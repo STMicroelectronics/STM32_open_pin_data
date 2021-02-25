@@ -8,7 +8,7 @@
 	<Die>DIE497</Die>
 	<Flash>64</Flash>
 	<Voltage Max="3.6" Min="1.8"/>
-	<Current Lowest="0.03" Run="71"/>
+	<Current Lowest="0.031" Run="71"/>
 	<Temperature Max="85" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32WLxx" InstanceName="ADC" Name="ADC" Version="aditf4_v3_0_WL_Cube"/>
 	<IP ConfigFile="ADV_TRACE-STM32WLxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube"/>

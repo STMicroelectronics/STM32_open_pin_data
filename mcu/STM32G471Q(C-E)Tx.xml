@@ -26,7 +26,7 @@
 	<IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" InstanceName="FDCAN2" Name="FDCAN" Version="fdcan1_v1_0_Cube"/>
 	<IP ConfigFile="FMAC-STM32G4xx" InstanceName="FMAC" Name="FMAC" Version="matrix1_v1_0_Cube"/>
 	<IP InstanceName="FREERTOS" Name="FREERTOS" Version="v8.0.0_Cube"/>
-	<IP ConfigFile="GUI_INTERFACE-STM32G4xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32G4_v1.10.2_Cube"/>
+	<IP ConfigFile="GUI_INTERFACE-STM32G4xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32G4_v1.13.0_Cube"/>
 	<IP InstanceName="I2C1" Name="I2C" Version="i2c2_v1_1_Cube"/>
 	<IP InstanceName="I2C2" Name="I2C" Version="i2c2_v1_1_Cube"/>
 	<IP InstanceName="I2C3" Name="I2C" Version="i2c2_v1_1_Cube"/>
@@ -40,6 +40,7 @@
 	<IP ClockEnableMode="none" InstanceName="OPAMP1" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
 	<IP ClockEnableMode="none" InstanceName="OPAMP2" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
 	<IP ClockEnableMode="none" InstanceName="OPAMP3" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" ConfigFile="QUADSPI-STM32G4xx" InstanceName="QUADSPI1" Name="QUADSPI" Version="quadspi1_v4_1_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32G4_rcc_v1_0"/>
 	<IP ConfigFile="RNG-STM32G4xx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc3_v1_1_Cube"/>
@@ -60,7 +61,7 @@
 	<IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM15" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
 	<IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM16" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
 	<IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM17" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
-	<IP ConfigFile="TRACER_EMB-STM32G4xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32G47_v1.0_Cube"/>
+	<IP ConfigFile="TRACER_EMB-STM32G4xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32G47_v1.6.0_Cube"/>
 	<IP InstanceName="UART4" Name="UART" Version="sci2_v3_1_Cube"/>
 	<IP InstanceName="UART5" Name="UART" Version="sci2_v3_1_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_UCPD1_CLK_ENABLE" ConfigFile="UCPD-STM32G4xx" InstanceName="UCPD1" Name="UCPD" Version="ucpd_v1_0_Cube"/>
@@ -68,7 +69,7 @@
 	<IP InstanceName="USART2" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP InstanceName="USART3" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP InstanceName="USB" Name="USB" Version="usb1_v2_2_STM32G4_Cube"/>
-	<IP ConfigFile="USBPD-STM32G4xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32G47_v1.3_Cube"/>
+	<IP ConfigFile="USBPD-STM32G4xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32G47_v1.4_Cube"/>
 	<IP ConfigFile="USB_DEVICE-STM32G4xx" InstanceName="USB_DEVICE" Name="USB_Device" Version="v3.0_Cube"/>
 	<IP ConfigFile="WWDG-STM32G4xx" InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0"/>
 	<IP ConfigFile="GPIO-STM32G4xx" InstanceName="GPIO" Name="GPIO" Version="STM32G47x_gpio_v1_0"/>
@@ -153,11 +154,13 @@
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PF7" Position="15" Type="I/O">
+		<Signal Name="QUADSPI1_BK1_IO2"/>
 		<Signal Name="SAI1_MCLK_B"/>
 		<Signal Name="TIM5_CH2"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PF8" Position="16" Type="I/O">
+		<Signal Name="QUADSPI1_BK1_IO0"/>
 		<Signal Name="SAI1_SCK_B"/>
 		<Signal Name="TIM5_CH3"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -165,6 +168,7 @@
 	<Pin Name="PF9" Position="17" Type="I/O">
 		<Signal Name="DAC1_EXTI9"/>
 		<Signal Name="DAC3_EXTI9"/>
+		<Signal Name="QUADSPI1_BK1_IO1"/>
 		<Signal Name="SAI1_FS_B"/>
 		<Signal Name="SPI2_SCK"/>
 		<Signal Name="TIM15_CH1"/>
@@ -174,6 +178,7 @@
 	<Pin Name="PF10" Position="18" Type="I/O">
 		<Signal Name="DAC1_EXTI10"/>
 		<Signal Name="DAC3_EXTI10"/>
+		<Signal Name="QUADSPI1_CLK"/>
 		<Signal Name="SAI1_D3"/>
 		<Signal Name="SPI2_SCK"/>
 		<Signal Name="TIM15_CH2"/>
@@ -217,6 +222,7 @@
 		<Signal Name="COMP3_INP"/>
 		<Signal Name="LPTIM1_OUT"/>
 		<Signal Name="LPUART1_TX"/>
+		<Signal Name="QUADSPI1_BK2_IO0"/>
 		<Signal Name="SAI1_SD_A"/>
 		<Signal Name="TIM1_CH2"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -227,6 +233,7 @@
 		<Signal Name="ADC3_EXTI2"/>
 		<Signal Name="COMP3_OUT"/>
 		<Signal Name="LPTIM1_IN2"/>
+		<Signal Name="QUADSPI1_BK2_IO1"/>
 		<Signal Name="TIM1_CH3"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
@@ -235,6 +242,7 @@
 		<Signal Name="ADC2_IN9"/>
 		<Signal Name="ADC3_EXTI3"/>
 		<Signal Name="LPTIM1_ETR"/>
+		<Signal Name="QUADSPI1_BK2_IO2"/>
 		<Signal Name="SAI1_D1"/>
 		<Signal Name="SAI1_SD_A"/>
 		<Signal Name="TIM1_BKIN2"/>
@@ -286,6 +294,7 @@
 		<Signal Name="COMP2_OUT"/>
 		<Signal Name="LPUART1_TX"/>
 		<Signal Name="OPAMP1_VOUT"/>
+		<Signal Name="QUADSPI1_BK1_NCS"/>
 		<Signal Name="RCC_LSCO"/>
 		<Signal Name="SYS_WKUP4"/>
 		<Signal Name="TIM15_CH1"/>
@@ -308,6 +317,7 @@
 		<Signal Name="OPAMP1_VINM_SEC"/>
 		<Signal Name="OPAMP1_VINP"/>
 		<Signal Name="OPAMP1_VINP_SEC"/>
+		<Signal Name="QUADSPI1_CLK"/>
 		<Signal Name="SAI1_CK1"/>
 		<Signal Name="SAI1_MCLK_A"/>
 		<Signal Name="TIM15_CH2"/>
@@ -347,6 +357,7 @@
 		<Signal Name="COMP1_OUT"/>
 		<Signal Name="LPUART1_CTS"/>
 		<Signal Name="OPAMP2_VOUT"/>
+		<Signal Name="QUADSPI1_BK1_IO3"/>
 		<Signal Name="SPI1_MISO"/>
 		<Signal Name="TIM16_CH1"/>
 		<Signal Name="TIM1_BKIN"/>
@@ -362,6 +373,7 @@
 		<Signal Name="OPAMP1_VINP_SEC"/>
 		<Signal Name="OPAMP2_VINP"/>
 		<Signal Name="OPAMP2_VINP_SEC"/>
+		<Signal Name="QUADSPI1_BK1_IO2"/>
 		<Signal Name="SPI1_MOSI"/>
 		<Signal Name="TIM17_CH1"/>
 		<Signal Name="TIM1_CH1N"/>
@@ -374,6 +386,7 @@
 	<Pin Name="PC4" Position="37" Type="I/O">
 		<Signal Name="ADC2_IN5"/>
 		<Signal Name="I2C2_SCL"/>
+		<Signal Name="QUADSPI1_BK2_IO3"/>
 		<Signal Name="TIM1_ETR"/>
 		<Signal Name="USART1_TX"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -401,6 +414,7 @@
 		<Signal Name="OPAMP2_VINP_SEC"/>
 		<Signal Name="OPAMP3_VINP"/>
 		<Signal Name="OPAMP3_VINP_SEC"/>
+		<Signal Name="QUADSPI1_BK1_IO1"/>
 		<Signal Name="TIM1_CH2N"/>
 		<Signal Name="TIM3_CH3"/>
 		<Signal Name="TIM8_CH2N"/>
@@ -416,6 +430,7 @@
 		<Signal Name="LPUART1_DE"/>
 		<Signal Name="LPUART1_RTS"/>
 		<Signal Name="OPAMP3_VOUT"/>
+		<Signal Name="QUADSPI1_BK1_IO0"/>
 		<Signal Name="TIM1_CH3N"/>
 		<Signal Name="TIM3_CH4"/>
 		<Signal Name="TIM8_CH3N"/>
@@ -430,6 +445,7 @@
 		<Signal Name="OPAMP3_VINM"/>
 		<Signal Name="OPAMP3_VINM0"/>
 		<Signal Name="OPAMP3_VINM_SEC"/>
+		<Signal Name="QUADSPI1_BK2_IO1"/>
 		<Signal Name="RTC_OUT2"/>
 		<Signal Name="TIM5_CH1"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -494,6 +510,7 @@
 		<Signal Name="ADC3_IN14"/>
 		<Signal Name="DAC1_EXTI10"/>
 		<Signal Name="DAC3_EXTI10"/>
+		<Signal Name="QUADSPI1_CLK"/>
 		<Signal Name="SAI1_MCLK_B"/>
 		<Signal Name="TIM1_CH2N"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -502,23 +519,27 @@
 		<Signal Name="ADC1_EXTI11"/>
 		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="ADC3_IN15"/>
+		<Signal Name="QUADSPI1_BK1_NCS"/>
 		<Signal Name="SPI4_NSS"/>
 		<Signal Name="TIM1_CH2"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PE12" Position="58" Type="I/O">
 		<Signal Name="ADC3_IN16"/>
+		<Signal Name="QUADSPI1_BK1_IO0"/>
 		<Signal Name="SPI4_SCK"/>
 		<Signal Name="TIM1_CH3N"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PE13" Position="59" Type="I/O">
 		<Signal Name="ADC3_IN3"/>
+		<Signal Name="QUADSPI1_BK1_IO1"/>
 		<Signal Name="SPI4_MISO"/>
 		<Signal Name="TIM1_CH3"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PE14" Position="60" Type="I/O">
+		<Signal Name="QUADSPI1_BK1_IO2"/>
 		<Signal Name="SPI4_MOSI"/>
 		<Signal Name="TIM1_BKIN2"/>
 		<Signal Name="TIM1_CH4"/>
@@ -527,6 +548,7 @@
 	<Pin Name="PE15" Position="61" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
 		<Signal Name="ADC2_EXTI15"/>
+		<Signal Name="QUADSPI1_BK1_IO3"/>
 		<Signal Name="TIM1_BKIN"/>
 		<Signal Name="TIM1_CH4N"/>
 		<Signal Name="USART3_RX"/>
@@ -539,6 +561,7 @@
 		<Signal Name="OPAMP3_VINM"/>
 		<Signal Name="OPAMP3_VINM1"/>
 		<Signal Name="OPAMP3_VINM_SEC"/>
+		<Signal Name="QUADSPI1_CLK"/>
 		<Signal Name="SAI1_SCK_A"/>
 		<Signal Name="TIM1_BKIN"/>
 		<Signal Name="TIM2_CH3"/>
@@ -553,6 +576,7 @@
 		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="ADC2_IN14"/>
 		<Signal Name="LPUART1_TX"/>
+		<Signal Name="QUADSPI1_BK1_NCS"/>
 		<Signal Name="TIM2_CH4"/>
 		<Signal Name="USART3_RX"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -802,6 +826,7 @@
 	</Pin>
 	<Pin Name="PF6" Position="97" Type="I/O">
 		<Signal Name="I2C2_SCL"/>
+		<Signal Name="QUADSPI1_BK1_IO3"/>
 		<Signal Name="SAI1_SD_B"/>
 		<Signal Name="TIM4_CH4"/>
 		<Signal Name="TIM5_CH1"/>
@@ -921,6 +946,7 @@
 	</Pin>
 	<Pin Name="PD3" Position="113" Type="I/O">
 		<Signal Name="ADC3_EXTI3"/>
+		<Signal Name="QUADSPI1_BK2_NCS"/>
 		<Signal Name="TIM2_CH1"/>
 		<Signal Name="TIM2_ETR"/>
 		<Signal Name="USART2_CTS"/>
@@ -928,16 +954,19 @@
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PD4" Position="114" Type="I/O">
+		<Signal Name="QUADSPI1_BK2_IO0"/>
 		<Signal Name="TIM2_CH2"/>
 		<Signal Name="USART2_DE"/>
 		<Signal Name="USART2_RTS"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PD5" Position="115" Type="I/O">
+		<Signal Name="QUADSPI1_BK2_IO1"/>
 		<Signal Name="USART2_TX"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PD6" Position="116" Type="I/O">
+		<Signal Name="QUADSPI1_BK2_IO2"/>
 		<Signal Name="SAI1_D1"/>
 		<Signal Name="SAI1_SD_A"/>
 		<Signal Name="TIM2_CH4"/>
@@ -945,6 +974,7 @@
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PD7" Position="117" Type="I/O">
+		<Signal Name="QUADSPI1_BK2_IO3"/>
 		<Signal Name="TIM2_CH3"/>
 		<Signal Name="USART2_CK"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>

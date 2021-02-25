@@ -9,7 +9,7 @@
 	<Flash>1024</Flash>
 	<Voltage Max="3.6" Min="1.71"/>
 	<Current Lowest="0.02" Run="112"/>
-	<Temperature Max="85" Min="-40"/>
+	<Temperature Max="125" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC2" Name="ADC" Version="aditf5_v2_0_Cube"/>
 	<IP ConfigFile="AES-STM32L4xx" InstanceName="AES" Name="AES" Version="aes3_v1_0_Cube"/>
@@ -40,6 +40,7 @@
 	<IP ClockEnableMode="__HAL_RCC_OPAMP_CLK_ENABLE" InstanceName="OPAMP1" Name="OPAMP" Version="tsmc018_ull_opamp_v1_0_L4_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_OPAMP_CLK_ENABLE" InstanceName="OPAMP2" Name="OPAMP" Version="tsmc018_ull_opamp_v1_0_L4_Cube"/>
 	<IP ConfigFile="PKA-STM32L4xx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube"/>
+	<IP InstanceName="PSSI" Name="PSSI" Version="cci_v3_0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32L4RS_rcc_v1_0"/>
 	<IP ConfigFile="RNG-STM32L4RSx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE;__HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32L4xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_9_Cube"/>
@@ -221,6 +222,7 @@
 		<Signal Name="LPTIM2_OUT"/>
 		<Signal Name="LTDC_CLK"/>
 		<Signal Name="OCTOSPIM_P1_NCS"/>
+		<Signal Name="PSSI_DE"/>
 		<Signal Name="SAI1_FS_B"/>
 		<Signal Name="SPI1_NSS"/>
 		<Signal Name="SPI3_NSS"/>
@@ -233,6 +235,7 @@
 		<Signal Name="DAC1_OUT2"/>
 		<Signal Name="LPTIM2_ETR"/>
 		<Signal Name="LTDC_R7"/>
+		<Signal Name="PSSI_D14"/>
 		<Signal Name="SPI1_SCK"/>
 		<Signal Name="TIM2_CH1"/>
 		<Signal Name="TIM2_ETR"/>
@@ -246,6 +249,7 @@
 		<Signal Name="LPUART1_CTS"/>
 		<Signal Name="OCTOSPIM_P1_IO3"/>
 		<Signal Name="OPAMP2_VINP"/>
+		<Signal Name="PSSI_PDCK"/>
 		<Signal Name="SPI1_MISO"/>
 		<Signal Name="TIM16_CH1"/>
 		<Signal Name="TIM1_BKIN"/>
@@ -282,6 +286,7 @@
 		<Signal Name="ADC2_IN14"/>
 		<Signal Name="COMP1_INP"/>
 		<Signal Name="LTDC_CLK"/>
+		<Signal Name="PSSI_D15"/>
 		<Signal Name="SAI1_D3"/>
 		<Signal Name="SYS_WKUP5"/>
 		<Signal Name="USART3_RX"/>
@@ -421,6 +426,7 @@
 		<Signal Name="DCMI_D0"/>
 		<Signal Name="DFSDM1_CKIN3"/>
 		<Signal Name="LTDC_G7"/>
+		<Signal Name="PSSI_D0"/>
 		<Signal Name="SAI2_MCLK_A"/>
 		<Signal Name="SDMMC1_D0DIR"/>
 		<Signal Name="SDMMC1_D6"/>
@@ -434,6 +440,7 @@
 		<Signal Name="DCMI_D1"/>
 		<Signal Name="DFSDM1_DATIN3"/>
 		<Signal Name="LTDC_B6"/>
+		<Signal Name="PSSI_D1"/>
 		<Signal Name="SAI2_MCLK_B"/>
 		<Signal Name="SDMMC1_D123DIR"/>
 		<Signal Name="SDMMC1_D7"/>
@@ -445,6 +452,7 @@
 	</Pin>
 	<Pin Name="PC8" Position="39" Type="I/O">
 		<Signal Name="DCMI_D2"/>
+		<Signal Name="PSSI_D2"/>
 		<Signal Name="SDMMC1_D0"/>
 		<Signal Name="TIM3_CH3"/>
 		<Signal Name="TIM8_CH3"/>
@@ -455,6 +463,7 @@
 		<Signal Name="DAC1_EXTI9"/>
 		<Signal Name="DCMI_D3"/>
 		<Signal Name="I2C3_SDA"/>
+		<Signal Name="PSSI_D3"/>
 		<Signal Name="SAI2_EXTCLK"/>
 		<Signal Name="SDMMC1_D1"/>
 		<Signal Name="SYS_TRACED0"/>
@@ -481,6 +490,7 @@
 		<Signal Name="DAC1_EXTI9"/>
 		<Signal Name="DCMI_D0"/>
 		<Signal Name="LTDC_G7"/>
+		<Signal Name="PSSI_D0"/>
 		<Signal Name="SAI1_FS_A"/>
 		<Signal Name="SPI2_SCK"/>
 		<Signal Name="TIM15_BKIN"/>
@@ -493,6 +503,7 @@
 	<Pin Name="PA10" Position="43" Type="I/O">
 		<Signal Name="DCMI_D1"/>
 		<Signal Name="LTDC_G6"/>
+		<Signal Name="PSSI_D1"/>
 		<Signal Name="SAI1_D1"/>
 		<Signal Name="SAI1_SD_A"/>
 		<Signal Name="TIM17_BKIN"/>
@@ -564,6 +575,8 @@
 	<Pin Name="PC10" Position="51" Type="I/O">
 		<Signal Name="DCMI_D8"/>
 		<Signal Name="DCMI_VSYNC"/>
+		<Signal Name="PSSI_D8"/>
+		<Signal Name="PSSI_RDY"/>
 		<Signal Name="SAI2_SCK_B"/>
 		<Signal Name="SDMMC1_D2"/>
 		<Signal Name="SPI3_SCK"/>
@@ -579,6 +592,8 @@
 		<Signal Name="DCMI_D2"/>
 		<Signal Name="DCMI_D4"/>
 		<Signal Name="OCTOSPIM_P1_NCS"/>
+		<Signal Name="PSSI_D2"/>
+		<Signal Name="PSSI_D4"/>
 		<Signal Name="SAI2_MCLK_B"/>
 		<Signal Name="SDMMC1_D3"/>
 		<Signal Name="SPI3_MISO"/>
@@ -590,6 +605,7 @@
 	<Pin Name="PC12" Position="53" Type="I/O">
 		<Signal Name="DCMI_D9"/>
 		<Signal Name="LTDC_R6"/>
+		<Signal Name="PSSI_D9"/>
 		<Signal Name="SAI2_SD_B"/>
 		<Signal Name="SDMMC1_CK"/>
 		<Signal Name="SPI3_MOSI"/>
@@ -600,6 +616,7 @@
 	</Pin>
 	<Pin Name="PD2" Position="54" Type="I/O">
 		<Signal Name="DCMI_D11"/>
+		<Signal Name="PSSI_D11"/>
 		<Signal Name="SDMMC1_CMD"/>
 		<Signal Name="SYS_TRACED2"/>
 		<Signal Name="TIM3_ETR"/>
@@ -627,6 +644,7 @@
 		<Signal Name="DCMI_D12"/>
 		<Signal Name="I2C3_SDA"/>
 		<Signal Name="OCTOSPIM_P1_IO5"/>
+		<Signal Name="PSSI_D12"/>
 		<Signal Name="SAI1_MCLK_B"/>
 		<Signal Name="SDMMC2_D3"/>
 		<Signal Name="SPI1_MISO"/>
@@ -645,6 +663,7 @@
 		<Signal Name="I2C1_SMBA"/>
 		<Signal Name="LPTIM1_IN1"/>
 		<Signal Name="OCTOSPIM_P1_IO0"/>
+		<Signal Name="PSSI_D10"/>
 		<Signal Name="SAI1_SD_B"/>
 		<Signal Name="SPI1_MOSI"/>
 		<Signal Name="SPI3_MOSI"/>
@@ -661,6 +680,7 @@
 		<Signal Name="I2C4_SCL"/>
 		<Signal Name="LPTIM1_ETR"/>
 		<Signal Name="LTDC_R6"/>
+		<Signal Name="PSSI_D5"/>
 		<Signal Name="SAI1_FS_B"/>
 		<Signal Name="TIM16_CH1N"/>
 		<Signal Name="TIM4_CH1"/>
@@ -676,6 +696,7 @@
 		<Signal Name="I2C4_SDA"/>
 		<Signal Name="LPTIM1_IN2"/>
 		<Signal Name="LTDC_VSYNC"/>
+		<Signal Name="PSSI_RDY"/>
 		<Signal Name="SYS_PVD_IN"/>
 		<Signal Name="TIM17_CH1N"/>
 		<Signal Name="TIM4_CH2"/>
@@ -694,6 +715,7 @@
 		<Signal Name="DFSDM1_CKOUT"/>
 		<Signal Name="I2C1_SCL"/>
 		<Signal Name="LTDC_DE"/>
+		<Signal Name="PSSI_D6"/>
 		<Signal Name="SAI1_CK1"/>
 		<Signal Name="SAI1_MCLK_A"/>
 		<Signal Name="SDMMC1_CKIN"/>
@@ -709,6 +731,7 @@
 		<Signal Name="DCMI_D7"/>
 		<Signal Name="I2C1_SDA"/>
 		<Signal Name="IR_OUT"/>
+		<Signal Name="PSSI_D7"/>
 		<Signal Name="SAI1_D2"/>
 		<Signal Name="SAI1_FS_A"/>
 		<Signal Name="SDMMC1_CDIR"/>

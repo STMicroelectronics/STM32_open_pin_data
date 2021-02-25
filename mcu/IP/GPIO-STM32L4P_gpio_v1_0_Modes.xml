@@ -2020,6 +2020,11 @@
                 <PossibleValue>GPIO_AF10_OCTOSPIM_P1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="OCTOSPIM_P1_IO3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF6_OCTOSPIM_P1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="SAI1_SCK_A">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF13_SAI1</PossibleValue>

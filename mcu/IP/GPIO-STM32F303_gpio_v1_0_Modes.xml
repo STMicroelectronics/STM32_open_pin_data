@@ -90,11 +90,11 @@
         <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
     </RefParameter>
     <RefParameter Name="GPIO_PuPdOD" Comment="GPIO Pull-up/Pull-down" Type="list" DefaultValue="GPIO_PULLUP">
-        <PossibleValue Value="GPIO_NOPULL" Comment="No pull up pull down"/>
+        <PossibleValue Value="GPIO_NOPULL" Comment="No pull-up and no pull-down"/>
         <PossibleValue Value="GPIO_PULLUP" Comment="Pull up"/>
     </RefParameter>
     <RefParameter Name="GPIO_PuPd" Comment="GPIO Pull-up/Pull-down" Type="list" DefaultValue="GPIO_NOPULL">
-        <PossibleValue Value="GPIO_NOPULL" Comment="No pull up pull down"/>
+        <PossibleValue Value="GPIO_NOPULL" Comment="No pull-up and no pull-down"/>
         <PossibleValue Value="GPIO_PULLUP" Comment="Pull up"/>
         <PossibleValue Value="GPIO_PULLDOWN" Comment="Pull down"/>
     </RefParameter>

@@ -17,6 +17,7 @@
 	<IP ConfigFile="FREERTOS-STM32WBxx" InstanceName="FREERTOS" Name="FREERTOS" Version="v8.0.0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_HSEM_CLK_ENABLE" InstanceName="HSEM" Name="HSEM" Version="hsem1_v1_0_Cube"/>
 	<IP InstanceName="I2C1" Name="I2C" Version="i2c2_v1_1_Cube"/>
+	<IP ConfigFile="IPCC-STM32WBxx" InstanceName="IPCC" Name="IPCC" Version="v1_0_Cube"/>
 	<IP ConfigFile="IRTIM-STM32WBxx" InstanceName="IRTIM" Name="IRTIM" Version="irtim_v1_0_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="IWDG-STM32WBxx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v2_0"/>
 	<IP ConfigFile="LPTIM-STM32WBxx" InstanceName="LPTIM1" Name="LPTIM" Version="WB5_lptimer1_v1_0_Cube"/>
@@ -24,7 +25,7 @@
 	<IP ClockEnableMode="__HAL_RCC_PKA_CLK_ENABLE" ConfigFile="PKA-STM32WBxx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32W_rcc_v1_0"/>
 	<IP InstanceName="RF" Name="RF" Version="rf2g4ctrl_v1_0_Cube"/>
-	<IP ConfigFile="RNG-STM32WBxx" InstanceName="RNG" Name="RNG" Version="rng1_v1_1"/>
+	<IP ConfigFile="RNG-STM32WBxx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE;__HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32WBxx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_WB_Cube"/>
 	<IP ConfigFile="SEQUENCER-STM32WBxx" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube"/>
 	<IP ConfigFile="SPI-STM32WBxx" InstanceName="SPI1" Name="SPI" Version="spi2s1_v3_1_Cube"/>
@@ -161,6 +162,7 @@
 	<Pin Name="AT0" Position="26" Type="NC"/>
 	<Pin Name="AT1" Position="27" Type="NC"/>
 	<Pin Name="PB0" Position="28" Type="I/O">
+		<Signal Name="RF_TX_MOD_EXT_PA"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PB1" Position="29" Type="I/O">
@@ -170,13 +172,12 @@
 	<Pin Name="PE4" Position="30" Type="I/O">
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
-	<Pin Name="VFBSMPS" Position="31" Type="Power"/>
-	<Pin Name="VSSSMPS" Position="32" Type="Power"/>
-	<Pin Name="VLXSMPS" Position="33" Type="Power"/>
-	<Pin Name="VDDSMPS" Position="34" Type="Power"/>
+	<Pin Name="VDD" Position="31" Type="Power"/>
+	<Pin Name="VSS" Position="32" Type="Power"/>
+	<Pin Name="VDD" Position="33" Type="Power"/>
+	<Pin Name="VDD" Position="34" Type="Power"/>
 	<Pin Name="VDD" Position="35" Type="Power"/>
 	<Pin Name="PA10" Position="36" Type="I/O">
-		<Signal Name="CRS_SYNC"/>
 		<Signal Name="I2C1_SDA"/>
 		<Signal Name="TIM17_BKIN"/>
 		<Signal Name="TIM1_CH3"/>
@@ -204,7 +205,7 @@
 		<Signal Name="SYS_JTMS-SWDIO"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
-	<Pin Name="VDDUSB" Position="40" Type="Power"/>
+	<Pin Name="VDD" Position="40" Type="Power"/>
 	<Pin Name="PA14" Position="41" Type="I/O">
 		<Signal Name="I2C1_SMBA"/>
 		<Signal Name="LPTIM1_OUT"/>

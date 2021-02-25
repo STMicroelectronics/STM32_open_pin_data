@@ -2870,6 +2870,11 @@
                 <PossibleValue>GPIO_AF0_MCO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="TIM9_CH2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM9</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="TIMX_IC3">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF14_TIM_IC3</PossibleValue>

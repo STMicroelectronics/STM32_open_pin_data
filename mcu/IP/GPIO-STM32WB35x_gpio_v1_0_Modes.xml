@@ -1101,70 +1101,6 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
     </RefMode>
-    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
-        <Condition Diagnostic="" Expression="PB6"/>
-        <ConfigForMode>AlternateFunction</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_FM6"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
-        <Condition Diagnostic="" Expression="PB7"/>
-        <ConfigForMode>AlternateFunction</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_FM7"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
-        <Condition Diagnostic="" Expression="PB8"/>
-        <ConfigForMode>AlternateFunction</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_FM8"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
-        <Condition Diagnostic="" Expression="PB9"/>
-        <ConfigForMode>AlternateFunction</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_FM9"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
-        <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
-        <ConfigForMode>AlternateFunction</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-    </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
         <Condition Diagnostic="" Expression="PB6"/>
         <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
@@ -1249,11 +1185,6 @@
                 <PossibleValue>GPIO_AF12_COMP1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_EXTCLK">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM2_CH1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM2</PossibleValue>
@@ -1299,39 +1230,19 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="CRS_SYNC">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_USB</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="I2C1_SDA">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_I2C1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_D1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_DI1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_SD_A">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="TIM17_BKIN">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM17</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM1_CH3">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G7_IO2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_RX">
@@ -1356,7 +1267,7 @@
         </PinSignal>
         <PinSignal Name="TIM1_BKIN2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_TIM1</PossibleValue>
+                <PossibleValue>GPIO_AF2_TIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH4">
@@ -1372,11 +1283,6 @@
         <PinSignal Name="USART1_NSS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="USB_DM">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_USB</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
@@ -1414,11 +1320,6 @@
                 <PossibleValue>GPIO_AF7_USART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="USB_DP">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_USB</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA13">
         <SpecificParameter Name="GPIO_Pin">
@@ -1429,14 +1330,9 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="IR_OUT">
+        <PinSignal Name="SPI1_MOSI">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF8_IR</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_SD_B">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
+                <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SYS_JTMS-SWDIO">
@@ -1444,9 +1340,9 @@
                 <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="USB_NOE">
+        <PinSignal Name="TSC_G7_IO1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_USB</PossibleValue>
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
@@ -1469,9 +1365,9 @@
                 <PossibleValue>GPIO_AF1_LPTIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_FS_B">
+        <PinSignal Name="SPI1_NSS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
+                <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SYS_JTCK-SWCLK">
@@ -1491,7 +1387,7 @@
         </PinSignal>
         <PinSignal Name="RCC_MCO">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_MCO</PossibleValue>
+                <PossibleValue>GPIO_AF6_SYS</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_NSS">
@@ -1514,6 +1410,11 @@
                 <PossibleValue>GPIO_AF2_TIM2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="TSC_G3_IO1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA2">
         <SpecificParameter Name="GPIO_Pin">
@@ -1524,19 +1425,9 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="COMP2_OUT">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_COMP2</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="LPUART1_TX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_LPUART1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="QUADSPI_BK1_NCS">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_QUADSPI</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RCC_LSCO">
@@ -1564,21 +1455,6 @@
                 <PossibleValue>GPIO_AF8_LPUART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="QUADSPI_CLK">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_QUADSPI</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_CK1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_MCLK_A">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM2_CH4">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM2</PossibleValue>
@@ -1597,11 +1473,6 @@
         <PinSignal Name="LPTIM2_OUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF14_LPTIM2</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_FS_B">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_NSS">
@@ -1624,9 +1495,9 @@
                 <PossibleValue>GPIO_AF14_LPTIM2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_SD_B">
+        <PinSignal Name="SPI1_MOSI">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
+                <PossibleValue>GPIO_AF4_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_SCK">
@@ -1659,24 +1530,14 @@
                 <PossibleValue>GPIO_AF8_LPUART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="QUADSPI_BK1_IO3">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_QUADSPI</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="SPI1_MISO">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TIM16_CH1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM16</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM1_BKIN">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_TIM1</PossibleValue>
+                <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
@@ -1689,29 +1550,9 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="COMP2_OUT">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_COMP2</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="I2C3_SCL">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_I2C3</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="QUADSPI_BK1_IO2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_QUADSPI</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="SPI1_MOSI">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="TIM17_CH1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM17</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH1N">
@@ -1739,16 +1580,6 @@
                 <PossibleValue>GPIO_AF0_MCO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_CK2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_SCK_A">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM1_CH1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
@@ -1772,21 +1603,6 @@
         <PinSignal Name="I2C1_SCL">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_I2C1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_D2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_DI2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_FS_A">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH2">
@@ -1814,9 +1630,9 @@
                 <PossibleValue>GPIO_AF12_COMP1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="EXT_PA_TX">
+        <PinSignal Name="RF_TX_MOD_EXT_PA">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_EXT_PA</PossibleValue>
+                <PossibleValue>GPIO_AF6_RF</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
@@ -1845,6 +1661,91 @@
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB10">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="CM4_EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G3_IO2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB12">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_12</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="CM4_EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM2_CH2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_TIM2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G1_IO1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB13">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_13</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="CM4_EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM2_CH3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_TIM2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G1_IO2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB14">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_14</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="CM4_EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB15">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_15</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="CM4_EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM2_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_TIM2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
     <GPIO_Pin PortName="PB" Name="PB2">
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_2</PossibleValue>
@@ -1854,19 +1755,14 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="I2C3_SMBA">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_I2C3</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="LPTIM1_OUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_LPTIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_EXTCLK">
+        <PinSignal Name="RTC_OUT">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
+                <PossibleValue>GPIO_AF0_RTC_OUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_NSS">
@@ -1882,11 +1778,6 @@
         <PinSignal Name="CM4_EVENTOUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_SCK_B">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_SCK">
@@ -1924,16 +1815,6 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="I2C3_SDA">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_I2C3</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_MCLK_B">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="SPI1_MISO">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
@@ -1944,9 +1825,9 @@
                 <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TIM17_BKIN">
+        <PinSignal Name="TSC_G2_IO1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM17</PossibleValue>
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_CTS">
@@ -1969,11 +1850,6 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="COMP2_OUT">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_COMP2</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="I2C1_SMBA">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_I2C1</PossibleValue>
@@ -1989,19 +1865,14 @@
                 <PossibleValue>GPIO_AF8_LPUART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_SD_B">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="SPI1_MOSI">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TIM16_BKIN">
+        <PinSignal Name="TSC_G2_IO2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM16</PossibleValue>
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_CK">
@@ -2034,14 +1905,14 @@
                 <PossibleValue>GPIO_AF0_MCO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SAI1_FS_B">
+        <PinSignal Name="SPI1_NSS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
+                <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TIM16_CH1N">
+        <PinSignal Name="TSC_G2_IO3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM16</PossibleValue>
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_TX">
@@ -2069,14 +1940,19 @@
                 <PossibleValue>GPIO_AF1_LPTIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TIM17_CH1N">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM17</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM1_BKIN">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF12_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G2_IO4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_RX">
@@ -2099,29 +1975,14 @@
                 <PossibleValue>GPIO_AF4_I2C1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="QUADSPI_BK1_IO1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_QUADSPI</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_CK1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_MCLK_A">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="TIM16_CH1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM16</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM1_CH2N">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G7_IO3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
@@ -2139,39 +2000,29 @@
                 <PossibleValue>GPIO_AF4_I2C1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="IR_OUT">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF8_IR</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="QUADSPI_BK1_IO0">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_QUADSPI</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_D2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_DI2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF3_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="SAI1_FS_A">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="TIM17_CH1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_TIM17</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="TIM1_CH3N">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G7_IO4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PC" Name="PC1">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_1</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="CM4_EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TSC_G3_IO3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>

@@ -24,7 +24,6 @@
 	<IP ConfigFile="DFSDM-STM32H7xx" InstanceName="DFSDM1" Name="DFSDM" Version="dfsdm1_v1_0_H7_Cube"/>
 	<IP ConfigFile="DMA2D-STM32H7xx" InstanceName="DMA2D" Name="DMA2D" Version="dma2d1_v1_0"/>
 	<IP ClockEnableMode="__HAL_RCC_DTS_CLK_ENABLE" ConfigFile="DTS-STM32H7xx" InstanceName="DTS" Name="DTS" Version="dts_v1_0_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_ETH1MAC_CLK_ENABLE;__HAL_RCC_ETH1TX_CLK_ENABLE;__HAL_RCC_ETH1RX_CLK_ENABLE" ConfigFile="ETH-STM32H7xx" InstanceName="ETH" Name="ETH" Version="ethermac110_v3_0"/>
 	<IP ConfigFile="FATFS-STM32H7xx" InstanceName="FATFS" Name="FATFS" Version="v0.1.0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32H7xx" InstanceName="FDCAN1" Name="FDCAN" Version="fdcan1_v1_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32H7xx" InstanceName="FDCAN2" Name="FDCAN" Version="fdcan1_v1_0_Cube"/>
@@ -148,7 +147,6 @@
 		<Signal Name="DEBUG_TRACED0"/>
 		<Signal Name="DFSDM1_CKIN4"/>
 		<Signal Name="DFSDM1_DATIN0"/>
-		<Signal Name="ETH_MDC"/>
 		<Signal Name="I2S2_SDO"/>
 		<Signal Name="LTDC_G5"/>
 		<Signal Name="MDIOS_MDC"/>
@@ -163,7 +161,6 @@
 	<Pin Name="VDDA" Position="16" Type="Power"/>
 	<Pin Name="PA0" Position="17" Type="I/O">
 		<Signal Name="ADC1_INP16"/>
-		<Signal Name="ETH_CRS"/>
 		<Signal Name="I2S6_WS"/>
 		<Signal Name="PWR_WKUP1"/>
 		<Signal Name="SDMMC2_CMD"/>
@@ -181,8 +178,6 @@
 	<Pin Name="PA1" Position="18" Type="I/O">
 		<Signal Name="ADC1_INN16"/>
 		<Signal Name="ADC1_INP17"/>
-		<Signal Name="ETH_REF_CLK"/>
-		<Signal Name="ETH_RX_CLK"/>
 		<Signal Name="LPTIM3_OUT"/>
 		<Signal Name="LTDC_R2"/>
 		<Signal Name="OCTOSPIM_P1_DQS"/>
@@ -198,7 +193,6 @@
 	<Pin Name="PA2" Position="19" Type="I/O">
 		<Signal Name="ADC1_INP14"/>
 		<Signal Name="ADC2_INP14"/>
-		<Signal Name="ETH_MDIO"/>
 		<Signal Name="LPTIM4_OUT"/>
 		<Signal Name="LTDC_R1"/>
 		<Signal Name="MDIOS_MDIO"/>
@@ -213,7 +207,6 @@
 	<Pin Name="PA3" Position="20" Type="I/O">
 		<Signal Name="ADC1_INP15"/>
 		<Signal Name="ADC2_INP15"/>
-		<Signal Name="ETH_COL"/>
 		<Signal Name="I2S6_MCK"/>
 		<Signal Name="LPTIM5_OUT"/>
 		<Signal Name="LTDC_B2"/>
@@ -291,8 +284,6 @@
 		<Signal Name="ADC1_INP7"/>
 		<Signal Name="ADC2_INN3"/>
 		<Signal Name="ADC2_INP7"/>
-		<Signal Name="ETH_CRS_DV"/>
-		<Signal Name="ETH_RX_DV"/>
 		<Signal Name="I2S1_SDO"/>
 		<Signal Name="I2S6_SDO"/>
 		<Signal Name="LTDC_VSYNC"/>
@@ -311,7 +302,6 @@
 		<Signal Name="ADC2_INP4"/>
 		<Signal Name="COMP1_INM"/>
 		<Signal Name="DFSDM1_CKIN2"/>
-		<Signal Name="ETH_RXD0"/>
 		<Signal Name="I2S1_MCK"/>
 		<Signal Name="LTDC_R7"/>
 		<Signal Name="OPAMP1_VOUT"/>
@@ -326,7 +316,6 @@
 		<Signal Name="ADC2_INP8"/>
 		<Signal Name="COMP1_OUT"/>
 		<Signal Name="DFSDM1_DATIN2"/>
-		<Signal Name="ETH_RXD1"/>
 		<Signal Name="LTDC_DE"/>
 		<Signal Name="OCTOSPIM_P1_DQS"/>
 		<Signal Name="OPAMP1_VINM"/>
@@ -341,7 +330,6 @@
 		<Signal Name="ADC2_INP9"/>
 		<Signal Name="COMP1_INP"/>
 		<Signal Name="DFSDM1_CKOUT"/>
-		<Signal Name="ETH_RXD2"/>
 		<Signal Name="LTDC_G1"/>
 		<Signal Name="LTDC_R3"/>
 		<Signal Name="OCTOSPIM_P1_IO1"/>
@@ -358,7 +346,6 @@
 		<Signal Name="ADC2_INP5"/>
 		<Signal Name="COMP1_INM"/>
 		<Signal Name="DFSDM1_DATIN1"/>
-		<Signal Name="ETH_RXD3"/>
 		<Signal Name="LTDC_G0"/>
 		<Signal Name="LTDC_R6"/>
 		<Signal Name="OCTOSPIM_P1_IO0"/>
@@ -371,7 +358,6 @@
 	<Pin Name="PB2" Position="31" Type="I/O">
 		<Signal Name="COMP1_INP"/>
 		<Signal Name="DFSDM1_CKIN1"/>
-		<Signal Name="ETH_TX_ER"/>
 		<Signal Name="I2S3_SDO"/>
 		<Signal Name="OCTOSPIM_P1_CLK"/>
 		<Signal Name="OCTOSPIM_P1_DQS"/>
@@ -383,7 +369,6 @@
 	</Pin>
 	<Pin Name="PB10" Position="32" Type="I/O">
 		<Signal Name="DFSDM1_DATIN7"/>
-		<Signal Name="ETH_RX_ER"/>
 		<Signal Name="I2C2_SCL"/>
 		<Signal Name="I2S2_CK"/>
 		<Signal Name="LPTIM2_IN1"/>
@@ -400,7 +385,6 @@
 	<Pin Name="VDD" Position="35" Type="Power"/>
 	<Pin Name="PB12" Position="36" Type="I/O">
 		<Signal Name="DFSDM1_DATIN1"/>
-		<Signal Name="ETH_TXD0"/>
 		<Signal Name="FDCAN2_RX"/>
 		<Signal Name="I2C2_SMBA"/>
 		<Signal Name="I2S2_WS"/>
@@ -418,7 +402,6 @@
 	<Pin Name="PB13" Position="37" Type="I/O">
 		<Signal Name="DCMI_D2"/>
 		<Signal Name="DFSDM1_CKIN1"/>
-		<Signal Name="ETH_TXD1"/>
 		<Signal Name="FDCAN2_TX"/>
 		<Signal Name="I2S2_CK"/>
 		<Signal Name="LPTIM2_OUT"/>
@@ -529,7 +512,6 @@
 	<Pin Name="PA9" Position="44" Type="I/O">
 		<Signal Name="DAC1_EXTI9"/>
 		<Signal Name="DCMI_D0"/>
-		<Signal Name="ETH_TX_ER"/>
 		<Signal Name="I2C3_SMBA"/>
 		<Signal Name="I2S2_CK"/>
 		<Signal Name="LPUART1_TX"/>
@@ -707,7 +689,6 @@
 	</Pin>
 	<Pin Name="PB5" Position="60" Type="I/O">
 		<Signal Name="DCMI_D10"/>
-		<Signal Name="ETH_PPS_OUT"/>
 		<Signal Name="FDCAN2_RX"/>
 		<Signal Name="I2C1_SMBA"/>
 		<Signal Name="I2C4_SMBA"/>
@@ -758,7 +739,6 @@
 	<Pin Name="PB8" Position="64" Type="I/O">
 		<Signal Name="DCMI_D6"/>
 		<Signal Name="DFSDM1_CKIN7"/>
-		<Signal Name="ETH_TXD3"/>
 		<Signal Name="FDCAN1_RX"/>
 		<Signal Name="I2C1_SCL"/>
 		<Signal Name="I2C4_SCL"/>

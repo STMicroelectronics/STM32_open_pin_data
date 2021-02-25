@@ -11,6 +11,7 @@
 	<Current Lowest="0.02" Run="112"/>
 	<Temperature Max="85" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_0_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC2" Name="ADC" Version="aditf5_v2_0_Cube"/>
 	<IP ConfigFile="AES-STM32L4xx" InstanceName="AES" Name="AES" Version="aes3_v1_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_CAN1_CLK_ENABLE" ConfigFile="CAN-STM32L4xx" InstanceName="CAN1" Name="CAN" Version="bxcan1_v1_1_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="COMP-STM32L4xx" InstanceName="COMP1" Name="COMP" Version="TSMC90_Cube"/>
@@ -134,6 +135,7 @@
 	<Pin Name="VDD" Position="A8" Type="Power"/>
 	<Pin Name="PA15 (JTDI)" Position="A9" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="LTDC_HSYNC"/>
 		<Signal Name="SAI2_FS_B"/>
 		<Signal Name="SPI1_NSS"/>
@@ -262,6 +264,7 @@
 	</Pin>
 	<Pin Name="PH15" Position="B12" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="DCMI_D11"/>
 		<Signal Name="OCTOSPIM_P2_IO6"/>
 		<Signal Name="PSSI_D11"/>
@@ -279,6 +282,7 @@
 	<Pin Name="VSS" Position="C2" Type="Power"/>
 	<Pin Name="PI11" Position="C3" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="OCTOSPIM_P2_IO0"/>
 		<Signal Name="PSSI_D15"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -317,6 +321,7 @@
 	</Pin>
 	<Pin Name="PG15" Position="C6" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="DCMI_D13"/>
 		<Signal Name="I2C1_SMBA"/>
 		<Signal Name="LPTIM1_OUT"/>
@@ -546,6 +551,7 @@
 	</Pin>
 	<Pin Name="PG11" Position="E6" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="LPTIM1_IN2"/>
 		<Signal Name="OCTOSPIM_P1_IO5"/>
 		<Signal Name="SAI2_MCLK_A"/>
@@ -585,6 +591,7 @@
 	</Pin>
 	<Pin Name="PC11" Position="E9" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="DCMI_D2"/>
 		<Signal Name="DCMI_D4"/>
 		<Signal Name="OCTOSPIM_P1_NCS"/>
@@ -615,6 +622,7 @@
 	<Pin Name="VDDUSB" Position="E12" Type="Power"/>
 	<Pin Name="PA11" Position="E13" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="CAN1_RX"/>
 		<Signal Name="LTDC_DE"/>
 		<Signal Name="SPI1_MISO"/>
@@ -725,6 +733,7 @@
 	<Pin Name="VSS" Position="F13" Type="Power"/>
 	<Pin Name="PC15-OSC32_OUT (PC15)" Position="G1" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="RCC_OSC32_OUT"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
@@ -834,6 +843,7 @@
 	</Pin>
 	<Pin Name="PC4" Position="H5" Type="I/O">
 		<Signal Name="ADC1_IN13"/>
+		<Signal Name="ADC2_IN13"/>
 		<Signal Name="COMP1_INM"/>
 		<Signal Name="OCTOSPIM_P1_IO7"/>
 		<Signal Name="OCTOSPIM_P2_NCS"/>
@@ -858,6 +868,7 @@
 	</Pin>
 	<Pin Name="PB11" Position="H8" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="COMP2_OUT"/>
 		<Signal Name="I2C2_SDA"/>
 		<Signal Name="I2C4_SDA"/>
@@ -885,6 +896,7 @@
 	</Pin>
 	<Pin Name="PD15" Position="H11" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="FMC_D1"/>
 		<Signal Name="FMC_DA1"/>
 		<Signal Name="LTDC_B3"/>
@@ -899,6 +911,7 @@
 	</Pin>
 	<Pin Name="PC0" Position="J2" Type="I/O">
 		<Signal Name="ADC1_IN1"/>
+		<Signal Name="ADC2_IN1"/>
 		<Signal Name="I2C3_SCL"/>
 		<Signal Name="LPTIM1_IN1"/>
 		<Signal Name="LPTIM2_IN1"/>
@@ -911,6 +924,7 @@
 	</Pin>
 	<Pin Name="PC1" Position="J3" Type="I/O">
 		<Signal Name="ADC1_IN2"/>
+		<Signal Name="ADC2_IN2"/>
 		<Signal Name="I2C3_SDA"/>
 		<Signal Name="LPTIM1_OUT"/>
 		<Signal Name="LPUART1_TX"/>
@@ -922,6 +936,7 @@
 	</Pin>
 	<Pin Name="PC2" Position="J4" Type="I/O">
 		<Signal Name="ADC1_IN3"/>
+		<Signal Name="ADC2_IN3"/>
 		<Signal Name="DFSDM1_CKOUT"/>
 		<Signal Name="LPTIM1_IN2"/>
 		<Signal Name="LTDC_HSYNC"/>
@@ -931,6 +946,7 @@
 	</Pin>
 	<Pin Name="PC5" Position="J5" Type="I/O">
 		<Signal Name="ADC1_IN14"/>
+		<Signal Name="ADC2_IN14"/>
 		<Signal Name="COMP1_INP"/>
 		<Signal Name="LTDC_CLK"/>
 		<Signal Name="PSSI_D15"/>
@@ -959,6 +975,7 @@
 	</Pin>
 	<Pin Name="PE15" Position="J8" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="FMC_D12"/>
 		<Signal Name="FMC_DA12"/>
 		<Signal Name="LTDC_R2"/>
@@ -1007,6 +1024,7 @@
 	</Pin>
 	<Pin Name="PC3" Position="K1" Type="I/O">
 		<Signal Name="ADC1_IN4"/>
+		<Signal Name="ADC2_IN4"/>
 		<Signal Name="LPTIM1_ETR"/>
 		<Signal Name="LPTIM2_ETR"/>
 		<Signal Name="OCTOSPIM_P1_IO6"/>
@@ -1018,6 +1036,7 @@
 	<Pin Name="VSSA/VREF-" Position="K2" Type="Power"/>
 	<Pin Name="PA0" Position="K3" Type="I/O">
 		<Signal Name="ADC1_IN5"/>
+		<Signal Name="ADC2_IN5"/>
 		<Signal Name="OPAMP1_VINP"/>
 		<Signal Name="RTC_TAMP2"/>
 		<Signal Name="SAI1_EXTCLK"/>
@@ -1033,6 +1052,7 @@
 	</Pin>
 	<Pin Name="PA5" Position="K4" Type="I/O">
 		<Signal Name="ADC1_IN10"/>
+		<Signal Name="ADC2_IN10"/>
 		<Signal Name="DAC1_OUT2"/>
 		<Signal Name="LPTIM2_ETR"/>
 		<Signal Name="LTDC_R7"/>
@@ -1045,6 +1065,7 @@
 	</Pin>
 	<Pin Name="PB0" Position="K5" Type="I/O">
 		<Signal Name="ADC1_IN15"/>
+		<Signal Name="ADC2_IN15"/>
 		<Signal Name="COMP1_OUT"/>
 		<Signal Name="LTDC_B6"/>
 		<Signal Name="OCTOSPIM_P1_IO1"/>
@@ -1059,6 +1080,7 @@
 	</Pin>
 	<Pin Name="PF15" Position="K6" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="FMC_A9"/>
 		<Signal Name="I2C4_SDA"/>
 		<Signal Name="LTDC_G1"/>
@@ -1112,6 +1134,7 @@
 	</Pin>
 	<Pin Name="PD11" Position="K12" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="FMC_A16"/>
 		<Signal Name="FMC_CLE"/>
 		<Signal Name="I2C4_SMBA"/>
@@ -1137,6 +1160,7 @@
 	<Pin Name="VDDA" Position="L2" Type="Power"/>
 	<Pin Name="PA4" Position="L3" Type="I/O">
 		<Signal Name="ADC1_IN9"/>
+		<Signal Name="ADC2_IN9"/>
 		<Signal Name="DAC1_OUT1"/>
 		<Signal Name="DCMI_HSYNC"/>
 		<Signal Name="LPTIM2_OUT"/>
@@ -1151,6 +1175,7 @@
 	</Pin>
 	<Pin Name="PA7" Position="L4" Type="I/O">
 		<Signal Name="ADC1_IN12"/>
+		<Signal Name="ADC2_IN12"/>
 		<Signal Name="I2C3_SCL"/>
 		<Signal Name="OCTOSPIM_P1_IO2"/>
 		<Signal Name="OPAMP2_VINM"/>
@@ -1163,6 +1188,7 @@
 	</Pin>
 	<Pin Name="PB1" Position="L5" Type="I/O">
 		<Signal Name="ADC1_IN16"/>
+		<Signal Name="ADC2_IN16"/>
 		<Signal Name="COMP1_INM"/>
 		<Signal Name="DFSDM1_DATIN0"/>
 		<Signal Name="LPTIM2_IN1"/>
@@ -1237,6 +1263,7 @@
 	</Pin>
 	<Pin Name="PA3" Position="M2" Type="I/O">
 		<Signal Name="ADC1_IN8"/>
+		<Signal Name="ADC2_IN8"/>
 		<Signal Name="LPUART1_RX"/>
 		<Signal Name="OCTOSPIM_P1_CLK"/>
 		<Signal Name="OPAMP1_VOUT"/>
@@ -1251,6 +1278,7 @@
 	<Pin Name="VSS" Position="M3" Type="Power"/>
 	<Pin Name="PA6" Position="M4" Type="I/O">
 		<Signal Name="ADC1_IN11"/>
+		<Signal Name="ADC2_IN11"/>
 		<Signal Name="DCMI_PIXCLK"/>
 		<Signal Name="LPUART1_CTS"/>
 		<Signal Name="OCTOSPIM_P1_IO3"/>
@@ -1267,6 +1295,7 @@
 	</Pin>
 	<Pin Name="PF11" Position="M5" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="DCMI_D12"/>
 		<Signal Name="LTDC_DE"/>
 		<Signal Name="OCTOSPIM_P1_NCLK"/>
@@ -1299,6 +1328,7 @@
 	</Pin>
 	<Pin Name="PH11" Position="M10" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="DCMI_D2"/>
 		<Signal Name="OCTOSPIM_P2_IO6"/>
 		<Signal Name="PSSI_D2"/>
@@ -1308,6 +1338,7 @@
 	<Pin Name="VSS" Position="M11" Type="Power"/>
 	<Pin Name="PB15" Position="M12" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
+		<Signal Name="ADC2_EXTI15"/>
 		<Signal Name="DFSDM1_CKIN2"/>
 		<Signal Name="OCTOSPIM_P1_IO7"/>
 		<Signal Name="RTC_REFIN"/>
@@ -1337,6 +1368,7 @@
 	</Pin>
 	<Pin Name="PA2" Position="N1" Type="I/O">
 		<Signal Name="ADC1_IN7"/>
+		<Signal Name="ADC2_IN7"/>
 		<Signal Name="LPUART1_TX"/>
 		<Signal Name="OCTOSPIM_P1_NCS"/>
 		<Signal Name="RCC_LSCO"/>
@@ -1350,6 +1382,7 @@
 	</Pin>
 	<Pin Name="PA1" Position="N2" Type="I/O">
 		<Signal Name="ADC1_IN6"/>
+		<Signal Name="ADC2_IN6"/>
 		<Signal Name="I2C1_SMBA"/>
 		<Signal Name="OCTOSPIM_P1_DQS"/>
 		<Signal Name="OPAMP1_VINM"/>
@@ -1386,6 +1419,7 @@
 	<Pin Name="VDD" Position="N7" Type="Power"/>
 	<Pin Name="PE11" Position="N8" Type="I/O">
 		<Signal Name="ADC1_EXTI11"/>
+		<Signal Name="ADC2_EXTI11"/>
 		<Signal Name="FMC_D8"/>
 		<Signal Name="FMC_DA8"/>
 		<Signal Name="LTDC_G4"/>

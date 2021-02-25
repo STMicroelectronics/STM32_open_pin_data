@@ -31,7 +31,7 @@
 	<IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" InstanceName="QUADSPI" Name="QUADSPI" Version="quadspi1_v2_2_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32W_rcc_v1_0"/>
 	<IP InstanceName="RF" Name="RF" Version="rf2g4ctrl_v1_0_Cube"/>
-	<IP ConfigFile="RNG-STM32WBxx" InstanceName="RNG" Name="RNG" Version="rng1_v1_1"/>
+	<IP ConfigFile="RNG-STM32WBxx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE;__HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32WBxx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_WB_Cube"/>
 	<IP ConfigFile="SAI-STM32WBxx" InstanceName="SAI1" Name="SAI" Version="sai1_v2_0_Cube"/>
 	<IP ConfigFile="SEQUENCER-STM32WBxx" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube"/>

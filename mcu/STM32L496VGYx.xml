@@ -810,7 +810,7 @@
 		<Signal Name="USART2_RTS"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
-	<Pin Name="VSSA" Position="H9" Type="Power"/>
+	<Pin Name="VSSA/VREF-" Position="H9" Type="Power"/>
 	<Pin Name="PC2" Position="H10" Type="I/O">
 		<Signal Name="ADC1_IN3"/>
 		<Signal Name="ADC2_IN3"/>

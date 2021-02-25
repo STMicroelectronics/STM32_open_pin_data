@@ -2,11 +2,15 @@
 <!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G0-512" DBVersion="V3.0" Family="STM32G0" HasPowerPad="false" IOType="" Line="STM32G0x1" Package="UFQFPN32" RefName="STM32G0C1K(C-E)Ux" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M0+</Core>
+	<Frequency>64</Frequency>
 	<Ram>144</Ram>
 	<IONb>30</IONb>
 	<Die>DIE467</Die>
 	<Flash>256</Flash>
 	<Flash>512</Flash>
+	<Voltage Max="3.6" Min="1.7"/>
+	<Current Run="100"/>
+	<Temperature Max="85" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32G0xx" InstanceName="ADC1" Name="ADC" Version="aditf4_v3_0_Cube"/>
 	<IP ConfigFile="AES-STM32G0xx" InstanceName="AES" Name="AES" Version="aes3_v1_0_G0_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="COMP-STM32G0xx" InstanceName="COMP1" Name="COMP" Version="TSMC90_OrcaZERO_Cube"/>

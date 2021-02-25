@@ -3,8 +3,8 @@
 <Mcu ClockTree="STM32WL" DBVersion="V3.0" Family="STM32WL" HasPowerPad="false" IOType="" Line="STM32WL5x" Package="UFQFPN48" RefName="STM32WL54CCUx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M4</Core>
 	<Core>ARM Cortex-M0+</Core>
-	<ContextProject Attributes="DUAL" Comment="Do you want to start a new project as Dual core project ?" Contexts="CortexM4,CortexM0Plus" Name="DualCore"/>
-	<ContextProject Attributes="MONO,REDUCED" Comment="Do you want to start a new project as Single core project ?" Contexts="CortexM4MonoOnDual" Name="MonoOnDualCore"/>
+	<ContextProject Attributes="DUAL" Comment="as Dual core project ?" Contexts="CortexM4,CortexM0Plus" Name="DualCore"/>
+	<ContextProject Attributes="MONO,REDUCED" Comment="as Single core project ?" Contexts="CortexM4MonoOnDual" Name="MonoOnDualCore"/>
 	<Context Core="ARM Cortex-M4" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M4" Name="CortexM4" Secure="false" SemaphoreSuffix="_Cortex_M4" ShortName="M4"/>
 	<Context Core="ARM Cortex-M4" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M4" Name="CortexM4MonoOnDual" Secure="false" SemaphoreSuffix="_Cortex_M4" ShortName="M4"/>
 	<Context Core="ARM Cortex-M0+" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M0+" Name="CortexM0Plus" Secure="false" SemaphoreSuffix="_Cortex_M0PLUS" ShortName="M0P"/>
@@ -14,8 +14,8 @@
 	<Die>DIE497</Die>
 	<Flash>256</Flash>
 	<Voltage Max="3.6" Min="1.8"/>
-	<Current Lowest="0.03" Run="71"/>
-	<Temperature Max="85" Min="-40"/>
+	<Current Lowest="0.031" Run="71"/>
+	<Temperature Max="105" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32WLxx" InstanceName="ADC" Name="ADC" Version="aditf4_v3_0_WL_Cube"/>
 	<IP ConfigFile="ADV_TRACE-STM32WLxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube">
 		<ContextSplit Name="split1">
@@ -24,7 +24,15 @@
 			<ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="AES-STM32WLxx" InstanceName="AES" Name="AES" Version="aes3_v1_0_WL_Cube"/>
+	<IP ConfigFile="AES-STM32WLxx" InstanceName="AES" Name="AES" Version="aes3_v1_0_WL_Cube">
+		<ContextSplit Name="split1">
+			<ContextIP ContextName="CortexM4"/>
+			<ContextIP ContextName="CortexM4MonoOnDual"/>
+		</ContextSplit>
+		<ContextSplit Name="split2">
+			<ContextIP ContextName="CortexM0Plus"/>
+		</ContextSplit>
+	</IP>
 	<IP ClockEnableMode="none" ConfigFile="COMP-STM32WLxx" InstanceName="COMP1" Name="COMP" Version="TSMC90_WLxx_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="COMP-STM32WLxx" InstanceName="COMP2" Name="COMP" Version="TSMC90_WLxx_Cube"/>
 	<IP ConfigFile="CRC-STM32WLxx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_0"/>
@@ -89,7 +97,15 @@
 			<ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="PKA-STM32WLxx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube"/>
+	<IP ConfigFile="PKA-STM32WLxx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
+		<ContextSplit Name="split1">
+			<ContextIP ContextName="CortexM4"/>
+			<ContextIP ContextName="CortexM4MonoOnDual"/>
+		</ContextSplit>
+		<ContextSplit Name="split2">
+			<ContextIP ContextName="CortexM0Plus"/>
+		</ContextSplit>
+	</IP>
 	<IP ConfigFile="PWR-STM32WLxx" InstanceName="PWR" Name="PWR" Version="STM32WL_pwr_v1_0"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32WLxx_rcc_v1_0">
 		<ContextSplit Name="split1">
@@ -98,7 +114,15 @@
 			<ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="RNG-STM32WLxx" InstanceName="RNG" Name="RNG" Version="rng1_v3_1"/>
+	<IP ConfigFile="RNG-STM32WLxx" InstanceName="RNG" Name="RNG" Version="rng1_v3_1">
+		<ContextSplit Name="split1">
+			<ContextIP ContextName="CortexM4"/>
+			<ContextIP ContextName="CortexM4MonoOnDual"/>
+		</ContextSplit>
+		<ContextSplit Name="split2">
+			<ContextIP ContextName="CortexM0Plus"/>
+		</ContextSplit>
+	</IP>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE;__HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32WLxx" InstanceName="RTC" Name="RTC" Version="rtc3_v3_0_Cube"/>
 	<IP ConfigFile="SEQUENCER-STM32WLxx" InstanceName="SEQUENCER_M0PLUS" Name="SEQUENCER" Version="v1.0_Cube">
 		<ContextSplit Name="split1">

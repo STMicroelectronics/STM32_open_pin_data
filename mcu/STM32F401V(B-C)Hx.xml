@@ -24,7 +24,7 @@
 	<IP ClockEnableMode="none" ConfigFile="IWDG-STM32F4xx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v1_1"/>
 	<IP ConfigFile="LIBJPEG-STM32F4xx" InstanceName="LIBJPEG" Name="LIBJPEG" Version="v8_Cube"/>
 	<IP ConfigFile="MBEDTLS-STM32F4xx" InstanceName="MBEDTLS" Name="MBEDTLS" Version="v2_16_2_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32F4xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.2.0_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32F4xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32F417-rcc_v1_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32F4xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_3"/>
 	<IP ConfigFile="SDIO-STM32F4xx" InstanceName="SDIO" Name="SDIO" Version="sdmmc_v1_2_Cube"/>

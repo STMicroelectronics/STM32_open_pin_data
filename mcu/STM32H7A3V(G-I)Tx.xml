@@ -4,7 +4,7 @@
 	<Core>Arm Cortex-M7</Core>
 	<Frequency>280</Frequency>
 	<Ram>1424</Ram>
-	<IONb>80</IONb>
+	<IONb>82</IONb>
 	<Die>DIE480</Die>
 	<Flash>1024</Flash>
 	<Flash>2048</Flash>
@@ -234,11 +234,26 @@
 	<Pin Name="PC2_C" Position="17" Type="I/O">
 		<Signal Name="ADC2_INN1"/>
 		<Signal Name="ADC2_INP0"/>
-		<Signal IOModes="Analog" Name="GPIO"/>
+		<Signal Name="DFSDM1_CKIN1"/>
+		<Signal Name="DFSDM1_CKOUT"/>
+		<Signal Name="FMC_SDNE0"/>
+		<Signal Name="I2S2_SDI"/>
+		<Signal Name="OCTOSPIM_P1_IO2"/>
+		<Signal Name="OCTOSPIM_P1_IO5"/>
+		<Signal Name="SPI2_MISO"/>
+		<Signal Name="USB_OTG_HS_ULPI_DIR"/>
+		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PC3_C" Position="18" Type="I/O">
 		<Signal Name="ADC2_INP1"/>
-		<Signal IOModes="Analog" Name="GPIO"/>
+		<Signal Name="DFSDM1_DATIN1"/>
+		<Signal Name="FMC_SDCKE0"/>
+		<Signal Name="I2S2_SDO"/>
+		<Signal Name="OCTOSPIM_P1_IO0"/>
+		<Signal Name="OCTOSPIM_P1_IO6"/>
+		<Signal Name="SPI2_MOSI"/>
+		<Signal Name="USB_OTG_HS_ULPI_NXT"/>
+		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="VSSA" Position="19" Type="Power"/>
 	<Pin Name="VREF+" Position="20" Type="MonoIO">

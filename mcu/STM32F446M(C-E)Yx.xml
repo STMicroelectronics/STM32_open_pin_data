@@ -21,7 +21,7 @@
 	<IP InstanceName="DAC" Name="DAC" Version="dacif_v1_1_Cube"/>
 	<IP ConfigFile="DCMI-STM32F446" InstanceName="DCMI" Name="DCMI" Version="cci_v2_0_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="FATFS-STM32F4xx" InstanceName="FATFS" Name="FATFS" Version="v0.1.0_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_FMPI2C1_CLK_ENABLE" ConfigFile="FMPI2C-STM32F4xx" InstanceName="FMPI2C1" Name="FMPI2C" Version="i2c2_v1_1_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_FMPI2C1_CLK_ENABLE" InstanceName="FMPI2C1" Name="FMPI2C" Version="i2c2_v1_1_Cube"/>
 	<IP ConfigFile="FREERTOS-STM32F4xx" InstanceName="FREERTOS" Name="FREERTOS" Version="v8.0.0_Cube"/>
 	<IP ConfigFile="CEC-STM32F4xx" InstanceName="HDMI_CEC" Name="HDMI_CEC" Version="hdmi_cec_v2_0_Cube"/>
 	<IP InstanceName="I2C1" Name="I2C" Version="i2c1_v1_5_Cube"/>
@@ -33,7 +33,7 @@
 	<IP ClockEnableMode="none" ConfigFile="IWDG-STM32F4xx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v1_1"/>
 	<IP ConfigFile="LIBJPEG-STM32F4xx" InstanceName="LIBJPEG" Name="LIBJPEG" Version="v8_Cube"/>
 	<IP ConfigFile="MBEDTLS-STM32F4xx" InstanceName="MBEDTLS" Name="MBEDTLS" Version="v2_16_2_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32F4xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.2.0_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32F4xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" ConfigFile="QUADSPI-STM32F4xx" InstanceName="QUADSPI" Name="QUADSPI" Version="quadspi1_v1_0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32F446-rcc_v1_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32F4xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_3"/>

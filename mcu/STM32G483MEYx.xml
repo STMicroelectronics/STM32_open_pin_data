@@ -34,7 +34,7 @@
 	<IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" InstanceName="FDCAN3" Name="FDCAN" Version="fdcan1_v1_0_Cube"/>
 	<IP ConfigFile="FMAC-STM32G4xx" InstanceName="FMAC" Name="FMAC" Version="matrix1_v1_0_Cube"/>
 	<IP InstanceName="FREERTOS" Name="FREERTOS" Version="v8.0.0_Cube"/>
-	<IP ConfigFile="GUI_INTERFACE-STM32G4xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32G4_v1.10.2_Cube"/>
+	<IP ConfigFile="GUI_INTERFACE-STM32G4xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32G4_v1.13.0_Cube"/>
 	<IP InstanceName="I2C1" Name="I2C" Version="i2c2_v1_1_Cube"/>
 	<IP InstanceName="I2C2" Name="I2C" Version="i2c2_v1_1_Cube"/>
 	<IP InstanceName="I2C3" Name="I2C" Version="i2c2_v1_1_Cube"/>
@@ -73,7 +73,7 @@
 	<IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM16" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
 	<IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM17" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
 	<IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM20" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
-	<IP ConfigFile="TRACER_EMB-STM32G4xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32G47_v1.0_Cube"/>
+	<IP ConfigFile="TRACER_EMB-STM32G4xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32G47_v1.6.0_Cube"/>
 	<IP InstanceName="UART4" Name="UART" Version="sci2_v3_1_Cube"/>
 	<IP InstanceName="UART5" Name="UART" Version="sci2_v3_1_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_UCPD1_CLK_ENABLE" ConfigFile="UCPD-STM32G4xx" InstanceName="UCPD1" Name="UCPD" Version="ucpd_v1_0_Cube"/>
@@ -81,7 +81,7 @@
 	<IP InstanceName="USART2" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP InstanceName="USART3" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP InstanceName="USB" Name="USB" Version="usb1_v2_2_STM32G4_Cube"/>
-	<IP ConfigFile="USBPD-STM32G4xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32G47_v1.3_Cube"/>
+	<IP ConfigFile="USBPD-STM32G4xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32G47_v1.4_Cube"/>
 	<IP ConfigFile="USB_DEVICE-STM32G4xx" InstanceName="USB_DEVICE" Name="USB_Device" Version="v3.0_Cube"/>
 	<IP ConfigFile="WWDG-STM32G4xx" InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0"/>
 	<IP ConfigFile="GPIO-STM32G4xx" InstanceName="GPIO" Name="GPIO" Version="STM32G47x_gpio_v1_0"/>

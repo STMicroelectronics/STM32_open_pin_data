@@ -835,6 +835,31 @@
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_0</PossibleValue>
         </SpecificParameter>
+        <PinSignal Name="COMP1_OUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_COMP1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPTIM1_IN1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_LPTIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM2_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_TIM2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM2_ETR">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_TIM2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART2_CTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_USART2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA0-CK_IN">
         <SpecificParameter Name="GPIO_Pin">

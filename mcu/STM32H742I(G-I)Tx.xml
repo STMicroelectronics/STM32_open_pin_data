@@ -1208,7 +1208,6 @@
 		<Signal Name="SPI2_NSS"/>
 		<Signal Name="TIM5_CH4"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-		<Condition Diagnostic="Conflicts with I2S2 in full duplex mode" Expression="!(I2S2_I2S_FULL_DUPLEX &amp; I2S2_WS)"/>
 	</Pin>
 	<Pin Name="PI1" Position="132" Type="I/O">
 		<Signal Name="DCMI_D8"/>
@@ -1219,7 +1218,6 @@
 		<Signal Name="TIM8_BKIN2_COMP1"/>
 		<Signal Name="TIM8_BKIN2_COMP2"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-		<Condition Diagnostic="Conflicts with I2S2 in full duplex mode" Expression="!(I2S2_I2S_FULL_DUPLEX &amp; I2S2_CK)"/>
 	</Pin>
 	<Pin Name="PI2" Position="133" Type="I/O">
 		<Signal Name="DCMI_D9"/>

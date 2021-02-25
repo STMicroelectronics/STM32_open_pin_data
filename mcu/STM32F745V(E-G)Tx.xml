@@ -12,7 +12,7 @@
 	<Flash>1024</Flash>
 	<Voltage Max="3.6" Min="1.7"/>
 	<Current Lowest="1.7" Run="472"/>
-	<Temperature Max="85" Min="-40"/>
+	<Temperature Max="105" Min="-40"/>
 	<IP InstanceName="ADC1" Name="ADC" Version="aditf2_v1_1_Cube"/>
 	<IP InstanceName="ADC2" Name="ADC" Version="aditf2_v1_1_Cube"/>
 	<IP InstanceName="ADC3" Name="ADC" Version="aditf2_v1_1_Cube"/>

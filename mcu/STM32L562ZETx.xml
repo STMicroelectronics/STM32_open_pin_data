@@ -2,8 +2,8 @@
 <!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L5" DBVersion="V3.0" Family="STM32L5" HasPowerPad="false" IOType="" Line="STM32L5x2" Package="LQFP144" RefName="STM32L562ZETx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M33</Core>
-	<ContextProject Attributes="YES,DUAL,TZ" Comment="Do you want to start a new project with TrustZone activated ?" Contexts="CortexM33S,CortexM33NS" Name="TrustZoneEnabled"/>
-	<ContextProject Attributes="NO,MONO" Comment="Do you want to start a new project with TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
+	<ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
+	<ContextProject Attributes="DUAL,TZ" Comment="with TrustZone activated ?" Contexts="CortexM33S,CortexM33NS" Name="TrustZoneEnabled"/>
 	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
 	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
 	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
@@ -157,11 +157,21 @@
 		</ContextSplit>
 	</IP>
 	<IP ClockEnableMode="__HAL_RCC_GTZC_CLK_ENABLE" ConfigFile="GTZC-STM32L5xx" InstanceName="GTZC" Name="GTZC" Version="tzsc1_v1_0">
-		<ContextSplit Name="split1">
-			<ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
+		<ContextSplit Name="split3">
+			<ContextIP ContextName="CortexM33"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="GUI_INTERFACE-STM32L5xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32L5_v1.10.2_Cube">
+	<IP ClockEnableMode="none" ConfigFile="GTZC-STM32L5xx" InstanceName="GTZC_NS" Name="GTZC" Version="tzsc1_v1_0">
+		<ContextSplit Name="split2">
+			<ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+		</ContextSplit>
+	</IP>
+	<IP ClockEnableMode="__HAL_RCC_GTZC_CLK_ENABLE" ConfigFile="GTZC-STM32L5xx" InstanceName="GTZC_S" Name="GTZC" Version="tzsc1_v1_0">
+		<ContextSplit Name="split1">
+			<ContextIP ContextName="CortexM33S" ForcedSelection="true"/>
+		</ContextSplit>
+	</IP>
+	<IP ConfigFile="GUI_INTERFACE-STM32L5xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32L5_v1.13.0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM33S"/>
 		</ContextSplit>
@@ -227,7 +237,7 @@
 			<ContextIP ContextName="CortexM33"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="ICAHE-STM32L5xx" InstanceName="ICACHE" Name="ICACHE" Version="Icache_v1_0_0_Cube">
+	<IP ConfigFile="ICACHE-STM32L5xx" InstanceName="ICACHE" Name="ICACHE" Version="Icache_v1_0_0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM33S"/>
 		</ContextSplit>
@@ -625,7 +635,7 @@
 			<ContextIP ContextName="CortexM33"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="TRACER_EMB-STM32L5xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32L5_v1.1_Cube">
+	<IP ConfigFile="TRACER_EMB-STM32L5xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32L5_v1.6.0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM33S"/>
 		</ContextSplit>
@@ -724,7 +734,7 @@
 			<ContextIP ContextName="CortexM33"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="USBPD-STM32L5xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32L5_v1.3_Cube">
+	<IP ConfigFile="USBPD-STM32L5xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32L5_v1.4_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM33S"/>
 		</ContextSplit>

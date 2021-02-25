@@ -9,7 +9,7 @@
 	<Flash>2048</Flash>
 	<Voltage Max="3.6" Min="1.71"/>
 	<Current Lowest="0.02" Run="112"/>
-	<Temperature Max="85" Min="-40"/>
+	<Temperature Max="125" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_0_Cube"/>
 	<IP ConfigFile="AES-STM32L4xx" InstanceName="AES" Name="AES" Version="aes3_v1_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_CAN1_CLK_ENABLE" ConfigFile="CAN-STM32L4xx" InstanceName="CAN1" Name="CAN" Version="bxcan1_v1_1_Cube"/>

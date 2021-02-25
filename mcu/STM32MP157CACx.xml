@@ -3,6 +3,9 @@
 <Mcu ClockTree="STM32MP" DBVersion="V3.0" Family="STM32MP1" HasPowerPad="false" IOType="" Line="STM32MP157" Package="TFBGA361" RefName="STM32MP157CACx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-A7</Core>
 	<Core>ARM Cortex-M4</Core>
+	<GentypeFirmware FirmwareName="OP-TEE" GenType="SP_MIN"/>
+	<GentypeFirmware FirmwareName="Linux" GenType="LINUX"/>
+	<GentypeFirmware FirmwareName="Stm32Cube" GenType="CUBE"/>
 	<Context Comment="Enable the Boot ROM context for the peripheral(s) that you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the Boot ROM." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Boot ROM" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="Boot ROM"/>
 	<Context Comment="Enable the Boot loader context for the peripheral(s) that you want to use in the early boot execution context, that is before U-Boot relocation in DDR." Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Boot loader" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="A7BL"/>
 	<Context Comment="Enable the Cortex-A7 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-A7" GenType="SP_MIN" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>

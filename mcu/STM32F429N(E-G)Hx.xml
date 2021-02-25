@@ -36,7 +36,7 @@
 	<IP ConfigFile="LTDC-STM32F4xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_0"/>
 	<IP ConfigFile="LWIP-STM32F4xx" InstanceName="LWIP" Name="LWIP" Version="v2.1.2_Cube"/>
 	<IP ConfigFile="MBEDTLS-STM32F4xx" InstanceName="MBEDTLS" Name="MBEDTLS" Version="v2_16_2_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32F4xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.2.0_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32F4xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32F427-rcc_v1_0"/>
 	<IP ConfigFile="RNG-STM32F4xx" InstanceName="RNG" Name="RNG" Version="rng1_v1_1"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32F4xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_3"/>

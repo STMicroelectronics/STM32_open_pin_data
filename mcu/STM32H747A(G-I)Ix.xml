@@ -19,7 +19,7 @@
 	<IP InstanceName="ADC3" Name="ADC" PowerDomain="D3" Version="aditf5_v3_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_COMP12_CLK_ENABLE" ConfigFile="COMP-STM32H7xx" InstanceName="COMP1" Name="COMP" PowerDomain="D3" Version="TSMC90_H7_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_COMP12_CLK_ENABLE" ConfigFile="COMP-STM32H7xx" InstanceName="COMP2" Name="COMP" PowerDomain="D3" Version="TSMC90_H7_Cube"/>
-	<IP ConfigFile="CORTEX_M4-STM32H7xx" InstanceName="CORTEX_M4" Name="CORTEX_M4" PowerDomain="D1" Version="cortex_v1_0_Cube">
+	<IP ConfigFile="CORTEX_M4-STM32H7xx" InstanceName="CORTEX_M4" Name="CORTEX_M4" PowerDomain="D2" Version="cortex_v1_0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM4" InitializerForced="true"/>
 		</ContextSplit>

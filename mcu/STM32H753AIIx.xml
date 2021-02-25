@@ -222,7 +222,6 @@
 		<Signal Name="SPI2_NSS"/>
 		<Signal Name="TIM5_CH4"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-		<Condition Diagnostic="Conflicts with I2S2 in full duplex mode" Expression="!(I2S2_I2S_FULL_DUPLEX &amp; I2S2_WS)"/>
 	</Pin>
 	<Pin Name="PC15-OSC32_OUT (OSC32_OUT)" Position="B1" Type="I/O">
 		<Signal Name="ADC1_EXTI15"/>
@@ -343,7 +342,6 @@
 		<Signal Name="TIM8_BKIN2_COMP1"/>
 		<Signal Name="TIM8_BKIN2_COMP2"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-		<Condition Diagnostic="Conflicts with I2S2 in full duplex mode" Expression="!(I2S2_I2S_FULL_DUPLEX &amp; I2S2_CK)"/>
 	</Pin>
 	<Pin Name="PC14-OSC32_IN (OSC32_IN)" Position="C1" Type="I/O">
 		<Signal Name="RCC_OSC32_IN"/>

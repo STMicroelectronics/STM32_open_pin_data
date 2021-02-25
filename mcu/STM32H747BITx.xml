@@ -18,7 +18,7 @@
 	<IP InstanceName="ADC3" Name="ADC" PowerDomain="D3" Version="aditf5_v3_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_COMP12_CLK_ENABLE" ConfigFile="COMP-STM32H7xx" InstanceName="COMP1" Name="COMP" PowerDomain="D3" Version="TSMC90_H7_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_COMP12_CLK_ENABLE" ConfigFile="COMP-STM32H7xx" InstanceName="COMP2" Name="COMP" PowerDomain="D3" Version="TSMC90_H7_Cube"/>
-	<IP ConfigFile="CORTEX_M4-STM32H7xx" InstanceName="CORTEX_M4" Name="CORTEX_M4" PowerDomain="D1" Version="cortex_v1_0_Cube">
+	<IP ConfigFile="CORTEX_M4-STM32H7xx" InstanceName="CORTEX_M4" Name="CORTEX_M4" PowerDomain="D2" Version="cortex_v1_0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM4" InitializerForced="true"/>
 		</ContextSplit>
@@ -1510,7 +1510,6 @@
 		<Signal Name="SPI2_NSS"/>
 		<Signal Name="TIM5_CH4"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-		<Condition Diagnostic="Conflicts with I2S2 in full duplex mode" Expression="!(I2S2_I2S_FULL_DUPLEX &amp; I2S2_WS)"/>
 	</Pin>
 	<Pin Name="VSS" Position="160" Type="Power"/>
 	<Pin Name="VDD" Position="161" Type="Power"/>
@@ -1524,7 +1523,6 @@
 		<Signal Name="TIM8_BKIN2_COMP1"/>
 		<Signal Name="TIM8_BKIN2_COMP2"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-		<Condition Diagnostic="Conflicts with I2S2 in full duplex mode" Expression="!(I2S2_I2S_FULL_DUPLEX &amp; I2S2_CK)"/>
 	</Pin>
 	<Pin Name="PI2" Position="163" Type="I/O">
 		<Signal Name="DCMI_D9"/>

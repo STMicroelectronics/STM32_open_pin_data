@@ -4,7 +4,7 @@
 	<Core>ARM Cortex-M0+</Core>
 	<Frequency>64</Frequency>
 	<Ram>8</Ram>
-	<IONb>27</IONb>
+	<IONb>16</IONb>
 	<Die>DIE466</Die>
 	<Flash>64</Flash>
 	<Voltage Max="3.6" Min="1.7"/>
