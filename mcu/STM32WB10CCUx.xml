@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WB1" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx0 Value Line" Package="UFQFPN48" RefName="STM32WB10CCUx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M4</Core>
 	<Frequency>64</Frequency>
 	<Ram>48</Ram>
 	<IONb>30</IONb>
 	<Die>DIE494</Die>
-	<Flash>256</Flash>
+	<Flash>320</Flash>
 	<Voltage Max="3.6" Min="2"/>
 	<Current Lowest="0.6" Run="90"/>
 	<Temperature Max="85" Min="-10"/>

@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2021 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-1\#ChannelRegularConversion=ADC_CHANNEL_1
 ADC1.IPParameters=Rank-1\#ChannelRegularConversion,Channel-1\#ChannelRegularConversion,SamplingTime-1\#ChannelRegularConversion,OffsetNumber-1\#ChannelRegularConversion,OffsetSignedSaturation-1\#ChannelRegularConversion,NbrOfConversionFlag,master
@@ -23,7 +23,7 @@ ADC3.OffsetSaturation-2\#ChannelRegularConversion=DISABLE
 ADC3.OffsetSign-2\#ChannelRegularConversion=ADC3_OFFSET_SIGN_NEGATIVE
 ADC3.OffsetSignedSaturation-2\#ChannelRegularConversion=DISABLE
 ADC3.Rank-2\#ChannelRegularConversion=1
-ADC3.SamplingTime-2\#ChannelRegularConversion=ADC_SAMPLETIME_1CYCLE_5
+ADC3.SamplingTime-2\#ChannelRegularConversion=ADC3_SAMPLETIME_2CYCLES_5
 DAC1.DAC_Channel-DAC_OUT2=DAC_CHANNEL_2
 DAC1.IPParameters=DAC_Channel-DAC_OUT2
 ETH.IPParameters=MediaInterface

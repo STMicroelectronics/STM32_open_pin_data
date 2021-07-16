@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WB1" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx5" Package="WLCSP49" RefName="STM32WB15CCYx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M4</Core>
 	<Frequency>64</Frequency>
 	<Ram>48</Ram>
 	<IONb>26</IONb>
 	<Die>DIE494</Die>
-	<Flash>256</Flash>
+	<Flash>320</Flash>
 	<Voltage Max="3.6" Min="1.71"/>
 	<Current Lowest="0.6" Run="90"/>
-	<Temperature Max="85" Min="-40"/>
+	<Temperature Max="105" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32WBxx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_1_Cube"/>
 	<IP ConfigFile="AES-STM32WBxx" InstanceName="AES2" Name="AES" Version="aes3_v1_0_WB_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="COMP-STM32WBxx" InstanceName="COMP1" Name="COMP" Version="TSMC90_Dory_Cube"/>

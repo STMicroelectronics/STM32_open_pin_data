@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L4RS" DBVersion="V3.0" Family="STM32L4+" HasPowerPad="false" IOType="" Line="STM32L4P5/Q5" Package="UFBGA132" RefName="STM32L4Q5QGIx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M4</Core>
 	<Frequency>120</Frequency>
@@ -64,7 +64,7 @@
 	<IP ConfigFile="TIM-STM32L4xx" InstanceName="TIM15" Name="TIM1_8L4" Version="gptimer2_v3_x_Cube"/>
 	<IP ConfigFile="TIM-STM32L4xx" InstanceName="TIM16" Name="TIM1_8L4" Version="gptimer2_v3_x_Cube"/>
 	<IP ConfigFile="TIM-STM32L4xx" InstanceName="TIM17" Name="TIM1_8L4" Version="gptimer2_v3_x_Cube"/>
-	<IP ConfigFile="TOUCHSENSING-STM32L4xx" InstanceName="TOUCHSENSING" Name="TOUCHSENSING" Version="v2_2_0_Cube"/>
+	<IP ConfigFile="TOUCHSENSING-STM32L4xx" InstanceName="TOUCHSENSING" Name="TOUCHSENSING" Version="v2_2_4_Cube"/>
 	<IP InstanceName="TSC" Name="TSC" Version="tsc1_v1_0_Cube"/>
 	<IP InstanceName="UART4" Name="UART" Version="sci2_v3_0_Cube"/>
 	<IP InstanceName="UART5" Name="UART" Version="sci2_v3_0_Cube"/>

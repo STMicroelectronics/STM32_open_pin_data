@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
-<Mcu ClockTree="STM32G0-512" DBVersion="V3.0" Family="STM32G0" HasPowerPad="false" IOType="" Line="STM32G0x0 Value line" Package="UFQFPN32" RefName="STM32G0B0KETx" xmlns="http://dummy.com">
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<Mcu ClockTree="STM32G0-512" DBVersion="V3.0" Family="STM32G0" HasPowerPad="false" IOType="" Line="STM32G0x0 Value line" Package="LQFP32" RefName="STM32G0B0KETx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M0+</Core>
 	<Frequency>64</Frequency>
 	<Ram>144</Ram>
@@ -42,9 +42,6 @@
 	<IP InstanceName="USART4" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP InstanceName="USART5" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP InstanceName="USART6" Name="USART" Version="sci3_v2_1_Cube"/>
-	<IP ConfigFile="USB_DEVICE-STM32G0xx" InstanceName="USB_DEVICE" Name="USB_Device" Version="v3.0_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_USB_CLK_ENABLE" InstanceName="USB_DRD_FS" Name="USB_DRD_FS" Version="usb2_v1_0_Cube"/>
-	<IP ConfigFile="USB_HOST-STM32G0xx" InstanceName="USB_HOST" Name="USB_Host" Version="v3.0_Cube"/>
 	<IP ConfigFile="WWDG-STM32G0xx" InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0"/>
 	<IP ConfigFile="GPIO-STM32G0xx" InstanceName="GPIO" Name="GPIO" Version="STM32G0Bx_gpio_v1_0"/>
 	<IP ConfigFile="DMA-STM32G0xx" InstanceName="DMA" Name="DMA" Version="STM32G0B1_dma1_v1_3"/>
@@ -133,7 +130,6 @@
 		<Signal Name="SYS_WKUP2"/>
 		<Signal Name="TIM14_CH1"/>
 		<Signal Name="USART6_TX"/>
-		<Signal Name="USB_NOE"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA5" Position="12" Type="I/O">
@@ -249,7 +245,6 @@
 		<Signal Name="TIM1_CH4"/>
 		<Signal Name="USART1_CTS"/>
 		<Signal Name="USART1_NSS"/>
-		<Signal Name="USB_DM"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA9 [PA11]" Position="22" Type="I/O" Variant="PINREMAP">
@@ -272,7 +267,6 @@
 		<Signal Name="USART1_CK"/>
 		<Signal Name="USART1_DE"/>
 		<Signal Name="USART1_RTS"/>
-		<Signal Name="USB_DP"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA10 [PA12]" Position="23" Type="I/O" Variant="PINREMAP_10_12">
@@ -289,7 +283,6 @@
 	<Pin Name="PA13" Position="24" Type="I/O">
 		<Signal Name="IR_OUT"/>
 		<Signal Name="SYS_SWDIO"/>
-		<Signal Name="USB_NOE"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA14-BOOT0" Position="25" Type="I/O">
@@ -310,7 +303,6 @@
 		<Signal Name="USART4_CK"/>
 		<Signal Name="USART4_DE"/>
 		<Signal Name="USART4_RTS"/>
-		<Signal Name="USB_NOE"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PB3" Position="27" Type="I/O">

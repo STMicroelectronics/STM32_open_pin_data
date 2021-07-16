@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32H72_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
@@ -117,6 +117,11 @@
     <RefParameter Name="GPIO_Speed_Only_High" Comment="Maximum output speed" Type="list" DefaultValue="GPIO_SPEED_FREQ_HIGH">
         <PossibleValue Value="GPIO_SPEED_FREQ_HIGH" Comment="High"/>
         <PossibleValue Value="GPIO_SPEED_FREQ_VERY_HIGH" Comment="Very High"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Speed_HighFirst" Comment="Maximum output speed" Type="list" DefaultValue="GPIO_SPEED_FREQ_HIGH">
+        <PossibleValue Value="GPIO_SPEED_FREQ_HIGH" Comment="High"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_MEDIUM" Comment="Medium"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_LOW" Comment="Low"/>
     </RefParameter>
     <RefParameter Name="GPIO_FM6" Comment="Fast Mode" Type="list" DefaultValue="__NULL">
         <PossibleValue Value="__NULL" Comment="Disable"/>
@@ -637,6 +642,75 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
     </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB6"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB7"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB8"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB9"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM9"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
         <Condition Diagnostic="" Expression="PB6"/>
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -874,6 +948,70 @@
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_Mode">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PB6"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PB7"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PB8"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PB9"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM9"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
     </RefMode>
@@ -2096,7 +2234,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P1_IO1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_OCTOSPIM</PossibleValue>
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH2N">
@@ -2156,7 +2294,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P1_IO0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_OCTOSPIM</PossibleValue>
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH3N">
@@ -2416,7 +2554,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P1_IO2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_OCTOSPIM</PossibleValue>
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="PSSI_D2">
@@ -3706,7 +3844,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P1_IO5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_OCTOSPIM</PossibleValue>
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI2_MISO">
@@ -3767,7 +3905,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P1_IO6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_OCTOSPIM</PossibleValue>
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI2_MOSI">

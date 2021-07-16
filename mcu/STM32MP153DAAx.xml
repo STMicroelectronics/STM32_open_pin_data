@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP" DBVersion="V3.0" Family="STM32MP1" HasPowerPad="false" IOType="" Line="STM32MP153" Package="LFBGA448" RefName="STM32MP153DAAx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-A7</Core>
 	<Core>ARM Cortex-M4</Core>
@@ -11,7 +11,7 @@
 	<Context Comment="Enable the Cortex-A7 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-A7" GenType="SP_MIN" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
 	<Context Comment="Enable the Cortex-A7 non-secure context for the peripheral(s) that you plan to use from Linux" Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
 	<Context Comment="Enable the Cortex-M4 context for the peripheral(s) that you plan to use from STM32Cube" Core="ARM Cortex-M4" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M4" Name="CortexM4" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M4"/>
-	<Ram>448</Ram>
+	<Ram>708</Ram>
 	<IONb>176</IONb>
 	<Die>DIE500</Die>
 	<Flash>0</Flash>

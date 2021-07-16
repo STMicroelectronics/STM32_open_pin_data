@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H723" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H725/735" Package="UFBGA176" RefName="STM32H735IGKx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M7</Core>
 	<Frequency>550</Frequency>
@@ -9,7 +9,7 @@
 	<Flash>1024</Flash>
 	<Voltage Max="3.6" Min="1.62"/>
 	<Current Lowest="4" Run="150"/>
-	<Temperature Max="85" Min="-40"/>
+	<Temperature Max="125" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" InstanceName="ADC1" Name="ADC" Version="aditf5_v3_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" InstanceName="ADC2" Name="ADC" Version="aditf5_v3_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC3_CLK_ENABLE" InstanceName="ADC3" Name="ADC" Version="aditf5_v3_0_Cube"/>
@@ -55,9 +55,9 @@
 	<IP ConfigFile="LWIP-STM32H7xx" InstanceName="LWIP" Name="LWIP" Version="v2.1.2_Cube"/>
 	<IP ConfigFile="MBEDTLS-STM32H7xx" InstanceName="MBEDTLS" Name="MBEDTLS" Version="v2_16_2_Cube"/>
 	<IP InstanceName="MDIOS" Name="MDIOS" Version="mdios1_v1_0_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_OSPI1_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi_v2_1H7AB_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_OSPI2_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPI2" Name="OCTOSPI" Version="octospi_v2_1H7AB_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_OSPIM_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPIM" Name="OCTOSPIM" Version="octospi_v2_1H7AB_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_OCTOSPIM_CLK_ENABLE;__HAL_RCC_OSPI1_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi_v2_1H7AB_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_OCTOSPIM_CLK_ENABLE;__HAL_RCC_OSPI2_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPI2" Name="OCTOSPI" Version="octospi_v2_1H7AB_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_OCTOSPIM_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPIM" Name="OCTOSPIM" Version="octospi_v2_1H7AB_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_OPAMP_CLK_ENABLE" InstanceName="OPAMP1" Name="OPAMP" Version="cmosM40_opamp_v1_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_OPAMP_CLK_ENABLE" InstanceName="OPAMP2" Name="OPAMP" Version="cmosM40_opamp_v1_0_Cube"/>
 	<IP ConfigFile="OTFDEC-STM32H7xx" InstanceName="OTFDEC1" Name="OTFDEC" Version="otfdec1_v1_0_Cube"/>
@@ -65,6 +65,7 @@
 	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32H7xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" ConfigFile="PSSI-STM32H7xx" InstanceName="PSSI" Name="PSSI" Version="cci_v3_0_Cube"/>
 	<IP ConfigFile="PWR-STM32H7xx" InstanceName="PWR" Name="PWR" Version="STM32H7_pwr_v1_0"/>
+	<IP ConfigFile="RAMECC-STM32H7xx" InstanceName="RAMECC" Name="RAMECC" Version="ramecc_v1_0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32H723_rcc_v1_0"/>
 	<IP ConfigFile="RNG-STM32H7xx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32H7xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_7_Cube"/>
@@ -1228,6 +1229,7 @@
 		<Signal Name="I2S2_SDI"/>
 		<Signal Name="OCTOSPIM_P1_IO2"/>
 		<Signal Name="OCTOSPIM_P1_IO5"/>
+		<Signal Name="PWR_CSTOP"/>
 		<Signal Name="SPI2_MISO"/>
 		<Signal Name="USB_OTG_HS_ULPI_DIR"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1243,6 +1245,7 @@
 		<Signal Name="I2S2_SDO"/>
 		<Signal Name="OCTOSPIM_P1_IO0"/>
 		<Signal Name="OCTOSPIM_P1_IO6"/>
+		<Signal Name="PWR_CSLEEP"/>
 		<Signal Name="SPI2_MOSI"/>
 		<Signal Name="USB_OTG_HS_ULPI_NXT"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1355,6 +1358,7 @@
 		<Signal Name="I2S2_SDI"/>
 		<Signal Name="OCTOSPIM_P1_IO2"/>
 		<Signal Name="OCTOSPIM_P1_IO5"/>
+		<Signal Name="PWR_CSTOP"/>
 		<Signal Name="SPI2_MISO"/>
 		<Signal Name="USB_OTG_HS_ULPI_DIR"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
@@ -1367,6 +1371,7 @@
 		<Signal Name="I2S2_SDO"/>
 		<Signal Name="OCTOSPIM_P1_IO0"/>
 		<Signal Name="OCTOSPIM_P1_IO6"/>
+		<Signal Name="PWR_CSLEEP"/>
 		<Signal Name="SPI2_MOSI"/>
 		<Signal Name="USB_OTG_HS_ULPI_NXT"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
@@ -1605,6 +1610,7 @@
 		<Signal Name="I2S6_CK"/>
 		<Signal Name="LTDC_R4"/>
 		<Signal Name="PSSI_D14"/>
+		<Signal Name="PWR_NDSTOP2"/>
 		<Signal Name="SPI1_SCK"/>
 		<Signal Name="SPI6_SCK"/>
 		<Signal Name="TIM2_CH1"/>

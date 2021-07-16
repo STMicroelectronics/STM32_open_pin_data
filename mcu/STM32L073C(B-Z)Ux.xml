@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x3" Package="UFQFPN48" RefName="STM32L073C(B-Z)Ux" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M0+</Core>
 	<Frequency>32</Frequency>
@@ -193,7 +193,7 @@
 	</Pin>
 	<Pin Name="PB2" Position="20" Type="I/O">
 		<Signal Name="I2C3_SMBA"/>
-		<Signal Name="LCD_VLCD1"/>
+		<Signal Name="LCD_VLCD2"/>
 		<Signal Name="LPTIM1_OUT"/>
 		<Signal Name="TSC_G3_IO4"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WL" DBVersion="V3.0" Family="STM32WL" HasPowerPad="false" IOType="" Line="STM32WL5x" Package="UFBGA73" RefName="STM32WL55JCIx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M4</Core>
 	<Core>ARM Cortex-M0+</Core>
@@ -85,8 +85,8 @@
 	</IP>
 	<IP ConfigFile="IRTIM-STM32WLxx" InstanceName="IRTIM" Name="IRTIM" Version="irtim_v1_0_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="IWDG-STM32WLxx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v2_0"/>
-	<IP ClockEnableMode="none" ConfigFile="KMS-STM32WLxx" InstanceName="KMS" Name="KMS" Version="v1.1.3_Cube"/>
-	<IP ConfigFile="LORAWAN-STM32WLxx" InstanceName="LORAWAN" Name="LoRaWAN" Version="v1.2.2_Cube">
+	<IP ClockEnableMode="none" ConfigFile="KMS-STM32WLxx" InstanceName="KMS" Name="KMS" Version="v1.1.6_Cube"/>
+	<IP ConfigFile="LORAWAN-STM32WLxx" InstanceName="LORAWAN" Name="LoRaWAN" Version="v2.3.0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
 			<ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -142,7 +142,7 @@
 			<ContextIP ContextName="CortexM4MonoOnDual" InitializerForced="true"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="SIGFOX-STM32WLxx" InstanceName="SIGFOX" Name="Sigfox" Version="v0.1.0_Cube">
+	<IP ConfigFile="SIGFOX-STM32WLxx" InstanceName="SIGFOX" Name="Sigfox" Version="v1.7.0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
 			<ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -157,7 +157,7 @@
 			<ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
 		</ContextSplit>
 	</IP>
-	<IP ConfigFile="SUBGHZ_PHY-STM32WLxx" InstanceName="SUBGHZ_PHY" Name="SubGHz_Phy" Version="v0.1.0_Cube">
+	<IP ConfigFile="SUBGHZ_PHY-STM32WLxx" InstanceName="SUBGHZ_PHY" Name="SubGHz_Phy" Version="v1.1.0_Cube">
 		<ContextSplit Name="split1">
 			<ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
 			<ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -235,6 +235,7 @@
 	<Pin Name="VBAT" Position="A8" Type="Power"/>
 	<Pin Name="PA12" Position="A9" Type="I/O">
 		<Signal Name="ADC_IN8"/>
+		<Signal Name="DEBUG_RF-BUSY"/>
 		<Signal Name="I2C2_SCL"/>
 		<Signal Name="LPTIM3_IN1"/>
 		<Signal Name="SPI1_MOSI"/>

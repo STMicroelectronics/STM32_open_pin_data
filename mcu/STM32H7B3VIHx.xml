@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7AB" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H7A3/7B3" Package="TFBGA100" RefName="STM32H7B3VIHx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M7</Core>
 	<Frequency>280</Frequency>
@@ -40,7 +40,7 @@
 	<IP ClockEnableMode="__HAL_RCC_SPI1_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S1" Name="I2S" Version="spi2s2_v1_1_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_SPI2_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S2" Name="I2S" Version="spi2s2_v1_1_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S3" Name="I2S" Version="spi2s2_v1_1_Cube"/>
-	<IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S6" Name="I2S" Version="spi2s2_v1_1_Cube"/>
+	<IP ClockEnableMode="__HAL_RCC_SPI6_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S6" Name="I2S" Version="spi2s2_v1_1_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="IWDG-STM32H7xx" InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v2_0"/>
 	<IP ConfigFile="JPEG-STM32H7xx" InstanceName="JPEG" Name="JPEG" Version="jpeg1_v1_0_Cube"/>
 	<IP ConfigFile="LIBJPEG-STM32H7xx" InstanceName="LIBJPEG" Name="LIBJPEG" Version="v8_Cube"/>
@@ -60,6 +60,7 @@
 	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32H7xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" ConfigFile="PSSI-STM32H7xx" InstanceName="PSSI" Name="PSSI" Version="cci_v3_0_Cube"/>
 	<IP ConfigFile="PWR-STM32H7xx" InstanceName="PWR" Name="PWR" Version="STM32H7_pwr_v1_0"/>
+	<IP ConfigFile="RAMECC-STM32H7xx" InstanceName="RAMECC" Name="RAMECC" Version="ramecc_v1_0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" Version="STM32H7AB_rcc_v1_0"/>
 	<IP ConfigFile="RNG-STM32H7xx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32H7xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_7_Cube"/>
@@ -554,6 +555,7 @@
 		<Signal Name="I2S2_SDI"/>
 		<Signal Name="OCTOSPIM_P1_IO2"/>
 		<Signal Name="OCTOSPIM_P1_IO5"/>
+		<Signal Name="PWR_CSTOP"/>
 		<Signal Name="SPI2_MISO"/>
 		<Signal Name="USB_OTG_HS_ULPI_DIR"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -660,6 +662,7 @@
 		<Signal Name="I2S2_SDO"/>
 		<Signal Name="OCTOSPIM_P1_IO0"/>
 		<Signal Name="OCTOSPIM_P1_IO6"/>
+		<Signal Name="PWR_CSLEEP"/>
 		<Signal Name="SPI2_MOSI"/>
 		<Signal Name="USB_OTG_HS_ULPI_NXT"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -845,6 +848,7 @@
 		<Signal Name="I2S6_CK"/>
 		<Signal Name="LTDC_R4"/>
 		<Signal Name="PSSI_D14"/>
+		<Signal Name="PWR_NDSTOP2"/>
 		<Signal Name="SPI1_SCK"/>
 		<Signal Name="SPI6_SCK"/>
 		<Signal Name="TIM2_CH1"/>

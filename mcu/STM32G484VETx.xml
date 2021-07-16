@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x4" Package="LQFP100" RefName="STM32G484VETx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M4</Core>
 	<Frequency>170</Frequency>
@@ -8,7 +8,7 @@
 	<Die>DIE469</Die>
 	<Flash>512</Flash>
 	<Voltage Max="3.6" Min="1.71"/>
-	<Temperature Max="125" Min="-40"/>
+	<Temperature Max="85" Min="-40"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" InstanceName="ADC1" Name="ADC" Version="G4_aditf5_90_v1_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" InstanceName="ADC2" Name="ADC" Version="G4_aditf5_90_v1_0_Cube"/>
 	<IP ClockEnableMode="__HAL_RCC_ADC345_CLK_ENABLE" InstanceName="ADC3" Name="ADC" Version="G4_aditf5_90_v1_0_Cube"/>

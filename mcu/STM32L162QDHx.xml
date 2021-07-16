@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L1" DBVersion="V3.0" Family="STM32L1" HasPowerPad="false" IOType="" Line="STM32L162" Package="UFBGA132" RefName="STM32L162QDHx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M3</Core>
 	<Frequency>32</Frequency>
@@ -478,7 +478,6 @@
 	<Pin Name="VDD" Position="G2" Type="Power"/>
 	<Pin Name="PF6" Position="G3" Type="I/O">
 		<Signal Name="ADC_IN27"/>
-		<Signal Name="COMP1_INP"/>
 		<Signal Name="TIM5_CH1"/>
 		<Signal Name="TIM5_ETR"/>
 		<Signal Name="TS_G11_IO1"/>

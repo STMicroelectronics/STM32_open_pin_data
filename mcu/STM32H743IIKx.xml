@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H743/753" Package="UFBGA176" RefName="STM32H743IIKx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M7</Core>
 	<Frequency>480</Frequency>
@@ -56,6 +56,7 @@
 	<IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32H7xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
 	<IP ConfigFile="PWR-STM32H7xx" InstanceName="PWR" Name="PWR" Version="STM32H7_pwr_v1_0"/>
 	<IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" ConfigFile="QUADSPI-STM32H7xx" InstanceName="QUADSPI" Name="QUADSPI" PowerDomain="D1" Version="quadspi1_v1_0_Cube"/>
+	<IP ConfigFile="RAMECC-STM32H7xx" InstanceName="RAMECC" Name="RAMECC" Version="ramecc_v1_0_Cube"/>
 	<IP InstanceName="RCC" Name="RCC" PowerDomain="D3" Version="STM32H7_rcc_v1_0"/>
 	<IP ConfigFile="RNG-STM32H7xx" InstanceName="RNG" Name="RNG" PowerDomain="D2" Version="rng1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32H7xx" InstanceName="RTC" Name="RTC" PowerDomain="D3" Version="rtc2_v2_7_Cube"/>
@@ -1152,6 +1153,7 @@
 		<Signal Name="ETH_TXD2"/>
 		<Signal Name="FMC_SDNE0"/>
 		<Signal Name="I2S2_SDI"/>
+		<Signal Name="PWR_CSTOP"/>
 		<Signal Name="SPI2_MISO"/>
 		<Signal Name="USB_OTG_HS_ULPI_DIR"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1162,6 +1164,7 @@
 		<Signal Name="ETH_TX_CLK"/>
 		<Signal Name="FMC_SDCKE0"/>
 		<Signal Name="I2S2_SDO"/>
+		<Signal Name="PWR_CSLEEP"/>
 		<Signal Name="SPI2_MOSI"/>
 		<Signal Name="USB_OTG_HS_ULPI_NXT"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1411,6 +1414,7 @@
 		<Signal Name="DAC1_OUT2"/>
 		<Signal Name="I2S1_CK"/>
 		<Signal Name="LTDC_R4"/>
+		<Signal Name="PWR_NDSTOP2"/>
 		<Signal Name="SPI1_SCK"/>
 		<Signal Name="SPI6_SCK"/>
 		<Signal Name="TIM2_CH1"/>

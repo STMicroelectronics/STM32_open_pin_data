@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2021 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 ADC2.BoostMode=ENABLE
 ADC2.Channel-8\#ChannelRegularConversion=ADC_CHANNEL_1
@@ -34,7 +34,7 @@ ADC3.IPParameters=Rank-0\#ChannelRegularConversion,Channel-0\#ChannelRegularConv
 ADC3.NbrOfConversionFlag=1
 ADC3.OffsetNumber-0\#ChannelRegularConversion=ADC_OFFSET_NONE
 ADC3.Rank-0\#ChannelRegularConversion=1
-ADC3.SamplingTime-0\#ChannelRegularConversion=ADC_SAMPLETIME_1CYCLE_5
+ADC3.SamplingTime-0\#ChannelRegularConversion=ADC3_SAMPLETIME_2CYCLES_5
 ETH.IPParameters=MediaInterface
 ETH.MediaInterface=HAL_ETH_RMII_MODE
 File.Version=6

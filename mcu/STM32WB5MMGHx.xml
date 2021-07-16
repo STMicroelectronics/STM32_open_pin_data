@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBxM Modules" Package="LGA86" RefName="STM32WB5MMGHx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M4</Core>
 	<Frequency>64</Frequency>
@@ -21,6 +21,7 @@
 	<IP ClockEnableMode="__HAL_RCC_HSEM_CLK_ENABLE" InstanceName="HSEM" Name="HSEM" Version="hsem1_v1_0_Cube"/>
 	<IP InstanceName="I2C1" Name="I2C" Version="i2c2_v1_1_Cube"/>
 	<IP InstanceName="I2C3" Name="I2C" Version="i2c2_v1_1_Cube"/>
+	<IP ConfigFile="IPCC-STM32WBxx" InstanceName="IPCC" Name="IPCC" Version="v1_0_Cube"/>
 	<IP ConfigFile="IRTIM-STM32WBxx" InstanceName="IRTIM" Name="IRTIM" Version="irtim_v1_0_Cube"/>
 	<IP ClockEnableMode="none" ConfigFile="IWDG-STM32WBxx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v2_0"/>
 	<IP ClockEnableMode="__HAL_RCC_LCD_CLK_ENABLE" ConfigFile="LCD-STM32WBxx" InstanceName="LCD" Name="LCD" Version="lcdc1_v1_2_Cube"/>

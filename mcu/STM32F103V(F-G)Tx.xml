@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32F102" DBVersion="V3.0" Family="STM32F1" HasPowerPad="false" IOType="" Line="STM32F103" Package="LQFP100" RefName="STM32F103V(F-G)Tx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M3</Core>
 	<Frequency>72</Frequency>
 	<Ram>96</Ram>
-	<IONb>82</IONb>
+	<IONb>80</IONb>
 	<Die>DIE430</Die>
 	<Flash>768</Flash>
 	<Flash>1024</Flash>
@@ -102,10 +102,10 @@
 	</Pin>
 	<Pin Name="VSS" Position="10" Type="Power"/>
 	<Pin Name="VDD" Position="11" Type="Power"/>
-	<Pin Name="OSC_IN" Position="12" Type="I/O">
+	<Pin Name="OSC_IN" Position="12" Type="MonoIO">
 		<Signal Name="RCC_OSC_IN"/>
 	</Pin>
-	<Pin Name="OSC_OUT" Position="13" Type="I/O">
+	<Pin Name="OSC_OUT" Position="13" Type="MonoIO">
 		<Signal Name="RCC_OSC_OUT"/>
 	</Pin>
 	<Pin Name="NRST" Position="14" Type="Reset"/>

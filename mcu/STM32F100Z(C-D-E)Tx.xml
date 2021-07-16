@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32F100" DBVersion="V3.0" Family="STM32F1" HasPowerPad="false" IOType="" Line="STM32F100 Value Line" Package="LQFP144" RefName="STM32F100Z(C-D-E)Tx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M3</Core>
 	<Frequency>24</Frequency>
 	<Ram>24</Ram>
 	<Ram>32</Ram>
 	<Ram>32</Ram>
-	<IONb>114</IONb>
+	<IONb>112</IONb>
 	<Die>DIE428</Die>
 	<Flash>256</Flash>
 	<Flash>384</Flash>
@@ -134,10 +134,10 @@
 	<Pin Name="PF10" Position="22" Type="I/O">
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
 	</Pin>
-	<Pin Name="OSC_IN" Position="23" Type="I/O">
+	<Pin Name="OSC_IN" Position="23" Type="MonoIO">
 		<Signal Name="RCC_OSC_IN"/>
 	</Pin>
-	<Pin Name="OSC_OUT" Position="24" Type="I/O">
+	<Pin Name="OSC_OUT" Position="24" Type="MonoIO">
 		<Signal Name="RCC_OSC_OUT"/>
 	</Pin>
 	<Pin Name="NRST" Position="25" Type="Reset"/>

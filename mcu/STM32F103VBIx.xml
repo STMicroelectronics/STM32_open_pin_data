@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32F102" DBVersion="V3.0" Family="STM32F1" HasPowerPad="false" IOType="" Line="STM32F103" Package="UFBGA100" RefName="STM32F103VBIx" xmlns="http://dummy.com">
 	<Core>Arm Cortex-M3</Core>
 	<Frequency>72</Frequency>
 	<Ram>20</Ram>
-	<IONb>82</IONb>
+	<IONb>80</IONb>
 	<Die>DIE410</Die>
 	<Flash>128</Flash>
 	<Voltage Max="3.6" Min="2"/>
@@ -240,13 +240,13 @@
 		<Signal Name="TIM3_CH1"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
-	<Pin Name="OSC_IN" Position="F1" Type="I/O">
+	<Pin Name="OSC_IN" Position="F1" Type="MonoIO">
 		<Signal Name="RCC_OSC_IN"/>
 	</Pin>
 	<Pin Name="VSS" Position="F2" Type="Power"/>
 	<Pin Name="VSS" Position="F11" Type="Power"/>
 	<Pin Name="VSS" Position="F12" Type="Power"/>
-	<Pin Name="OSC_OUT" Position="G1" Type="I/O">
+	<Pin Name="OSC_OUT" Position="G1" Type="MonoIO">
 		<Signal Name="RCC_OSC_OUT"/>
 	</Pin>
 	<Pin Name="VDD" Position="G2" Type="Power"/>

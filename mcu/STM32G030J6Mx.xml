@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G0_64" DBVersion="V3.0" Family="STM32G0" HasPowerPad="false" IOType="" Line="STM32G0x0 Value line" Package="SO8N" RefName="STM32G030J6Mx" xmlns="http://dummy.com">
 	<Core>ARM Cortex-M0+</Core>
 	<Frequency>64</Frequency>
@@ -29,6 +29,7 @@
 	<IP ConfigFile="TIM-STM32G0xx" InstanceName="TIM16" Name="TIM1_8G0" Version="gptimer2_v3_x_Cube"/>
 	<IP ConfigFile="TIM-STM32G0xx" InstanceName="TIM17" Name="TIM1_8G0" Version="gptimer2_v3_x_Cube"/>
 	<IP InstanceName="USART1" Name="USART" Version="sci3_v2_1_Cube"/>
+	<IP InstanceName="USART2" Name="USART" Version="sci3_v2_1_Cube"/>
 	<IP ConfigFile="WWDG-STM32G0xx" InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0"/>
 	<IP ConfigFile="GPIO-STM32G0xx" InstanceName="GPIO" Name="GPIO" Version="STM32G03x_gpio_v1_0"/>
 	<IP ConfigFile="DMA-STM32G0xx" InstanceName="DMA" Name="DMA" Version="STM32G041_dma1_v1_3"/>
@@ -69,6 +70,8 @@
 		<Signal Name="RTC_TAMP_IN2"/>
 		<Signal Name="SPI2_SCK"/>
 		<Signal Name="SYS_WKUP1"/>
+		<Signal Name="USART2_CTS"/>
+		<Signal Name="USART2_NSS"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA1" Position="4" Type="I/O">
@@ -76,6 +79,9 @@
 		<Signal Name="I2C1_SMBA"/>
 		<Signal Name="I2S1_CK"/>
 		<Signal Name="SPI1_SCK"/>
+		<Signal Name="USART2_CK"/>
+		<Signal Name="USART2_DE"/>
+		<Signal Name="USART2_RTS"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA2" Position="4" Type="I/O">
@@ -84,6 +90,7 @@
 		<Signal Name="RCC_LSCO"/>
 		<Signal Name="SPI1_MOSI"/>
 		<Signal Name="SYS_WKUP4"/>
+		<Signal Name="USART2_TX"/>
 		<Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PB0" Position="5" Type="I/O">
@@ -156,11 +163,13 @@
 	<Pin Name="PA14-BOOT0" Position="8" Type="I/O">
 		<Signal Name="ADC1_IN18"/>
 		<Signal Name="SYS_SWCLK"/>
+		<Signal Name="USART2_TX"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PA15" Position="8" Type="I/O">
 		<Signal Name="I2S1_WS"/>
 		<Signal Name="SPI1_NSS"/>
+		<Signal Name="USART2_RX"/>
 		<Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
 	</Pin>
 	<Pin Name="PB5" Position="8" Type="I/O">
