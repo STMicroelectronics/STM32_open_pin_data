@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x1" Package="UFBGA100" RefName="STM32L071V(B-Z)Ix" xmlns="http://dummy.com">
+	<Frequency>32</Frequency>
 	<Core>Arm Cortex-M0+</Core>
 	<E2prom>6144</E2prom>
 	<Ram>20</Ram>

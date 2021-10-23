@@ -6,6 +6,7 @@
 	<ContextProject Attributes="DUAL,TZ" Comment="with TrustZone activated ?" Contexts="CortexM33S,CortexM33NS" Name="TrustZoneEnabled"/>
 	<Context Comment="Enable the Cortex-M33 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure" Name="CortexM33S" Secure="true" SemaphoreSuffix="_SECURE" ShortName="M33S"/>
 	<Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
+	<Frequency>160</Frequency>
 	<Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
 	<TrustZone>Available</TrustZone>
 	<Ram>256</Ram>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx0 Value Line" Package="UFQFPN48" RefName="STM32WB30CEUxA" xmlns="http://dummy.com">
+	<Frequency>64</Frequency>
 	<Core>ARM Cortex-M4</Core>
 	<Ram>96</Ram>
 	<IONb>30</IONb>

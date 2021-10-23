@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x4" Package="UFBGA100" RefName="STM32G484VEIx" xmlns="http://dummy.com">
+	<Frequency>170</Frequency>
 	<Core>ARM Cortex-M4</Core>
 	<Ram>128</Ram>
 	<IONb>86</IONb>
