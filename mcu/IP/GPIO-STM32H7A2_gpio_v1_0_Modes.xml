@@ -668,7 +668,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_FM8"/>
+        <Parameter Name="GPIO_FM7"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
         <Condition Diagnostic="" Expression="PB8"/>

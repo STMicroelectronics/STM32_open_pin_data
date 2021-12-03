@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2021 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_2
 ADC1.ClockPrescaler=ADC_CLOCK_ASYNC_DIV10
@@ -52,7 +52,7 @@ I2C1.I2C_Speed_Mode=I2C_Fast
 I2C1.IPParameters=Timing,CustomTiming,I2C_Speed_Mode
 I2C1.Timing=0x10707DBC
 I2C3.IPParameters=Timing,Timeout,SMBusAddressingMode
-I2C3.SMBusAddressingMode=SMBUS_ADDRESSINGMODE_10BIT
+I2C3.SMBusAddressingMode=SMBUS_ADDRESSINGMODE_7BIT
 I2C3.Timeout=0x0000830D
 I2C3.Timing=0x10707DBC
 KeepUserPlacement=false

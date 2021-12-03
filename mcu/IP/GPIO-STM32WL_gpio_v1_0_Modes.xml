@@ -1512,7 +1512,7 @@
         </PinSignal>
         <PinSignal Name="DEBUG_RF-BUSY">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_RF</PossibleValue>
+                <PossibleValue>GPIO_AF6_RF_BUSY</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2C2_SCL">

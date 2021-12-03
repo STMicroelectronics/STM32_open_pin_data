@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2021 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 File.Version=6
 I2C4.IPParameters=Timing
@@ -8,6 +8,15 @@ I2S6.IPParameters=Instance,VirtualMode,FullDuplexMode
 I2S6.Instance=SPI$Index
 I2S6.VirtualMode=I2S_MODE_MASTER
 KeepUserPlacement=false
+LTDC.ActiveH=272
+LTDC.ActiveW=480
+LTDC.HBP=43
+LTDC.HFP=8
+LTDC.HSync=1
+LTDC.IPParameters=ActiveW,ActiveH,HBP,HFP,VBP,VFP,HSync,VSync
+LTDC.VBP=12
+LTDC.VFP=4
+LTDC.VSync=10
 Mcu.Family=STM32H7
 Mcu.IP0=CORTEX_M7
 Mcu.IP1=DEBUG

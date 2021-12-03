@@ -118,6 +118,11 @@
         <PossibleValue Value="GPIO_SPEED_FREQ_HIGH" Comment="High"/>
         <PossibleValue Value="GPIO_SPEED_FREQ_VERY_HIGH" Comment="Very High"/>
     </RefParameter>
+    <RefParameter Name="GPIO_Speed_HighFirst" Comment="Maximum output speed" Type="list" DefaultValue="GPIO_SPEED_FREQ_HIGH">
+        <PossibleValue Value="GPIO_SPEED_FREQ_HIGH" Comment="High"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_MEDIUM" Comment="Medium"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_LOW" Comment="Low"/>
+    </RefParameter>
     <RefParameter Name="GPIO_FM6" Comment="Fast Mode" Type="list" DefaultValue="__NULL">
         <PossibleValue Value="__NULL" Comment="Disable"/>
         <PossibleValue Value="SYSCFG_FASTMODEPLUS_PB6" Comment="Enable"/>
@@ -1291,6 +1296,75 @@
         <Parameter Name="GPIO_Pu"/>
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB6"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB7"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB8"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="PB9"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM9"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPHIGHSPEED">
+        <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
+        <ConfigForMode>AlternateFunctionDefaultPPHFirst</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_HighFirst"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
