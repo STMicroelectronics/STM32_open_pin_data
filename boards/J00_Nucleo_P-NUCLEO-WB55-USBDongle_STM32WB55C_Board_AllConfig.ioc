@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2022 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 File.Version=6
 KeepUserPlacement=false
@@ -147,5 +147,5 @@ RCC.VCOOutputFreq_Value=128000000
 RCC.VCOSAI1OutputFreq_Value=96000000
 VP_SYS_VS_Systick.Mode=SysTick
 VP_SYS_VS_Systick.Signal=SYS_VS_Systick
-board=P-NUCLEO-WB55-USBDongle
+board=P-NUCLEO-WB55-USBDONGLE
 boardIOC=true

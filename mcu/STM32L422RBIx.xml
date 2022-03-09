@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L4x2" DBVersion="V3.0" Family="STM32L4" HasPowerPad="false" IOType="" Line="STM32L4x2" Package="UFBGA64" RefName="STM32L422RBIx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M4</Core>
     <Frequency>80</Frequency>
@@ -460,6 +460,7 @@
         <Signal Name="ADC1_IN14"/>
         <Signal Name="ADC2_IN14"/>
         <Signal Name="COMP1_INP"/>
+        <Signal Name="SYS_WKUP5"/>
         <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>

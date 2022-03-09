@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2022 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 File.Version=6
 KeepUserPlacement=false
@@ -177,5 +177,5 @@ USART1.IPParameters=VirtualMode-Asynchronous
 USART1.VirtualMode-Asynchronous=VM_ASYNC
 VP_SYS_VS_Systick.Mode=SysTick
 VP_SYS_VS_Systick.Signal=SYS_VS_Systick
-board=P-NUCLEO-WB55-Nucleo
+board=P-NUCLEO-WB55-NUCLEO
 boardIOC=true

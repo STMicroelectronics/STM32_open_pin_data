@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7AB" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H7B0 Value line" Package="LQFP64" RefName="STM32H7B0RBTx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>280</Frequency>
@@ -18,6 +18,7 @@
     <IP ConfigFile="CRYP-STM32H7xx" InstanceName="CRYP" Name="CRYP" Version="cryp1_v2_0_H7_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_DAC12_CLK_ENABLE" InstanceName="DAC1" Name="DAC" Version="dacif_v3_0_Cube"/>
     <IP InstanceName="DAC2" Name="DAC" Version="dacif_v3_0_Cube"/>
+    <IP ConfigFile="DCMI-STM32H7xx" InstanceName="DCMI" Name="DCMI" Version="cci_v2_0_Cube"/>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0"/>
     <IP ConfigFile="DFSDM-STM32H7Axx" InstanceName="DFSDM1" Name="DFSDM" Version="dfsdm1_v1_0_H7A_8ch8f_Cube"/>
     <IP ConfigFile="DFSDM-STM32H7Axx" InstanceName="DFSDM2" Name="DFSDM" Version="dfsdm1_v1_0_H7A_2ch_Cube"/>
@@ -53,6 +54,7 @@
     <IP ClockEnableMode="__HAL_RCC_OPAMP_CLK_ENABLE" InstanceName="OPAMP1" Name="OPAMP" Version="cmosM40_opamp_v1_0_Cube"/>
     <IP ConfigFile="OTFDEC-STM32H7xx" InstanceName="OTFDEC1" Name="OTFDEC" Version="otfdec_v1_0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32H7xx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.3.0_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" ConfigFile="PSSI-STM32H7xx" InstanceName="PSSI" Name="PSSI" Version="cci_v3_0_Cube"/>
     <IP ConfigFile="PWR-STM32H7xx" InstanceName="PWR" Name="PWR" Version="STM32H7_pwr_v1_0"/>
     <IP ConfigFile="RAMECC-STM32H7xx" InstanceName="RAMECC" Name="RAMECC" Version="ramecc_v1_0_Cube"/>
     <IP InstanceName="RCC" Name="RCC" Version="STM32H7AB_rcc_v1_0"/>
@@ -253,10 +255,12 @@
     <Pin Name="PA4" Position="20" Type="I/O">
         <Signal Name="ADC1_INP18"/>
         <Signal Name="DAC1_OUT1"/>
+        <Signal Name="DCMI_HSYNC"/>
         <Signal Name="I2S1_WS"/>
         <Signal Name="I2S3_WS"/>
         <Signal Name="I2S6_WS"/>
         <Signal Name="LTDC_VSYNC"/>
+        <Signal Name="PSSI_DE"/>
         <Signal Name="SPI1_NSS"/>
         <Signal Name="SPI3_NSS"/>
         <Signal Name="SPI6_NSS"/>
@@ -271,6 +275,7 @@
         <Signal Name="I2S1_CK"/>
         <Signal Name="I2S6_CK"/>
         <Signal Name="LTDC_R4"/>
+        <Signal Name="PSSI_D14"/>
         <Signal Name="PWR_NDSTOP2"/>
         <Signal Name="SPI1_SCK"/>
         <Signal Name="SPI6_SCK"/>
@@ -285,11 +290,13 @@
         <Signal Name="ADC1_INP3"/>
         <Signal Name="ADC2_INP3"/>
         <Signal Name="DAC2_OUT1"/>
+        <Signal Name="DCMI_PIXCLK"/>
         <Signal Name="I2S1_SDI"/>
         <Signal Name="I2S6_SDI"/>
         <Signal Name="LTDC_G2"/>
         <Signal Name="MDIOS_MDC"/>
         <Signal Name="OCTOSPIM_P1_IO3"/>
+        <Signal Name="PSSI_PDCK"/>
         <Signal Name="SPI1_MISO"/>
         <Signal Name="SPI6_MISO"/>
         <Signal Name="TIM13_CH1"/>
@@ -341,6 +348,7 @@
         <Signal Name="LTDC_DE"/>
         <Signal Name="OCTOSPIM_P1_DQS"/>
         <Signal Name="OPAMP1_VINM"/>
+        <Signal Name="PSSI_D15"/>
         <Signal Name="SPDIFRX_IN3"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -418,11 +426,13 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB13" Position="34" Type="I/O">
+        <Signal Name="DCMI_D2"/>
         <Signal Name="DFSDM1_CKIN1"/>
         <Signal Name="DFSDM2_CKIN1"/>
         <Signal Name="FDCAN2_TX"/>
         <Signal Name="I2S2_CK"/>
         <Signal Name="LPTIM2_OUT"/>
+        <Signal Name="PSSI_D2"/>
         <Signal Name="SDMMC1_D0"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_CH1N"/>
@@ -465,9 +475,11 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PC6" Position="37" Type="I/O">
+        <Signal Name="DCMI_D0"/>
         <Signal Name="DFSDM1_CKIN3"/>
         <Signal Name="I2S2_MCK"/>
         <Signal Name="LTDC_HSYNC"/>
+        <Signal Name="PSSI_D0"/>
         <Signal Name="SDMMC1_D0DIR"/>
         <Signal Name="SDMMC1_D6"/>
         <Signal Name="SDMMC2_D6"/>
@@ -478,10 +490,12 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PC7" Position="38" Type="I/O">
+        <Signal Name="DCMI_D1"/>
         <Signal Name="DEBUG_TRGIO"/>
         <Signal Name="DFSDM1_DATIN3"/>
         <Signal Name="I2S3_MCK"/>
         <Signal Name="LTDC_G6"/>
+        <Signal Name="PSSI_D1"/>
         <Signal Name="SDMMC1_D123DIR"/>
         <Signal Name="SDMMC1_D7"/>
         <Signal Name="SDMMC2_D7"/>
@@ -493,11 +507,13 @@
     </Pin>
     <Pin Name="PC9" Position="39" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
+        <Signal Name="DCMI_D3"/>
         <Signal Name="I2C3_SDA"/>
         <Signal Name="I2S_CKIN"/>
         <Signal Name="LTDC_B2"/>
         <Signal Name="LTDC_G3"/>
         <Signal Name="OCTOSPIM_P1_IO0"/>
+        <Signal Name="PSSI_D3"/>
         <Signal Name="RCC_MCO_2"/>
         <Signal Name="SDMMC1_D1"/>
         <Signal Name="SWPMI1_SUSPEND"/>
@@ -521,10 +537,12 @@
     </Pin>
     <Pin Name="PA9" Position="41" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
+        <Signal Name="DCMI_D0"/>
         <Signal Name="I2C3_SMBA"/>
         <Signal Name="I2S2_CK"/>
         <Signal Name="LPUART1_TX"/>
         <Signal Name="LTDC_R5"/>
+        <Signal Name="PSSI_D0"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_CH2"/>
         <Signal Name="USART1_TX"/>
@@ -532,10 +550,12 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA10" Position="42" Type="I/O">
+        <Signal Name="DCMI_D1"/>
         <Signal Name="LPUART1_RX"/>
         <Signal Name="LTDC_B1"/>
         <Signal Name="LTDC_B4"/>
         <Signal Name="MDIOS_MDIO"/>
+        <Signal Name="PSSI_D1"/>
         <Signal Name="TIM1_CH3"/>
         <Signal Name="USART1_RX"/>
         <Signal Name="USB_OTG_HS_ID"/>
@@ -604,12 +624,14 @@
         <Condition Diagnostic="ETR and CH1 on the same GPIO for TIM2" Expression="(!(TIM2_CH1 &amp; (PA5_S_TIM2_ETR|PA0_S_TIM2_ETR)) &amp; !(TIM2_ETR &amp; (PA5_S_TIM2_CH1|PA0_S_TIM2_CH1)))"/>
     </Pin>
     <Pin Name="PC10" Position="51" Type="I/O">
+        <Signal Name="DCMI_D8"/>
         <Signal Name="DFSDM1_CKIN5"/>
         <Signal Name="DFSDM2_CKIN0"/>
         <Signal Name="I2S3_CK"/>
         <Signal Name="LTDC_B1"/>
         <Signal Name="LTDC_R2"/>
         <Signal Name="OCTOSPIM_P1_IO1"/>
+        <Signal Name="PSSI_D8"/>
         <Signal Name="SDMMC1_D2"/>
         <Signal Name="SPI3_SCK"/>
         <Signal Name="SWPMI1_RX"/>
@@ -620,11 +642,13 @@
     <Pin Name="PC11" Position="52" Type="I/O">
         <Signal Name="ADC1_EXTI11"/>
         <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="DCMI_D4"/>
         <Signal Name="DFSDM1_DATIN5"/>
         <Signal Name="DFSDM2_DATIN0"/>
         <Signal Name="I2S3_SDI"/>
         <Signal Name="LTDC_B4"/>
         <Signal Name="OCTOSPIM_P1_NCS"/>
+        <Signal Name="PSSI_D4"/>
         <Signal Name="SDMMC1_D3"/>
         <Signal Name="SPI3_MISO"/>
         <Signal Name="UART4_RX"/>
@@ -632,11 +656,13 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PC12" Position="53" Type="I/O">
+        <Signal Name="DCMI_D9"/>
         <Signal Name="DEBUG_TRACED3"/>
         <Signal Name="DFSDM2_CKOUT"/>
         <Signal Name="I2S3_SDO"/>
         <Signal Name="I2S6_CK"/>
         <Signal Name="LTDC_R6"/>
+        <Signal Name="PSSI_D9"/>
         <Signal Name="SDMMC1_CK"/>
         <Signal Name="SPI3_MOSI"/>
         <Signal Name="SPI6_SCK"/>
@@ -646,9 +672,11 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD2" Position="54" Type="I/O">
+        <Signal Name="DCMI_D11"/>
         <Signal Name="DEBUG_TRACED2"/>
         <Signal Name="LTDC_B2"/>
         <Signal Name="LTDC_B7"/>
+        <Signal Name="PSSI_D11"/>
         <Signal Name="SDMMC1_CMD"/>
         <Signal Name="TIM15_BKIN"/>
         <Signal Name="TIM3_ETR"/>
@@ -686,6 +714,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB5" Position="57" Type="I/O">
+        <Signal Name="DCMI_D10"/>
         <Signal Name="FDCAN2_RX"/>
         <Signal Name="I2C1_SMBA"/>
         <Signal Name="I2C4_SMBA"/>
@@ -693,6 +722,7 @@
         <Signal Name="I2S3_SDO"/>
         <Signal Name="I2S6_SDO"/>
         <Signal Name="LTDC_B5"/>
+        <Signal Name="PSSI_D10"/>
         <Signal Name="SPI1_MOSI"/>
         <Signal Name="SPI3_MOSI"/>
         <Signal Name="SPI6_MOSI"/>
@@ -704,12 +734,14 @@
     </Pin>
     <Pin Name="PB6" Position="58" Type="I/O">
         <Signal Name="CEC"/>
+        <Signal Name="DCMI_D5"/>
         <Signal Name="DFSDM1_DATIN5"/>
         <Signal Name="FDCAN2_TX"/>
         <Signal Name="I2C1_SCL"/>
         <Signal Name="I2C4_SCL"/>
         <Signal Name="LPUART1_TX"/>
         <Signal Name="OCTOSPIM_P1_NCS"/>
+        <Signal Name="PSSI_D5"/>
         <Signal Name="TIM16_CH1N"/>
         <Signal Name="TIM4_CH1"/>
         <Signal Name="UART5_TX"/>
@@ -717,10 +749,12 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB7" Position="59" Type="I/O">
+        <Signal Name="DCMI_VSYNC"/>
         <Signal Name="DFSDM1_CKIN5"/>
         <Signal Name="I2C1_SDA"/>
         <Signal Name="I2C4_SDA"/>
         <Signal Name="LPUART1_RX"/>
+        <Signal Name="PSSI_RDY"/>
         <Signal Name="PWR_PVD_IN"/>
         <Signal Name="TIM17_CH1N"/>
         <Signal Name="TIM4_CH2"/>
@@ -729,11 +763,13 @@
     </Pin>
     <Pin Name="BOOT0" Position="60" Type="Boot"/>
     <Pin Name="PB8" Position="61" Type="I/O">
+        <Signal Name="DCMI_D6"/>
         <Signal Name="DFSDM1_CKIN7"/>
         <Signal Name="FDCAN1_RX"/>
         <Signal Name="I2C1_SCL"/>
         <Signal Name="I2C4_SCL"/>
         <Signal Name="LTDC_B6"/>
+        <Signal Name="PSSI_D6"/>
         <Signal Name="SDMMC1_CKIN"/>
         <Signal Name="SDMMC1_D4"/>
         <Signal Name="SDMMC2_D4"/>
@@ -744,6 +780,7 @@
     </Pin>
     <Pin Name="PB9" Position="62" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
+        <Signal Name="DCMI_D7"/>
         <Signal Name="DFSDM1_DATIN7"/>
         <Signal Name="FDCAN1_TX"/>
         <Signal Name="I2C1_SDA"/>
@@ -751,6 +788,7 @@
         <Signal Name="I2C4_SMBA"/>
         <Signal Name="I2S2_WS"/>
         <Signal Name="LTDC_B7"/>
+        <Signal Name="PSSI_D7"/>
         <Signal Name="SDMMC1_CDIR"/>
         <Signal Name="SDMMC1_D5"/>
         <Signal Name="SDMMC2_D5"/>

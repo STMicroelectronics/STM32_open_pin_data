@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32U5x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="LPGPIOx" Comment="LPGPIO address" Type="list" Visible="false">
@@ -2115,7 +2115,7 @@
         </PinSignal>
         <PinSignal Name="PWR_CSLEEP">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_CSLEEP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_SCK">
@@ -2187,7 +2187,7 @@
         </PinSignal>
         <PinSignal Name="PWR_CDSTOP">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_CSTOP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_MISO">
@@ -2250,7 +2250,7 @@
         </PinSignal>
         <PinSignal Name="PWR_SRDSTOP">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_SRDSTOP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_MOSI">
@@ -4129,7 +4129,7 @@
         </PinSignal>
         <PinSignal Name="PWR_CSLEEP">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_CSLEEP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_MCLK_A">
@@ -4202,7 +4202,7 @@
         </PinSignal>
         <PinSignal Name="PWR_CDSTOP">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_CSTOP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_MCLK_B">
@@ -4270,7 +4270,7 @@
         </PinSignal>
         <PinSignal Name="PWR_SRDSTOP">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_SRDSTOP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D0">
