@@ -12,7 +12,7 @@
     <Ram>256</Ram>
     <IONb>111</IONb>
     <Die>DIE481</Die>
-    <Flash>72</Flash>
+    <Flash>4096</Flash>
     <Voltage Max="3.6" Min="1.71"/>
     <Current Lowest="0.02" Run="26"/>
     <Temperature Max="85" Min="-40"/>
@@ -695,6 +695,11 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="SYS-STM32U5xx" InstanceName="SYS_S" Name="SYS_S" Version="STM32U5x_sys_s_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
     <IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" InstanceName="TAMP" Name="TAMP" Version="STM32L5_rtc2_v2_8_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
@@ -962,7 +967,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_USB_OTG_HS_CLK_ENABLE" InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_USB_OTG_HS_CLK_ENABLE;__HAL_RCC_USBPHYC_CLK_ENABLE" InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -993,7 +998,15 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32U5xx" InstanceName="GPIO" Name="GPIO" Version="STM32U59x_gpio_v1_0"/>
+    <IP ConfigFile="GPIO-STM32U5xx" InstanceName="GPIO" Name="GPIO" Version="STM32U59x_gpio_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="NVIC-STM32U5xx" InstanceName="NVIC1" Name="NVIC1" Version="STM32U5A9">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>

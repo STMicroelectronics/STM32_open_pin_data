@@ -179,7 +179,13 @@
             <ContextIP ContextName="CortexM4MonoOnDual"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32WLxx" InstanceName="GPIO" Name="GPIO" Version="STM32WL_gpio_v1_0"/>
+    <IP ConfigFile="GPIO-STM32WLxx" InstanceName="GPIO" Name="GPIO" Version="STM32WL_gpio_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM4" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM4MonoOnDual" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="DMA-STM32WLxx" InstanceName="DMA" Name="DMA" Version="STM32WL55_dma1_v1_3">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" InitializerForced="true"/>

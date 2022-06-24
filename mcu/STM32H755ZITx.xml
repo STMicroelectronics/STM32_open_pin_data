@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H745/755" Package="LQFP144" RefName="STM32H755ZITx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M7</Core>
     <Core>ARM Cortex-M4</Core>
@@ -259,7 +259,12 @@
             <ContextIP ContextName="CortexM4" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32H7xx" InstanceName="GPIO" Name="GPIO" Version="STM32H747_gpio_v1_0"/>
+    <IP ConfigFile="GPIO-STM32H7xx" InstanceName="GPIO" Name="GPIO" Version="STM32H747_gpio_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM7" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM4" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="DMA-STM32H7xx" InstanceName="DMA" Name="DMA" PowerDomain="D2" Version="STM32H753_dma2_v1_3">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM7" InitializerForced="true"/>

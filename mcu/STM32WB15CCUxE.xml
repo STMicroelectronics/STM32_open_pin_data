@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WB1" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx5" Package="UFQFPN48" RefName="STM32WB15CCUxE" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
     <Frequency>64</Frequency>
@@ -195,8 +195,8 @@
     <Pin Name="PE4" Position="31" Type="I/O">
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="VDD" Position="32" Type="Power"/>
-    <Pin Name="VDD" Position="33" Type="Power"/>
+    <Pin Name="VFBSMPS" Position="32" Type="Power"/>
+    <Pin Name="VDDSMPS" Position="33" Type="Power"/>
     <Pin Name="PB14" Position="34" Type="I/O">
         <Signal Name="TIM1_CH1"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>

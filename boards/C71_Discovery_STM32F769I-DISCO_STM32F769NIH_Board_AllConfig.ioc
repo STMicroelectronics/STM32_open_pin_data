@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2022 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_12
 ADC1.ClockPrescaler=ADC_CLOCK_SYNC_PCLK_DIV4
@@ -1034,7 +1034,7 @@ PJ12.Signal=GPIO_Input
 PJ13.GPIOParameters=GPIO_Label
 PJ13.GPIO_Label=LD_USER1 [Led_RED]
 PJ13.Locked=true
-PJ13.Signal=GPIO_Input
+PJ13.Signal=GPIO_Output
 PJ14.GPIOParameters=GPIO_Label
 PJ14.GPIO_Label=WIFI_RST
 PJ14.Locked=true
@@ -1059,7 +1059,7 @@ PJ4.Signal=GPIO_Input
 PJ5.GPIOParameters=GPIO_Label
 PJ5.GPIO_Label=LD_USER2 [LED_Green]
 PJ5.Locked=true
-PJ5.Signal=GPIO_Input
+PJ5.Signal=GPIO_Output
 PK3.GPIOParameters=GPIO_Label
 PK3.GPIO_Label=NC7 [TP9]
 PK3.Locked=true

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L4x6" DBVersion="V3.0" Family="STM32L4" HasPowerPad="false" IOType="" Line="STM32L4x6" Package="LQFP100" RefName="STM32L4A6VGTxP" xmlns="http://dummy.com">
     <Core>Arm Cortex-M4</Core>
     <Frequency>80</Frequency>
@@ -10,9 +10,9 @@
     <Voltage Max="3.6" Min="1.71"/>
     <Current Lowest="0.03" Run="90"/>
     <Temperature Max="85" Min="-40"/>
-    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_0_Cube"/>
-    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC2" Name="ADC" Version="aditf5_v2_0_Cube"/>
-    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC3" Name="ADC" Version="aditf5_v2_0_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_2_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC2" Name="ADC" Version="aditf5_v2_2_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC3" Name="ADC" Version="aditf5_v2_2_Cube"/>
     <IP ConfigFile="AES-STM32L4xx" InstanceName="AES" Name="AES" Version="aes2_v1_1_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_CAN1_CLK_ENABLE" ConfigFile="CAN-STM32L4xx" InstanceName="CAN1" Name="CAN" Version="bxcan1_v1_1_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_CAN2_CLK_ENABLE;__HAL_RCC_CAN1_CLK_ENABLE" ConfigFile="CAN-STM32L4xx" InstanceName="CAN2" Name="CAN" Version="bxcan1_v1_1_Cube"/>

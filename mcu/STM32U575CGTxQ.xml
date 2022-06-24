@@ -446,7 +446,7 @@
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
+            <ContextIP ContextName="CortexM33NS" DefaultSelection="true"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
@@ -557,7 +557,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_OSPI1_CLK_ENABLE" ConfigFile="OCTOSPI-STM32U5xx" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi1_v3_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_OSPIM_CLK_ENABLE;__HAL_RCC_OSPI1_CLK_ENABLE" ConfigFile="OCTOSPI-STM32U5xx" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi1_v3_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -568,7 +568,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_OSPI2_CLK_ENABLE" ConfigFile="OCTOSPI-STM32U5xx" InstanceName="OCTOSPI2" Name="OCTOSPI" Version="octospi1_v3_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_OSPIM_CLK_ENABLE;__HAL_RCC_OSPI2_CLK_ENABLE" ConfigFile="OCTOSPI-STM32U5xx" InstanceName="OCTOSPI2" Name="OCTOSPI" Version="octospi1_v3_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -977,6 +977,8 @@
     <IP ConfigFile="SYS-STM32U5xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32L55_vrefbuf_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
         <ContextSplit Name="split3">
@@ -1005,7 +1007,15 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32U5xx" InstanceName="GPIO" Name="GPIO" Version="STM32U5x_gpio_v1_0"/>
+    <IP ConfigFile="GPIO-STM32U5xx" InstanceName="GPIO" Name="GPIO" Version="STM32U5x_gpio_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="NVIC-STM32U5xx" InstanceName="NVIC1" Name="NVIC1" Version="STM32U585">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>

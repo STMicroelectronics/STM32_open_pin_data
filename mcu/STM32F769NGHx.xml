@@ -24,7 +24,7 @@
     <IP ConfigFile="DFSDM-STM32F7xx" InstanceName="DFSDM1" Name="DFSDM" Version="dfsdm1_F7_v1_0_Cube"/>
     <IP ConfigFile="DMA2D-STM32F7xx" InstanceName="DMA2D" Name="DMA2D" Version="dma2d1_v1_0"/>
     <IP ClockEnableMode="__HAL_RCC_DSI_CLK_ENABLE" ConfigFile="DSI-STM32F7xx" InstanceName="DSIHOST" Name="DSIHOST" Version="dsihost1_v1_0_Cube"/>
-    <IP ConfigFile="ETH-STM32F7xx" InstanceName="ETH" Name="ETH" Version="ethermac110_v2_0"/>
+    <IP ConfigFile="ETH-STM32F7xx" InstanceName="ETH" Name="ETH" Version="ethermac110_v3_0"/>
     <IP ConfigFile="FATFS-STM32F7xx" InstanceName="FATFS" Name="FATFS" Version="v0.1.0_Cube"/>
     <IP ConfigFile="FMC-STM32F7xx" InstanceName="FMC" Name="FMC" Version="f7_fmc_v2_0"/>
     <IP ConfigFile="FREERTOS-STM32F7xx" InstanceName="FREERTOS" Name="FREERTOS" Version="v8.0.0_Cube"/>

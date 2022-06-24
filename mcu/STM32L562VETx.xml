@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L5" DBVersion="V3.0" Family="STM32L5" HasPowerPad="false" IOType="" Line="STM32L5x2" Package="LQFP100" RefName="STM32L562VETx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -778,7 +778,15 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32L5xx" InstanceName="GPIO" Name="GPIO" Version="STM32L55x_gpio_v1_0"/>
+    <IP ConfigFile="GPIO-STM32L5xx" InstanceName="GPIO" Name="GPIO" Version="STM32L55x_gpio_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="DMA-STM32L5xx" InstanceName="DMA" Name="DMA" Version="STM32L562_dma1_v2_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true"/>

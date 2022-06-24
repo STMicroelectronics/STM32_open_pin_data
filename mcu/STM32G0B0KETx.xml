@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G0-512" DBVersion="V3.0" Family="STM32G0" HasPowerPad="false" IOType="" Line="STM32G0x0 Value line" Package="LQFP32" RefName="STM32G0B0KETx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Frequency>64</Frequency>
     <Ram>144</Ram>
-    <IONb>30</IONb>
+    <IONb>29</IONb>
     <Die>DIE467</Die>
     <Flash>512</Flash>
     <Voltage Max="3.6" Min="2"/>
@@ -72,10 +72,7 @@
     </Pin>
     <Pin Name="VDD" Position="4" Type="Power"/>
     <Pin Name="VSS" Position="5" Type="Power"/>
-    <Pin Name="PF2-NRST" Position="6" Type="I/O">
-        <Signal Name="RCC_MCO"/>
-        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
-    </Pin>
+    <Pin Name="NRST" Position="6" Type="Reset"/>
     <Pin Name="PA0" Position="7" Type="I/O">
         <Signal Name="ADC1_IN0"/>
         <Signal Name="I2S2_CK"/>

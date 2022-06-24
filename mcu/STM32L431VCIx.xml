@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L43" DBVersion="V3.0" Family="STM32L4" HasPowerPad="false" IOType="" Line="STM32L4x1" Package="UFBGA100" RefName="STM32L431VCIx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M4</Core>
     <Frequency>80</Frequency>
@@ -9,7 +9,7 @@
     <Flash>256</Flash>
     <Voltage Max="3.6" Min="1.71"/>
     <Current Lowest="0.01"/>
-    <Temperature Max="105" Min="-40"/>
+    <Temperature Max="125" Min="-40"/>
     <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L4xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_CAN1_CLK_ENABLE" ConfigFile="CAN-STM32L4xx" InstanceName="CAN1" Name="CAN" Version="bxcan1_v1_1_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="COMP-STM32L4xx" InstanceName="COMP1" Name="COMP" Version="TSMC90_Cube"/>

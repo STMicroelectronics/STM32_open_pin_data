@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBxM Modules" Package="LGA86" RefName="STM32WB5MMGHx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
     <Frequency>64</Frequency>
     <Ram>256</Ram>
-    <IONb>71</IONb>
+    <IONb>73</IONb>
     <Die>DIE495</Die>
     <Flash>1024</Flash>
     <Voltage Max="3.6" Min="1.71"/>
@@ -365,8 +365,17 @@
     <Pin Name="PE4" Position="42" Type="I/O">
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="NC" Position="43" Type="NC"/>
-    <Pin Name="NC" Position="44" Type="NC"/>
+    <Pin Name="PB1" Position="43" Type="I/O">
+        <Signal Name="LPTIM2_IN1"/>
+        <Signal Name="LPUART1_DE"/>
+        <Signal Name="LPUART1_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB0" Position="44" Type="I/O">
+        <Signal Name="COMP1_OUT"/>
+        <Signal Name="RF_TX_MOD_EXT_PA"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
     <Pin Name="PC5" Position="45" Type="I/O">
         <Signal Name="ADC1_IN14"/>
         <Signal Name="COMP1_INP"/>
