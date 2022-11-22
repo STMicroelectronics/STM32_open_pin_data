@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2020 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32L55x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
@@ -1717,11 +1717,6 @@
                 <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="UCPD1_FRSTX2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="USART2_TX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART2</PossibleValue>
@@ -2406,11 +2401,6 @@
                 <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="UCPD1_FRSTX1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="UCPD1_FRSTX2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
@@ -2576,11 +2566,6 @@
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UCPD1_FRSTX1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="UCPD1_FRSTX2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
             </SpecificParameter>
@@ -3221,11 +3206,6 @@
         <PinSignal Name="UART4_RX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_UART4</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="UCPD1_FRSTX1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UCPD1_FRSTX2">
@@ -5706,11 +5686,6 @@
                 <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="UCPD1_FRSTX2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PG" Name="PG7">
         <SpecificParameter Name="EXTI_Line">
@@ -5752,11 +5727,6 @@
         <PinSignal Name="SAI1_MCLK_A">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF13_SAI1</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="UCPD1_FRSTX1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_UCPD1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UCPD1_FRSTX2">

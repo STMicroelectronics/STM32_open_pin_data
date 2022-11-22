@@ -1509,7 +1509,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P2_NCS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_OCTOSPI1</PossibleValue>
+                <PossibleValue>GPIO_AF10_OCTOSPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC2_CMD">
@@ -1750,7 +1750,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P2_NCS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_OCTOSPI1</PossibleValue>
+                <PossibleValue>GPIO_AF6_OCTOSPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_MOSI">
@@ -3780,7 +3780,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P1_NCS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF5_OCTOSPI2</PossibleValue>
+                <PossibleValue>GPIO_AF5_OCTOSPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="PSSI_D2">
@@ -4791,7 +4791,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P2_NCS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_OCTOSPI1</PossibleValue>
+                <PossibleValue>GPIO_AF10_OCTOSPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="PSSI_D5">
@@ -7449,7 +7449,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P2_IO2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_OCTOSPI1</PossibleValue>
+                <PossibleValue>GPIO_AF6_OCTOSPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="PSSI_D8">
@@ -7482,7 +7482,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P2_IO1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_OCTOSPI1</PossibleValue>
+                <PossibleValue>GPIO_AF6_OCTOSPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="PSSI_D9">
@@ -7520,7 +7520,7 @@
         </PinSignal>
         <PinSignal Name="OCTOSPIM_P2_IO0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF6_OCTOSPI1</PossibleValue>
+                <PossibleValue>GPIO_AF6_OCTOSPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="PSSI_D10">

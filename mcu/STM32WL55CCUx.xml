@@ -17,7 +17,7 @@
     <Current Lowest="0.031" Run="71"/>
     <Temperature Max="105" Min="-40"/>
     <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32WLxx" InstanceName="ADC" Name="ADC" Version="aditf4_v3_0_WL_Cube"/>
-    <IP ConfigFile="ADV_TRACE-STM32WLxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube">
+    <IP ConfigFile="ADV_TRACE-STM32WLxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -78,8 +78,8 @@
     </IP>
     <IP ConfigFile="IRTIM-STM32WLxx" InstanceName="IRTIM" Name="IRTIM" Version="irtim_v1_0_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="IWDG-STM32WLxx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v2_0"/>
-    <IP ClockEnableMode="none" ConfigFile="KMS-STM32WLxx" InstanceName="KMS" Name="KMS" Version="v1.1.6_Cube"/>
-    <IP ConfigFile="LORAWAN-STM32WLxx" InstanceName="LORAWAN" Name="LoRaWAN" Version="v2.4.0_Cube">
+    <IP ClockEnableMode="none" ConfigFile="KMS-STM32WLxx" InstanceName="KMS" Name="KMS" Version="v1.1.9_Cube"/>
+    <IP ConfigFile="LORAWAN-STM32WLxx" InstanceName="LORAWAN" Name="LoRaWAN" Version="v2.5.0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -108,18 +108,18 @@
     </IP>
     <IP ConfigFile="RNG-STM32WLxx" InstanceName="RNG" Name="RNG" Version="rng1_v3_1"/>
     <IP ClockEnableMode="__HAL_RCC_RTC_ENABLE;__HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32WLxx" InstanceName="RTC" Name="RTC" Version="rtc3_v3_0_Cube"/>
-    <IP ConfigFile="SEQUENCER-STM32WLxx" InstanceName="SEQUENCER_M0PLUS" Name="SEQUENCER" Version="v1.0_Cube">
+    <IP ConfigFile="SEQUENCER-STM32WLxx" InstanceName="SEQUENCER_M0PLUS" Name="SEQUENCER" Version="v1.1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM0Plus" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SEQUENCER-STM32WLxx" InstanceName="SEQUENCER_M4" Name="SEQUENCER" Version="v1.0_Cube">
+    <IP ConfigFile="SEQUENCER-STM32WLxx" InstanceName="SEQUENCER_M4" Name="SEQUENCER" Version="v1.1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SIGFOX-STM32WLxx" InstanceName="SIGFOX" Name="Sigfox" Version="v1.7.1_Cube">
+    <IP ConfigFile="SIGFOX-STM32WLxx" InstanceName="SIGFOX" Name="Sigfox" Version="v1.8.0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -134,7 +134,7 @@
             <ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SUBGHZ_PHY-STM32WLxx" InstanceName="SUBGHZ_PHY" Name="SubGHz_Phy" Version="v1.2.0_Cube">
+    <IP ConfigFile="SUBGHZ_PHY-STM32WLxx" InstanceName="SUBGHZ_PHY" Name="SubGHz_Phy" Version="v1.3.0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
@@ -156,14 +156,14 @@
     <IP ConfigFile="TIM-STM32WLxx" InstanceName="TIM2" Name="TIM1_8WL5" Version="gptimer2_v3_x_Cube"/>
     <IP ConfigFile="TIM-STM32WLxx" InstanceName="TIM16" Name="TIM1_8WL5" Version="gptimer2_v3_x_Cube"/>
     <IP ConfigFile="TIM-STM32WLxx" InstanceName="TIM17" Name="TIM1_8WL5" Version="gptimer2_v3_x_Cube"/>
-    <IP ConfigFile="TIMER-STM32WLxx" InstanceName="TIMER" Name="TIMER" Version="v1.0_Cube">
+    <IP ConfigFile="TIMER-STM32WLxx" InstanceName="TIMER" Name="TIMER" Version="v1.1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM0Plus" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TINY_LPM-STM32WLxx" InstanceName="TINY_LPM" Name="TINY_LPM" Version="v1.0_Cube">
+    <IP ConfigFile="TINY_LPM-STM32WLxx" InstanceName="TINY_LPM" Name="TINY_LPM" Version="v1.1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM4MonoOnDual" ForcedSelection="true" InitializerForced="true"/>

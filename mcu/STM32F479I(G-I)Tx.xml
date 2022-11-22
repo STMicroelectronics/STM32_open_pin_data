@@ -427,6 +427,7 @@
         <Signal Name="ADC2_IN7"/>
         <Signal Name="ETH_CRS_DV"/>
         <Signal Name="ETH_RX_DV"/>
+        <Signal Name="FMC_SDNWE"/>
         <Signal Name="QUADSPI_CLK"/>
         <Signal Name="SPI1_MOSI"/>
         <Signal Name="TIM14_CH1"/>

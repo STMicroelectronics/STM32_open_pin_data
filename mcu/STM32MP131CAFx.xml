@@ -778,6 +778,7 @@
         <Signal Name="SDMMC2_D6"/>
         <Signal Name="TIM3_CH1"/>
         <Signal Name="TIM8_CH1"/>
+        <Signal Name="USART6_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB15" Position="B15" Type="I/O">
@@ -947,6 +948,7 @@
         <Signal Name="UART5_RX"/>
         <Signal Name="UART7_DE"/>
         <Signal Name="UART7_RTS"/>
+        <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
         <Condition Diagnostic="Pin not available for boot step (boot ROM)" Expression="!(UART5_RX &amp; UART5_BOOTROM)"/>
     </Pin>
@@ -968,6 +970,7 @@
         <Signal Name="TIM3_CH2"/>
         <Signal Name="TIM8_CH2"/>
         <Signal Name="USART3_CTS"/>
+        <Signal Name="USART6_RX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB3" Position="C14" Type="I/O">
@@ -1171,6 +1174,7 @@
         <Signal Name="SPI2_SCK"/>
         <Signal Name="SPI4_NSS"/>
         <Signal Name="TIM2_CH3"/>
+        <Signal Name="USART3_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PH10" Position="E14" Type="I/O">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32F303" DBVersion="V3.0" Family="STM32F3" HasPowerPad="false" IOType="" Line="STM32F303" Package="WLCSP100" RefName="STM32F303VEYx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M4</Core>
     <Frequency>72</Frequency>
@@ -25,6 +25,7 @@
     <IP ConfigFile="CRC-STM32F3xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_0"/>
     <IP ClockEnableMode="__HAL_RCC_DAC1_CLK_ENABLE" ConfigFile="DAC-STM32F3xx" InstanceName="DAC1" Name="DAC" Version="F3_dacif_v1_1_Cube"/>
     <IP ConfigFile="FATFS-STM32F3xx" InstanceName="FATFS" Name="FATFS" Version="v0.1.0_Cube"/>
+    <IP ConfigFile="FMC-STM32F3xx" InstanceName="FMC" Name="FMC" Version="nornandmux_fmc_v1_0"/>
     <IP ConfigFile="FREERTOS-STM32F3xx" InstanceName="FREERTOS" Name="FREERTOS" Version="v8.0.0_Cube"/>
     <IP InstanceName="I2C1" Name="I2C" Version="i2c2_v1_1_Cube"/>
     <IP InstanceName="I2C2" Name="I2C" Version="i2c2_v1_1_Cube"/>
@@ -114,6 +115,7 @@
     </Pin>
     <Pin Name="BOOT0" Position="A7" Type="Boot"/>
     <Pin Name="PE1" Position="A8" Type="I/O">
+        <Signal Name="FMC_NBL1"/>
         <Signal Name="TIM17_CH1"/>
         <Signal Name="TIM20_CH4"/>
         <Signal Name="USART1_RX"/>
@@ -142,9 +144,12 @@
     </Pin>
     <Pin Name="PD0" Position="B3" Type="I/O">
         <Signal Name="CAN_RX"/>
+        <Signal Name="FMC_D2"/>
+        <Signal Name="FMC_DA2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD3" Position="B4" Type="I/O">
+        <Signal Name="FMC_CLK"/>
         <Signal Name="TIM2_CH1"/>
         <Signal Name="TIM2_ETR"/>
         <Signal Name="USART2_CTS"/>
@@ -175,6 +180,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PE0" Position="B7" Type="I/O">
+        <Signal Name="FMC_NBL0"/>
         <Signal Name="TIM16_CH1"/>
         <Signal Name="TIM20_ETR"/>
         <Signal Name="TIM4_ETR"/>
@@ -183,6 +189,7 @@
     </Pin>
     <Pin Name="VDD" Position="B8" Type="Power"/>
     <Pin Name="PE5" Position="B9" Type="I/O">
+        <Signal Name="FMC_A21"/>
         <Signal Name="SPI4_MISO"/>
         <Signal Name="SYS_TRACED2"/>
         <Signal Name="TIM20_CH2N"/>
@@ -192,6 +199,7 @@
     </Pin>
     <Pin Name="VDD" Position="B10" Type="Power"/>
     <Pin Name="PF6" Position="C1" Type="I/O">
+        <Signal Name="FMC_NIORD"/>
         <Signal Name="I2C2_SCL"/>
         <Signal Name="TIM4_CH4"/>
         <Signal Name="USART3_DE"/>
@@ -209,17 +217,21 @@
     </Pin>
     <Pin Name="PD1" Position="C3" Type="I/O">
         <Signal Name="CAN_TX"/>
+        <Signal Name="FMC_D3"/>
+        <Signal Name="FMC_DA3"/>
         <Signal Name="TIM8_BKIN2"/>
         <Signal Name="TIM8_CH4"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD4" Position="C4" Type="I/O">
+        <Signal Name="FMC_NOE"/>
         <Signal Name="TIM2_CH2"/>
         <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB7" Position="C5" Type="I/O">
+        <Signal Name="FMC_NL"/>
         <Signal Name="I2C1_SDA"/>
         <Signal Name="TIM17_CH1N"/>
         <Signal Name="TIM3_CH4"/>
@@ -243,6 +255,7 @@
     </Pin>
     <Pin Name="VSS" Position="C7" Type="Power"/>
     <Pin Name="PE4" Position="C8" Type="I/O">
+        <Signal Name="FMC_A20"/>
         <Signal Name="SPI4_NSS"/>
         <Signal Name="SYS_TRACED1"/>
         <Signal Name="TIM20_CH1N"/>
@@ -288,6 +301,8 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD7" Position="D4" Type="I/O">
+        <Signal Name="FMC_NCE2"/>
+        <Signal Name="FMC_NE1"/>
         <Signal Name="TIM2_CH3"/>
         <Signal Name="USART2_CK"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -307,6 +322,7 @@
     <Pin Name="PE2" Position="D6" Type="I/O">
         <Signal Name="ADC3_EXTI2"/>
         <Signal Name="ADC4_EXTI2"/>
+        <Signal Name="FMC_A23"/>
         <Signal Name="SPI4_SCK"/>
         <Signal Name="SYS_TRACECK"/>
         <Signal Name="TIM20_CH1"/>
@@ -315,6 +331,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PE3" Position="D7" Type="I/O">
+        <Signal Name="FMC_A19"/>
         <Signal Name="SPI4_NSS"/>
         <Signal Name="SYS_TRACED0"/>
         <Signal Name="TIM20_CH2"/>
@@ -333,6 +350,7 @@
     </Pin>
     <Pin Name="PF9" Position="D10" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
+        <Signal Name="FMC_CD"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM15_CH1"/>
         <Signal Name="TIM20_BKIN"/>
@@ -400,10 +418,13 @@
         <Signal Name="ADC3_IN6"/>
         <Signal Name="ADC4_IN6"/>
         <Signal Name="COMP4_INM"/>
+        <Signal Name="FMC_D5"/>
+        <Signal Name="FMC_DA5"/>
         <Signal Name="TIM1_CH1N"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PE6" Position="E7" Type="I/O">
+        <Signal Name="FMC_A22"/>
         <Signal Name="RTC_TAMP3"/>
         <Signal Name="SPI4_MOSI"/>
         <Signal Name="SYS_TRACED3"/>
@@ -416,11 +437,13 @@
         <Signal Name="ADC2_IN10"/>
         <Signal Name="ADC3_EXTI2"/>
         <Signal Name="ADC4_EXTI2"/>
+        <Signal Name="FMC_A2"/>
         <Signal Name="TIM20_CH3"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="NRST" Position="E9" Type="Reset"/>
     <Pin Name="PF10" Position="E10" Type="I/O">
+        <Signal Name="FMC_INTR"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM15_CH2"/>
         <Signal Name="TIM20_BKIN2"/>
@@ -492,6 +515,8 @@
     </Pin>
     <Pin Name="PE7" Position="F8" Type="I/O">
         <Signal Name="ADC3_IN13"/>
+        <Signal Name="FMC_D4"/>
+        <Signal Name="FMC_DA4"/>
         <Signal Name="TIM1_ETR"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -516,6 +541,8 @@
         <Signal Name="ADC3_EXTI15"/>
         <Signal Name="ADC4_EXTI15"/>
         <Signal Name="COMP3_INM"/>
+        <Signal Name="FMC_D1"/>
+        <Signal Name="FMC_DA1"/>
         <Signal Name="SPI2_NSS"/>
         <Signal Name="TIM4_CH4"/>
         <Signal Name="TSC_G8_IO4"/>
@@ -524,6 +551,8 @@
     <Pin Name="PD14" Position="G2" Type="I/O">
         <Signal Name="ADC3_IN11"/>
         <Signal Name="ADC4_IN11"/>
+        <Signal Name="FMC_D0"/>
+        <Signal Name="FMC_DA0"/>
         <Signal Name="OPAMP2_VINP"/>
         <Signal Name="OPAMP2_VINP_SEC"/>
         <Signal Name="TIM4_CH3"/>
@@ -534,6 +563,7 @@
         <Signal Name="ADC3_IN10"/>
         <Signal Name="ADC4_IN10"/>
         <Signal Name="COMP5_INM"/>
+        <Signal Name="FMC_A18"/>
         <Signal Name="TIM4_CH2"/>
         <Signal Name="TSC_G8_IO2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -541,11 +571,15 @@
     <Pin Name="PD9" Position="G4" Type="I/O">
         <Signal Name="ADC4_IN13"/>
         <Signal Name="DAC1_EXTI9"/>
+        <Signal Name="FMC_D14"/>
+        <Signal Name="FMC_DA14"/>
         <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PE12" Position="G5" Type="I/O">
         <Signal Name="ADC3_IN16"/>
+        <Signal Name="FMC_D9"/>
+        <Signal Name="FMC_DA9"/>
         <Signal Name="SPI4_SCK"/>
         <Signal Name="TIM1_CH3N"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -594,6 +628,8 @@
     <Pin Name="PD12" Position="H1" Type="I/O">
         <Signal Name="ADC3_IN9"/>
         <Signal Name="ADC4_IN9"/>
+        <Signal Name="FMC_A17"/>
+        <Signal Name="FMC_ALE"/>
         <Signal Name="TIM4_CH1"/>
         <Signal Name="TSC_G8_IO1"/>
         <Signal Name="USART3_DE"/>
@@ -605,6 +641,8 @@
         <Signal Name="ADC2_EXTI11"/>
         <Signal Name="ADC3_IN8"/>
         <Signal Name="ADC4_IN8"/>
+        <Signal Name="FMC_A16"/>
+        <Signal Name="FMC_CLE"/>
         <Signal Name="OPAMP4_VINP"/>
         <Signal Name="OPAMP4_VINP_SEC"/>
         <Signal Name="USART3_CTS"/>
@@ -614,6 +652,8 @@
         <Signal Name="ADC3_IN7"/>
         <Signal Name="ADC4_IN7"/>
         <Signal Name="COMP6_INM"/>
+        <Signal Name="FMC_D15"/>
+        <Signal Name="FMC_DA15"/>
         <Signal Name="USART3_CK"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -636,6 +676,8 @@
         <Signal Name="ADC1_EXTI11"/>
         <Signal Name="ADC2_EXTI11"/>
         <Signal Name="ADC3_IN15"/>
+        <Signal Name="FMC_D8"/>
+        <Signal Name="FMC_DA8"/>
         <Signal Name="SPI4_NSS"/>
         <Signal Name="TIM1_CH2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>

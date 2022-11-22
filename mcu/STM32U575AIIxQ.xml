@@ -10,14 +10,14 @@
     <Frequency>160</Frequency>
     <TrustZone>Available</TrustZone>
     <LPBAM>Available</LPBAM>
-    <Ram>256</Ram>
+    <Ram>786</Ram>
     <IONb>133</IONb>
     <Die>DIE482</Die>
     <Flash>2048</Flash>
     <Voltage Max="3.6" Min="1.71"/>
     <Current Lowest="0.02" Run="26"/>
     <Temperature Max="85" Min="-40"/>
-    <IP ClockEnableMode="__HAL_RCC_ADC1_CLK_ENABLE" ConfigFile="ADC-STM32U5xx" InstanceName="ADC1" Name="ADC" Version="aditf5_40v1_U5_Cube">
+    <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32U5xx" InstanceName="ADC1" Name="ADC" Version="aditf5_40v1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

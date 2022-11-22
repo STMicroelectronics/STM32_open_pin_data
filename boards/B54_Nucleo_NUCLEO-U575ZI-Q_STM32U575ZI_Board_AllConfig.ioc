@@ -162,7 +162,6 @@ PG2.Signal=GPIO_Output
 PWR.IPParameters=PowerMode
 PWR.PowerMode=PWR_SMPS_SUPPLY
 PinOutPanel.RotationAngle=0
-ProjectManager.LPBAM.generateCode=
 RCC.ADCFreq_Value=16000000
 RCC.ADF1Freq_Value=160000000
 RCC.AHBFreq_Value=160000000

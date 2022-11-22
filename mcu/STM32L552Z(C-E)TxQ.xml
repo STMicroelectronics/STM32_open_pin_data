@@ -978,9 +978,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="VSSA/VREF-" Position="30" Type="Power"/>
-    <Pin Name="VREF+" Position="31" Type="MonoIO">
-        <Signal Name="VREFBUF_OUT"/>
-    </Pin>
+    <Pin Name="VREF+" Position="31" Type="Power"/>
     <Pin Name="VDDA" Position="32" Type="Power"/>
     <Pin Name="PA0" Position="33" RequestToSecureIP="Yes" Type="I/O">
         <Signal Name="ADC1_IN5"/>
@@ -1029,7 +1027,6 @@
         <Signal Name="TIM2_CH3"/>
         <Signal Name="TIM5_CH3"/>
         <Signal Name="UCPD1_FRSTX1"/>
-        <Signal Name="UCPD1_FRSTX2"/>
         <Signal Name="USART2_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1138,7 +1135,6 @@
         <Signal Name="OCTOSPI1_DQS"/>
         <Signal Name="RTC_OUT2"/>
         <Signal Name="UCPD1_FRSTX1"/>
-        <Signal Name="UCPD1_FRSTX2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
         <Condition Diagnostic="" Expression="!(RTC_OUT1 &amp; CALIBRATION)"/>
     </Pin>
@@ -1319,7 +1315,6 @@
         <Signal Name="TIM15_CH1N"/>
         <Signal Name="TIM1_CH1N"/>
         <Signal Name="TSC_G1_IO2"/>
-        <Signal Name="UCPD1_FRSTX1"/>
         <Signal Name="UCPD1_FRSTX2"/>
         <Signal Name="USART3_CTS"/>
         <Signal Name="USART3_NSS"/>
@@ -1461,7 +1456,6 @@
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="OCTOSPI1_DQS"/>
         <Signal Name="UCPD1_FRSTX1"/>
-        <Signal Name="UCPD1_FRSTX2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PG7" Position="92" Type="I/O">
@@ -1471,7 +1465,6 @@
         <Signal Name="LPUART1_TX"/>
         <Signal Name="SAI1_CK1"/>
         <Signal Name="SAI1_MCLK_A"/>
-        <Signal Name="UCPD1_FRSTX1"/>
         <Signal Name="UCPD1_FRSTX2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1629,7 +1622,6 @@
         <Signal Name="SPI3_MISO"/>
         <Signal Name="TSC_G3_IO3"/>
         <Signal Name="UART4_RX"/>
-        <Signal Name="UCPD1_FRSTX1"/>
         <Signal Name="UCPD1_FRSTX2"/>
         <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>

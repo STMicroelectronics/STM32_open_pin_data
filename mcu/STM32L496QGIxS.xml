@@ -4,7 +4,7 @@
     <Core>Arm Cortex-M4</Core>
     <Frequency>80</Frequency>
     <Ram>320</Ram>
-    <IONb>108</IONb>
+    <IONb>110</IONb>
     <Die>DIE461</Die>
     <Flash>1024</Flash>
     <Voltage Max="3.6" Min="1.71"/>
@@ -389,7 +389,11 @@
         <Signal Name="USART1_CK"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="VDD12" Position="C6" Type="Power"/>
+    <Pin Name="PG14" Position="C6" Type="I/O">
+        <Signal Name="FMC_A25"/>
+        <Signal Name="I2C1_SCL"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
     <Pin Name="PG13" Position="C7" Type="I/O">
         <Signal Name="FMC_A24"/>
         <Signal Name="I2C1_SDA"/>
@@ -1079,7 +1083,21 @@
         <Signal Name="USART3_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="VDD12" Position="L11" Type="Power"/>
+    <Pin Name="PB11" Position="L11" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="ADC3_EXTI11"/>
+        <Signal Name="COMP2_OUT"/>
+        <Signal Name="DFSDM1_CKIN7"/>
+        <Signal Name="I2C2_SDA"/>
+        <Signal Name="I2C4_SDA"/>
+        <Signal Name="LCD_SEG11"/>
+        <Signal Name="LPUART1_TX"/>
+        <Signal Name="QUADSPI_BK1_NCS"/>
+        <Signal Name="TIM2_CH4"/>
+        <Signal Name="USART3_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
     <Pin Name="PB12" Position="L12" Type="I/O">
         <Signal Name="CAN2_RX"/>
         <Signal Name="DFSDM1_DATIN1"/>

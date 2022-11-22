@@ -1,4 +1,4 @@
-#Copyright (c) 2020 STMicroelectronics. All rights reserved.
+#Copyright (c) 2022 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_10
 ADC1.IPParameters=Rank-0\#ChannelRegularConversion,Channel-0\#ChannelRegularConversion,SamplingTime-0\#ChannelRegularConversion,OffsetNumber-0\#ChannelRegularConversion,Offset-0\#ChannelRegularConversion,NbrOfConversionFlag,master
@@ -331,7 +331,7 @@ PC15/OSC32_OUT.Signal=RCC_OSC32_OUT
 PC2.GPIOParameters=GPIO_Label
 PC2.GPIO_Label=DFSM_CKOUT
 PC2.Locked=true
-PC2.Signal=S_CKOUTDFSDM
+PC2.Signal=DFSDM1_CKOUT
 PC3.GPIOParameters=GPIO_Label,GPIO_Speed,GPIO_PuPd,GPIO_Mode
 PC3.GPIO_Label=VLCD
 PC3.GPIO_Mode=GPIO_MODE_AF_PP
@@ -425,7 +425,7 @@ PD3.GPIO_Mode=GPIO_MODE_AF_PP
 PD3.GPIO_PuPd=GPIO_NOPULL
 PD3.GPIO_Speed=GPIO_SPEED_LOW
 PD3.Locked=true
-PD3.Signal=S_DATAIN0DFSDM
+PD3.Signal=DFSDM1_DATIN0
 PD4.GPIOParameters=GPIO_Label,GPIO_Speed,GPIO_PuPd,GPIO_Mode
 PD4.GPIO_Label=FMC_NOE
 PD4.GPIO_Mode=GPIO_MODE_AF_PP

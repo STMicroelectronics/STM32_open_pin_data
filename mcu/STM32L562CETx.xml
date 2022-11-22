@@ -808,9 +808,7 @@
     </Pin>
     <Pin Name="NRST" Position="7" Type="Reset"/>
     <Pin Name="VSSA/VREF-" Position="8" Type="Power"/>
-    <Pin Name="VDDA/VREF+" Position="9" Type="Power">
-        <Signal Name="VREFBUF_OUT"/>
-    </Pin>
+    <Pin Name="VDDA/VREF+" Position="9" Type="Power"/>
     <Pin Name="PA0" Position="10" RequestToSecureIP="Yes" Type="I/O">
         <Signal Name="ADC1_IN5"/>
         <Signal Name="ADC2_IN5"/>
@@ -858,7 +856,6 @@
         <Signal Name="TIM2_CH3"/>
         <Signal Name="TIM5_CH3"/>
         <Signal Name="UCPD1_FRSTX1"/>
-        <Signal Name="UCPD1_FRSTX2"/>
         <Signal Name="USART2_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -965,7 +962,6 @@
         <Signal Name="OCTOSPI1_DQS"/>
         <Signal Name="RTC_OUT2"/>
         <Signal Name="UCPD1_FRSTX1"/>
-        <Signal Name="UCPD1_FRSTX2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
         <Condition Diagnostic="" Expression="!(RTC_OUT1 &amp; CALIBRATION)"/>
     </Pin>
@@ -1023,7 +1019,6 @@
         <Signal Name="TIM15_CH1N"/>
         <Signal Name="TIM1_CH1N"/>
         <Signal Name="TSC_G1_IO2"/>
-        <Signal Name="UCPD1_FRSTX1"/>
         <Signal Name="UCPD1_FRSTX2"/>
         <Signal Name="USART3_CTS"/>
         <Signal Name="USART3_NSS"/>

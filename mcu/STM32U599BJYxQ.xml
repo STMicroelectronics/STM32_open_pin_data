@@ -9,7 +9,7 @@
     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
     <Frequency>160</Frequency>
     <TrustZone>Available</TrustZone>
-    <Ram>256</Ram>
+    <Ram>2514</Ram>
     <IONb>145</IONb>
     <Die>DIE481</Die>
     <Flash>4096</Flash>

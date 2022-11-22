@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H723" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H723/733" Package="LQFP100" RefName="STM32H733VGTx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>550</Frequency>
@@ -45,6 +45,7 @@
     <IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S3" Name="I2S" Version="spi2s2_v1_1_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_SPI6_CLK_ENABLE" ConfigFile="I2S-STM32H7xx" InstanceName="I2S6" Name="I2S" Version="spi2s2_v1_1_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="IWDG-STM32H7xx" InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v2_0"/>
+    <IP ConfigFile="LIBJPEG-STM32H7xx" InstanceName="LIBJPEG" Name="LIBJPEG" Version="v8_Cube"/>
     <IP ConfigFile="LPTIM-STM32H7xx" InstanceName="LPTIM1" Name="LPTIM" Version="H7xx_lptimer1_v1_1_Cube"/>
     <IP ConfigFile="LPTIM-STM32H7xx" InstanceName="LPTIM2" Name="LPTIM" Version="H7xx_lptimer1_v1_1_Cube"/>
     <IP ConfigFile="LPTIM-STM32H7xx" InstanceName="LPTIM3" Name="LPTIM" Version="H7xx_lptimer1_v1_1_Cube"/>
