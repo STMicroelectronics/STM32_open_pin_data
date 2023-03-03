@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U5" DBVersion="V3.0" Family="STM32U5" HasPowerPad="false" IOType="" Line="STM32U575/585" Package="WLCSP90" RefName="STM32U585OIYxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -960,7 +960,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TOUCHSENSING-STM32U5xx" InstanceName="TOUCHSENSING" Name="TOUCHSENSING" Version="v2_2_6_Cube">
+    <IP ConfigFile="TOUCHSENSING-STM32U5xx" InstanceName="TOUCHSENSING" Name="TOUCHSENSING" Version="v2_2_8_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

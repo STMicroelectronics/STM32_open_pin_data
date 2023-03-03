@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32H72_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
@@ -3806,6 +3806,56 @@
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_2</PossibleValue>
         </SpecificParameter>
+        <PinSignal Name="DFSDM1_CKIN1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_DFSDM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="DFSDM1_CKOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF6_DFSDM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="ETH_MII_TXD2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="FMC_SDNE0">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF12_FMC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_SDI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="OCTOSPIM_P1_IO2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_OCTOSPIM_P1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="OCTOSPIM_P1_IO5">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="OTG_HS_ULPI_DIR">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF10_OTG1_HS</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PC" Name="PC2_C">
         <SpecificParameter Name="GPIO_Pin">
@@ -3872,6 +3922,51 @@
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_3</PossibleValue>
         </SpecificParameter>
+        <PinSignal Name="DFSDM1_DATIN1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_DFSDM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="ETH_MII_TX_CLK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="EVENTOUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="FMC_SDCKE0">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF12_FMC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_SDO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="OCTOSPIM_P1_IO0">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF9_OCTOSPIM_P1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="OCTOSPIM_P1_IO6">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_OCTOSPIM_P1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="OTG_HS_ULPI_NXT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF10_OTG1_HS</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PC" Name="PC3_C">
         <SpecificParameter Name="GPIO_Pin">
@@ -3973,7 +4068,7 @@
                 <PossibleValue>GPIO_AF10_SDMMC2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN3">
+        <PinSignal Name="SPDIFRX1_IN2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -4033,7 +4128,7 @@
                 <PossibleValue>GPIO_AF1_SAI4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN4">
+        <PinSignal Name="SPDIFRX1_IN3">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -5023,7 +5118,7 @@
                 <PossibleValue>GPIO_AF11_SDMMC2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN1">
+        <PinSignal Name="SPDIFRX1_IN0">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -5063,7 +5158,7 @@
                 <PossibleValue>GPIO_AF12_FMC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN2">
+        <PinSignal Name="SPDIFRX1_IN1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -6673,7 +6768,7 @@
                 <PossibleValue>GPIO_AF10_SDMMC2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN1">
+        <PinSignal Name="SPDIFRX1_IN0">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -6738,7 +6833,7 @@
                 <PossibleValue>GPIO_AF10_SDMMC2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN2">
+        <PinSignal Name="SPDIFRX1_IN1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -7208,7 +7303,7 @@
                 <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN3">
+        <PinSignal Name="SPDIFRX1_IN2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_SPDIF</PossibleValue>
             </SpecificParameter>
@@ -7288,7 +7383,7 @@
                 <PossibleValue>GPIO_AF11_SDMMC2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX1_IN4">
+        <PinSignal Name="SPDIFRX1_IN3">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_SPDIF</PossibleValue>
             </SpecificParameter>

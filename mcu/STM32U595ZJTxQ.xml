@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U5_9_A" DBVersion="V3.0" Family="STM32U5" HasPowerPad="false" IOType="" Line="STM32U595/5A5" Package="LQFP144" RefName="STM32U595ZJTxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -9,6 +9,7 @@
     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
     <Frequency>160</Frequency>
     <TrustZone>Available</TrustZone>
+    <LPBAM>Available</LPBAM>
     <Ram>2514</Ram>
     <IONb>111</IONb>
     <Die>DIE481</Die>
@@ -358,6 +359,171 @@
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMADC-STM32U5xx" InstanceName="LPBAMADC4" Name="LPBAMADC" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMCOMP-STM32U5xx" InstanceName="LPBAMCOMP1" Name="LPBAMCOMP" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMCOMP-STM32U5xx" InstanceName="LPBAMCOMP2" Name="LPBAMCOMP" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMDAC-STM32U5xx" InstanceName="LPBAMDAC1" Name="LPBAMDAC" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMI2C-STM32U5xx" InstanceName="LPBAMI2C3" Name="LPBAMI2C" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMLPDMA-STM32U5xx" InstanceName="LPBAMLPDMA1" Name="LPBAMLPDMA" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMLPGPIO-STM32U5xx" InstanceName="LPBAMLPGPIO1" Name="LPBAMLPGPIO" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMLPTIM-STM32U5xx" InstanceName="LPBAMLPTIM1" Name="LPBAMLPTIM" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMLPTIM-STM32U5xx" InstanceName="LPBAMLPTIM3" Name="LPBAMLPTIM" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMLPUART-STM32U5xx" InstanceName="LPBAMLPUART1" Name="LPBAMLPUART" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMOPAMP-STM32U5xx" InstanceName="LPBAMOPAMP1" Name="LPBAMOPAMP" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMOPAMP-STM32U5xx" InstanceName="LPBAMOPAMP2" Name="LPBAMOPAMP" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMQUEUE-STM32U5xx" InstanceName="LPBAMQUEUE" Name="LPBAMQUEUE" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS" DefaultSelection="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMSPI-STM32U5xx" InstanceName="LPBAMSPI3" Name="LPBAMSPI" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPBAMVREFBUF-STM32U5xx" InstanceName="LPBAMVREFBUF" Name="LPBAMVREFBUF" Version="STM32U5xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
@@ -949,15 +1115,18 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32U5xx" InstanceName="GPIO" Name="GPIO" Version="STM32U59x_gpio_v1_0">
+    <IP ConfigFile="LPBAM-STM32U5xx" InstanceName="LPBAM" Name="LPBAM" Version="STM32U5xx">
         <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS" DefaultSelection="true"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="GPIO-STM32U5xx" InstanceName="GPIO" Name="GPIO" Version="STM32U59x_gpio_v1_0"/>
     <IP ConfigFile="NVIC-STM32U5xx" InstanceName="NVIC1" Name="NVIC1" Version="STM32U5A9">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
@@ -1209,7 +1378,6 @@
         <Signal Name="MDF1_CCK1"/>
         <Signal Name="OCTOSPIM_P1_IO5"/>
         <Signal Name="SPI2_MISO"/>
-        <Signal Name="TSC_G3_IO1"/>
         <Signal Name="USART6_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
         <Signal IOModes="LPInput,LPOutput" Name="GPIO"/>
@@ -1225,7 +1393,6 @@
         <Signal Name="SAI1_D1"/>
         <Signal Name="SAI1_SD_A"/>
         <Signal Name="SPI2_MOSI"/>
-        <Signal Name="TSC_G1_IO4"/>
         <Signal Name="USART6_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>

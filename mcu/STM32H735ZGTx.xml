@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H723" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H725/735" Package="LQFP144" RefName="STM32H735ZGTx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>550</Frequency>
-    <Ram>1024</Ram>
+    <Ram>564</Ram>
     <IONb>99</IONb>
     <Die>DIE483</Die>
     <Flash>1024</Flash>

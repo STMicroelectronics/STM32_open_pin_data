@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H747/757" Package="WLCSP156" RefName="STM32H757ZIYx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M7</Core>
     <Core>ARM Cortex-M4</Core>
@@ -799,7 +799,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PC13" Position="E9" Type="I/O">
-        <Signal Name="PWR_WKUP2"/>
+        <Signal Name="PWR_WKUP4"/>
         <Signal Name="RTC_OUT_ALARM"/>
         <Signal Name="RTC_OUT_CALIB"/>
         <Signal Name="RTC_TAMP1"/>
@@ -999,7 +999,7 @@
         <Signal Name="ETH_MDC"/>
         <Signal Name="I2S2_SDO"/>
         <Signal Name="MDIOS_MDC"/>
-        <Signal Name="PWR_WKUP5"/>
+        <Signal Name="PWR_WKUP6"/>
         <Signal Name="RTC_TAMP3"/>
         <Signal Name="SAI1_D1"/>
         <Signal Name="SAI1_SD_A"/>
@@ -1354,7 +1354,7 @@
         <Signal Name="LPTIM4_OUT"/>
         <Signal Name="LTDC_R1"/>
         <Signal Name="MDIOS_MDIO"/>
-        <Signal Name="PWR_WKUP1"/>
+        <Signal Name="PWR_WKUP2"/>
         <Signal Name="SAI2_SCK_B"/>
         <Signal Name="TIM15_CH1"/>
         <Signal Name="TIM2_CH3"/>
@@ -1466,7 +1466,7 @@
     <Pin Name="PA0" Position="L13" Type="I/O">
         <Signal Name="ADC1_INP16"/>
         <Signal Name="ETH_CRS"/>
-        <Signal Name="PWR_WKUP0"/>
+        <Signal Name="PWR_WKUP1"/>
         <Signal Name="SAI2_SD_B"/>
         <Signal Name="SDMMC2_CMD"/>
         <Signal Name="TIM15_BKIN"/>

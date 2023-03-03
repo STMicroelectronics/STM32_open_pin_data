@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L5" DBVersion="V3.0" Family="STM32L5" HasPowerPad="false" IOType="" Line="STM32L5x2" Package="LQFP48" RefName="STM32L562CETxP" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -15,7 +15,7 @@
     <Flash>512</Flash>
     <Voltage Max="3.6" Min="1.71"/>
     <Current Lowest="0.02" Run="96"/>
-    <Temperature Max="125" Min="-40"/>
+    <Temperature Max="85" Min="-40"/>
     <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32L5xx" IPContextCoupling="ADC" InstanceName="ADC1" Name="ADC" Version="aditf5_v2_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>

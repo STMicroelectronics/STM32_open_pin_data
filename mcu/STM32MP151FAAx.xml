@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP" DBVersion="V3.0" Family="STM32MP1" HasPowerPad="false" IOType="" Line="STM32MP151" Package="LFBGA448" RefName="STM32MP151FAAx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A7</Core>
     <Core>ARM Cortex-M4</Core>
     <GentypeFirmware FirmwareName="OP-TEE" GenType="SP_MIN"/>
     <GentypeFirmware FirmwareName="Linux" GenType="LINUX"/>
     <GentypeFirmware FirmwareName="Stm32Cube" GenType="CUBE"/>
-    <Context Comment="Enable the Boot ROM context for the peripheral(s) that you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the Boot ROM." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Boot ROM" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="Boot ROM"/>
-    <Context Comment="Enable the FSBL (first stage boot loader) context only for the peripheral(s) you want to use in TF-A BL2: this will limit the size of the device tree generated for TF-A" Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 FSBL" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="A7 FSBL"/>
-    <Context Comment="Enable the Cortex-A7 secure context for the peripheral(s) that you want to use from the secure world, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-A7" GenType="SP_MIN" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
-    <Context Comment="Enable the Cortex-A7 non-secure context for the peripheral(s) that you plan to use from Linux" Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
-    <Context Comment="Enable the Cortex-M4 context for the peripheral(s) that you plan to use from STM32Cube" Core="ARM Cortex-M4" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M4" Name="CortexM4" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M4"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the ROM code." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Boot ROM" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A7 ROM"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use in TF-A BL2: this will limit the size of the device tree generated for TF-A BL2." Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 secure loader" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="TF-A BL2"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use in OP-TEE secure OS." Core="ARM Cortex-A7" GenType="SP_MIN" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure OS" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use in Linux OS.Notice that the selected peripherals are also enabled in U-Boot device tree." Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure OS" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
+    <Context Comment="Enable this context for the peripheral(s) that you want to use in STM32Cube running on the Cortex-M coprocessor." Core="ARM Cortex-M4" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M4 FW" Name="CortexM4" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M4"/>
     <Ram>708</Ram>
     <IONb>176</IONb>
     <Die>DIE500</Die>

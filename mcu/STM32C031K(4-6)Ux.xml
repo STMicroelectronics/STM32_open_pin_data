@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32C0" DBVersion="V3.0" Family="STM32C0" HasPowerPad="false" IOType="" Line="STM32C0x1" Package="UFQFPN32" RefName="STM32C031K(4-6)Ux" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Frequency>48</Frequency>
@@ -341,7 +341,7 @@
         <Signal Name="USART1_NSS"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USART1_TX"/>
-        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB7" Position="31" Type="I/O">
         <Signal Name="I2C1_SCL"/>

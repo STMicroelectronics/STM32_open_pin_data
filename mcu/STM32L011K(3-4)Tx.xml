@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x1" Package="LQFP32" RefName="STM32L011K(3-4)Tx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M0+</Core>
     <Frequency>32</Frequency>
@@ -11,7 +11,7 @@
     <Flash>16</Flash>
     <Voltage Max="3.6" Min="1.65"/>
     <Current Lowest="0.25" Run="87"/>
-    <Temperature Max="125" Min="-40"/>
+    <Temperature Max="150" Min="-40"/>
     <IP ClockEnableMode="__HAL_RCC_ADC1_CLK_ENABLE" ConfigFile="ADC-STM32L0xx" InstanceName="ADC" Name="ADC" Version="aditf4_v2_0_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="COMP-STM32L0xx" InstanceName="COMP1" Name="COMP" Version="advmu_pvm_v1_0_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="COMP-STM32L0xx" InstanceName="COMP2" Name="COMP" Version="advmu_pvm_v1_0_Cube"/>

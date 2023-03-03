@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32U59x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="LPGPIOx" Comment="LPGPIO address" Type="list" Visible="false">
@@ -3995,11 +3995,6 @@
                 <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TSC_G3_IO1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="USART6_RX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART6</PossibleValue>
@@ -4051,11 +4046,6 @@
         <PinSignal Name="SPI2_MOSI">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="TSC_G1_IO4">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_TSC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART6_TX">
@@ -4573,6 +4563,11 @@
                 <PossibleValue>GPIO_AF12_FMC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="FMC_CLE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF12_FMC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="I2C4_SMBA">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_I2C4</PossibleValue>
@@ -4617,6 +4612,11 @@
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="FMC_A17">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF12_FMC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="FMC_ALE">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF12_FMC</PossibleValue>
             </SpecificParameter>
