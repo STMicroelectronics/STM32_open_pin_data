@@ -8,6 +8,7 @@
     <Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
     <Frequency>250</Frequency>
+    <MemoryMap>Available</MemoryMap>
     <TrustZone>Available</TrustZone>
     <BootPath>Available</BootPath>
     <Ram>640</Ram>
@@ -134,7 +135,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_ETH_CLK_ENABLE;__HAL_RCC_ETHTX_CLK_ENABLE;__HAL_RCC_ETHRX_CLK_ENABLE" ConfigFile="ETH-STM32H5xx" InstanceName="ETH" Name="ETH" Version="ethermac110_v3_0">
+    <IP ClockEnableMode="__HAL_RCC_ETH_CLK_ENABLE;__HAL_RCC_ETHTX_CLK_ENABLE;__HAL_RCC_ETHRX_CLK_ENABLE" ConfigFile="ETH-STM32H5xx" InstanceName="ETH" Name="ETH" Version="ethermac110_v3_0_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
             <ContextIP ContextName="CortexM33NS"/>
@@ -168,6 +169,17 @@
     <IP ConfigFile="FileX-STM32H5xx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_H5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="flash-STM32H5xx" InstanceName="FLASH" Name="flash" Version="v1.0.0_H5_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
@@ -586,6 +598,11 @@
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SAU-STM32H5xx" InstanceName="SAU" Name="SAU" Version="sau_v2_0_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
@@ -1079,6 +1096,17 @@
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33" DefaultSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS" DefaultSelection="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="GPIO-STM32H5xx" InstanceName="GPIO" Name="GPIO" Version="STM32H56x_gpio_v1_0">

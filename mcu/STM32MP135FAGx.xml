@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP13" DBVersion="V3.0" Family="STM32MP1" HasPowerPad="false" IOType="" Line="STM32MP135" Package="TFBGA289" RefName="STM32MP135FAGx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A7</Core>
     <GentypeFirmware FirmwareName="OP-TEE" GenType="OP-TEE"/>
     <GentypeFirmware FirmwareName="Linux" GenType="LINUX"/>
-    <Context Comment="Enable the ROM code context for the peripheral(s) you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the ROM code." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 ROM Code" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A7 ROM"/>
-    <Context Comment="Enable the FSBL (first stage boot loader) context only for the peripheral(s) you want to use in TF-A BL2: this will limit the size of the device tree generated for TF-A BL2." Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 FSBL" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="A7 FSBL"/>
-    <Context Comment="Enable the secure context for the peripheral(s) you want to use in OP-TEE secure OS." Core="ARM Cortex-A7" GenType="OP-TEE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
-    <Context Comment="Enable the non-secure context for the peripheral(s) you want to use in Linux OS. Notice that the selected peripherals are also enabled in U-Boot device tree. Ensure that one U(S)ART is selected as ‘serial console’ among the ones assigned to this context : this choice will be applied in both Linux and U-Boot device trees." Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
+    <GentypeFirmware FirmwareName="TF-A BL2" GenType="BOOTLOADER"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the ROM code." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 ROM Code" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A7 ROM"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use in TF-A BL2: this will limit the size of the device tree generated for TF-A BL2." Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 secure loader" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="A7S"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use in OP-TEE secure OS." Core="ARM Cortex-A7" GenType="OP-TEE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure OS" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
+    <Context Comment="Enable this context for the peripheral(s) you want to use in Linux OS. Notice that the selected peripherals are also enabled in U-Boot device tree." Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure OS" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
     <Ram>168</Ram>
     <IONb>136</IONb>
     <Die>DIE501</Die>

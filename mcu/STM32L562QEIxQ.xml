@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L5" DBVersion="V3.0" Family="STM32L5" HasPowerPad="false" IOType="" Line="STM32L5x2" Package="UFBGA132" RefName="STM32L562QEIxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -1436,7 +1436,9 @@
         <Condition Diagnostic="Conflict with ADC1 and GPIO_EXTI15 context" Expression="!(ADC1_EXTI15 &amp; ADC1_EXTI15_CONTEXT_CONFLICT)"/>
         <Condition Diagnostic="Conflict with ADC2 and GPIO_EXTI15 context" Expression="!(ADC2_EXTI15 &amp; ADC2_EXTI15_CONTEXT_CONFLICT)"/>
     </Pin>
-    <Pin Name="VREF+" Position="J1" Type="Power"/>
+    <Pin Name="VREF+" Position="J1" Type="MonoIO">
+        <Signal Name="VREFBUF_OUT"/>
+    </Pin>
     <Pin Name="PA0" Position="J2" RequestToSecureIP="Yes" Type="I/O">
         <Signal Name="ADC1_IN5"/>
         <Signal Name="ADC2_IN5"/>

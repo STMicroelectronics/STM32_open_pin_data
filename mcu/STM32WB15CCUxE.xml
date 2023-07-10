@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WB1" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx5" Package="UFQFPN48" RefName="STM32WB15CCUxE" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
     <Frequency>64</Frequency>
+    <MemoryMap>Available</MemoryMap>
     <Ram>48</Ram>
     <IONb>36</IONb>
     <Die>DIE494</Die>
@@ -39,6 +40,7 @@
     <IP InstanceName="TSC" Name="TSC" Version="tsc1_v1_0_Cube"/>
     <IP InstanceName="USART1" Name="USART" Version="sci3_v2_1_Cube"/>
     <IP InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0"/>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx"/>
     <IP ConfigFile="GPIO-STM32WBxx" InstanceName="GPIO" Name="GPIO" Version="STM32WB35x_gpio_v1_0"/>
     <IP ConfigFile="DMA-STM32WBxx" InstanceName="DMA" Name="DMA" Version="STM32WB35_dma1_v1_3"/>
     <IP ConfigFile="NVIC-STM32WBxx" InstanceName="NVIC" Name="NVIC" Version="STM32WB15"/>
