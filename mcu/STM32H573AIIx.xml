@@ -2493,7 +2493,6 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB13" Position="L11" Type="I/O">
-        <Signal Name="ETH_TXD1"/>
         <Signal Name="FDCAN2_TX"/>
         <Signal Name="I2C2_SMBA"/>
         <Signal Name="I2S2_CK"/>
@@ -2596,7 +2595,6 @@
     </Pin>
     <Pin Name="VSS" Position="M12" Type="Power"/>
     <Pin Name="PB14" Position="M13" Type="I/O">
-        <Signal Name="ETH_TX_EN"/>
         <Signal Name="I2S2_SDI"/>
         <Signal Name="LPTIM3_ETR"/>
         <Signal Name="SDMMC2_D0"/>

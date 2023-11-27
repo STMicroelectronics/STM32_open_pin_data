@@ -2190,7 +2190,6 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB14" Position="J10" Type="I/O">
-        <Signal Name="ETH_TX_EN"/>
         <Signal Name="I2S2_SDI"/>
         <Signal Name="LPTIM3_ETR"/>
         <Signal Name="SDMMC2_D0"/>
@@ -2360,7 +2359,6 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB13" Position="K12" Type="I/O">
-        <Signal Name="ETH_TXD1"/>
         <Signal Name="FDCAN2_TX"/>
         <Signal Name="I2C2_SMBA"/>
         <Signal Name="I2S2_CK"/>

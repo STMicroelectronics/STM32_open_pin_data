@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
-<Mcu ClockTree="STM32MP13" DBVersion="V3.0" Family="STM32MP1" HasPowerPad="false" IOType="" Line="STM32MP133" Package="TFBGA320" RefName="STM32MP133FAFx" xmlns="http://dummy.com">
+<Mcu ClockTree="STM32MP13" DBVersion="V3.0" Family="STM32MP1" FwLibrary="STM32Cube_FW_MP13" HasPowerPad="false" IOType="" Line="STM32MP133" Package="TFBGA320" RefName="STM32MP133FAFx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A7</Core>
     <GentypeFirmware FirmwareName="OP-TEE" GenType="OP-TEE"/>
     <GentypeFirmware FirmwareName="Linux" GenType="LINUX"/>
-    <GentypeFirmware FirmwareName="TF-A BL2" GenType="BOOTLOADER"/>
-    <Context Comment="Enable this context for the peripheral(s) you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the ROM code." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 ROM Code" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A7 ROM"/>
-    <Context Comment="Enable this context for the peripheral(s) you want to use in TF-A BL2: this will limit the size of the device tree generated for TF-A BL2." Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 secure loader" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="A7S"/>
-    <Context Comment="Enable this context for the peripheral(s) you want to use in OP-TEE secure OS." Core="ARM Cortex-A7" GenType="OP-TEE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure OS" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
-    <Context Comment="Enable this context for the peripheral(s) you want to use in Linux OS. Notice that the selected peripherals are also enabled in U-Boot device tree." Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure OS" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
+    <ContextProject Attributes="DUAL,TZ" Comment="MP13 OpenSTLinux" Contexts="BootROM,BootLoader,CortexA7S,CortexA7NS" Name="Bare Metal Disabled"/>
+    <ContextProject Attributes="DUAL,TZ" Comment="MP13 Bare Metal" Contexts="FirstStageBootLoader,Application" Name="Bare Metal Enabled"/>
+    <Context Comment="Enable the ROM code context for the peripheral(s) you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the ROM code." Core="ARM Cortex-A7" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 ROM Code" Name="BootROM" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A7 ROM"/>
+    <Context Comment="Enable the FSBL (first stage boot loader) context only for the peripheral(s) you want to use in TF-A BL2: this will limit the size of the device tree generated for TF-A BL2." Core="ARM Cortex-A7" GenType="BOOTLOADER" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A7 FSBL" Name="BootLoader" Secure="true" SemaphoreSuffix="_BOOTLOADER" ShortName="A7 FSBL"/>
+    <Context Comment="Enable the secure context for the peripheral(s) you want to use in OP-TEE secure OS." Core="ARM Cortex-A7" GenType="OP-TEE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 secure" Name="CortexA7S" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A7S"/>
+    <Context Comment="Enable the non-secure context for the peripheral(s) you want to use in Linux OS. Notice that the selected peripherals are also enabled in U-Boot device tree. Ensure that one U(S)ART is selected as ‘serial console’ among the ones assigned to this context : this choice will be applied in both Linux and U-Boot device trees." Core="ARM Cortex-A7" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A7 non secure" Name="CortexA7NS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A7NS"/>
+    <Context Comment="Enable the First Stage Boot Loader for the peripheral(s) you want to use.This context will configure the boot loader that will run in SYSRAM and load the Application in DDR." Core="ARM Cortex-A7" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="First Stage Boot Loader" Name="FirstStageBootLoader" Secure="true" SemaphoreSuffix="_BOOT" ShortName="FSBL"/>
+    <Context Comment="Enable the Application context for the peripheral(s) you want to use. This context will configure the Application." Core="ARM Cortex-A7" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Application" Name="Application" Secure="true" SemaphoreSuffix="_APP" ShortName="APP"/>
     <Ram>168</Ram>
     <IONb>136</IONb>
     <Die>DIE501</Die>
     <Flash>0</Flash>
-    <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" InstanceName="ADC1" Name="ADC" Version="STM32MP_aditf5_v3_3">
+    <IP ConfigFile="ADC-STM32MP13xx" InstanceName="ADC1" Name="ADC" Version="STM32MP_aditf5_v3_4">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" InstanceName="ADC2" Name="ADC" Version="STM32MP_aditf5_v3_3">
+    <IP ConfigFile="ADC-STM32MP13xx" InstanceName="ADC2" Name="ADC" Version="STM32MP_aditf5_v3_4">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
@@ -35,16 +40,28 @@
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="CRC-STM32MP1xx" InstanceName="CRC1" Name="CRC" Version="integtest1_v1_0">
+    <IP ConfigFile="CORTEX_A7-STM32MP13xx" InstanceName="CORTEX_A7" Name="CORTEX_A7" Version="cortex_v1_0_Cube">
         <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="CRYP1" Name="CRYP" Version="cryp1_v2_3_MP13_Cube">
+    <IP ConfigFile="CRC-STM32MP13xx" InstanceName="CRC1" Name="CRC" Version="integtest1_v1_0_MP13">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CRYP-STM32MP13xx" InstanceName="CRYP1" Name="CRYP" Version="cryp1_v2_3_MP13_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
@@ -55,460 +72,638 @@
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
+            <ContextIP ContextName="FirstStageBootLoader" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32MP1_debug_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
-    </IP>
-    <IP ClockEnableMode="__HAL_RCC_DFSDM1_CLK_ENABLE" InstanceName="DFSDM1" Name="DFSDM" Version="dfsdm1_v1_0_4ch_MP13_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA7NS"/>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="DTS" Name="DTS" Version="dtp_1_1">
+    <IP ClockEnableMode="__HAL_RCC_DFSDM1_CLK_ENABLE" ConfigFile="DFSDM-STM32MP13xx" InstanceName="DFSDM1" Name="DFSDM" Version="dfsdm1_v1_0_4ch_MP13_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="ETH1" Name="ETH" Version="STM32MP13_ethermac1G_v1_1_rc1">
+    <IP ClockEnableMode="__HAL_RCC_DTS_CLK_ENABLE" ConfigFile="DTS-STM32MP13xx" InstanceName="DTS" Name="DTS" Version="dts_v1_0_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_ETH1MAC_CLK_ENABLE" ConfigFile="ETH-STM32MP13xx" InstanceName="ETH1" Name="ETH" Version="STM32MP13_ethermac1G_v1_1_rc1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="ETH2" Name="ETH" Version="STM32MP13_ethermac1G_v1_1_rc1">
+    <IP ClockEnableMode="__HAL_RCC_ETH2MAC_CLK_ENABLE" ConfigFile="ETH-STM32MP13xx" InstanceName="ETH2" Name="ETH" Version="STM32MP13_ethermac1G_v1_1_rc1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="ETZPC" Name="ETZPC" Version="tzpc1_v2_0">
+    <IP ConfigFile="ETZPC-STM32MP13xx" InstanceName="ETZPC" Name="ETZPC" Version="tzpc1_v2_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM" ForcedSelection="true"/>
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" ForcedSelection="true"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32MP1xx" InstanceName="FDCAN1" Name="FDCAN" Version="STM32MP13_fdcan1_v1_0">
+    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32MP13xx" InstanceName="FDCAN1" Name="FDCAN" Version="STM32MP13_fdcan1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32MP1xx" InstanceName="FDCAN2" Name="FDCAN" Version="STM32MP13_fdcan1_v1_0">
+    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32MP13xx" InstanceName="FDCAN2" Name="FDCAN" Version="STM32MP13_fdcan1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="none" ConfigFile="FMC-STM32H7xx" InstanceName="FMC" Name="FMC" Version="STM32MP_fmc2_v1_1_beta1">
+    <IP ConfigFile="FileX-STM32MP13xx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_MP13_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="FMC-STM32MP13xx" InstanceName="FMC" Name="FMC" Version="STM32MP_fmc2_v1_1_beta1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="HASH1" Name="HASH" Version="hash1_v4_1_MP13_Cube">
+    <IP ConfigFile="HASH-STM32MP13xx" InstanceName="HASH1" Name="HASH" Version="hash1_v4_1_MP13_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="HDP" Name="HDP" Version="STM32MP13_hdp_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="I2C1" Name="I2C" Version="STM32MP13_i2c1_v1_0">
+    <IP ConfigFile="I2C-STM32MP13xx" InstanceName="I2C1" Name="I2C" Version="STM32MP13_i2c1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="I2C2" Name="I2C" Version="STM32MP13_i2c1_v1_0">
+    <IP ConfigFile="I2C-STM32MP13xx" InstanceName="I2C2" Name="I2C" Version="STM32MP13_i2c1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="I2C3" Name="I2C" Version="STM32MP13_i2c1_v1_0">
+    <IP ConfigFile="I2C-STM32MP13xx" InstanceName="I2C3" Name="I2C" Version="STM32MP13_i2c1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="I2C4" Name="I2C" Version="STM32MP13_i2c1_v1_0">
+    <IP ConfigFile="I2C-STM32MP13xx" InstanceName="I2C4" Name="I2C" Version="STM32MP13_i2c1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="I2C5" Name="I2C" Version="STM32MP13_i2c1_v1_0">
+    <IP ConfigFile="I2C-STM32MP13xx" InstanceName="I2C5" Name="I2C" Version="STM32MP13_i2c1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
-    </IP>
-    <IP ClockEnableMode="__HAL_RCC_SPI1_CLK_ENABLE" ConfigFile="I2S-STM32MP1xx" IPContextCoupling="SPI1I2S1" InstanceName="I2S1" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA7NS"/>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SPI2_CLK_ENABLE" ConfigFile="I2S-STM32MP1xx" IPContextCoupling="SPI2I2S2" InstanceName="I2S2" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
+    <IP ClockEnableMode="__HAL_RCC_SPI1_CLK_ENABLE" ConfigFile="I2S-STM32MP13xx" IPContextCoupling="SPI1I2S1" InstanceName="I2S1" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32MP1xx" IPContextCoupling="SPI3I2S3" InstanceName="I2S3" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
+    <IP ClockEnableMode="__HAL_RCC_SPI2_CLK_ENABLE" ConfigFile="I2S-STM32MP13xx" IPContextCoupling="SPI2I2S2" InstanceName="I2S2" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32MP1xx" IPContextCoupling="SPI3I2S4" InstanceName="I2S4" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
+    <IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32MP13xx" IPContextCoupling="SPI3I2S3" InstanceName="I2S3" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32MP13xx" IPContextCoupling="SPI3I2S4" InstanceName="I2S4" Name="I2S" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v2_0">
+    <IP ConfigFile="IWDG-STM32MP13xx" InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader" SynchronizedContexts="CortexA7S"/>
             <ContextIP ContextName="CortexA7S" SynchronizedContexts="BootLoader"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="IWDG2" Name="IWDG" Version="iwdg1_v2_0">
+    <IP ConfigFile="IWDG-STM32MP13xx" InstanceName="IWDG2" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader" SynchronizedContexts="CortexA7S,CortexA7NS"/>
             <ContextIP ContextName="CortexA7S" SynchronizedContexts="BootLoader,CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" SynchronizedContexts="BootLoader,CortexA7S"/>
         </ContextSplit>
-    </IP>
-    <IP ConfigFile="LPTIM-STM32MP1xx" InstanceName="LPTIM1" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA7NS"/>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32MP1xx" InstanceName="LPTIM2" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
+    <IP ConfigFile="LevelX-STM32MP13xx" InstanceName="LEVELX" Name="LevelX" Version="v1.0.0_MP13_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32MP13xx" InstanceName="LPTIM1" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32MP13xx" InstanceName="LPTIM2" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32MP1xx" InstanceName="LPTIM3" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
+    <IP ConfigFile="LPTIM-STM32MP13xx" InstanceName="LPTIM3" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32MP1xx" InstanceName="LPTIM4" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
+    <IP ConfigFile="LPTIM-STM32MP13xx" InstanceName="LPTIM4" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32MP1xx" InstanceName="LPTIM5" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
+    <IP ConfigFile="LPTIM-STM32MP13xx" InstanceName="LPTIM5" Name="LPTIM" Version="MPxx_lptimer1_v1_1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="MCE" Name="MCE" Version="v1_0_Cube">
+    <IP ConfigFile="MCE-STM32MP13xx" InstanceName="MCE" Name="MCE" Version="v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
+    <IP ConfigFile="NetXDuo-STM32MP13xx" InstanceName="NETXDUO" Name="NetXDuo" Version="v1.0.0_MP13_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="PKA-STM32MP13xx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="PWR" Name="PWR" Version="STM32MP1_pwr_v1_0">
+    <IP ConfigFile="PWR-STM32MP13xx" InstanceName="PWR" Name="PWR" Version="STM32MP13_pwr_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM" ForcedSelection="true"/>
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" InitializerForced="true"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" ConfigFile="QUADSPI-STM32MP1xx" InstanceName="QUADSPI" Name="QUADSPI" Version="STM32MP13_quadspi1_v4_2">
+    <IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" ConfigFile="QUADSPI-STM32MP13xx" InstanceName="QUADSPI" Name="QUADSPI" Version="quadspi1_v4_2_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="RCC" Name="RCC" Version="STM32MP13_rcc_v1_0">
+    <IP ConfigFile="RCC-STM32MP13xx" InstanceName="RCC" Name="RCC" Version="STM32MP13_rcc_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM" ForcedSelection="true"/>
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
+            <ContextIP ContextName="FirstStageBootLoader" InitializerForced="true"/>
+            <ContextIP ContextName="Application" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="RNG1" Name="RNG" Version="rng1_v4_1_MP13">
+    <IP ConfigFile="RNG-STM32MP13xx" InstanceName="RNG1" Name="RNG" Version="rng1_v4_1_MP13">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="RTC" Name="RTC" Version="STM32MP_rtc3_v1_2_rc1">
+    <IP ClockEnableMode="__HAL_RCC_RTC_ENABLE; __HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32MP13xx" IPContextCoupling="RTC|TAMP" InstanceName="RTC" Name="RTC" Version="rtc2_v2_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" ForcedSelection="true"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="SAES" Name="SAES" Version="aes3_v3_0_MP13_Cube">
+    <IP ConfigFile="AES-STM32MP13xx" InstanceName="SAES" Name="SAES" Version="aes3_v3_0_MP13_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SAI-STM32MP1xx" InstanceName="SAI1" Name="SAI" Version="STM32MP13_sai1_v2_1">
+    <IP ConfigFile="SAI-STM32MP13xx" InstanceName="SAI1" Name="SAI" Version="STM32MP_sai1_v2_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SAI-STM32MP1xx" InstanceName="SAI2" Name="SAI" Version="STM32MP13_sai1_v2_1">
+    <IP ConfigFile="SAI-STM32MP13xx" InstanceName="SAI2" Name="SAI" Version="STM32MP_sai1_v2_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SDIO-STM32MP1xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_2_rc1_Cube">
+    <IP ConfigFile="SDIO-STM32MP13xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_2_rc1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SDIO-STM32MP1xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_2_rc1_Cube">
+    <IP ConfigFile="SDIO-STM32MP13xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_2_rc1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SPDIFRX-STM32MPxx" InstanceName="SPDIFRX" Name="SPDIFRX" Version="STM32MP_spdifrx1_v1_2">
+    <IP ConfigFile="SPDIFRX-STM32MP13xx" InstanceName="SPDIFRX" Name="SPDIFRX" Version="STM32MP_spdifrx1_v1_2">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32MP13xx" IPContextCoupling="SPI1I2S1" InstanceName="SPI1" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="SPI-STM32MP1xx" IPContextCoupling="SPI1I2S1" InstanceName="SPI1" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
+    <IP ConfigFile="SPI-STM32MP13xx" IPContextCoupling="SPI2I2S2" InstanceName="SPI2" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="SPI-STM32MP1xx" IPContextCoupling="SPI2I2S2" InstanceName="SPI2" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
+    <IP ConfigFile="SPI-STM32MP13xx" IPContextCoupling="SPI3I2S3" InstanceName="SPI3" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
-    </IP>
-    <IP ConfigFile="SPI-STM32MP1xx" IPContextCoupling="SPI3I2S3" InstanceName="SPI3" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA7NS"/>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SPI-STM32MP1xx" IPContextCoupling="SPI3I2S4" InstanceName="SPI4" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
+    <IP ConfigFile="SPI-STM32MP13xx" IPContextCoupling="SPI3I2S4" InstanceName="SPI4" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SPI-STM32MP1xx" InstanceName="SPI5" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
+    <IP ConfigFile="SPI-STM32MP13xx" InstanceName="SPI5" Name="SPI" Version="STM32MP13_spi2s2_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="TAMP" Name="TAMP" Version="STM32MP_rtc3_v1_2_rc1">
+    <IP ConfigFile="SYS-STM32MP13xx" InstanceName="SYS" Name="SYS" Version="STM32MP13_sys_v1_0">
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP IPContextCoupling="RTC|TAMP" InstanceName="TAMP" Name="TAMP" Version="STM32L5_rtc2_v2_8_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM" ForcedSelection="true"/>
             <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM1" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="ThreadX-STM32MP13xx" InstanceName="THREADX" Name="ThreadX" Version="v1.0.0_MP13_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM1" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM2" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM2" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM3" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM3" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM4" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM4" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM5" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM5" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM6" Name="TIM6_7MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM6" Name="TIM6_7MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM7" Name="TIM6_7MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM7" Name="TIM6_7MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM8" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM8" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM12" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM12" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM13" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM13" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM14" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM14" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM15" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM15" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM16" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM16" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TIM-STM32MP1xx" InstanceName="TIM17" Name="TIM1_8MP1" Version="gptimer2_v3_x_Cube">
+    <IP ConfigFile="TIM-STM32MP13xx" InstanceName="TIM17" Name="TIM1_8MP13" Version="gptimer2_v3_x_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S"/>
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="UART4" Name="UART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="UART-STM32MP13xx" InstanceName="UART4" Name="UART" Version="STM32MP_sci3_v2_3">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="UART5" Name="UART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="UART-STM32MP13xx" InstanceName="UART5" Name="UART" Version="STM32MP_sci3_v2_3">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="UART7" Name="UART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="UART-STM32MP13xx" InstanceName="UART7" Name="UART" Version="STM32MP_sci3_v2_3">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="UART8" Name="UART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="UART-STM32MP13xx" InstanceName="UART8" Name="UART" Version="STM32MP_sci3_v2_3">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="USART1" Name="USART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="USART-STM32MP13xx" InstanceName="USART1" Name="USART" Version="STM32MP13_sci1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="USART2" Name="USART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="USART-STM32MP13xx" InstanceName="USART2" Name="USART" Version="STM32MP13_sci1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="USART3" Name="USART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="USART-STM32MP13xx" InstanceName="USART3" Name="USART" Version="STM32MP13_sci1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
     </IP>
-    <IP InstanceName="USART6" Name="USART" Version="STM32MP13_sci1_v1_0">
+    <IP ConfigFile="USART-STM32MP13xx" InstanceName="USART6" Name="USART" Version="STM32MP13_sci1_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="USBH_HS1" Name="USBH_HS" Version="STM32MP_host_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="USBH_HS2" Name="USBH_HS" Version="STM32MP_host_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="STM32MP_otghs1_v4_0">
+    <IP ConfigFile="USBX-STM32MP13xx" InstanceName="USBX" Name="USBX" Version="v1.0.0_MP13_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_USBO_CLK_ENABLE; __HAL_RCC_USBPHY_CLK_ENABLE" InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="STM32MP_otghs1_v4_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROM"/>
             <ContextIP ContextName="BootLoader"/>
             <ContextIP ContextName="CortexA7S" DevalidatedOnSelect="CortexA7NS"/>
             <ContextIP ContextName="CortexA7NS" DevalidatedOnSelect="CortexA7S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="VREFBUF" Name="VREFBUF" Version="vref_buf_1_3_0_0">
@@ -517,32 +712,43 @@
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="Application"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPIO-STM32MP1xx" InstanceName="GPIO" Name="GPIO" Version="STM32MP13x_gpio_v1_0">
+    <IP ConfigFile="GPIO-STM32MP13xx" InstanceName="GPIO" Name="GPIO" Version="STM32MP13x_gpio_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7NS" ForcedSelection="true"/>
+            <ContextIP ContextName="FirstStageBootLoader" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="DMA-STM32MP1xx" InstanceName="DMA" Name="DMA" Version="STM32MP135_dma2_v1_3">
         <ContextSplit Name="split1">
+            <ContextIP ContextName="BootROM" ForcedSelection="true"/>
+            <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA7NS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
+            <ContextIP ContextName="FirstStageBootLoader" InitializerForced="true"/>
+            <ContextIP ContextName="Application" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="MDMA-STM32MP1xx" InstanceName="MDMA" Name="MDMA" Version="STM32MP135_mdma1_v1_0">
         <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA7S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexA7NS"/>
+            <ContextIP ContextName="BootLoader" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA7NS" InitializerForced="true"/>
+            <ContextIP ContextName="FirstStageBootLoader" InitializerForced="true"/>
+            <ContextIP ContextName="Application" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GIC-STM32MP1xx" InstanceName="GIC" Name="GIC" Version="STM32MP131">
+    <IP ConfigFile="NVIC-STM32MP1xx" InstanceName="NVIC1" Name="NVIC1" Version="STM32MP135">
         <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA7NS" ForcedSelection="true"/>
+            <ContextIP ContextName="FirstStageBootLoader" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="NVIC-STM32MP1xx" InstanceName="NVIC2" Name="NVIC2" Version="STM32MP135">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="Application" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <Pin Name="VSS" Position="A1" Type="Power"/>
@@ -815,7 +1021,6 @@
         <Signal Name="SDMMC2_D6"/>
         <Signal Name="TIM3_CH1"/>
         <Signal Name="TIM8_CH1"/>
-        <Signal Name="USART6_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB15" Position="B15" Type="I/O">
@@ -990,7 +1195,6 @@
         <Signal Name="UART5_RX"/>
         <Signal Name="UART7_DE"/>
         <Signal Name="UART7_RTS"/>
-        <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
         <Condition Diagnostic="Pin not available for boot step (boot ROM)" Expression="!(UART5_RX &amp; UART5_BOOTROM)"/>
     </Pin>
@@ -1012,7 +1216,6 @@
         <Signal Name="TIM3_CH2"/>
         <Signal Name="TIM8_CH2"/>
         <Signal Name="USART3_CTS"/>
-        <Signal Name="USART6_RX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB3" Position="C14" Type="I/O">
@@ -1220,7 +1423,6 @@
         <Signal Name="SPI2_SCK"/>
         <Signal Name="SPI4_NSS"/>
         <Signal Name="TIM2_CH3"/>
-        <Signal Name="USART3_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PH10" Position="E14" Type="I/O">
@@ -1449,7 +1651,6 @@
         <Signal Name="FMC_A6"/>
         <Signal Name="I2S_CKIN"/>
         <Signal Name="QUADSPI_BK1_NCS"/>
-        <Signal Name="RTC_LSCO_OUT2"/>
         <Signal Name="RTC_OUT2"/>
         <Signal Name="SAI1_D1"/>
         <Signal Name="SAI1_SD_A"/>
@@ -1565,8 +1766,6 @@
     </Pin>
     <Pin Name="PC13" Position="M3" Type="I/O">
         <Signal Name="PWR_WKUP3"/>
-        <Signal Name="RTC_LSCO"/>
-        <Signal Name="RTC_LSCO_OUT1"/>
         <Signal Name="RTC_OUT1"/>
         <Signal Name="RTC_TS"/>
         <Signal Name="TAMP_IN1"/>
@@ -1677,8 +1876,6 @@
     </Pin>
     <Pin Name="PI1" Position="P4" Type="I/O">
         <Signal Name="PWR_WKUP4"/>
-        <Signal Name="RTC_LSCO"/>
-        <Signal Name="RTC_LSCO_OUT2"/>
         <Signal Name="RTC_OUT2"/>
         <Signal Name="SPDIFRX_IN1"/>
         <Signal Name="TAMP_IN2"/>

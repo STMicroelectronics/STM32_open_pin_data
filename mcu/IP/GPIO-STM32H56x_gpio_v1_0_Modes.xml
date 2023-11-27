@@ -2880,11 +2880,6 @@
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_13</PossibleValue>
         </SpecificParameter>
-        <PinSignal Name="ETH_TXD1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="EVENTOUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
@@ -2953,11 +2948,6 @@
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_14</PossibleValue>
         </SpecificParameter>
-        <PinSignal Name="ETH_TX_EN">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="EVENTOUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>

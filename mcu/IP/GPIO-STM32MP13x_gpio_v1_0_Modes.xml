@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32MP13x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="PinState" Comment="GPIO output level" Type="list" DefaultValue="GPIO_PIN_RESET">
@@ -20,6 +20,11 @@
         <PossibleValue Value="GPIOJ" Comment="Port J address"/>
         <PossibleValue Value="GPIOK" Comment="Port K address"/>
         <PossibleValue Value="GPIOZ" Comment="Port Z address"/>
+    </RefParameter>
+    <RefParameter Name="PinAttribute" Comment="Pin Context Assignement" Type="list" DefaultValue="Free">
+        <PossibleValue Value="Free" Comment="Free"/>
+        <PossibleValue Value="FirstStageBootLoader" Comment="First Stage Boot Loader"/>
+        <PossibleValue Value="Application" Comment="Application"/>
     </RefParameter>
     <RefParameter Name="GPIO_Pin" Comment="GPIO pin mask" Type="list" Visible="false"/>
     <RefParameter Name="GPIO_ModeDefaultPP" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_AF_PP">
@@ -152,6 +157,7 @@
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_Mode"/>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AnalogForADC">
         <ConfigForMode>GPIO</ConfigForMode>
@@ -164,6 +170,7 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="SYSCFG_AnalogSwitch"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AnalogForADC_NoPuPd">
         <ConfigForMode>GPIO</ConfigForMode>
@@ -173,6 +180,7 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="SYSCFG_AnalogSwitch"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="Analog">
         <ConfigForMode>GPIO</ConfigForMode>
@@ -184,6 +192,7 @@
             <PossibleValue>GPIO_MODE_ANALOG</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="Analog_NoPuPd">
         <ConfigForMode>GPIO</ConfigForMode>
@@ -192,6 +201,7 @@
             <PossibleValue>GPIO_MODE_ANALOG</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="Input">
         <ConfigForMode>GPIO</ConfigForMode>
@@ -201,6 +211,7 @@
             <PossibleValue>GPIO_MODE_INPUT</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="Output">
         <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
@@ -213,6 +224,7 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinState"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPull">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -224,6 +236,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrain">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -235,6 +248,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
         <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
@@ -247,6 +261,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPWildcat">
         <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
@@ -259,6 +274,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -271,6 +287,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
         <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
@@ -282,6 +299,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -295,6 +313,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -308,6 +327,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullVeryHighSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -321,6 +341,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullUp">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -332,6 +353,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullPULLUP">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -345,6 +367,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeedDefault">
         <ConfigForMode>AlternateFunctionMediumSpeedDefault</ConfigForMode>
@@ -356,6 +379,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
         <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
@@ -367,6 +391,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedByDefault">
         <ConfigForMode>AlternateFunctionHighSpeedByDefault</ConfigForMode>
@@ -378,6 +403,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnly">
         <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
@@ -388,6 +414,7 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF</PossibleValue>
         </Parameter>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuOnly">
         <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
@@ -400,6 +427,7 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF</PossibleValue>
         </Parameter>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="EXTI">
         <ConfigForMode>EXTI</ConfigForMode>
@@ -407,6 +435,7 @@
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_ModeDefaultEXTI"/>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="EXTIRisingFalling">
         <ConfigForMode>EXTIRisingFalling</ConfigForMode>
@@ -414,6 +443,7 @@
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_ModeDefaultEXTI_IT_RF"/>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="EVENTOUT">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -427,6 +457,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPLowSpeed">
         <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
@@ -441,6 +472,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainLowSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -454,6 +486,7 @@
             <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullLowSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -467,6 +500,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
         <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
@@ -479,6 +513,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultODLowSpeed">
         <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
@@ -493,6 +528,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="System"/>
     <GPIO_Pin PortName="PA" Name="ANA0">
@@ -517,7 +553,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_CRS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_CRS">
@@ -572,12 +608,12 @@
         </PinSignal>
         <PinSignal Name="ETH1_REF_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_RX_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LPTIM3_OUT">
@@ -627,7 +663,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_CLK">
@@ -702,7 +738,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_MCLK_A">
@@ -807,7 +843,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S4_MCK">
@@ -817,12 +853,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM2_CH1">
@@ -862,7 +898,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_MDIO">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LPTIM4_OUT">
@@ -897,7 +933,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_COL">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_COL">
@@ -957,7 +993,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_PPS_OUT">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_PPS_OUT">
@@ -1002,7 +1038,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_PPS_OUT">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_PPS_OUT">
@@ -1117,17 +1153,17 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_CRS_DV">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_RX_CTL">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_RX_DV">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S1_CK">
@@ -1207,7 +1243,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RCC_MCO_1">
@@ -1277,7 +1313,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH2">
@@ -1307,7 +1343,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_RXD2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S1_MCK">
@@ -1367,7 +1403,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_RXD3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S1_CK">
@@ -1427,7 +1463,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_R3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI2_SCK">
@@ -1457,12 +1493,12 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_TX_CTL">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_TX_EN">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2C5_SMBA">
@@ -1507,12 +1543,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_R3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_VSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D5">
@@ -1572,7 +1608,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D123DIR">
@@ -1607,12 +1643,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D4">
@@ -1662,12 +1698,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RTC_REFIN">
@@ -1737,12 +1773,12 @@
         </PinSignal>
         <PinSignal Name="I2S_CKIN">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
+                <PossibleValue>GPIO_AF5_I2S1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_NCS">
@@ -1787,12 +1823,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_CK1">
@@ -1847,17 +1883,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_B6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_CK2">
@@ -1922,12 +1958,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_DE">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_CKIN">
@@ -1982,17 +2018,17 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF7_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF7_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_NCS">
@@ -2157,12 +2193,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_DE">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_CDIR">
@@ -2232,17 +2268,17 @@
         </PinSignal>
         <PinSignal Name="ETH1_CRS_DV">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_GTX_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_RX_DV">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI1_D3">
@@ -2347,7 +2383,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_DE">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_SD_B">
@@ -2396,7 +2432,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_TXD2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S1_WS">
@@ -2446,7 +2482,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_TX_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_TX_CLK">
@@ -2501,7 +2537,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_RXD0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S1_MCK">
@@ -2551,7 +2587,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_RXD1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S_CKIN">
@@ -2606,7 +2642,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S3_MCK">
@@ -2616,17 +2652,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_B1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_HSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D6">
@@ -2671,7 +2707,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S2_MCK">
@@ -2681,12 +2717,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D7">
@@ -2741,7 +2777,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_FS_B">
@@ -2806,7 +2842,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D1">
@@ -2901,12 +2937,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_NCS">
@@ -2956,17 +2992,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_B2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RTC_REFIN">
@@ -3026,7 +3062,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_R7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO2">
@@ -3116,7 +3152,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO3">
@@ -3186,7 +3222,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_R4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM4_CH3">
@@ -3226,7 +3262,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO3">
@@ -3361,17 +3397,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_R1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_CLK">
@@ -3406,12 +3442,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO0">
@@ -3466,12 +3502,12 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_REF_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_RX_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="FMC_NE1">
@@ -3576,17 +3612,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_B0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC2_CDIR">
@@ -3626,12 +3662,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TSC_G4_IO1">
@@ -3671,12 +3707,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_HSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TSC_G2_IO3">
@@ -3731,7 +3767,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_TX_ER">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_TX_ER">
@@ -3756,12 +3792,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_R0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI1_D2">
@@ -3821,7 +3857,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S4_CK">
@@ -3831,17 +3867,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_G4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_VSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI4_SCK">
@@ -3901,12 +3937,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI4_MISO">
@@ -3941,7 +3977,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_NCS">
@@ -3996,7 +4032,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2C4_SCL">
@@ -4006,7 +4042,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_BKIN">
@@ -4061,7 +4097,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_R1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI1_FS_B">
@@ -4126,7 +4162,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_R4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_D4">
@@ -4191,7 +4227,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK2_NCS">
@@ -4246,7 +4282,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_TXD3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="FMC_NE1">
@@ -4301,12 +4337,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RCC_MCO_2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF0_TRACE</PossibleValue>
+                <PossibleValue>GPIO_AF0_MCO2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI1_SCK_B">
@@ -4361,12 +4397,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_ETR">
@@ -4436,17 +4472,17 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_HSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO1">
@@ -4481,12 +4517,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC2_D4">
@@ -4516,7 +4552,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2C2_SDA">
@@ -4531,12 +4567,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI3_MOSI">
@@ -4556,7 +4592,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_CLK">
@@ -4641,12 +4677,12 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_CLK125">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_TX_ER">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S1_WS">
@@ -4741,12 +4777,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC1_D0DIR">
@@ -4796,7 +4832,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI3_NSS">
@@ -4831,7 +4867,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TSC_G3_IO3">
@@ -4876,12 +4912,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
@@ -4901,12 +4937,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO2">
@@ -4936,7 +4972,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_CLK125">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_TXD0">
@@ -4951,7 +4987,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM17_CH1">
@@ -4981,7 +5017,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO0">
@@ -5036,7 +5072,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO1">
@@ -5101,7 +5137,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TSC_G4_IO2">
@@ -5146,7 +5182,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_D2">
@@ -5236,7 +5272,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_D3">
@@ -5261,7 +5297,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_PHY_INTN">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_CRS_DV">
@@ -5326,7 +5362,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_TXD0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LPTIM1_OUT">
@@ -5351,7 +5387,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_TXD1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LPTIM1_ETR">
@@ -5391,12 +5427,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_B4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO1">
@@ -5431,7 +5467,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_MDC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RCC_MCO_2">
@@ -5466,7 +5502,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_MDIO">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_GTX_CLK">
@@ -5531,12 +5567,12 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_VSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC2_D123DIR">
@@ -5581,7 +5617,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM17_CH1">
@@ -5601,22 +5637,22 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_DE">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R7">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_D1">
@@ -5666,17 +5702,17 @@
         </PinSignal>
         <PinSignal Name="LTDC_R1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SDMMC2_CKIN">
@@ -5721,7 +5757,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF7_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF7_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO3">
@@ -5846,7 +5882,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2S2_SDO">
@@ -5861,12 +5897,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_HSYNC">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SAI2_D3">
@@ -5931,7 +5967,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_G6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK2_IO0">
@@ -5981,7 +6017,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_CRS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="FMC_A6">
@@ -6046,12 +6082,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_G2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G3">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF13_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI3_SCK">
@@ -6106,7 +6142,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART4_RX">
@@ -6126,7 +6162,7 @@
         </PinSignal>
         <PinSignal Name="ETH1_CRS">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_CLK125">
@@ -6151,12 +6187,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B0">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_G1">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF7_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF7_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK2_IO0">
@@ -6181,7 +6217,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_COL">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_COL">
@@ -6196,12 +6232,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B4">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO0">
@@ -6236,12 +6272,12 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_PHY_INTN">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF10_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF10_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH1_RX_ER">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_RXD2">
@@ -6291,7 +6327,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_TX_CLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="ETH2_TX_CLK">
@@ -6306,7 +6342,7 @@
         </PinSignal>
         <PinSignal Name="LTDC_B2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="QUADSPI_BK1_IO3">
@@ -6351,7 +6387,7 @@
         </PinSignal>
         <PinSignal Name="HDP_HDP2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF15_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF15_HDP</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2C3_SDA">
@@ -6361,12 +6397,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_R2">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF14_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF14_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_R6">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM5_ETR">
@@ -6411,12 +6447,12 @@
         </PinSignal>
         <PinSignal Name="LTDC_B5">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF9_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF9_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LTDC_DE">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_LTDC</PossibleValue>
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI4_SCK">
@@ -6488,7 +6524,7 @@
         </SpecificParameter>
         <PinSignal Name="ETH1_RX_ER">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF11_ETH1</PossibleValue>
+                <PossibleValue>GPIO_AF11_ETH</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPDIFRX_IN3">

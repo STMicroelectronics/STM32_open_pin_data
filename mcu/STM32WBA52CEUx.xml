@@ -8,6 +8,7 @@
     <Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you plan to use from the non secure world" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33NS"/>
     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33" Name="CortexM33" Secure="false" SemaphoreSuffix="_NON_SECURE" ShortName="M33"/>
     <Frequency>100</Frequency>
+    <MemoryMap>Available</MemoryMap>
     <TrustZone>Available</TrustZone>
     <Ram>96</Ram>
     <IONb>37</IONb>
@@ -83,6 +84,17 @@
     <IP ConfigFile="FileX-STM32WBAxx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_WBA_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="flash-STM32WBAxx" InstanceName="FLASH" Name="flash" Version="v1.0.0_WBA_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
@@ -318,6 +330,11 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="SAU-STM32WBAxx" InstanceName="SAU" Name="SAU" Version="sau_v1_0_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="SEQUENCER-STM32WBAxx" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
@@ -348,7 +365,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.0_Cube">
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.2_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>
@@ -457,7 +474,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="TOUCHSENSING-STM32WBAxx" InstanceName="TOUCHSENSING" Name="TOUCHSENSING" Version="v2_2_6_Cube">
+    <IP ConfigFile="TOUCHSENSING-STM32WBAxx" InstanceName="TOUCHSENSING" Name="TOUCHSENSING" Version="v2_2_11_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -507,6 +524,17 @@
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS" DefaultSelection="true"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>

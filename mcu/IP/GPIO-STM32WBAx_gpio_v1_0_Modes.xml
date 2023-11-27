@@ -1872,6 +1872,12 @@
         </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA4">
+        <SpecificParameter Name="EXTI_Line">
+            <PossibleValue>EXTI_LINE_4</PossibleValue>
+        </SpecificParameter>
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_4</PossibleValue>
+        </SpecificParameter>
         <PinSignal Name="AUDIOCLK">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF13_SAI1</PossibleValue>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x3" Package="LQFP64" RefName="STM32L063R8Tx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M0+</Core>
     <Frequency>32</Frequency>
@@ -225,7 +225,7 @@
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB2" Position="28" Type="I/O">
-        <Signal Name="LCD_VLCD1"/>
+        <Signal Name="LCD_VLCD2"/>
         <Signal Name="LPTIM1_OUT"/>
         <Signal Name="TSC_G3_IO4"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
@@ -253,7 +253,7 @@
     <Pin Name="PB12" Position="33" Type="I/O">
         <Signal Name="I2S2_WS"/>
         <Signal Name="LCD_SEG12"/>
-        <Signal Name="LCD_VLCD2"/>
+        <Signal Name="LCD_VLCD1"/>
         <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SPI2_NSS"/>

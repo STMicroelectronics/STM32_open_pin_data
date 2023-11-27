@@ -345,7 +345,6 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="GPIO_FM6"/>
-        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighDefault">
         <Condition Diagnostic="" Expression="PB7"/>
@@ -359,7 +358,6 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="GPIO_FM7"/>
-        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighDefault">
         <Condition Diagnostic="" Expression="PB8"/>
@@ -373,7 +371,6 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="GPIO_FM8"/>
-        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighDefault">
         <Condition Diagnostic="" Expression="PB9"/>
@@ -387,7 +384,6 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="GPIO_FM9"/>
-        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighDefault">
         <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
@@ -400,7 +396,6 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrain">
         <Condition Diagnostic="" Expression="PB6"/>

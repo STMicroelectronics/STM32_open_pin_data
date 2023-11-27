@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
-<Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="true" IOType="" Line="STM32L0x2" Package="UFQFPN32" RefName="STM32L052K(6-8)Ux" xmlns="http://dummy.com">
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<Mcu ClockTree="STM32L0" DBVersion="V3.0" Family="STM32L0" HasPowerPad="false" IOType="" Line="STM32L0x2" Package="UFQFPN32" RefName="STM32L052K(6-8)Ux" xmlns="http://dummy.com">
     <Core>Arm Cortex-M0+</Core>
     <Frequency>32</Frequency>
     <E2prom>2048</E2prom>

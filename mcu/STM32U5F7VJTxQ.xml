@@ -2034,6 +2034,7 @@
         <Signal Name="I2C4_SMBA"/>
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="SAI1_FS_B"/>
+        <Signal Name="USB_OTG_HS_SOF"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA15 (JTDI)" Position="77" Type="I/O">

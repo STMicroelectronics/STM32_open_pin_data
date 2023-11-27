@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFBGA100" RefName="STM32G471V(C-E)Ix" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
     <Frequency>170</Frequency>
@@ -40,6 +40,7 @@
     <IP ClockEnableMode="none" InstanceName="OPAMP1" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
     <IP ClockEnableMode="none" InstanceName="OPAMP2" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
     <IP ClockEnableMode="none" InstanceName="OPAMP3" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
+    <IP ClockEnableMode="none" InstanceName="OPAMP6" Name="OPAMP" Version="G4_tsmc90_fastOpamp_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_QSPI_CLK_ENABLE" ConfigFile="QUADSPI-STM32G4xx" InstanceName="QUADSPI1" Name="QUADSPI" Version="quadspi1_v4_1_Cube"/>
     <IP InstanceName="RCC" Name="RCC" Version="STM32G4_rcc_v1_0"/>
     <IP ConfigFile="RNG-STM32G4xx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
@@ -624,6 +625,8 @@
     <Pin Name="PD9" Position="J11" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
         <Signal Name="DAC3_EXTI9"/>
+        <Signal Name="OPAMP6_VINP"/>
+        <Signal Name="OPAMP6_VINP_SEC"/>
         <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -658,6 +661,9 @@
         <Signal Name="OPAMP1_VINP_SEC"/>
         <Signal Name="OPAMP3_VINP"/>
         <Signal Name="OPAMP3_VINP_SEC"/>
+        <Signal Name="OPAMP6_VINM"/>
+        <Signal Name="OPAMP6_VINM0"/>
+        <Signal Name="OPAMP6_VINM_SEC"/>
         <Signal Name="RTC_REFIN"/>
         <Signal Name="TIM15_CH1N"/>
         <Signal Name="TIM2_CH2"/>
@@ -733,6 +739,7 @@
         <Signal Name="ADC2_EXTI11"/>
         <Signal Name="ADC2_IN14"/>
         <Signal Name="LPUART1_TX"/>
+        <Signal Name="OPAMP6_VOUT"/>
         <Signal Name="QUADSPI1_BK1_NCS"/>
         <Signal Name="TIM2_CH4"/>
         <Signal Name="USART3_RX"/>
@@ -745,6 +752,8 @@
         <Signal Name="LPUART1_CTS"/>
         <Signal Name="OPAMP3_VINP"/>
         <Signal Name="OPAMP3_VINP_SEC"/>
+        <Signal Name="OPAMP6_VINP"/>
+        <Signal Name="OPAMP6_VINP_SEC"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_CH1N"/>
         <Signal Name="USART3_CTS"/>
@@ -849,6 +858,8 @@
         <Signal Name="I2S2_WS"/>
         <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
+        <Signal Name="OPAMP6_VINP"/>
+        <Signal Name="OPAMP6_VINP_SEC"/>
         <Signal Name="SPI2_NSS"/>
         <Signal Name="TIM1_BKIN"/>
         <Signal Name="USART3_CK"/>
@@ -920,6 +931,9 @@
         <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="OPAMP3_VOUT"/>
+        <Signal Name="OPAMP6_VINM"/>
+        <Signal Name="OPAMP6_VINM1"/>
+        <Signal Name="OPAMP6_VINM_SEC"/>
         <Signal Name="QUADSPI1_BK1_IO0"/>
         <Signal Name="TIM1_CH3N"/>
         <Signal Name="TIM3_CH4"/>
