@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H747/757" Package="LQFP208" RefName="STM32H747BITx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M7</Core>
     <Core>ARM Cortex-M4</Core>
@@ -824,6 +824,7 @@
     <Pin Name="PB2" Position="65" Type="I/O">
         <Signal Name="COMP1_INP"/>
         <Signal Name="DFSDM1_CKIN1"/>
+        <Signal Name="ETH_TX_ER"/>
         <Signal Name="I2S3_SDO"/>
         <Signal Name="QUADSPI_CLK"/>
         <Signal Name="RTC_OUT_ALARM"/>
@@ -1420,6 +1421,7 @@
     <Pin Name="PA9" Position="147" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
         <Signal Name="DCMI_D0"/>
+        <Signal Name="ETH_TX_ER"/>
         <Signal Name="HRTIM_CHC1"/>
         <Signal Name="I2C3_SMBA"/>
         <Signal Name="I2S2_CK"/>

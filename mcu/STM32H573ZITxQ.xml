@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H563/H573" Package="LQFP144" RefName="STM32H573ZITxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -127,6 +127,15 @@
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_DTS_CLK_ENABLE" ConfigFile="DTS-STM32H5xx" InstanceName="DTS" Name="DTS" Version="dts_v1_0_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_ETH_CLK_ENABLE;__HAL_RCC_ETHTX_CLK_ENABLE;__HAL_RCC_ETHRX_CLK_ENABLE" ConfigFile="ETH-STM32H5xx" InstanceName="ETH" Name="ETH" Version="ethermac110_v3_0_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
             <ContextIP ContextName="CortexM33NS"/>
@@ -1125,6 +1134,7 @@
     <Pin Name="PE2" Position="1" Type="I/O">
         <Signal Name="DCMI_D3"/>
         <Signal Name="DEBUG_TRACECLK"/>
+        <Signal Name="ETH_TXD3"/>
         <Signal Name="FMC_A23"/>
         <Signal Name="LPTIM1_IN2"/>
         <Signal Name="OCTOSPI1_IO2"/>
@@ -1331,6 +1341,7 @@
         <Signal Name="ADC2_INN10"/>
         <Signal Name="ADC2_INP11"/>
         <Signal Name="DEBUG_TRACED0"/>
+        <Signal Name="ETH_MDC"/>
         <Signal Name="I2S2_SDO"/>
         <Signal Name="OCTOSPI1_IO4"/>
         <Signal Name="PWR_WKUP6"/>
@@ -1349,6 +1360,7 @@
         <Signal Name="ADC1_INP12"/>
         <Signal Name="ADC2_INN11"/>
         <Signal Name="ADC2_INP12"/>
+        <Signal Name="ETH_TXD2"/>
         <Signal Name="FMC_SDNE0"/>
         <Signal Name="I2S2_SDI"/>
         <Signal Name="OCTOSPI1_IO2"/>
@@ -1364,6 +1376,7 @@
         <Signal Name="ADC1_INP13"/>
         <Signal Name="ADC2_INN12"/>
         <Signal Name="ADC2_INP13"/>
+        <Signal Name="ETH_TX_CLK"/>
         <Signal Name="FMC_SDCKE0"/>
         <Signal Name="I2S2_SDO"/>
         <Signal Name="LPTIM3_CH1"/>
@@ -1382,6 +1395,7 @@
         <Signal Name="ADC1_INP0"/>
         <Signal Name="ADC2_INN1"/>
         <Signal Name="ADC2_INP0"/>
+        <Signal Name="ETH_CRS"/>
         <Signal Name="PWR_WKUP1"/>
         <Signal Name="SAI2_SD_B"/>
         <Signal Name="SDMMC2_CMD"/>
@@ -1402,6 +1416,8 @@
     <Pin Name="PA1" Position="34" Type="I/O">
         <Signal Name="ADC1_INP1"/>
         <Signal Name="ADC2_INP1"/>
+        <Signal Name="ETH_REF_CLK"/>
+        <Signal Name="ETH_RX_CLK"/>
         <Signal Name="LPTIM1_IN1"/>
         <Signal Name="OCTOSPI1_DQS"/>
         <Signal Name="OCTOSPI1_IO3"/>
@@ -1418,6 +1434,7 @@
     <Pin Name="PA2" Position="35" Type="I/O">
         <Signal Name="ADC1_INP14"/>
         <Signal Name="ADC2_INP14"/>
+        <Signal Name="ETH_MDIO"/>
         <Signal Name="LPTIM1_IN2"/>
         <Signal Name="PWR_WKUP2"/>
         <Signal Name="SAI2_SCK_B"/>
@@ -1432,6 +1449,7 @@
     <Pin Name="PA3" Position="36" Type="I/O">
         <Signal Name="ADC1_INP15"/>
         <Signal Name="ADC2_INP15"/>
+        <Signal Name="ETH_COL"/>
         <Signal Name="I2S2_WS"/>
         <Signal Name="OCTOSPI1_CLK"/>
         <Signal Name="SAI1_SD_B"/>
@@ -1466,6 +1484,7 @@
         <Signal Name="ADC2_INN18"/>
         <Signal Name="ADC2_INP19"/>
         <Signal Name="DAC1_OUT2"/>
+        <Signal Name="ETH_TX_EN"/>
         <Signal Name="I2S1_CK"/>
         <Signal Name="PSSI_D14"/>
         <Signal Name="SPI1_SCK"/>
@@ -1496,6 +1515,8 @@
         <Signal Name="ADC1_INP7"/>
         <Signal Name="ADC2_INN3"/>
         <Signal Name="ADC2_INP7"/>
+        <Signal Name="ETH_CRS_DV"/>
+        <Signal Name="ETH_RX_DV"/>
         <Signal Name="FMC_NWE"/>
         <Signal Name="FMC_SDNWE"/>
         <Signal Name="I2S1_SDO"/>
@@ -1514,6 +1535,7 @@
         <Signal Name="ADC1_INP9"/>
         <Signal Name="ADC2_INN5"/>
         <Signal Name="ADC2_INP9"/>
+        <Signal Name="ETH_RXD2"/>
         <Signal Name="LPTIM3_CH1"/>
         <Signal Name="OCTOSPI1_IO1"/>
         <Signal Name="TIM1_CH2N"/>
@@ -1526,6 +1548,7 @@
     <Pin Name="PB1" Position="44" Type="I/O">
         <Signal Name="ADC1_INP5"/>
         <Signal Name="ADC2_INP5"/>
+        <Signal Name="ETH_RXD3"/>
         <Signal Name="LPTIM3_CH2"/>
         <Signal Name="OCTOSPI1_IO0"/>
         <Signal Name="TIM1_CH3N"/>
@@ -1693,6 +1716,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB10" Position="66" Type="I/O">
+        <Signal Name="ETH_RX_ER"/>
         <Signal Name="I2C2_SCL"/>
         <Signal Name="I2S2_CK"/>
         <Signal Name="LPTIM2_IN1"/>
@@ -1706,6 +1730,7 @@
     <Pin Name="PB11" Position="67" Type="I/O">
         <Signal Name="ADC1_EXTI11"/>
         <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="ETH_TX_EN"/>
         <Signal Name="FMC_NBL1"/>
         <Signal Name="I2C2_SDA"/>
         <Signal Name="LPTIM2_ETR"/>
@@ -1755,6 +1780,7 @@
         <Signal Name="ADC1_EXTI15"/>
         <Signal Name="ADC2_EXTI15"/>
         <Signal Name="DCMI_D2"/>
+        <Signal Name="ETH_TXD1"/>
         <Signal Name="I2S2_SDO"/>
         <Signal Name="OCTOSPI1_CLK"/>
         <Signal Name="PSSI_D2"/>
@@ -1912,6 +1938,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PG8" Position="93" Type="I/O">
+        <Signal Name="ETH_PPS_OUT"/>
         <Signal Name="FMC_SDCLK"/>
         <Signal Name="SPI6_NSS"/>
         <Signal Name="TIM8_ETR"/>
@@ -1999,6 +2026,7 @@
     <Pin Name="PA9" Position="101" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
         <Signal Name="DCMI_D0"/>
+        <Signal Name="ETH_TX_ER"/>
         <Signal Name="FMC_NWE"/>
         <Signal Name="I2C3_SMBA"/>
         <Signal Name="I2S2_CK"/>
@@ -2082,6 +2110,7 @@
     </Pin>
     <Pin Name="PC10" Position="111" Type="I/O">
         <Signal Name="DCMI_D8"/>
+        <Signal Name="ETH_TXD0"/>
         <Signal Name="I2S3_CK"/>
         <Signal Name="LPTIM3_ETR"/>
         <Signal Name="OCTOSPI1_IO1"/>
@@ -2225,6 +2254,7 @@
     </Pin>
     <Pin Name="PG12" Position="126" Type="I/O">
         <Signal Name="DCMI_D11"/>
+        <Signal Name="ETH_TXD1"/>
         <Signal Name="FMC_NE4"/>
         <Signal Name="LPTIM1_IN1"/>
         <Signal Name="LPTIM5_CH1"/>
@@ -2238,6 +2268,7 @@
     </Pin>
     <Pin Name="PG13" Position="127" Type="I/O">
         <Signal Name="DEBUG_TRACED0"/>
+        <Signal Name="ETH_TXD0"/>
         <Signal Name="FMC_A24"/>
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="LPTIM5_CH2"/>
@@ -2251,6 +2282,7 @@
     </Pin>
     <Pin Name="PG14" Position="128" Type="I/O">
         <Signal Name="DEBUG_TRACED1"/>
+        <Signal Name="ETH_TXD1"/>
         <Signal Name="FMC_A25"/>
         <Signal Name="LPTIM1_CH2"/>
         <Signal Name="LPTIM1_ETR"/>
@@ -2313,6 +2345,7 @@
     </Pin>
     <Pin Name="PB5" Position="134" Type="I/O">
         <Signal Name="DCMI_D10"/>
+        <Signal Name="ETH_PPS_OUT"/>
         <Signal Name="FDCAN2_RX"/>
         <Signal Name="FMC_SDCKE1"/>
         <Signal Name="I2C1_SMBA"/>
@@ -2366,6 +2399,7 @@
     <Pin Name="BOOT0" Position="137" Type="Boot"/>
     <Pin Name="PB8" Position="138" Type="I/O">
         <Signal Name="DCMI_D6"/>
+        <Signal Name="ETH_TXD3"/>
         <Signal Name="FDCAN1_RX"/>
         <Signal Name="I2C1_SCL"/>
         <Signal Name="I2C4_SCL"/>

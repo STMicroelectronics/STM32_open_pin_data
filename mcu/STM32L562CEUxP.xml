@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32L5" DBVersion="V3.0" Family="STM32L5" HasPowerPad="false" IOType="" Line="STM32L5x2" Package="UFQFPN48" RefName="STM32L562CEUxP" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -808,9 +808,7 @@
     </Pin>
     <Pin Name="NRST" Position="7" Type="Reset"/>
     <Pin Name="VSSA/VREF-" Position="8" Type="Power"/>
-    <Pin Name="VDDA/VREF+" Position="9" Type="Power">
-        <Signal Name="VREFBUF_OUT"/>
-    </Pin>
+    <Pin Name="VDDA/VREF+" Position="9" Type="Power"/>
     <Pin Name="PA0" Position="10" RequestToSecureIP="Yes" Type="I/O">
         <Signal Name="ADC1_IN5"/>
         <Signal Name="ADC2_IN5"/>

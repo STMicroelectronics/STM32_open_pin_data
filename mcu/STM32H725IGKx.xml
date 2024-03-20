@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H723" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H725/735" Package="UFBGA176" RefName="STM32H725IGKx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>550</Frequency>
@@ -1768,7 +1768,6 @@
     </Pin>
     <Pin Name="PH5" Position="R5" Type="I/O">
         <Signal Name="ADC3_INN15"/>
-        <Signal Name="ADC3_INP16"/>
         <Signal Name="FMC_SDNWE"/>
         <Signal Name="I2C2_SDA"/>
         <Signal Name="SPI5_NSS"/>

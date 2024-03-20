@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H5x3" Package="LQFP176" RefName="STM32H563IGTx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -465,6 +465,17 @@
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_OSPI1_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H5xx" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi1_v5_1_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+        <ContextSplit Name="split2">
+            <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="PKA-STM32H5xx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
