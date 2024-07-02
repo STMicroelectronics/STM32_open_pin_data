@@ -9,7 +9,7 @@
     <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32U0xx" InstanceName="ADC1" Name="ADC" Version="aditf4_v3_U0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_COMP_CLK_ENABLE" InstanceName="COMP1" Name="COMP" Version="TSMC90_U0_Cube"/>
     <IP ConfigFile="CORTEX_M0+-STM32U0xx" InstanceName="CORTEX_M0+" Name="CORTEX_M0+" Version="cortex_v1_0_Cube"/>
-    <IP ConfigFile="CRC-STM32U0xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_0"/>
+    <IP ConfigFile="CRC-STM32U0xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_1_U0_N6"/>
     <IP ClockEnableMode="__HAL_RCC_DAC1_CLK_ENABLE" ConfigFile="DAC-STM32U0xx" InstanceName="DAC1" Name="DAC" Version="dacif_v2_0_U0_Cube"/>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32U0_sys_v1_0"/>
     <IP ConfigFile="FileX-STM32U0xx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_U0_Cube"/>

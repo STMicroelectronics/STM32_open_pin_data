@@ -32,12 +32,7 @@
     <IP ConfigFile="CRYP-STM32H7xx" InstanceName="CRYP" Name="CRYP" PowerDomain="D2" Version="cryp1_v2_0_H7_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_DAC12_CLK_ENABLE" InstanceName="DAC1" Name="DAC" PowerDomain="D2" Version="dacif_v3_0_Cube"/>
     <IP ConfigFile="DCMI-STM32H7xx" InstanceName="DCMI" Name="DCMI" PowerDomain="D2" Version="cci_v2_0_Cube"/>
-    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM7" InitializerForced="true"/>
-            <ContextIP ContextName="CortexM4" ForcedSelection="true"/>
-        </ContextSplit>
-    </IP>
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_1"/>
     <IP ConfigFile="DFSDM-STM32H7xx" InstanceName="DFSDM1" Name="DFSDM" PowerDomain="D2" Version="dfsdm1_v1_0_H7_Cube"/>
     <IP ConfigFile="DMA2D-STM32H7xx" InstanceName="DMA2D" Name="DMA2D" PowerDomain="D1" Version="dma2d1_v1_0"/>
     <IP ClockEnableMode="__HAL_RCC_ETH1MAC_CLK_ENABLE;__HAL_RCC_ETH1TX_CLK_ENABLE;__HAL_RCC_ETH1RX_CLK_ENABLE" ConfigFile="ETH-STM32H7xx" InstanceName="ETH" Name="ETH" PowerDomain="D2" Version="ethermac110_v3_0"/>
@@ -1965,7 +1960,7 @@
     </Pin>
     <Pin Name="VCAP" Position="199" Type="Power"/>
     <Pin Name="VSS" Position="200" Type="Power"/>
-    <Pin Name="PDR_ON" Position="201" Type="Reset"/>
+    <Pin Name="PDR_ON" Position="201" Type="Power"/>
     <Pin Name="VDDLDO" Position="202" Type="Power"/>
     <Pin Name="PI4" Position="203" Type="I/O">
         <Signal Name="DCMI_D5"/>

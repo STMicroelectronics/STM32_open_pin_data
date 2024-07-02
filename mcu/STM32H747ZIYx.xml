@@ -31,12 +31,7 @@
     <IP ConfigFile="CRC-STM32H7xx" InstanceName="CRC" Name="CRC" PowerDomain="D3" Version="integtest1_v2_2"/>
     <IP ClockEnableMode="__HAL_RCC_DAC12_CLK_ENABLE" InstanceName="DAC1" Name="DAC" PowerDomain="D2" Version="dacif_v3_0_Cube"/>
     <IP ConfigFile="DCMI-STM32H7xx" InstanceName="DCMI" Name="DCMI" PowerDomain="D2" Version="cci_v2_0_Cube"/>
-    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM7" InitializerForced="true"/>
-            <ContextIP ContextName="CortexM4" ForcedSelection="true"/>
-        </ContextSplit>
-    </IP>
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_1"/>
     <IP ConfigFile="DFSDM-STM32H7xx" InstanceName="DFSDM1" Name="DFSDM" PowerDomain="D2" Version="dfsdm1_v1_0_H7_Cube"/>
     <IP ConfigFile="DMA2D-STM32H7xx" InstanceName="DMA2D" Name="DMA2D" PowerDomain="D1" Version="dma2d1_v1_0"/>
     <IP ClockEnableMode="__HAL_RCC_DSI_CLK_ENABLE" ConfigFile="DSI-STM32H7xx" IPContextCoupling="DSI_LTDC" InstanceName="DSIHOST" Name="DSIHOST" PowerDomain="D1" Version="dsihost1_v1_0_SHARK_Cube">
@@ -779,7 +774,7 @@
         <Signal Name="UART5_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="PDR_ON" Position="E7" Type="Reset"/>
+    <Pin Name="PDR_ON" Position="E7" Type="Power"/>
     <Pin Name="PE6" Position="E8" Type="I/O">
         <Signal Name="DCMI_D7"/>
         <Signal Name="DEBUG_TRACED3"/>

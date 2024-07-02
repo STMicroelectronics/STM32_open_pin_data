@@ -876,7 +876,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SYS-STM32U5xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32L55_vrefbuf_v1_0">
+    <IP ConfigFile="SYS-STM32U5xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32U5_vrefbuf_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
             <ContextIP ContextName="CortexM33NS"/>

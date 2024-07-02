@@ -3374,6 +3374,11 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="LCD_VLCD">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="LPTIM1_CH1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_LPTIM1</PossibleValue>
@@ -3828,11 +3833,6 @@
                 <PossibleValue>GPIO_AF2_I2C4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="LCD_BIAS1">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_LCD</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="LCD_SEG18">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF11_LCD</PossibleValue>
@@ -3879,11 +3879,6 @@
         <PinSignal Name="I2C4_SDA">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF2_I2C4</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="LCD_BIAS2">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LCD_SEG19">
@@ -4154,11 +4149,6 @@
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="LCD_BIAS3">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF12_LCD</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="LCD_SEG20">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF11_LCD</PossibleValue>
@@ -4190,6 +4180,11 @@
         <PinSignal Name="EVENTOUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF15_EVENTOUT</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LCD_VLCD">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LPTIM1_ETR">

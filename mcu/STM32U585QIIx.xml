@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U5" DBVersion="V3.0" Family="STM32U5" HasPowerPad="false" IOType="" Line="STM32U575/585" Package="UFBGA132" RefName="STM32U585QIIx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -782,7 +782,7 @@
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -793,7 +793,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC2_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC2_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

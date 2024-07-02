@@ -11,7 +11,7 @@
     <Voltage Max="3.6" Min="1.7"/>
     <Current Run="100"/>
     <Temperature Max="85" Min="-40"/>
-    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32G0xx" InstanceName="ADC1" Name="ADC" Version="aditf4_v3_0_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32G0xx" InstanceName="ADC1" Name="ADC" Version="aditf4_v3_0_G0_Cube"/>
     <IP ConfigFile="AES-STM32G0xx" InstanceName="AES" Name="AES" Version="aes3_v1_0_G0_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="COMP-STM32G0xx" InstanceName="COMP1" Name="COMP" Version="TSMC90_OrcaZERO_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="COMP-STM32G0xx" InstanceName="COMP2" Name="COMP" Version="TSMC90_OrcaZERO_Cube"/>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H723" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H725/735" Package="LQFP100" RefName="STM32H725VGTx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>550</Frequency>
+    <MemoryMap>Available</MemoryMap>
     <Ram>564</Ram>
     <IONb>69</IONb>
     <Die>DIE483</Die>
@@ -20,7 +21,7 @@
     <IP ConfigFile="CRC-STM32H7xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_2"/>
     <IP ClockEnableMode="__HAL_RCC_DAC12_CLK_ENABLE" InstanceName="DAC1" Name="DAC" Version="dacif_v3_0_Cube"/>
     <IP ConfigFile="DCMI-STM32H7xx" InstanceName="DCMI" Name="DCMI" Version="cci_v2_0_Cube"/>
-    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0"/>
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_1"/>
     <IP ConfigFile="DFSDM-STM32H7xx" InstanceName="DFSDM1" Name="DFSDM" Version="dfsdm1_v1_0_H7_Cube"/>
     <IP ConfigFile="DMA2D-STM32H7xx" InstanceName="DMA2D" Name="DMA2D" Version="dma2d1_v1_0"/>
     <IP ClockEnableMode="__HAL_RCC_DTS_CLK_ENABLE" ConfigFile="DTS-STM32H7xx" InstanceName="DTS" Name="DTS" Version="dts_v1_0_Cube"/>
@@ -107,6 +108,7 @@
     <IP InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_0_Cube"/>
     <IP ConfigFile="PWR-STM32H7xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32H7_vrefbuf_v1_0"/>
     <IP ClockEnableMode="HAL_RCCEx_WWDGxSysResetConfig(RCC_WWDG1);__HAL_RCC_WWDG1_CLK_ENABLE" ConfigFile="WWDG-STM32H7xx" InstanceName="WWDG1" Name="WWDG" Version="wwdg1_v2_0"/>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx"/>
     <IP ConfigFile="GPIO-STM32H7xx" InstanceName="GPIO" Name="GPIO" Version="STM32H72_gpio_v1_0"/>
     <IP ConfigFile="DMA-STM32H7xx" InstanceName="DMA" Name="DMA" Version="STM32H72_dma2_v1_3"/>
     <IP ConfigFile="BDMA-STM32H7xx" InstanceName="BDMA" Name="BDMA" Version="STM32H72_dma1_v1_2"/>

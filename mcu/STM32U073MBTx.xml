@@ -10,7 +10,7 @@
     <IP ClockEnableMode="__HAL_RCC_COMP_CLK_ENABLE" InstanceName="COMP1" Name="COMP" Version="TSMC90_U0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_COMP_CLK_ENABLE" InstanceName="COMP2" Name="COMP" Version="TSMC90_U0_Cube"/>
     <IP ConfigFile="CORTEX_M0+-STM32U0xx" InstanceName="CORTEX_M0+" Name="CORTEX_M0+" Version="cortex_v1_0_Cube"/>
-    <IP ConfigFile="CRC-STM32U0xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_0"/>
+    <IP ConfigFile="CRC-STM32U0xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_1_U0_N6"/>
     <IP ClockEnableMode="__HAL_RCC_DAC1_CLK_ENABLE" ConfigFile="DAC-STM32U0xx" InstanceName="DAC1" Name="DAC" Version="dacif_v2_0_U0_Cube"/>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32U0_sys_v1_0"/>
     <IP ConfigFile="FileX-STM32U0xx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_U0_Cube"/>
@@ -21,7 +21,7 @@
     <IP InstanceName="I2C4" Name="I2C" Version="i2c2_v1_1U5_Cube"/>
     <IP ConfigFile="IRTIM-STM32U0xx" InstanceName="IRTIM" Name="IRTIM" Version="L5_irtim_v1_0_Cube"/>
     <IP ConfigFile="IWDG-STM32U0xx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v3_0"/>
-    <IP ConfigFile="LCD-STM32U0xx" InstanceName="LCD" Name="LCD" Version="lcdc1_v1_4_Cube"/>
+    <IP ConfigFile="LCD-STM32U0xx" InstanceName="LCD" Name="LCD" Version="lcdc1_v1_2_Cube"/>
     <IP ConfigFile="LevelX-STM32U0xx" InstanceName="LEVELX" Name="LevelX" Version="v1.0.0_U0_Cube"/>
     <IP ConfigFile="LPTIM-STM32U0xx" InstanceName="LPTIM1" Name="LPTIM" Version="U0_lptimer1_v2_3_Cube"/>
     <IP ConfigFile="LPTIM-STM32U0xx" InstanceName="LPTIM2" Name="LPTIM" Version="U0_lptimer1_v2_3_Cube"/>
@@ -100,7 +100,6 @@
         <Signal Name="ADC1_IN0"/>
         <Signal Name="I2C3_SCL"/>
         <Signal Name="I2C4_SCL"/>
-        <Signal Name="LCD_BIAS1"/>
         <Signal Name="LCD_SEG18"/>
         <Signal Name="LPTIM1_IN1"/>
         <Signal Name="LPTIM2_IN1"/>
@@ -112,7 +111,6 @@
         <Signal Name="ADC1_IN1"/>
         <Signal Name="I2C3_SDA"/>
         <Signal Name="I2C4_SDA"/>
-        <Signal Name="LCD_BIAS2"/>
         <Signal Name="LCD_SEG19"/>
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="LPUART1_TX"/>
@@ -121,7 +119,6 @@
     </Pin>
     <Pin Name="PC2" Position="12" Type="I/O">
         <Signal Name="ADC1_IN2"/>
-        <Signal Name="LCD_BIAS3"/>
         <Signal Name="LCD_SEG20"/>
         <Signal Name="LPTIM1_IN2"/>
         <Signal Name="RCC_MCO2"/>
@@ -130,6 +127,7 @@
     </Pin>
     <Pin Name="PC3" Position="13" Type="I/O">
         <Signal Name="ADC1_IN3"/>
+        <Signal Name="LCD_VLCD"/>
         <Signal Name="LPTIM1_ETR"/>
         <Signal Name="LPTIM2_ETR"/>
         <Signal Name="LPTIM3_CH1"/>
@@ -304,6 +302,7 @@
     </Pin>
     <Pin Name="PB2" Position="31" Type="I/O">
         <Signal Name="COMP1_INP"/>
+        <Signal Name="LCD_VLCD"/>
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="RTC_OUT2"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>

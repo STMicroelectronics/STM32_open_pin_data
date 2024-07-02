@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5_128" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H503" Package="LQFP64" RefName="STM32H503RBTx" xmlns="http://dummy.com">
     <Core>Arm Cortex-M33</Core>
     <Frequency>250</Frequency>
@@ -46,6 +46,7 @@
     <IP ConfigFile="RNG-STM32H5xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1"/>
     <IP ClockEnableMode="__HAL_RCC_RTC_ENABLE; __HAL_RCC_RTCAPB_CLK_ENABLE" ConfigFile="RTC-STM32H5xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_U5_Cube"/>
     <IP ConfigFile="SAU-STM32H5xx" InstanceName="SAU" Name="SAU" Version="sau_v2_0_Cube"/>
+    <IP InstanceName="SBS" Name="SBS" Version="sbs_v1_1_Cube"/>
     <IP ConfigFile="SPI-STM32H5xx" InstanceName="SPI1" Name="SPI" Version="spi2s3_v2_1_Cube"/>
     <IP ConfigFile="SPI-STM32H5xx" InstanceName="SPI2" Name="SPI" Version="spi2s3_v2_1_Cube"/>
     <IP ConfigFile="SPI-STM32H5xx" InstanceName="SPI3" Name="SPI" Version="spi2s3_v2_1_Cube"/>
@@ -124,10 +125,12 @@
         <Signal Name="ADC1_INP12"/>
         <Signal Name="I2S1_SDI"/>
         <Signal Name="I2S2_SDI"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
-        <Signal Name="PWR_CSTOP"/>
+        <Signal Name="PWR_CSLEEP"/>
         <Signal Name="SPI1_MISO"/>
         <Signal Name="SPI2_MISO"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -138,7 +141,7 @@
         <Signal Name="I2S2_SDO"/>
         <Signal Name="LPTIM2_IN2"/>
         <Signal Name="LPUART1_TX"/>
-        <Signal Name="PWR_CSLEEP"/>
+        <Signal Name="PWR_CSTOP"/>
         <Signal Name="SPI1_MOSI"/>
         <Signal Name="SPI2_MOSI"/>
         <Signal Name="USART2_CTS"/>
@@ -189,6 +192,7 @@
         <Signal Name="TIM2_CH2"/>
         <Signal Name="USART1_RX"/>
         <Signal Name="USART2_CK"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -240,6 +244,7 @@
         <Signal Name="SPI3_NSS"/>
         <Signal Name="TIM1_BKIN"/>
         <Signal Name="TIM1_CH2N"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USART2_CK"/>
         <Signal Name="USART3_TX"/>
@@ -257,6 +262,7 @@
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="LPTIM1_ETR"/>
         <Signal Name="LPTIM2_CH2"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="PWR_CSTOP"/>
         <Signal Name="SPI1_SCK"/>
@@ -295,8 +301,10 @@
         <Signal Name="TIM1_CH1N"/>
         <Signal Name="TIM2_CH3"/>
         <Signal Name="TIM3_CH2"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USART3_CK"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -413,10 +421,12 @@
     <Pin Name="PB14" Position="35" Type="I/O">
         <Signal Name="I2S2_SDI"/>
         <Signal Name="LPTIM1_ETR"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SPI2_MISO"/>
         <Signal Name="TIM1_CH2N"/>
         <Signal Name="USART1_TX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -437,6 +447,7 @@
         <Signal Name="TIM1_CH3N"/>
         <Signal Name="TIM3_CH4"/>
         <Signal Name="USART1_RX"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal Name="USART2_RX"/>
         <Signal Name="USART3_CTS"/>
@@ -492,6 +503,7 @@
         <Signal Name="TIM3_CH4"/>
         <Signal Name="USART2_CTS"/>
         <Signal Name="USART2_NSS"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -553,6 +565,7 @@
         <Signal Name="USART1_NSS"/>
         <Signal Name="USART1_RX"/>
         <Signal Name="USART2_RX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal Name="USB_DM"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -561,12 +574,14 @@
         <Signal Name="DEBUG_TRACED3"/>
         <Signal Name="FDCAN1_TX"/>
         <Signal Name="I2S2_CK"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SPI2_RDY"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_ETR"/>
         <Signal Name="TIM2_CH4"/>
         <Signal Name="TIM3_CH4"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USART1_TX"/>
         <Signal Name="USART2_TX"/>
@@ -591,6 +606,7 @@
         <Signal Name="DEBUG_JTCK-SWCLK"/>
         <Signal Name="LPTIM1_ETR"/>
         <Signal Name="LPTIM2_CH1"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="TIM1_CH2"/>
         <Signal Name="TIM1_CH4N"/>
@@ -617,6 +633,7 @@
         <Signal Name="USART1_CTS"/>
         <Signal Name="USART1_NSS"/>
         <Signal Name="USART2_CK"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal Name="USART2_RX"/>
         <Signal Name="USART3_RX"/>
@@ -631,6 +648,7 @@
         <Signal Name="SPI1_MISO"/>
         <Signal Name="SPI3_SCK"/>
         <Signal Name="TIM1_BKIN2"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal Name="USART3_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -667,6 +685,7 @@
         <Signal Name="TIM2_CH3"/>
         <Signal Name="TIM2_ETR"/>
         <Signal Name="TIM3_ETR"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal Name="USART3_CTS"/>
         <Signal Name="USART3_NSS"/>

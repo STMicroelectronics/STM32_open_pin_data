@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP13" DBVersion="V3.0" Family="STM32MP1" FwLibrary="STM32Cube_FW_MP13" HasPowerPad="false" IOType="" Line="STM32MP133" Package="LFBGA289" RefName="STM32MP133CAEx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A7</Core>
     <GentypeFirmware FirmwareName="OP-TEE" GenType="OP-TEE"/>
@@ -846,6 +846,7 @@
         <Signal Name="TIM3_CH2"/>
         <Signal Name="TIM8_CH2"/>
         <Signal Name="USART3_CTS"/>
+        <Signal Name="USART6_RX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB9" Position="A12" Type="I/O">
@@ -1002,6 +1003,7 @@
         <Signal Name="SDMMC2_D6"/>
         <Signal Name="TIM3_CH1"/>
         <Signal Name="TIM8_CH1"/>
+        <Signal Name="USART6_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB15" Position="B12" Type="I/O">
@@ -1287,6 +1289,7 @@
         <Signal Name="UART5_RX"/>
         <Signal Name="UART7_DE"/>
         <Signal Name="UART7_RTS"/>
+        <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
         <Condition Diagnostic="Pin not available for boot step (boot ROM)" Expression="!(UART5_RX &amp; UART5_BOOTROM)"/>
     </Pin>
@@ -1298,6 +1301,7 @@
         <Signal Name="SPI2_SCK"/>
         <Signal Name="SPI4_NSS"/>
         <Signal Name="TIM2_CH3"/>
+        <Signal Name="USART3_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="VDDSD2" Position="D11" Type="Power"/>

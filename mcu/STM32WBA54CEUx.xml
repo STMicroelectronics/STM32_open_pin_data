@@ -273,6 +273,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
+    <IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32WBAxx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.2.0_Cube"/>
     <IP ConfigFile="PKA-STM32WBAxx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
@@ -409,7 +410,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.3_Cube">
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.4_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>

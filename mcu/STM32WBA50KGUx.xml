@@ -25,6 +25,7 @@
     <IP ConfigFile="LPTIM-STM32WBAxx" InstanceName="LPTIM1" Name="LPTIM" Version="WBA_lptimer1_v2_2_Cube"/>
     <IP InstanceName="LPUART1" Name="LPUART" Version="sci3_v1_3_Cube"/>
     <IP ConfigFile="MISC-STM32WBAxx" InstanceName="MISC" Name="MISC" Version="v1.0_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_CRC_CLK_ENABLE" ConfigFile="PDM2PCM-STM32WBAxx" InstanceName="PDM2PCM" Name="PDM2PCM" Version="pdm2pcm_v3.2.0_Cube"/>
     <IP ConfigFile="PKA-STM32WBAxx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_PWR_CLK_ENABLE" InstanceName="PWR" Name="PWR" Version="STM32WBA_pwr_v1_0"/>
     <IP ClockEnableMode="__HAL_RCC_RAMCFG_CLK_ENABLE" ConfigFile="RAMCFG-STM32WBAxx" InstanceName="RAMCFG" Name="RAMCFG" Version="STM32WBA_v1_0_Cube"/>
@@ -34,7 +35,7 @@
     <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc2_v2_U5_Cube"/>
     <IP ConfigFile="SEQUENCER-STM32WBAxx" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube"/>
     <IP ConfigFile="SPI-STM32WBAxx" InstanceName="SPI3" Name="SPI" Version="spi2s3_v2_0_Cube"/>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.3_Cube"/>
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.4_Cube"/>
     <IP InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0"/>
     <IP InstanceName="TAMP" Name="TAMP" Version="STM32L5_rtc2_v2_8_Cube"/>
     <IP ConfigFile="ThreadX-STM32WBAxx" InstanceName="THREADX" Name="ThreadX" Version="v1.0.0_WBA_Cube"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32H56x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="LPGPIOx" Comment="LPGPIO address" Type="list" Visible="false">
@@ -426,6 +426,62 @@
         <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
         <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM9"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultH5">
+        <Condition Diagnostic="" Expression="PB6"/>
+        <ConfigForMode>AlternateFunctionSpeedDefaultHigh</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_Default_HIGH"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultH5">
+        <Condition Diagnostic="" Expression="PB7"/>
+        <ConfigForMode>AlternateFunctionSpeedDefaultHigh</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_Default_HIGH"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultH5">
+        <Condition Diagnostic="" Expression="PB8"/>
+        <ConfigForMode>AlternateFunctionSpeedDefaultHigh</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_Default_HIGH"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultH5">
+        <Condition Diagnostic="" Expression="PB9"/>
+        <ConfigForMode>AlternateFunctionSpeedDefaultHigh</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_Default_HIGH"/>
         <Parameter Name="GPIO_PuPd"/>
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_Mode">
@@ -885,6 +941,20 @@
         <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
         <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultH5">
+        <ConfigForMode>AlternateFunctionSpeedDefaultHigh</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>!(PB9|PB8|PB7|PB6)</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed_Default_HIGH"/>
         <Parameter Name="GPIO_PuPd"/>
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_Mode">
@@ -1635,6 +1705,7 @@
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionNoPushPullVeryHighTargetMode">
+        <Condition Diagnostic="" Expression="PB6"/>
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeedTargetMode</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
         <Parameter Name="GPIO_Speed_High_Only">
@@ -1651,9 +1722,79 @@
         <Parameter Name="GPIO_FM6"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
+    <RefMode Name="AlternateFunctionNoPushPullVeryHighTargetMode">
+        <Condition Diagnostic="" Expression="PB7"/>
+        <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeedTargetMode</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Only">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionNoPushPullVeryHighTargetMode">
+        <Condition Diagnostic="" Expression="PB8"/>
+        <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeedTargetMode</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Only">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionNoPushPullVeryHighTargetMode">
+        <Condition Diagnostic="" Expression="PB9"/>
+        <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeedTargetMode</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Only">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM9"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionNoPushPullVeryHighTargetMode">
+        <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
+        <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeedTargetMode</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Only">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
     <RefMode Name="System">
         <ConfigForMode>System</ConfigForMode>
-        <Parameter Name="PinAttribute"/>
     </RefMode>
     <GPIO_Pin PortName="PA" Name="PA0">
         <SpecificParameter Name="EXTI_Line">
@@ -1793,6 +1934,11 @@
         <PinSignal Name="UART4_RX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_UART4</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART2_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART2_RTS">
@@ -1939,6 +2085,11 @@
                 <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="LPUART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="LPUART1_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
@@ -1962,6 +2113,11 @@
         <PinSignal Name="UART4_TX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_UART4</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_RTS">
@@ -3003,6 +3159,11 @@
                 <PossibleValue>GPIO_AF4_USART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="USART3_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="USART3_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART3</PossibleValue>
@@ -3876,6 +4037,11 @@
                 <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="USART11_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART11</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="USART11_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART11</PossibleValue>
@@ -4323,6 +4489,11 @@
         <PinSignal Name="TIM1_CH4N">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART12_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_UART12</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART12_RTS">
@@ -4872,6 +5043,11 @@
                 <PossibleValue>GPIO_AF8_UART4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="USART3_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="USART3_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART3</PossibleValue>
@@ -4945,6 +5121,11 @@
                 <PossibleValue>GPIO_AF2_TIM4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="UART9_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF11_UART9</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="UART9_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF11_UART9</PossibleValue>
@@ -5014,6 +5195,11 @@
         <PinSignal Name="TIM4_CH4">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF2_TIM4</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART8_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_UART8</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART8_RTS">
@@ -5148,6 +5334,11 @@
         <PinSignal Name="OCTOSPI1_IO4">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF10_OCTOSPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART2_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART2_RTS">
@@ -6042,6 +6233,11 @@
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="UART12_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF6_UART12</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="UART12_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_UART12</PossibleValue>
@@ -6131,6 +6327,11 @@
         <PinSignal Name="UART12_RX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_UART12</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART7_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_UART7</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART7_RTS">
@@ -6678,6 +6879,11 @@
                 <PossibleValue>GPIO_AF1_TIM16</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="UART7_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_UART7</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="UART7_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_UART7</PossibleValue>
@@ -6893,6 +7099,11 @@
                 <PossibleValue>GPIO_AF6_USART10</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="USART11_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART11</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="USART11_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART11</PossibleValue>
@@ -6959,6 +7170,11 @@
         <PinSignal Name="USART10_TX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_USART10</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART6_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART6</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART6_RTS">
@@ -7090,6 +7306,11 @@
         <PinSignal Name="SPI6_MOSI">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI6</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART10_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF6_USART10</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART10_RTS">
@@ -7424,6 +7645,11 @@
         <PinSignal Name="TIM8_ETR">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF3_TIM8</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART6_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART6</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART6_RTS">

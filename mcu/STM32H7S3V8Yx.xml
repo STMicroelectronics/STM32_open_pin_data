@@ -78,6 +78,11 @@
             <ContextIP ContextName="ExtMemLoader" InitializerForced="true"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="EXTMEM_MANAGER_APPLI-STM32H7RSxx" InstanceName="EXTMEM_MANAGER_APPLI" Name="EXTMEM_MANAGER_APPLI" Version="v1.0.0_H7RS_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="Appli"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="FATFS-STM32H7RSxx" InstanceName="FATFS" Name="FATFS" Version="H7RS-v0.1.0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="Boot"/>

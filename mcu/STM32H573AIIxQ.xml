@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H563/H573" Package="UFBGA169" RefName="STM32H573AIIxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -605,7 +605,16 @@
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP InstanceName="SBS" Name="SBS" Version="sbs_v1_1_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+            <ContextIP ContextName="CortexM33NS" DefaultSelection="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33" DefaultSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_h5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -616,7 +625,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC2_CLK_ENABLE" ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC2_CLK_ENABLE" ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_h5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -1296,11 +1305,13 @@
     <Pin Name="PA12" Position="B13" Type="I/O">
         <Signal Name="FDCAN1_TX"/>
         <Signal Name="I2S2_CK"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SAI2_FS_B"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_ETR"/>
         <Signal Name="UART4_TX"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USB_DP"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1518,12 +1529,14 @@
         <Signal Name="SDMMC2_D3"/>
         <Signal Name="SPI6_MISO"/>
         <Signal Name="USART10_TX"/>
+        <Signal Name="USART6_DE"/>
         <Signal Name="USART6_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD4" Position="D8" Type="I/O">
         <Signal Name="FMC_NOE"/>
         <Signal Name="OCTOSPI1_IO4"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1879,6 +1892,7 @@
         <Signal Name="SPI5_MISO"/>
         <Signal Name="TIM13_CH1"/>
         <Signal Name="TIM16_CH1N"/>
+        <Signal Name="UART7_DE"/>
         <Signal Name="UART7_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1916,6 +1930,7 @@
         <Signal Name="PSSI_D13"/>
         <Signal Name="SAI2_SCK_A"/>
         <Signal Name="TIM4_CH2"/>
+        <Signal Name="UART9_DE"/>
         <Signal Name="UART9_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1932,6 +1947,7 @@
         <Signal Name="FMC_D1"/>
         <Signal Name="FMC_DA1"/>
         <Signal Name="TIM4_CH4"/>
+        <Signal Name="UART8_DE"/>
         <Signal Name="UART8_RTS"/>
         <Signal Name="UART9_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1960,6 +1976,7 @@
         <Signal Name="FMC_SDCLK"/>
         <Signal Name="SPI6_NSS"/>
         <Signal Name="TIM8_ETR"/>
+        <Signal Name="USART6_DE"/>
         <Signal Name="USART6_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1993,6 +2010,7 @@
         <Signal Name="TIM2_CH2"/>
         <Signal Name="TIM5_CH2"/>
         <Signal Name="UART4_RX"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -2073,6 +2091,7 @@
         <Signal Name="SAI2_FS_A"/>
         <Signal Name="TIM4_CH1"/>
         <Signal Name="UART4_TX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -2124,6 +2143,7 @@
         <Signal Name="SPI2_MOSI"/>
         <Signal Name="TAMP_IN3"/>
         <Signal Name="TAMP_OUT5"/>
+        <Signal Name="USART11_DE"/>
         <Signal Name="USART11_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -2201,6 +2221,7 @@
         <Signal Name="UART4_RTS"/>
         <Signal Name="UCPD1_CC2"/>
         <Signal Name="USART1_TX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -2428,6 +2449,7 @@
         <Signal Name="FMC_DA4"/>
         <Signal Name="OCTOSPI1_IO4"/>
         <Signal Name="TIM1_ETR"/>
+        <Signal Name="UART12_DE"/>
         <Signal Name="UART12_RTS"/>
         <Signal Name="UART7_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -2529,6 +2551,7 @@
         <Signal Name="SAI1_D3"/>
         <Signal Name="SAI1_FS_A"/>
         <Signal Name="TIM1_CH4N"/>
+        <Signal Name="UART12_DE"/>
         <Signal Name="UART12_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -2653,6 +2676,7 @@
         <Signal Name="OCTOSPI1_IO6"/>
         <Signal Name="TIM1_CH1"/>
         <Signal Name="UART12_RX"/>
+        <Signal Name="UART7_DE"/>
         <Signal Name="UART7_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>

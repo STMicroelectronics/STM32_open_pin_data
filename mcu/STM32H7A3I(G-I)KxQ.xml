@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7AB" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H7A3/7B3" Package="UFBGA176" RefName="STM32H7A3I(G-I)KxQ" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>280</Frequency>
+    <MemoryMap>Available</MemoryMap>
     <Ram>1424</Ram>
     <IONb>132</IONb>
     <Die>DIE480</Die>
@@ -104,6 +105,7 @@
     <IP InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_0_Cube"/>
     <IP ConfigFile="PWR-STM32H7xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32H7_vrefbuf_v1_0"/>
     <IP ConfigFile="WWDG-STM32H7xx" InstanceName="WWDG1" Name="WWDG" Version="wwdg1_v2_0"/>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx"/>
     <IP ConfigFile="GPIO-STM32H7xx" InstanceName="GPIO" Name="GPIO" Version="STM32H7A2_gpio_v1_0"/>
     <IP ConfigFile="DMA-STM32H7xx" InstanceName="DMA" Name="DMA" Version="STM32H7Ax3Bx3_dma2_v1_3"/>
     <IP ConfigFile="BDMA1-STM32H7xx" InstanceName="BDMA1" Name="BDMA1" Version="STM32H7Ax3Bx3_dma_v1_1"/>

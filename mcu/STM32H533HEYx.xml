@@ -229,15 +229,6 @@
             <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="I2C3" Name="I2C" Version="i2c2_v1_1U5_Cube">
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33S"/>
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-    </IP>
     <IP ConfigFile="I2S-STM32H5xx" IPContextCoupling="SPI1I2S1" InstanceName="I2S1" Name="I2S" Version="spi2s3_v2_1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
@@ -250,17 +241,6 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="I2S-STM32H5xx" IPContextCoupling="SPI2I2S2" InstanceName="I2S2" Name="I2S" Version="spi2s3_v2_1_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
-    <IP ConfigFile="I2S-STM32H5xx" IPContextCoupling="SPI3I2S3" InstanceName="I2S3" Name="I2S" Version="spi2s3_v2_1_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -507,17 +487,6 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SPI-STM32H5xx" InstanceName="SPI4" Name="SPI" Version="spi2s3_v2_1_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
     <IP ConfigFile="SYS-STM32H5xx" InstanceName="SYS" Name="SYS" Version="STM32H5x_sys_v1_0">
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
@@ -710,28 +679,6 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="USART3" Name="USART" Version="sci3_v2_0_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
-    <IP InstanceName="USART6" Name="USART" Version="sci3_v2_0_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
     <IP ClockEnableMode="__HAL_RCC_USB_CLK_ENABLE" InstanceName="USB" Name="USB" Version="usbfs_v1.0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
@@ -816,7 +763,6 @@
         <Signal Name="CEC"/>
         <Signal Name="DEBUG_JTDI"/>
         <Signal Name="I2S1_WS"/>
-        <Signal Name="I2S3_WS"/>
         <Signal Name="OCTOSPI1_NCS"/>
         <Signal Name="SPI1_NSS"/>
         <Signal Name="SPI3_NSS"/>
@@ -833,7 +779,6 @@
         <Signal Name="FDCAN2_TX"/>
         <Signal Name="I2C2_SDA"/>
         <Signal Name="I2S1_CK"/>
-        <Signal Name="I2S3_CK"/>
         <Signal Name="I3C2_SCL"/>
         <Signal Name="LPUART1_TX"/>
         <Signal Name="SPI1_SCK"/>
@@ -844,10 +789,8 @@
     </Pin>
     <Pin Name="PB4(NJTRST)" Position="A7" Type="I/O">
         <Signal Name="DEBUG_NJTRST"/>
-        <Signal Name="I2C3_SDA"/>
         <Signal Name="I2S1_SDI"/>
         <Signal Name="I2S2_WS"/>
-        <Signal Name="I2S3_SDI"/>
         <Signal Name="I3C2_SDA"/>
         <Signal Name="LPTIM1_CH2"/>
         <Signal Name="OCTOSPI1_CLK"/>
@@ -862,10 +805,12 @@
     <Pin Name="PA12" Position="B2" Type="I/O">
         <Signal Name="FDCAN1_TX"/>
         <Signal Name="I2S2_CK"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_ETR"/>
         <Signal Name="UART4_TX"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USB_DP"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -897,20 +842,15 @@
         <Signal Name="I3C1_SDA"/>
         <Signal Name="LPUART1_RX"/>
         <Signal Name="PWR_WKUP5"/>
-        <Signal Name="SPI4_MISO"/>
         <Signal Name="TIM4_CH2"/>
         <Signal Name="USART1_RX"/>
-        <Signal Name="USART6_CTS"/>
-        <Signal Name="USART6_NSS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB8" Position="C5" Type="I/O">
         <Signal Name="FDCAN1_RX"/>
         <Signal Name="I2C1_SCL"/>
-        <Signal Name="I2S3_WS"/>
         <Signal Name="I3C1_SCL"/>
         <Signal Name="SPI3_NSS"/>
-        <Signal Name="SPI4_RDY"/>
         <Signal Name="TIM4_CH3"/>
         <Signal Name="UART4_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -936,11 +876,9 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA8" Position="D2" Type="I/O">
-        <Signal Name="I2C3_SCL"/>
         <Signal Name="I3C2_SCL"/>
         <Signal Name="RCC_MCO_1"/>
         <Signal Name="SPI1_RDY"/>
-        <Signal Name="SPI4_MOSI"/>
         <Signal Name="TIM1_CH1"/>
         <Signal Name="TIM8_BKIN2"/>
         <Signal Name="USART1_CK"/>
@@ -951,7 +889,6 @@
         <Signal Name="ADC1_INP15"/>
         <Signal Name="ADC2_INP15"/>
         <Signal Name="I2S2_WS"/>
-        <Signal Name="I2S3_SDO"/>
         <Signal Name="OCTOSPI1_CLK"/>
         <Signal Name="SPI2_NSS"/>
         <Signal Name="SPI3_MOSI"/>
@@ -973,8 +910,8 @@
         <Signal Name="TIM2_CH2"/>
         <Signal Name="TIM5_CH2"/>
         <Signal Name="UART4_RX"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
-        <Signal Name="USART6_CK"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PH1-OSC_OUT(PH1)" Position="D8" Type="I/O">
@@ -1021,8 +958,6 @@
         <Signal Name="ADC2_INP18"/>
         <Signal Name="DAC1_OUT1"/>
         <Signal Name="I2S1_WS"/>
-        <Signal Name="I2S3_SDO"/>
-        <Signal Name="I2S3_WS"/>
         <Signal Name="LPTIM2_CH1"/>
         <Signal Name="SPI1_NSS"/>
         <Signal Name="SPI3_MOSI"/>
@@ -1053,7 +988,6 @@
         <Signal Name="FDCAN2_RX"/>
         <Signal Name="PWR_WKUP1"/>
         <Signal Name="SPI3_RDY"/>
-        <Signal Name="SPI4_SCK"/>
         <Signal Name="TAMP_IN2"/>
         <Signal Name="TAMP_OUT1"/>
         <Signal Name="TIM15_BKIN"/>
@@ -1106,7 +1040,6 @@
         <Signal Name="TIM1_CH3N"/>
         <Signal Name="TIM3_CH4"/>
         <Signal Name="TIM8_CH3N"/>
-        <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB0" Position="G7" Type="I/O">
@@ -1114,7 +1047,6 @@
         <Signal Name="ADC1_INP9"/>
         <Signal Name="ADC2_INN5"/>
         <Signal Name="ADC2_INP9"/>
-        <Signal Name="I2S3_SDI"/>
         <Signal Name="OCTOSPI1_IO1"/>
         <Signal Name="SPI3_MISO"/>
         <Signal Name="TIM1_CH2N"/>

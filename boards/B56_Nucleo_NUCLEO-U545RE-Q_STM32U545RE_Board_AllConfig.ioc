@@ -1,4 +1,4 @@
-#Copyright (c) 2023 STMicroelectronics. All rights reserved.
+#Copyright (c) 2024 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 ADC1.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_3
 ADC1.IPParameters=Rank-0\#ChannelRegularConversion,Channel-0\#ChannelRegularConversion,SamplingTime-0\#ChannelRegularConversion,OffsetNumber-0\#ChannelRegularConversion,MonitoredBy-0\#ChannelRegularConversion,NbrOfConversionFlag,master
@@ -27,7 +27,7 @@ Mcu.IP5=PWR
 Mcu.IP6=RCC
 Mcu.IP7=SYS
 Mcu.IP8=USART1
-Mcu.IP9=USB
+Mcu.IP9=USB_DRD_FS
 Mcu.IPNb=10
 Mcu.Name=STM32U545RETxQ
 Mcu.Package=LQFP64
@@ -52,8 +52,8 @@ Mcu.PinsNb=17
 Mcu.ThirdPartyNb=0
 Mcu.UserConstants=
 Mcu.UserName=STM32U545RETxQ
-MxCube.Version=6.8.0
-MxDb.Version=DB.6.0.80
+MxCube.Version=6.12.0
+MxDb.Version=DB.6.0.120
 NVIC.BusFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false
 NVIC.DebugMonitor_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false
 NVIC.ForceEnableDMAVector=true
@@ -85,9 +85,10 @@ PA9.Mode=Asynchronous
 PA9.Signal=USART1_TX
 PB3\ (JTDO/TRACESWO).Mode=Trace_Asynchronous_SW
 PB3\ (JTDO/TRACESWO).Signal=DEBUG_JTDO-SWO
-PC13.GPIOParameters=GPIO_Label,GPIO_ModeDefaultEXTI
+PC13.GPIOParameters=GPIO_PuPd,GPIO_Label,GPIO_ModeDefaultEXTI
 PC13.GPIO_Label=USER_BUTTON
 PC13.GPIO_ModeDefaultEXTI=GPIO_MODE_IT_FALLING
+PC13.GPIO_PuPd=GPIO_PULLDOWN
 PC13.Locked=true
 PC13.Signal=GPXTI13
 PC14-OSC32_IN\ (PC14).Mode=LSE-External-Oscillator

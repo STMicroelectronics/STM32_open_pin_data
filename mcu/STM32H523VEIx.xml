@@ -477,7 +477,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ConfigFile="SDIO-STM32H5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_h5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -911,6 +911,7 @@
     <Pin Name="PD4" Position="A7" Type="I/O">
         <Signal Name="FMC_NOE"/>
         <Signal Name="OCTOSPI1_IO4"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1149,10 +1150,12 @@
     <Pin Name="PA12" Position="C11" Type="I/O">
         <Signal Name="FDCAN1_TX"/>
         <Signal Name="I2S2_CK"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_ETR"/>
         <Signal Name="UART4_TX"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal Name="USB_DP"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1403,6 +1406,7 @@
         <Signal Name="PSSI_D12"/>
         <Signal Name="TIM4_CH1"/>
         <Signal Name="UART4_TX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -1449,6 +1453,7 @@
         <Signal Name="TIM2_CH2"/>
         <Signal Name="TIM5_CH2"/>
         <Signal Name="UART4_RX"/>
+        <Signal Name="USART2_DE"/>
         <Signal Name="USART2_RTS"/>
         <Signal Name="USART6_CK"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1500,6 +1505,7 @@
         <Signal Name="UART4_RTS"/>
         <Signal Name="UCPD1_CC2"/>
         <Signal Name="USART1_TX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>

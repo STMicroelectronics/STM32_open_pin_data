@@ -1,0 +1,2615 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32WB07x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
+    <About>GPIO: General Purpose Input Output</About>
+    <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
+    <RefParameter Name="GPIOx" Comment="GPIO address" Type="list" Visible="false">
+        <PossibleValue Value="GPIOA" Comment="Port A address"/>
+        <PossibleValue Value="GPIOB" Comment="Port B address"/>
+        <PossibleValue Value="GPIOC" Comment="Port C address"/>
+        <PossibleValue Value="GPIOD" Comment="Port D address"/>
+        <PossibleValue Value="GPIOH" Comment="Port H address"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Pin" Comment="GPIO pin mask" Type="list" Visible="false"/>
+    <RefParameter Name="PinState" Comment="GPIO output level" Type="list" DefaultValue="GPIO_PIN_RESET">
+        <PossibleValue Value="GPIO_PIN_RESET" Comment="Low"/>
+        <PossibleValue Value="GPIO_PIN_SET" Comment="High"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_ModeDefaultPP" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_AF_PP">
+        <PossibleValue Value="GPIO_MODE_INPUT" Comment="Input mode"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_PP" Comment="Output Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_OD" Comment="Output Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_AF_PP" Comment="Alternate Function Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_AF_OD" Comment="Alternate Function Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_ANALOG" Comment="Analog mode"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_ModeDefaultOD" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_AF_OD">
+        <PossibleValue Value="GPIO_MODE_INPUT" Comment="Input mode"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_PP" Comment="Output Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_OD" Comment="Output Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_AF_PP" Comment="Alternate Function Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_AF_OD" Comment="Alternate Function Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_ANALOG" Comment="Analog mode"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_ModeDefaultOutputPP" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_OUTPUT_PP">
+        <PossibleValue Value="GPIO_MODE_INPUT" Comment="Input mode"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_PP" Comment="Output Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_OD" Comment="Output Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_AF_PP" Comment="Alternate Function Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_AF_OD" Comment="Alternate Function Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_ANALOG" Comment="Analog mode"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_ModeDefaultEXTI_IT_RF" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_IT_RISING_FALLING">
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_ModeDefaultEXTI" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_IT_RISING">
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Mode" Comment="GPIO mode" Type="list">
+        <PossibleValue Value="GPIO_MODE_INPUT" Comment="Input mode"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_PP" Comment="Output Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_OUTPUT_OD" Comment="Output Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_AF_PP" Comment="Alternate Function Push Pull"/>
+        <PossibleValue Value="GPIO_MODE_AF_OD" Comment="Alternate Function Open Drain"/>
+        <PossibleValue Value="GPIO_MODE_ANALOG" Comment="Analog mode"/>
+        <PossibleValue Value="GPIO_MODE_ANALOG_ADC_CONTROL" Comment="Analog mode for ADC conversion"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_PIN_PWR" Comment="GPIO mode" Type="list" DefaultValue="LL_PWR_GPIO_BIT_0">
+        <PossibleValue Value="LL_PWR_GPIO_BIT_0" Comment="GPIO port I/O pin 0"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_1" Comment="GPIO port I/O pin 1"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_2" Comment="GPIO port I/O pin 2"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_3" Comment="GPIO port I/O pin 3"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_4" Comment="GPIO port I/O pin 4"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_5" Comment="GPIO port I/O pin 5"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_6" Comment="GPIO port I/O pin 6"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_7" Comment="GPIO port I/O pin 7"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_8" Comment="GPIO port I/O pin 8"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_9" Comment="GPIO port I/O pin 9"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_10" Comment="GPIO port I/O pin 10"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_11" Comment="GPIO port I/O pin 11"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_12" Comment="GPIO port I/O pin 12"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_13" Comment="GPIO port I/O pin 13"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_14" Comment="GPIO port I/O pin 14"/>
+        <PossibleValue Value="LL_PWR_GPIO_BIT_15" Comment="GPIO port I/O pin 15"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_PWR" Comment="GPIO mode" Type="list" DefaultValue="LL_PWR_GPIO_A">
+        <PossibleValue Value="LL_PWR_GPIO_A" Comment="LL_PWR_GPIO_A"/>
+        <PossibleValue Value="LL_PWR_GPIO_B" Comment="LL_PWR_GPIO_B"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Mode_For_EXTI_LL" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_INPUT">
+        <PossibleValue Value="GPIO_MODE_INPUT" Comment="Input mode"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING" Comment="External Interrupt Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_FALLING" Comment="External Interrupt Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_IT_RISING_FALLING" Comment="External Interrupt Mode with Rising/Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING" Comment="External Event Mode with Rising edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
+        <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_PuPd" Comment="GPIO Pull-up/Pull-down" Type="list" DefaultValue="GPIO_NOPULL">
+        <PossibleValue Value="GPIO_NOPULL" Comment="No pull-up and no pull-down"/>
+        <PossibleValue Value="GPIO_PULLUP" Comment="Pull-up"/>
+        <PossibleValue Value="GPIO_PULLDOWN" Comment="Pull-down"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Pu" Comment="GPIO Pull-up/Pull-down" Type="list" DefaultValue="GPIO_NOPULL">
+        <PossibleValue Value="GPIO_NOPULL" Comment="No pull-up and no pull-down"/>
+        <PossibleValue Value="GPIO_PULLUP" Comment="Pull-up"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_PuPdOD" Comment="GPIO Pull-up/Pull-down" Type="list" DefaultValue="GPIO_PULLUP">
+        <PossibleValue Value="GPIO_NOPULL" Comment="No pull-up and no pull-down"/>
+        <PossibleValue Value="GPIO_PULLUP" Comment="Pull-up"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Speed" Comment="Maximum output speed" Type="list" DefaultValue="GPIO_SPEED_FREQ_LOW">
+        <PossibleValue Value="GPIO_SPEED_FREQ_LOW" Comment="Low"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_MEDIUM" Comment="Medium"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_HIGH" Comment="High"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_VERY_HIGH" Comment="Very High"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_Speed_High_Default" Comment="Maximum output speed" Type="list" DefaultValue="GPIO_SPEED_FREQ_VERY_HIGH">
+        <PossibleValue Value="GPIO_SPEED_FREQ_LOW" Comment="Low"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_MEDIUM" Comment="Medium"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_HIGH" Comment="High"/>
+        <PossibleValue Value="GPIO_SPEED_FREQ_VERY_HIGH" Comment="Very High"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_FM6" Comment="Fast Mode" Type="list" DefaultValue="__NULL">
+        <PossibleValue Value="__NULL" Comment="Disable"/>
+        <PossibleValue Value="SYSCFG_FASTMODEPLUS_PB6" Comment="Enable"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_FM7" Comment="Fast Mode" Type="list" DefaultValue="__NULL">
+        <PossibleValue Value="__NULL" Comment="Disable"/>
+        <PossibleValue Value="SYSCFG_FASTMODEPLUS_PB7" Comment="Enable"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_FMA0" Comment="Fast Mode" Type="list" DefaultValue="__NULL">
+        <PossibleValue Value="__NULL" Comment="Disable"/>
+        <PossibleValue Value="SYSCFG_FASTMODEPLUS_PA0" Comment="Enable"/>
+    </RefParameter>
+    <RefParameter Name="GPIO_FMA1" Comment="Fast Mode" Type="list" DefaultValue="__NULL">
+        <PossibleValue Value="__NULL" Comment="Disable"/>
+        <PossibleValue Value="SYSCFG_FASTMODEPLUS_PA1" Comment="Enable"/>
+    </RefParameter>
+    <RefParameter Name="PinAttribute" Comment="Pin Context Assignement" Type="list" Visible="false"/>
+    <RefMode Name="GPIO">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode"/>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="GPIO">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode"/>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="PB6  &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+        <Parameter Name="PinState"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+        <Parameter Name="PinState"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+        <Parameter Name="PinState"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+        <Parameter Name="PinState"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinState"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; (PWR:PWR_APC=1)"/>
+        <ConfigForMode>GPIODefaultOutputPPForAPC</ConfigForMode>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinState"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionHighSpeedDefault</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionHighSpeedDefaultForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLUP">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLUP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLUP">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLUP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLUP">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLUP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLUP">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLUP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLUP">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLUP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLUP">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLUP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullUp">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullUp">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullUp">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullUp">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullUp">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullUp">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrain">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrain">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrain">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrain">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrain">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrain">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionODForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionDefaultPPForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeed">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeed">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeed">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeed">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeed">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullHighSpeed">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="Analog">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=0"/>
+        <ConfigForMode>GPIO</ConfigForMode>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_ANALOG</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="Analog">
+        <Condition Diagnostic="" Expression="(PWR:PWR_APC=1)"/>
+        <ConfigForMode>GPIOForAPC</ConfigForMode>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_ANALOG</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="Input">
+        <ConfigForMode>GPIO</ConfigForMode>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_INPUT</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="RTCAlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="(RTC_OUT_ALARM &amp; PC13_RTC_OUT_ALARM) | (RTC_OUT_CALIB &amp; PC13_RTC_OUT_CALIB)"/>
+    </RefMode>
+    <RefMode Name="RTCAlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="RTCAlternateFunctionPushPull">
+        <Condition Diagnostic="" Expression="(PWR:PWR_APC=1)"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLDOWN">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPULLDOWN</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLDOWN</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullPULLDOWN">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionDefaultPULLDOWNForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_High_Default"/>
+        <Parameter Name="GPIO_PuPd">
+            <PossibleValue>GPIO_PULLDOWN</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="EXTI">
+        <ConfigForMode>EXTI</ConfigForMode>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultEXTI"/>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="EXTIRisingFalling">
+        <ConfigForMode>EXTIRisingFalling</ConfigForMode>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultEXTI_IT_RF"/>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionSampling">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPdOD">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionSampling">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPdOD">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionSampling">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPdOD">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionSampling">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPdOD">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionSampling">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPdOD">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionSampling">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionDefaultODForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPdOD">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionChannel">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionChannel">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionChannel">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionChannel">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionChannel">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="TSCAlternateFunctionChannel">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionDefaultPPForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultPP">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="Sync">
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="EVENTOUT">
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; (PWR:PWR_APC=0)"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAllPullValues">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunction</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionDefaultODForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPdOD"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOD">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionNoPullOrPullUpForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_Pu"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_OD</PossibleValue>
+        </Parameter>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull1">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_RX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull1">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_RX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull1">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_RX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull1">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_RX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull1">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_RX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </Parameter>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull1">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionNoPullForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_RX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </Parameter>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull2">
+        <Condition Diagnostic="" Expression="PB6 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_TX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FM6"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull2">
+        <Condition Diagnostic="" Expression="PB7 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_TX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FM7"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull2">
+        <Condition Diagnostic="" Expression="PA0 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_TX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FMA0"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull2">
+        <Condition Diagnostic="" Expression="PA1 &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_TX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_FMA1"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull2">
+        <Condition Diagnostic="" Expression="!(PA0|PA1|PB7|PB6) &amp; PWR:PWR_APC=0"/>
+        <ConfigForMode>AlternateFunctionNoPull</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_TX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </Parameter>
+    </RefMode>
+    <RefMode Name="AlternateFunctionOpenDrainNoPull2">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=1"/>
+        <ConfigForMode>AlternateFunctionNoPullForAPC</ConfigForMode>
+        <Parameter Name="GPIO_AF">
+            <PossibleValue>GPIO_AF2_TX_SEQUENCE</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pu">
+            <PossibleValue>GPIO_NOPULL</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIOx">
+            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </Parameter>
+    </RefMode>
+    <RefMode Name="System">
+        <ConfigForMode>System</ConfigForMode>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <GPIO_Pin PortName="PA" Name="PA0">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_0</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C1_SCL">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_MCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_I2S2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_CTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA1">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_1</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C1_SDA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA10">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S3_MCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RF_TX_SEQUENCE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_TX</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA11">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S3_SD">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RCC_MCO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_MCO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RF_RX_SEQUENCE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_RX</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI3_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA12">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_12</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C1_SMBA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_SD">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_I2S2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA13">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_13</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C2_SCL">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_ETR">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA14">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_14</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C2_SDA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA15">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_15</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C2_SMBA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_BKIN2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA2">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_2</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="DEBUG_SWDIO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_SWDIO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S3_MCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_CK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA3">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_3</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="DEBUG_SWCLK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_SWDIO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S3_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI3_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_BKIN2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_RTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA4">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_4</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S2_WS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA5">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_5</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RCC_MCO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_MCO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA6">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_6</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S2_SD">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_WS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_I2S2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_CTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA7">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_7</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_I2S2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_RTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA8">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_8</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="RF_RX_SEQUENCE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_RX</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI3_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA9">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_9</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S3_WS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RTC_OUT">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_RTC</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI3_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_SPI3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB0">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_0</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="LPUART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_RTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH2N">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB1">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_1</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="ADC1_PDM_CLK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_PDM</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_ETR">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB10">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C1_SDA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_I2C1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3N">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB11">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_11</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C1_SCL">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_I2C1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_WS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB12">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_12</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="ADC1_PDM_DATA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_PDM</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB13">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_13</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="ADC1_PDM_CLK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_PDM</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2C2_SCL">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_BKIN2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB14">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_14</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C2_SDA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI1_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3N">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_ETR">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB15">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_15</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C1_SMBA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RCC_MCO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_SYS</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="RF_TX_SEQUENCE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_TX</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB2">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_2</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="ADC1_PDM_DATA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_PDM</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH3">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_RTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB3">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_3</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="LPUART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_CTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB4">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_4</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="ADC1_PDM_DATA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_PDM</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB5">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_5</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="ADC1_PDM_CLK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_PDM</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_SD">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB6">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_6</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C2_SCL">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_WS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_NSS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB7">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_7</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2C2_SDA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_SCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH2">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB8">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_8</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="LPUART1_RX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1N">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH4">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_CK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PB" Name="PB9">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_9</PossibleValue>
+        </SpecificParameter>
+        <PinSignal Name="I2S2_MCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_I2S2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="LPUART1_CTS">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH1N">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM1_CH2N">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TIM1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_TX">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PC" Name="PC13">
+        <SpecificParameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PC" Name="PC14-OSC32_IN">
+        <SpecificParameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PC" Name="PC15-OSC32_OUT">
+        <SpecificParameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PI" Name="PI8">
+        <SpecificParameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Pin>
+    <GPIO_Port Name="PA" ClockEnableMode="__HAL_RCC_GPIOA_CLK_ENABLE">
+        <SpecificParameter Name="GPIOx">
+            <PossibleValue>GPIOA</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Port>
+    <GPIO_Port Name="PB" ClockEnableMode="__HAL_RCC_GPIOB_CLK_ENABLE">
+        <SpecificParameter Name="GPIOx">
+            <PossibleValue>GPIOB</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Port>
+</IP>
