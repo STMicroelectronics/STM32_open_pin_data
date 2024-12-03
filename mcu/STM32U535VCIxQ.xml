@@ -629,7 +629,7 @@
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

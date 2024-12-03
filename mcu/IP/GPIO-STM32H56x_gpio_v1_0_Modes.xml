@@ -22,9 +22,6 @@
         <PossibleValue Value="CortexM33S" Comment="Cortex-M33 secure"/>
         <PossibleValue Value="CortexM33NS" Comment="Cortex-M33 non secure"/>
     </RefParameter>
-    <RefParameter Name="PinAttribute" Comment="Pin Context Assignement" Type="list" Visible="false">
-        <Condition Diagnostic="" Expression="!S_SECURE"/>
-    </RefParameter>
     <RefParameter Name="Privilege" Comment="Pin Privilege access" Type="list" DefaultValue="EXTI_LINE_NPRIV">
         <PossibleValue Value="EXTI_LINE_NPRIV" Comment="Non-privileged access"/>
         <PossibleValue Value="EXTI_LINE_PRIV" Comment="Privileged-only access"/>

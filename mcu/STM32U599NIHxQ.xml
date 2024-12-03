@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U5_9_A" DBVersion="V3.0" Family="STM32U5" HasPowerPad="false" IOType="" Line="STM32U599/5A9" Package="TFBGA216" RefName="STM32U599NIHxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -656,7 +656,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LTDC-STM32U5xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_1">
+    <IP ConfigFile="LTDC-STM32U5xx" IPContextCoupling="DSI_LTDC" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -828,7 +828,7 @@
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -839,7 +839,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC2_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC2_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

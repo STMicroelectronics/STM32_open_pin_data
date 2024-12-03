@@ -46,6 +46,14 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="COMMON_WPAN-STM32WBAxx" InstanceName="COMMON_WPAN" Name="COMMON_WPAN" Version="v1.0.0_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
     <IP ClockEnableMode="__HAL_RCC_COMP_CLK_ENABLE" ConfigFile="COMP-STM32WBAxx" IPContextCoupling="COMP" InstanceName="COMP1" Name="COMP" Version="TSMC90_WBA_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
@@ -344,7 +352,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc2_v2_U5_Cube">
+    <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc2_v2_WBA_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
@@ -410,7 +418,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.4_Cube">
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>

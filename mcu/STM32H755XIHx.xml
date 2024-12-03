@@ -7,6 +7,7 @@
     <Context Core="ARM Cortex-M4" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M4" Name="CortexM4" PowerDomain="D2" Secure="false" SemaphoreSuffix="_Cortex_M4" ShortName="M4"/>
     <Frequency>480</Frequency>
     <CCMRam>192</CCMRam>
+    <MemoryMap>Available</MemoryMap>
     <Ram>864</Ram>
     <IONb>172</IONb>
     <Die>DIE450</Die>
@@ -254,6 +255,7 @@
             <ContextIP ContextName="CortexM4" InitializerForced="true"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx"/>
     <IP ConfigFile="GPIO-STM32H7xx" InstanceName="GPIO" Name="GPIO" Version="STM32H747_gpio_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM7" InitializerForced="true"/>

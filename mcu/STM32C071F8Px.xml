@@ -16,7 +16,7 @@
     <IP ConfigFile="FLASH-STM32C0xx" InstanceName="FLASH" Name="flash" Version="v1.0.0_C0_Cube"/>
     <IP InstanceName="I2C1" Name="I2C" Version="i2c2_v1_1_Cube"/>
     <IP InstanceName="I2C2" Name="I2C" Version="i2c2_v1_1_Cube"/>
-    <IP InstanceName="I2S1" Name="I2S" Version="spi2s1_v3_5_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_SPI1_CLK_ENABLE" InstanceName="I2S1" Name="I2S" Version="spi2s1_v3_5_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="IRTIM-STM32C0xx" InstanceName="IRTIM" Name="IRTIM" Version="C0xx_irtim_v1_0_Cube"/>
     <IP ClockEnableMode="none" ConfigFile="IWDG-STM32C0xx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v2_0"/>
     <IP ConfigFile="LevelX-STM32C0xx" InstanceName="LEVELX" Name="LevelX" Version="v1.0.0_C0_Cube"/>
@@ -196,7 +196,7 @@
         <Signal Name="CRS_SYNC"/>
         <Signal Name="I2S1_WS"/>
         <Signal Name="RCC_MCO"/>
-        <Signal Name="RCC_MCO2"/>
+        <Signal Name="RCC_MCO_2"/>
         <Signal Name="SPI1_NSS"/>
         <Signal Name="SPI2_MISO"/>
         <Signal Name="SPI2_NSS"/>
@@ -247,7 +247,7 @@
         <Signal Name="ADC1_IN14"/>
         <Signal Name="DEBUG_SWCLK"/>
         <Signal Name="I2S1_WS"/>
-        <Signal Name="RCC_MCO2"/>
+        <Signal Name="RCC_MCO_2"/>
         <Signal Name="SPI1_NSS"/>
         <Signal Name="TIM1_CH1"/>
         <Signal Name="USART1_CK"/>
@@ -259,7 +259,7 @@
     </Pin>
     <Pin Name="PA15" Position="19" Type="I/O">
         <Signal Name="I2S1_WS"/>
-        <Signal Name="RCC_MCO2"/>
+        <Signal Name="RCC_MCO_2"/>
         <Signal Name="SPI1_NSS"/>
         <Signal Name="TIM1_CH1"/>
         <Signal Name="TIM2_CH1"/>

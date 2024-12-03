@@ -2,7 +2,7 @@
 <!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G4" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x4" Package="LQFP64" RefName="STM32G414RBTx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
-    <Ram>128</Ram>
+    <Ram>256</Ram>
     <IONb>52</IONb>
     <Die>DIE469</Die>
     <Flash>128</Flash>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
-<Mcu ClockTree="STM32H7" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H743/753" Package="UFBGA176" RefName="STM32H743IGKx" xmlns="http://dummy.com">
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<Mcu ClockTree="STM32H7" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H743/753" Package="UFBGA176+25" RefName="STM32H743IGKx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M7</Core>
     <Frequency>480</Frequency>
     <CCMRam>192</CCMRam>
+    <MemoryMap>Available</MemoryMap>
     <Ram>864</Ram>
     <IONb>140</IONb>
     <Die>DIE450</Die>
@@ -20,7 +21,7 @@
     <IP ConfigFile="CRC-STM32H7xx" InstanceName="CRC" Name="CRC" PowerDomain="D3" Version="integtest1_v2_2"/>
     <IP ClockEnableMode="__HAL_RCC_DAC12_CLK_ENABLE" InstanceName="DAC1" Name="DAC" PowerDomain="D2" Version="dacif_v3_0_Cube"/>
     <IP ConfigFile="DCMI-STM32H7xx" InstanceName="DCMI" Name="DCMI" PowerDomain="D2" Version="cci_v2_0_Cube"/>
-    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0"/>
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_1"/>
     <IP ConfigFile="DFSDM-STM32H7xx" InstanceName="DFSDM1" Name="DFSDM" PowerDomain="D2" Version="dfsdm1_v1_0_H7_Cube"/>
     <IP ConfigFile="DMA2D-STM32H7xx" InstanceName="DMA2D" Name="DMA2D" PowerDomain="D1" Version="dma2d1_v1_0"/>
     <IP ClockEnableMode="__HAL_RCC_ETH1MAC_CLK_ENABLE;__HAL_RCC_ETH1TX_CLK_ENABLE;__HAL_RCC_ETH1RX_CLK_ENABLE" ConfigFile="ETH-STM32H7xx" InstanceName="ETH" Name="ETH" PowerDomain="D2" Version="ethermac110_v3_0"/>
@@ -103,6 +104,7 @@
     <IP InstanceName="USB_OTG_HS" Name="USB_OTG_HS" PowerDomain="D2" Version="otghs1_v2_0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_VREF_CLK_ENABLE" ConfigFile="PWR-STM32H7xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32H7_vrefbuf_v1_0"/>
     <IP ClockEnableMode="HAL_RCCEx_WWDGxSysResetConfig(RCC_WWDG1);__HAL_RCC_WWDG1_CLK_ENABLE" ConfigFile="WWDG-STM32H7xx" InstanceName="WWDG1" Name="WWDG" PowerDomain="D1" Version="wwdg1_v2_0"/>
+    <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx"/>
     <IP ConfigFile="GPIO-STM32H7xx" InstanceName="GPIO" Name="GPIO" Version="STM32H747_gpio_v1_0"/>
     <IP ConfigFile="DMA-STM32H7xx" InstanceName="DMA" Name="DMA" PowerDomain="D2" Version="STM32H753_dma2_v1_3"/>
     <IP ConfigFile="BDMA-STM32H7xx" InstanceName="BDMA" Name="BDMA" PowerDomain="D3" Version="STM32H753_dma1_v1_2"/>
@@ -530,7 +532,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="VDD" Position="C5" Type="Power"/>
-    <Pin Name="PDR_ON" Position="C6" Type="Reset"/>
+    <Pin Name="PDR_ON" Position="C6" Type="Power"/>
     <Pin Name="VDD" Position="C7" Type="Power"/>
     <Pin Name="VDD" Position="C8" Type="Power"/>
     <Pin Name="VDD" Position="C9" Type="Power"/>
@@ -747,6 +749,7 @@
     <Pin Name="PA9" Position="E15" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
         <Signal Name="DCMI_D0"/>
+        <Signal Name="ETH_TX_ER"/>
         <Signal Name="HRTIM_CHC1"/>
         <Signal Name="I2C3_SMBA"/>
         <Signal Name="I2S2_CK"/>
@@ -1172,6 +1175,7 @@
     <Pin Name="PB2" Position="M6" Type="I/O">
         <Signal Name="COMP1_INP"/>
         <Signal Name="DFSDM1_CKIN1"/>
+        <Signal Name="ETH_TX_ER"/>
         <Signal Name="I2S3_SDO"/>
         <Signal Name="QUADSPI_CLK"/>
         <Signal Name="RTC_OUT_ALARM"/>

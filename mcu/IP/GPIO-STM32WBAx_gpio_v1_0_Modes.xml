@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32WBAx_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
@@ -18,9 +18,6 @@
         <PossibleValue Value="Free" Comment="Free"/>
         <PossibleValue Value="CortexM33S" Comment="Cortex-M33 secure"/>
         <PossibleValue Value="CortexM33NS" Comment="Cortex-M33 non secure"/>
-    </RefParameter>
-    <RefParameter Name="PinAttribute" Comment="Pin Context Assignement" Type="list" Visible="false">
-        <Condition Diagnostic="" Expression="!S_SECURE"/>
     </RefParameter>
     <RefParameter Name="Privilege" Comment="Pin Privilege access" Type="list" DefaultValue="EXTI_LINE_NPRIV">
         <Condition Diagnostic="" Expression="!STM32WBAx0"/>

@@ -71,7 +71,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="DAC-STM32H5xx" InstanceName="DAC1" Name="DAC" Version="dacif_v5_0_Cube">
+    <IP ConfigFile="DAC-STM32H5xx" InstanceName="DAC1" Name="DAC" Version="dacif_v5_0_Cube_H5_512k">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

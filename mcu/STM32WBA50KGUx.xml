@@ -10,6 +10,7 @@
     <IP ClockEnableMode="__HAL_RCC_ADC4_CLK_ENABLE" ConfigFile="ADC-STM32WBAxx" InstanceName="ADC4" Name="ADC" Version="aditf4_v4_WBA_Cube"/>
     <IP ConfigFile="ADV_TRACE-STM32WBAxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube"/>
     <IP ConfigFile="AES-STM32WBAxx" InstanceName="AES" Name="AES" Version="aes3_v2_0_WBA_Cube"/>
+    <IP ConfigFile="COMMON_WPAN-STM32WBAxx" InstanceName="COMMON_WPAN" Name="COMMON_WPAN" Version="v1.0.0_Cube"/>
     <IP ConfigFile="CORTEX_M33-STM32WBAxx" InstanceName="CORTEX_M33" Name="CORTEX_M33" Version="cortex_v1_0_Cube"/>
     <IP InstanceName="CRC" Name="CRC" Version="integtest1_v2_0"/>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32L55_sys_v1_0"/>
@@ -32,10 +33,10 @@
     <IP InstanceName="RCC" Name="RCC" Version="STM32WBA_rcc_v1_0"/>
     <IP ConfigFile="RF-STM32WBAxx" InstanceName="RF" Name="RF" Version="ble154combo_v1_0_Cube"/>
     <IP ConfigFile="RNG-STM32WBAxx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1"/>
-    <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc2_v2_U5_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc2_v2_WBA_Cube"/>
     <IP ConfigFile="SEQUENCER-STM32WBAxx" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube"/>
     <IP ConfigFile="SPI-STM32WBAxx" InstanceName="SPI3" Name="SPI" Version="spi2s3_v2_0_Cube"/>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.4_Cube"/>
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.5_Cube"/>
     <IP InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0"/>
     <IP InstanceName="TAMP" Name="TAMP" Version="STM32L5_rtc2_v2_8_Cube"/>
     <IP ConfigFile="ThreadX-STM32WBAxx" InstanceName="THREADX" Name="ThreadX" Version="v1.0.0_WBA_Cube"/>

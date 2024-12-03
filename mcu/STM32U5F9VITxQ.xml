@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U5_9_A" DBVersion="V3.0" Family="STM32U5" HasPowerPad="false" IOType="" Line="STM32U5F9/5G9" Package="LQFP100" RefName="STM32U5F9VITxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -181,17 +181,6 @@
     <IP ClockEnableMode="__HAL_RCC_DSI_CLK_ENABLE" ConfigFile="DSI-STM32U5xx" IPContextCoupling="DSI_LTDC" InstanceName="DSIHOST" Name="DSIHOST" Version="dsihost_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
-    <IP ClockEnableMode="__HAL_RCC_FDCAN1_CLK_ENABLE" ConfigFile="FDCAN-STM32U5xx" InstanceName="FDCAN1" Name="FDCAN" Version="fdcan1_v1_1_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
         <ContextSplit Name="split3">
@@ -694,7 +683,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LTDC-STM32U5xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_1">
+    <IP ConfigFile="LTDC-STM32U5xx" IPContextCoupling="DSI_LTDC" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -866,18 +855,7 @@
             <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32U5xx" InstanceName="SDMMC2" Name="SDMMC" Version="sdmmc2_v2_1_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -1332,7 +1310,6 @@
         <Signal Name="MDF1_SDI4"/>
         <Signal Name="OCTOSPIM_P1_IO7"/>
         <Signal Name="SAI2_FS_A"/>
-        <Signal Name="SDMMC1_D5"/>
         <Signal Name="SPI2_RDY"/>
         <Signal Name="USART6_CTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1716,7 +1693,6 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PH13" Position="58" Type="I/O">
-        <Signal Name="FDCAN1_TX"/>
         <Signal Name="HSPI1_IO3"/>
         <Signal Name="TIM8_CH1N"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -1725,7 +1701,6 @@
     <Pin Name="VDD" Position="60" Type="Power"/>
     <Pin Name="PH14" Position="61" Type="I/O">
         <Signal Name="DCMI_D4"/>
-        <Signal Name="FDCAN1_RX"/>
         <Signal Name="HSPI1_IO4"/>
         <Signal Name="PSSI_D4"/>
         <Signal Name="TIM8_CH2N"/>
@@ -1822,7 +1797,6 @@
     <Pin Name="PA11" Position="72" Type="I/O">
         <Signal Name="ADC1_EXTI11"/>
         <Signal Name="ADC2_EXTI11"/>
-        <Signal Name="FDCAN1_RX"/>
         <Signal Name="SPI1_MISO"/>
         <Signal Name="TIM1_BKIN2"/>
         <Signal Name="TIM1_CH4"/>
@@ -1831,7 +1805,6 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA12" Position="73" Type="I/O">
-        <Signal Name="FDCAN1_TX"/>
         <Signal Name="OCTOSPIM_P2_NCS"/>
         <Signal Name="SPI1_MOSI"/>
         <Signal Name="TIM1_ETR"/>
@@ -1883,7 +1856,6 @@
         <Signal Name="LPTIM3_ETR"/>
         <Signal Name="PSSI_D8"/>
         <Signal Name="SAI2_SCK_B"/>
-        <Signal Name="SDMMC1_D2"/>
         <Signal Name="SPI3_SCK"/>
         <Signal Name="TSC_G3_IO2"/>
         <Signal Name="UART4_TX"/>
@@ -1902,7 +1874,6 @@
         <Signal Name="PSSI_D2"/>
         <Signal Name="PSSI_D4"/>
         <Signal Name="SAI2_MCLK_B"/>
-        <Signal Name="SDMMC1_D3"/>
         <Signal Name="SPI3_MISO"/>
         <Signal Name="TSC_G3_IO3"/>
         <Signal Name="UART4_RX"/>
@@ -1915,7 +1886,6 @@
         <Signal Name="DEBUG_TRACED3"/>
         <Signal Name="PSSI_D9"/>
         <Signal Name="SAI2_SD_B"/>
-        <Signal Name="SDMMC1_CK"/>
         <Signal Name="SPI3_MOSI"/>
         <Signal Name="TSC_G3_IO4"/>
         <Signal Name="UART5_TX"/>
@@ -1924,7 +1894,6 @@
         <Signal IOModes="LPInput,LPOutput" Name="GPIO"/>
     </Pin>
     <Pin Name="PD0" Position="83" Type="I/O">
-        <Signal Name="FDCAN1_RX"/>
         <Signal Name="FMC_D2"/>
         <Signal Name="FMC_DA2"/>
         <Signal Name="I2C5_SDA"/>
@@ -1935,7 +1904,6 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD1" Position="84" Type="I/O">
-        <Signal Name="FDCAN1_TX"/>
         <Signal Name="FMC_D3"/>
         <Signal Name="FMC_DA3"/>
         <Signal Name="I2C5_SCL"/>
@@ -1951,7 +1919,6 @@
         <Signal Name="I2C5_SMBA"/>
         <Signal Name="LPTIM4_ETR"/>
         <Signal Name="PSSI_D11"/>
-        <Signal Name="SDMMC1_CMD"/>
         <Signal Name="TIM3_ETR"/>
         <Signal Name="TSC_SYNC"/>
         <Signal Name="UART5_RX"/>
@@ -2090,7 +2057,6 @@
     </Pin>
     <Pin Name="PB8" Position="96" Type="I/O">
         <Signal Name="DCMI_D6"/>
-        <Signal Name="FDCAN1_RX"/>
         <Signal Name="I2C1_SCL"/>
         <Signal Name="LTDC_B1"/>
         <Signal Name="MDF1_CCK0"/>
@@ -2098,8 +2064,6 @@
         <Signal Name="PWR_WKUP5"/>
         <Signal Name="SAI1_CK1"/>
         <Signal Name="SAI1_MCLK_A"/>
-        <Signal Name="SDMMC1_CKIN"/>
-        <Signal Name="SDMMC1_D4"/>
         <Signal Name="SDMMC2_D4"/>
         <Signal Name="SPI3_RDY"/>
         <Signal Name="TIM16_CH1"/>
@@ -2109,15 +2073,12 @@
     <Pin Name="PB9" Position="97" Type="I/O">
         <Signal Name="DAC1_EXTI9"/>
         <Signal Name="DCMI_D7"/>
-        <Signal Name="FDCAN1_TX"/>
         <Signal Name="I2C1_SDA"/>
         <Signal Name="IR_OUT"/>
         <Signal Name="LTDC_B0"/>
         <Signal Name="PSSI_D7"/>
         <Signal Name="SAI1_D2"/>
         <Signal Name="SAI1_FS_A"/>
-        <Signal Name="SDMMC1_CDIR"/>
-        <Signal Name="SDMMC1_D5"/>
         <Signal Name="SDMMC2_D5"/>
         <Signal Name="SPI2_NSS"/>
         <Signal Name="TIM17_CH1"/>

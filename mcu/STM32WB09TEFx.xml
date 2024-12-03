@@ -9,6 +9,7 @@
     <Flash>512</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADCANA_CLK_ENABLE;__HAL_RCC_ADCDIG_CLK_ENABLE" ConfigFile="ADC-STM32WB0xx" InstanceName="ADC1" Name="ADC" Version="aditf5_v1_0_WB0x_Cube"/>
     <IP ConfigFile="ADV_TRACE-STM32WB0x" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube"/>
+    <IP ConfigFile="COMMON_BLE-STM32WB0xx" InstanceName="COMMON_BLE" Name="COMMON_BLE" Version="v1.0.0_Cube"/>
     <IP ConfigFile="Cortex_M0+-STM32WB0xx" InstanceName="CORTEX_M0+" Name="CORTEX_M0+" Version="cortex_v1_0_Cube"/>
     <IP ConfigFile="CRC-STM32WB0xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_5"/>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32WB0_sys_v1_0"/>
@@ -30,7 +31,7 @@
     <IP ConfigFile="SEQUENCER-STM32WB0x" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube"/>
     <IP ConfigFile="SPI-STM32WB0xx" InstanceName="SPI3" Name="SPI" Version="spi2s1_v3_5_Cube"/>
     <IP ConfigFile="STM32_BLE-STM32WB0xx" InstanceName="STM32_BLE" Name="STM32_BLE" Version="v1.0_Cube"/>
-    <IP ConfigFile="SYS-STM32WB0xx" InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0"/>
+    <IP ClockEnableMode="__HAL_RCC_SYSCFG_CLK_ENABLE" ConfigFile="SYS-STM32WB0xx" InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0"/>
     <IP ConfigFile="TIM-STM32WB0xx" InstanceName="TIM2" Name="TIM1_8WB0" Version="gptimer2_v3_x_Cube"/>
     <IP ConfigFile="TIM-STM32WB0xx" InstanceName="TIM16" Name="TIM1_8WB0" Version="gptimer2_v3_x_Cube"/>
     <IP ConfigFile="TIM-STM32WB0xx" InstanceName="TIM17" Name="TIM1_8WB0" Version="gptimer2_v3_x_Cube"/>
@@ -39,7 +40,7 @@
     <IP ConfigFile="MEMORYMAP-STM32xx" InstanceName="MEMORYMAP" Name="MEMORYMAP" Version="STM32xx"/>
     <IP ConfigFile="GPIO-STM32WB0xx" InstanceName="GPIO" Name="GPIO" Version="STM32WB09x_gpio_v1_0"/>
     <IP ConfigFile="DMA-STM32WB0xx" InstanceName="DMA" Name="DMA" Version="STM32WB09_dma1_v1_3"/>
-    <IP ConfigFile="NVIC-STM32WB0xx" InstanceName="NVIC" Name="NVIC" Version="STM32WB09"/>
+    <IP ConfigFile="NVIC-STM32WB0x" InstanceName="NVIC" Name="NVIC" Version="STM32WB09"/>
     <Pin Name="VSSSD" Position="A2" Type="Power"/>
     <Pin Name="VDDA_VCAP" Position="A4" Type="Power"/>
     <Pin Name="VDD" Position="A6" Type="Power"/>

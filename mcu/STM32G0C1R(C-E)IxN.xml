@@ -639,7 +639,7 @@
         <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal Name="USART5_RX"/>
-        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB10" Position="G6" Type="I/O">
         <Signal Name="ADC1_IN11"/>

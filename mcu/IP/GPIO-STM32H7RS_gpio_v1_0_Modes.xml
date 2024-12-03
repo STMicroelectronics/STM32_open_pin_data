@@ -688,6 +688,11 @@
                 <PossibleValue>GPIO_AF8_UART4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="USART2_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="USART2_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART2</PossibleValue>
@@ -843,6 +848,11 @@
                 <PossibleValue>GPIO_AF5_SPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="LPUART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="LPUART1_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF3_LPUART1</PossibleValue>
@@ -871,6 +881,11 @@
         <PinSignal Name="UART4_TX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_UART4</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_RTS">
@@ -981,6 +996,11 @@
         <PinSignal Name="TIM2_ETR">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF2_TIM2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART4_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_UART4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART4_RTS">
@@ -2001,6 +2021,11 @@
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="UART4_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_UART4</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="UART4_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_UART4</PossibleValue>
@@ -2009,6 +2034,11 @@
         <PinSignal Name="USART1_TX">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_USART1</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART3_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART3</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART3_RTS">
@@ -3180,7 +3210,7 @@
                 <PossibleValue>GPIO_AF5_SPI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX_IN1">
+        <PinSignal Name="SPDIFRX_IN2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIFRX</PossibleValue>
             </SpecificParameter>
@@ -3230,7 +3260,7 @@
                 <PossibleValue>GPIO_AF2_SAI1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX_IN2">
+        <PinSignal Name="SPDIFRX_IN3">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIFRX</PossibleValue>
             </SpecificParameter>
@@ -3378,6 +3408,11 @@
         <PinSignal Name="TIM3_CH3">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF2_TIM3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART5_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_UART5</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART5_RTS">
@@ -3660,6 +3695,11 @@
                 <PossibleValue>GPIO_AF2_TIM4</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="USART3_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART3</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="USART3_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_USART3</PossibleValue>
@@ -3793,6 +3833,11 @@
         <PinSignal Name="TIM4_CH4">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF2_TIM4</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART8_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_UART8</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART8_RTS">
@@ -3938,6 +3983,11 @@
         <PinSignal Name="PSSI_DE">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_PSSI</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART2_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_USART2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART2_RTS">
@@ -4150,7 +4200,7 @@
                 <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX_IN2">
+        <PinSignal Name="SPDIFRX_IN1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF9_SPDIFRX</PossibleValue>
             </SpecificParameter>
@@ -4860,6 +4910,11 @@
                 <PossibleValue>GPIO_AF1_TIM1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="UART7_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_UART7</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="UART7_RTS">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_UART7</PossibleValue>
@@ -5113,6 +5168,11 @@
         <PinSignal Name="SPI5_SCK">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF5_SPI5</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="USART1_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_USART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_RTS">
@@ -5378,6 +5438,11 @@
         <PinSignal Name="TIM16_CH1N">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM16</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="UART7_DE">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF7_UART7</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="UART7_RTS">
@@ -5965,7 +6030,7 @@
                 <PossibleValue>GPIO_AF13_LTDC</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="SPDIFRX_IN3">
+        <PinSignal Name="SPDIFRX_IN2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF8_SPDIFRX</PossibleValue>
             </SpecificParameter>

@@ -1,0 +1,2602 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<Mcu ClockTree="STM32N6" DBVersion="V3.0" Family="STM32N6" HasPowerPad="false" IOType="" Line="STM32N6x5" Package="VFBGA178" RefName="STM32N655I0HxQ" xmlns="http://dummy.com">
+    <Core>ARM Cortex-M55</Core>
+    <ContextProject Attributes="DUAL,TZ" Comment="Secure and Non Secure domains" Contexts="FSBL,AppliSecure,AppliNonSecure,ExtMemLoader" Name="SecureNSecure"/>
+    <ContextProject Attributes="DUAL,TZ" Comment="Secure domain only" Contexts="FSBL,Appli,ExtMemLoader" Name="FullSecure"/>
+    <Context Comment="Enable the First Stage Boot Loader context for the peripheral(s) you want to use. This context will configure the FSBL that will run in AXISRAM2" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="First Stage Boot Loader" Name="FSBL" Secure="true" SemaphoreSuffix="_FSBL" ShortName="FSBL"/>
+    <Context Comment="Enable the Application secure context for the peripheral(s) that you want to use from the secure domain, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Application" Name="Appli" Secure="true" SemaphoreSuffix="_APPS" ShortName="Appli"/>
+    <Context Comment="Enable the Application secure context for the peripheral(s) that you want to use from the secure domain, whether a basic secure monitor or a trusted execution environment" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Secure Application" Name="AppliSecure" Secure="true" SemaphoreSuffix="_APPS" ShortName="AppS"/>
+    <Context Comment="Enable the Application non-secure context for the peripheral(s) that you plan to use from the non secure domain" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Non Secure Application" Name="AppliNonSecure" Secure="false" SemaphoreSuffix="_APPNS" ShortName="AppNS"/>
+    <Context Comment="Enable the External Memory Loader context for the peripheral(s) that you plan to use" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="External Memory Loader" Name="ExtMemLoader" Secure="true" SemaphoreSuffix="_EL" ShortName="ExtMemLoader"/>
+    <TrustZone>Available</TrustZone>
+    <Ram>4200</Ram>
+    <IONb>125</IONb>
+    <Die>DIE486</Die>
+    <Flash>0</Flash>
+    <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32N6xx" IPContextCoupling="ADC1|ADC2" InstanceName="ADC1" Name="ADC" Version="aditf6_v3_3_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32N6xx" IPContextCoupling="ADC1|ADC2" InstanceName="ADC2" Name="ADC" Version="aditf6_v3_3_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MDF-STM32N6xx" InstanceName="ADF1" Name="MDF" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="BOOT" Name="BOOT" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_BSEC_CLK_ENABLE" ConfigFile="BSEC-STM32N6xx" InstanceName="BSEC" Name="BSEC" Version="bsec2_v1_1">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CACHEAXI-STM32N6xx" InstanceName="CACHEAXI" Name="CACHEAXI" Version="STM32N6xx1_v0_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CORTEX_M55_S-STM32N6xx" InstanceName="CORTEX_M55_FSBL" Name="CORTEX_M55_FSBL" Version="cortex_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CORTEX_M55_NS-STM32N6xx" InstanceName="CORTEX_M55_NS" Name="CORTEX_M55_NS" Version="cortex_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CORTEX_M55_S-STM32N6xx" InstanceName="CORTEX_M55_S" Name="CORTEX_M55_S" Version="cortex_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CRC-STM32N6xx" InstanceName="CRC" Name="CRC" Version="integtest1_v2_1_U0_N6">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CRYP-STM32N6xx" InstanceName="CRYP" Name="CRYP" Version="cryp1_v2_0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="CSI" Name="CSI" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" InstanceName="DCMI" Name="DCMI" Version="cci_v2_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="DCMIPP-STM32N6xx" InstanceName="DCMIPP" Name="DCMIPP" Version="cci_v2_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32N6_sys_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="DMA2D" Name="DMA2D" Version="dma2d1_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="DTS-STM32N6xx" InstanceName="DTS" Name="DTS" Version="dtsN6_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="ETH-STM32N6xx" InstanceName="ETH1" Name="ETH" Version="ethermac110_v3_1_1">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="EXTMEM_LOADER-STM32N6xx" InstanceName="EXTMEM_LOADER" Name="EXTMEM_LOADER" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="EXTMEM_MANAGER-STM32N6xx" InstanceName="EXTMEM_MANAGER" Name="EXTMEM_MANAGER" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="EXTMEM_MANAGER_APPLI-STM32N6xx" InstanceName="EXTMEM_MANAGER_APPLI" Name="EXTMEM_MANAGER_APPLI" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32N6xx" InstanceName="FDCAN1" Name="FDCAN" Version="STM32N6_fdcan1_v1_2"/>
+    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32N6xx" InstanceName="FDCAN2" Name="FDCAN" Version="STM32N6_fdcan1_v1_2">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32N6xx" InstanceName="FDCAN3" Name="FDCAN" Version="STM32N6_fdcan1_v1_2">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="FileX-STM32N6xx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="FMC-STM32N6xx" InstanceName="FMC" Name="FMC" Version="fmc2_v2_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="GFXMMU-STM32N6xx" InstanceName="GFXMMU" Name="GFXMMU" Version="gfxmmu_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="GFXTIM-STM32N6xx" InstanceName="GFXTIM" Name="GFXTIM" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_GPDMA1_CLK_ENABLE" ConfigFile="GPDMA-STM32N6xx" InstanceName="GPDMA1" Name="GPDMA" Version="STM32N6_dma3_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="GPU2D-STM32N6xx" InstanceName="GPU2D" Name="GPU2D" Version="gpu2d_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="GUI_INTERFACE-STM32N6xx" InstanceName="GUI_INTERFACE" Name="GUI_INTERFACE" Version="guiinterface_STM32N6_v2.0.0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="HASH" Name="HASH" Version="hash1_v4_0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="HDP" Name="HDP" Version="STM32MP1_hdp_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL" InitializerForced="true"/>
+            <ContextIP ContextName="AppliNonSecure" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_HPDMA1_CLK_ENABLE" ConfigFile="HPDMA-STM32N6xx" InstanceName="HPDMA1" Name="HPDMA" Version="STM32N6_dma3_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="I2C1" Name="I2C" Version="i2c1_v1_0N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP IPContextCoupling="OPAMP" InstanceName="I2C2" Name="I2C" Version="i2c1_v1_0N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="I2C3" Name="I2C" Version="i2c1_v1_0N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="I2C4" Name="I2C" Version="i2c1_v1_0N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S1" Name="I2S" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S2" Name="I2S" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S3" Name="I2S" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S6" Name="I2S" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="I3C1" Name="I3C" Version="i3c1_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="I3C2" Name="I3C" Version="i3c1_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="ICACHE-STM32N6xx" InstanceName="ICACHE" Name="ICACHE" Version="Icache_v1_0_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="none" ConfigFile="IWDG-STM32N6xx" InstanceName="IWDG" Name="IWDG" Version="iwdg1_v3_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="JPEG-STM32N6xx" InstanceName="JPEG" Name="JPEG" Version="jpeg1_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LevelX-STM32N6xx" InstanceName="LEVELX" Name="LevelX" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LINKEDLIST-STM32N6xx" InstanceName="LINKEDLIST" Name="LINKEDLIST" Version="STM32N6_linkedlist_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM1" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM2" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM3" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM4" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM5" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="LPUART1" Name="LPUART" Version="sci3_v3_3_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LTDC-STM32N6xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_1">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MCE-STM32N6xx" InstanceName="MCE1" Name="MCE" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MCE-STM32N6xx" InstanceName="MCE2" Name="MCE" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MCE-STM32N6xx" InstanceName="MCE3" Name="MCE" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MCE-STM32N6xx" InstanceName="MCE4" Name="MCE" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MDF-STM32N6xx" InstanceName="MDF1" Name="MDF" Version="v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="MDIOS-STM32N6xx" InstanceName="MDIOS" Name="MDIOS" Version="mdios1_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="NetXDuo-STM32N6xx" InstanceName="NETXDUO" Name="NetXDuo" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="PKA-STM32N6xx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" ConfigFile="PSSI-STM32N6xx" InstanceName="PSSI" Name="PSSI" Version="cci_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="PWR-STM32N6xx" InstanceName="PWR" Name="PWR" Version="STM32N6_pwr_v1_0"/>
+    <IP ClockEnableMode="__HAL_RCC_RAMCFG_CLK_ENABLE" ConfigFile="RAMCFG-STM32N6xx" InstanceName="RAMCFG" Name="RAMCFG" Version="v1_0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="RCC" Name="RCC" Version="STM32N6_rcc_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="RIF-STM32N6xx" InstanceName="RIF" Name="RIF" Version="STM32N6_rif_v1_0_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="RNG-STM32N6xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE;__HAL_RCC_RTC_CLK_ENABLE" ConfigFile="RTC-STM32N6xx" IPContextCoupling="RTC|TAMP" InstanceName="RTC" Name="RTC" Version="rtc2_v2_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="AES-STM32N6xx" InstanceName="SAES" Name="SAES" Version="aes3_v2_0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SAI-STM32N6xx" InstanceName="SAI1" Name="SAI" Version="sai1_L5_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SAI-STM32N6xx" InstanceName="SAI2" Name="SAI" Version="sai1_L5_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32N6xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_SPDIFRX_CLK_ENABLE" ConfigFile="SPDIFRX-STM32N6xx" InstanceName="SPDIFRX1" Name="SPDIFRX" Version="spdifrx1_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32N6xx" InstanceName="SPI1" Name="SPI" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32N6xx" InstanceName="SPI2" Name="SPI" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32N6xx" InstanceName="SPI3" Name="SPI" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32N6xx" InstanceName="SPI4" Name="SPI" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32N6xx" InstanceName="SPI5" Name="SPI" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SPI-STM32N6xx" InstanceName="SPI6" Name="SPI" Version="spi2s3_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SYS-STM32N6xx" InstanceName="SYS" Name="SYS" Version="STM32N6x_sys_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SYS-STM32N6xx" InstanceName="SYS_S" Name="SYS_S" Version="STM32N6x_sys_s_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+        </ContextSplit>
+    </IP>
+    <IP IPContextCoupling="RTC|TAMP" InstanceName="TAMP" Name="TAMP" Version="STM32L5_rtc2_v2_8_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="ThreadX-STM32N6xx" InstanceName="THREADX" Name="ThreadX" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+        </ContextSplit>
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM1" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM2" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM3" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM4" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM5" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM6" Name="TIM6_7N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM7" Name="TIM6_7N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM8" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM9" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM10" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM11" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM12" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM13" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM14" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM15" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM16" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM17" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM18" Name="TIM6_7N6" Version="gptimer2_v4_x_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="TRACER_EMB-STM32N6xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32N6_v1.6.1_Cube"/>
+    <IP InstanceName="UART4" Name="UART" Version="sci2_v3_3_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="UART5" Name="UART" Version="sci2_v3_3_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="UART7" Name="UART" Version="sci2_v3_3_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="UART8" Name="UART" Version="sci2_v3_3_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="UART9" Name="UART" Version="sci2_v3_3_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="UCPD-STM32N6xx" InstanceName="UCPD1" Name="UCPD" Version="ucpd_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="USART1" Name="USART" Version="sci3_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="USART2" Name="USART" Version="sci3_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="USART3" Name="USART" Version="sci3_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="USART6" Name="USART" Version="sci3_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP InstanceName="USART10" Name="USART" Version="sci3_v3_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_USB1_OTG_HS_CLK_ENABLE" InstanceName="USB1_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_5_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_USB2_OTG_HS_CLK_ENABLE" InstanceName="USB2_OTG_HS" Name="USB_OTG_HS" Version="otghs2_v2_5_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="USBPD-STM32N6xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32N6_v1.4_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="USBX-STM32N6xx" InstanceName="USBX" Name="USBX" Version="v1.0.0_N6_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="VENC-STM32N6xx" InstanceName="VENC" Name="VENC" Version="venc1_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SYS-STM32N6xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32L55_vrefbuf_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="WWDG-STM32N6xx" InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_XSPIM_CLK_ENABLE;__HAL_RCC_XSPI1_CLK_ENABLE" ConfigFile="XSPI-STM32N6xx" InstanceName="XSPI1" Name="XSPI" Version="xspi_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_XSPIM_CLK_ENABLE;__HAL_RCC_XSPI2_CLK_ENABLE" ConfigFile="XSPI-STM32N6xx" InstanceName="XSPI2" Name="XSPI" Version="xspi_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_XSPIM_CLK_ENABLE;__HAL_RCC_XSPI3_CLK_ENABLE" ConfigFile="XSPI-STM32N6xx" InstanceName="XSPI3" Name="XSPI" Version="xspi_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_XSPIM_CLK_ENABLE" InstanceName="XSPIM" Name="XSPIM" Version="xspi_v2_1_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
+            <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="GPIO-STM32N6xx" InstanceName="GPIO" Name="GPIO" Version="STM32N6_gpio_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true"/>
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="NVIC-STM32N6x" InstanceName="NVIC" Name="NVIC" Version="STM32N6">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="NVIC-STM32N6x" InstanceName="NVIC1" Name="NVIC1" Version="STM32N6">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="NVIC-STM32N6x" InstanceName="NVIC2" Name="NVIC2" Version="STM32N6">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
+    <Pin Name="PDR_ON" Position="A1" Type="I/O">
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="OTG2_HSDM" Position="A2" Type="I/O">
+        <Signal Name="USB2_OTG_HS_DM"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="NC" Position="A3" Type="NC"/>
+    <Pin Name="VDD33USB" Position="A4" Type="Power"/>
+    <Pin Name="OTG1_HSDM" Position="A5" Type="I/O">
+        <Signal Name="USB1_OTG_HS_DM"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="UCPD1_CC1" Position="A6" Type="I/O">
+        <Signal Name="UCPD1_CC1"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PH1-OSC_OUT(PH1)" Position="A7" Type="I/O">
+        <Signal Name="RCC_OSC_OUT"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC6" Position="A8" Type="I/O">
+        <Signal Name="DCMIPP_D1"/>
+        <Signal Name="DCMI_D1"/>
+        <Signal Name="HDP_HDP6"/>
+        <Signal Name="I2S2_MCK"/>
+        <Signal Name="PSSI_D1"/>
+        <Signal Name="SDMMC1_D0DIR"/>
+        <Signal Name="SDMMC1_D6"/>
+        <Signal Name="TIM1_CH1"/>
+        <Signal Name="TIM3_CH1"/>
+        <Signal Name="TIM9_CH1"/>
+        <Signal Name="USART6_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC7" Position="A9" Type="I/O">
+        <Signal Name="DCMIPP_D1"/>
+        <Signal Name="DCMI_D1"/>
+        <Signal Name="DEBUG_TRGIO"/>
+        <Signal Name="HDP_HDP7"/>
+        <Signal Name="I2S3_MCK"/>
+        <Signal Name="PSSI_D1"/>
+        <Signal Name="SDMMC1_D123DIR"/>
+        <Signal Name="SDMMC1_D7"/>
+        <Signal Name="TIM16_CH1N"/>
+        <Signal Name="TIM3_CH2"/>
+        <Signal Name="TIM9_CH2"/>
+        <Signal Name="USART6_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE6" Position="A10" Type="I/O">
+        <Signal Name="DCMIPP_D1"/>
+        <Signal Name="DCMIPP_VSYNC"/>
+        <Signal Name="DCMI_D1"/>
+        <Signal Name="DCMI_VSYNC"/>
+        <Signal Name="FMC_SDCKE1"/>
+        <Signal Name="HDP_HDP7"/>
+        <Signal Name="I2C1_SDA"/>
+        <Signal Name="I3C1_SDA"/>
+        <Signal Name="LPUART1_RX"/>
+        <Signal Name="PSSI_D1"/>
+        <Signal Name="PSSI_RDY"/>
+        <Signal Name="TIM17_CH1N"/>
+        <Signal Name="TIM4_CH2"/>
+        <Signal Name="UART5_TX"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD6" Position="A11" Type="I/O">
+        <Signal Name="FMC_A1"/>
+        <Signal Name="FMC_A17"/>
+        <Signal Name="FMC_ALE"/>
+        <Signal Name="HDP_HDP2"/>
+        <Signal Name="I2S2_SDI"/>
+        <Signal Name="SPI2_MISO"/>
+        <Signal Name="TIM15_CH2"/>
+        <Signal Name="TIM1_CH1"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD0" Position="A12" Type="I/O">
+        <Signal Name="DCMIPP_HSYNC"/>
+        <Signal Name="DCMI_HSYNC"/>
+        <Signal Name="FDCAN1_RX"/>
+        <Signal Name="FMC_A6"/>
+        <Signal Name="FMC_A22"/>
+        <Signal Name="PSSI_DE"/>
+        <Signal Name="TIM1_ETR"/>
+        <Signal Name="UART4_RX"/>
+        <Signal Name="UART9_CTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD3" Position="A13" Type="I/O">
+        <Signal Name="DCMIPP_D14"/>
+        <Signal Name="ETH1_PHY_INTN"/>
+        <Signal Name="FMC_A10"/>
+        <Signal Name="I2C2_SMBA"/>
+        <Signal Name="PSSI_D14"/>
+        <Signal Name="USART10_RX"/>
+        <Signal Name="USART6_CTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VSS" Position="A14" Type="Power"/>
+    <Pin Name="PC14-OSC32_IN(OSC32_IN)" Position="B1" Type="I/O">
+        <Signal Name="RCC_OSC32_IN"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="OTG2_HSDP" Position="B2" Type="I/O">
+        <Signal Name="USB2_OTG_HS_DP"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="OTG1_ID" Position="B3" Type="I/O">
+        <Signal Name="USB1_OTG_HS_ID"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="OTG2_TXRTUNE" Position="B4" Type="I/O">
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="OTG1_HSDP" Position="B5" Type="I/O">
+        <Signal Name="USB1_OTG_HS_DP"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="UCPD1_CC2" Position="B6" Type="I/O">
+        <Signal Name="UCPD1_CC2"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PH0-OSC_IN(PH0)" Position="B7" Type="I/O">
+        <Signal Name="RCC_OSC_IN"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC1" Position="B8" Type="I/O">
+        <Signal Name="DCMIPP_D7"/>
+        <Signal Name="DCMI_D7"/>
+        <Signal Name="FDCAN1_TX"/>
+        <Signal Name="HDP_HDP1"/>
+        <Signal Name="I2C1_SDA"/>
+        <Signal Name="I2S2_WS"/>
+        <Signal Name="I3C1_SDA"/>
+        <Signal Name="PSSI_D7"/>
+        <Signal Name="SDMMC1_CDIR"/>
+        <Signal Name="SDMMC1_D5"/>
+        <Signal Name="SPI2_NSS"/>
+        <Signal Name="TIM17_CH1"/>
+        <Signal Name="TIM4_CH4"/>
+        <Signal Name="UART4_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE11" Position="B9" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="FDCAN3_TX"/>
+        <Signal Name="FMC_SDNWE"/>
+        <Signal Name="LTDC_VSYNC"/>
+        <Signal Name="MDF1_CKI5"/>
+        <Signal Name="SAI2_SD_B"/>
+        <Signal Name="SPI4_NSS"/>
+        <Signal Name="TIM1_CH2"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE15" Position="B10" Type="I/O">
+        <Signal Name="ADC1_EXTI15"/>
+        <Signal Name="ADC2_EXTI15"/>
+        <Signal Name="FMC_SDCKE0"/>
+        <Signal Name="GFXTIM_FCKCAL"/>
+        <Signal Name="GFXTIM_LCKCAL"/>
+        <Signal Name="I2C4_SMBA"/>
+        <Signal Name="SDMMC1_D0"/>
+        <Signal Name="SPI5_SCK"/>
+        <Signal Name="TIM1_BKIN"/>
+        <Signal Name="USART10_CK"/>
+        <Signal Name="USART2_CK"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD7" Position="B11" Type="I/O">
+        <Signal Name="DCMIPP_D0"/>
+        <Signal Name="DCMI_D0"/>
+        <Signal Name="FMC_A2"/>
+        <Signal Name="FMC_A18"/>
+        <Signal Name="HDP_HDP3"/>
+        <Signal Name="I2S2_SDO"/>
+        <Signal Name="I2S3_WS"/>
+        <Signal Name="PSSI_D0"/>
+        <Signal Name="SPI2_MOSI"/>
+        <Signal Name="SPI3_NSS"/>
+        <Signal Name="TIM15_CH1N"/>
+        <Signal Name="TIM1_CH2"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD1" Position="B12" Type="I/O">
+        <Signal Name="ETH1_MDC"/>
+        <Signal Name="FDCAN1_TX"/>
+        <Signal Name="FMC_A7"/>
+        <Signal Name="FMC_A23"/>
+        <Signal Name="UART4_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD4" Position="B13" Type="I/O">
+        <Signal Name="DCMIPP_D9"/>
+        <Signal Name="DCMI_D9"/>
+        <Signal Name="FMC_A11"/>
+        <Signal Name="I2C2_SDA"/>
+        <Signal Name="PSSI_D9"/>
+        <Signal Name="SPI5_MISO"/>
+        <Signal Name="TAMP_IN7"/>
+        <Signal Name="TAMP_OUT8"/>
+        <Signal Name="TIM1_BKIN2"/>
+        <Signal Name="USART6_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE9" Position="B14" Type="I/O">
+        <Signal Name="FMC_A14"/>
+        <Signal Name="FMC_BA0"/>
+        <Signal Name="MDF1_CKI4"/>
+        <Signal Name="TIM1_CH1"/>
+        <Signal Name="UART7_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC15-OSC32_OUT(OSC32_OUT)" Position="C1" Type="I/O">
+        <Signal Name="ADC1_EXTI15"/>
+        <Signal Name="ADC2_EXTI15"/>
+        <Signal Name="RCC_OSC32_OUT"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VBAT" Position="C2" Type="Power"/>
+    <Pin Name="PC13" Position="C3" Type="I/O">
+        <Signal Name="HDP_HDP5"/>
+        <Signal Name="PWR_WKUP3"/>
+        <Signal Name="RTC_OUT1"/>
+        <Signal Name="RTC_TS"/>
+        <Signal Name="TAMP_IN1"/>
+        <Signal Name="TAMP_OUT2"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+        <Condition Diagnostic="" Expression="!(RTC_OUT1 &amp; CALIBRATION)"/>
+    </Pin>
+    <Pin Name="NC" Position="C4" Type="NC"/>
+    <Pin Name="OTG2_ID" Position="C5" Type="I/O">
+        <Signal Name="USB2_OTG_HS_ID"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC8" Position="C6" Type="I/O">
+        <Signal Name="DCMIPP_D2"/>
+        <Signal Name="DCMI_D2"/>
+        <Signal Name="DEBUG_TRACED1"/>
+        <Signal Name="FMC_NE4"/>
+        <Signal Name="HDP_HDP0"/>
+        <Signal Name="I2C3_SMBA"/>
+        <Signal Name="LTDC_B0"/>
+        <Signal Name="PSSI_D2"/>
+        <Signal Name="SDMMC1_D0"/>
+        <Signal Name="TIM3_CH3"/>
+        <Signal Name="UART5_DE"/>
+        <Signal Name="UART5_RTS"/>
+        <Signal Name="UCPD1_FRSTX1"/>
+        <Signal Name="USART6_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC11" Position="C7" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="DCMIPP_D4"/>
+        <Signal Name="DCMI_D4"/>
+        <Signal Name="HDP_HDP3"/>
+        <Signal Name="I2C4_SDA"/>
+        <Signal Name="I2S3_SDI"/>
+        <Signal Name="I3C2_SDA"/>
+        <Signal Name="PSSI_D4"/>
+        <Signal Name="SDMMC1_D3"/>
+        <Signal Name="SPI3_MISO"/>
+        <Signal Name="UART4_RX"/>
+        <Signal Name="USART3_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PH9" Position="C8" Type="I/O">
+        <Signal Name="DCMIPP_D6"/>
+        <Signal Name="DCMI_D6"/>
+        <Signal Name="FDCAN1_RX"/>
+        <Signal Name="FMC_D9"/>
+        <Signal Name="FMC_DA9"/>
+        <Signal Name="HDP_HDP0"/>
+        <Signal Name="I2C1_SCL"/>
+        <Signal Name="I3C1_SCL"/>
+        <Signal Name="PSSI_D6"/>
+        <Signal Name="SDMMC1_CKIN"/>
+        <Signal Name="SDMMC1_D4"/>
+        <Signal Name="TIM16_CH1"/>
+        <Signal Name="TIM4_CH3"/>
+        <Signal Name="UART4_RX"/>
+        <Signal Name="USART3_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE14" Position="C9" Type="I/O">
+        <Signal Name="ADF1_CCK1"/>
+        <Signal Name="FMC_NWE"/>
+        <Signal Name="FMC_SDNE0"/>
+        <Signal Name="GFXTIM_FCKCAL"/>
+        <Signal Name="GFXTIM_LCKCAL"/>
+        <Signal Name="I2C4_SDA"/>
+        <Signal Name="SAI2_MCLK_B"/>
+        <Signal Name="SPI4_MOSI"/>
+        <Signal Name="TIM1_CH4"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE13" Position="C10" Type="I/O">
+        <Signal Name="ADF1_CCK0"/>
+        <Signal Name="FMC_SDNCAS"/>
+        <Signal Name="I2C4_SCL"/>
+        <Signal Name="SAI2_FS_B"/>
+        <Signal Name="SPI4_MISO"/>
+        <Signal Name="TIM1_CH3"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD10" Position="C11" Type="I/O">
+        <Signal Name="DEBUG_TRACECLK"/>
+        <Signal Name="FMC_A3"/>
+        <Signal Name="FMC_A19"/>
+        <Signal Name="GFXTIM_TE"/>
+        <Signal Name="HDP_HDP4"/>
+        <Signal Name="I2S1_MCK"/>
+        <Signal Name="MDF1_CKI3"/>
+        <Signal Name="SAI2_FS_B"/>
+        <Signal Name="SPDIFRX1_IN2"/>
+        <Signal Name="TIM1_ETR"/>
+        <Signal Name="UCPD1_FRSTX1"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD15" Position="C12" Type="I/O">
+        <Signal Name="ADC1_EXTI15"/>
+        <Signal Name="ADC2_EXTI15"/>
+        <Signal Name="FMC_A8"/>
+        <Signal Name="I2C2_SDA"/>
+        <Signal Name="LTDC_R2"/>
+        <Signal Name="USART10_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE8" Position="C13" Type="I/O">
+        <Signal Name="DCMIPP_D4"/>
+        <Signal Name="DCMI_D4"/>
+        <Signal Name="FMC_A12"/>
+        <Signal Name="MDF1_SDI0"/>
+        <Signal Name="PSSI_D4"/>
+        <Signal Name="TIM1_CH1N"/>
+        <Signal Name="UART7_TX"/>
+        <Signal Name="USART3_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE10" Position="C14" Type="I/O">
+        <Signal Name="DCMIPP_D3"/>
+        <Signal Name="DCMI_D3"/>
+        <Signal Name="DEBUG_TRACECLK"/>
+        <Signal Name="FMC_A15"/>
+        <Signal Name="FMC_BA1"/>
+        <Signal Name="MDF1_SDI4"/>
+        <Signal Name="PSSI_D3"/>
+        <Signal Name="TIM1_CH2N"/>
+        <Signal Name="UART7_CTS"/>
+        <Signal Name="USART3_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="V08CAP" Position="D1" Type="Power"/>
+    <Pin Name="VFBSMPS" Position="D2" Type="Power"/>
+    <Pin Name="BOOT0" Position="D3" Type="Boot"/>
+    <Pin Name="VDDA18USB" Position="D4" Type="Power"/>
+    <Pin Name="OTG1_TXRTUNE" Position="D5" Type="I/O">
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC9" Position="D6" Type="I/O">
+        <Signal Name="AUDIOCLK"/>
+        <Signal Name="DCMIPP_D3"/>
+        <Signal Name="DCMI_D3"/>
+        <Signal Name="HDP_HDP1"/>
+        <Signal Name="I2C3_SDA"/>
+        <Signal Name="LTDC_B3"/>
+        <Signal Name="PSSI_D3"/>
+        <Signal Name="RCC_MCO_2"/>
+        <Signal Name="SDMMC1_D1"/>
+        <Signal Name="TIM3_CH4"/>
+        <Signal Name="UART5_CTS"/>
+        <Signal Name="UCPD1_FRSTX2"/>
+        <Signal Name="USART6_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC12" Position="D7" Type="I/O">
+        <Signal Name="DCMIPP_D9"/>
+        <Signal Name="DCMI_D9"/>
+        <Signal Name="DEBUG_TRACED3"/>
+        <Signal Name="FMC_NL"/>
+        <Signal Name="HDP_HDP4"/>
+        <Signal Name="I2S3_SDO"/>
+        <Signal Name="I2S6_CK"/>
+        <Signal Name="PSSI_D9"/>
+        <Signal Name="SDMMC1_CK"/>
+        <Signal Name="SPI3_MOSI"/>
+        <Signal Name="SPI6_SCK"/>
+        <Signal Name="TIM15_CH1"/>
+        <Signal Name="TIM1_CH4"/>
+        <Signal Name="UART5_TX"/>
+        <Signal Name="USART3_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PC10" Position="D8" Type="I/O">
+        <Signal Name="DCMIPP_D14"/>
+        <Signal Name="FMC_CLK"/>
+        <Signal Name="HDP_HDP2"/>
+        <Signal Name="I2C4_SCL"/>
+        <Signal Name="I2S3_CK"/>
+        <Signal Name="I3C2_SCL"/>
+        <Signal Name="PSSI_D14"/>
+        <Signal Name="SDMMC1_D2"/>
+        <Signal Name="SPI3_SCK"/>
+        <Signal Name="TIM1_BKIN"/>
+        <Signal Name="UART4_TX"/>
+        <Signal Name="USART3_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE5" Position="D9" Type="I/O">
+        <Signal Name="DCMIPP_D5"/>
+        <Signal Name="DCMI_D5"/>
+        <Signal Name="FDCAN2_TX"/>
+        <Signal Name="FMC_SDNE1"/>
+        <Signal Name="HDP_HDP6"/>
+        <Signal Name="I2C1_SCL"/>
+        <Signal Name="I3C1_SCL"/>
+        <Signal Name="LPUART1_TX"/>
+        <Signal Name="PSSI_D5"/>
+        <Signal Name="TIM16_CH1N"/>
+        <Signal Name="TIM4_CH1"/>
+        <Signal Name="UART5_TX"/>
+        <Signal Name="USART1_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE12" Position="D10" Type="I/O">
+        <Signal Name="FDCAN3_RX"/>
+        <Signal Name="FMC_SDNRAS"/>
+        <Signal Name="MDF1_SDI5"/>
+        <Signal Name="SAI2_SCK_B"/>
+        <Signal Name="SPI4_SCK"/>
+        <Signal Name="TIM1_CH3N"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE7" Position="D11" Type="I/O">
+        <Signal Name="FMC_A4"/>
+        <Signal Name="FMC_A20"/>
+        <Signal Name="MDF1_CKI0"/>
+        <Signal Name="SAI2_SD_B"/>
+        <Signal Name="TIM1_ETR"/>
+        <Signal Name="UART7_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD14" Position="D12" Type="I/O">
+        <Signal Name="FMC_A9"/>
+        <Signal Name="I2C2_SCL"/>
+        <Signal Name="USART10_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD8" Position="D13" Type="I/O">
+        <Signal Name="DCMIPP_D11"/>
+        <Signal Name="DCMI_D11"/>
+        <Signal Name="FMC_NBL0"/>
+        <Signal Name="LTDC_R7"/>
+        <Signal Name="PSSI_D11"/>
+        <Signal Name="SPDIFRX1_IN1"/>
+        <Signal Name="TAMP_IN3"/>
+        <Signal Name="TAMP_OUT4"/>
+        <Signal Name="USART3_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD5" Position="D14" Type="I/O">
+        <Signal Name="DCMIPP_PIXCLK"/>
+        <Signal Name="DCMI_PIXCLK"/>
+        <Signal Name="FMC_D6"/>
+        <Signal Name="FMC_DA6"/>
+        <Signal Name="PSSI_PDCK"/>
+        <Signal Name="TIM1_CH4N"/>
+        <Signal Name="USART2_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDA18PMU" Position="E1" Type="Power"/>
+    <Pin Name="VSSAPMU" Position="E2" Type="Power"/>
+    <Pin Name="PWR_ON" Position="E3" Type="I/O">
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="NRST" Position="E4" Type="Reset"/>
+    <Pin Name="VDDA18AON" Position="E5" Type="Power"/>
+    <Pin Name="PH2" Position="E6" Type="I/O">
+        <Signal Name="DCMIPP_D11"/>
+        <Signal Name="DCMI_D11"/>
+        <Signal Name="DEBUG_TRACED2"/>
+        <Signal Name="FDCAN1_TX"/>
+        <Signal Name="FMC_NE3"/>
+        <Signal Name="PSSI_D11"/>
+        <Signal Name="SDMMC1_CMD"/>
+        <Signal Name="TIM15_BKIN"/>
+        <Signal Name="TIM1_ETR"/>
+        <Signal Name="TIM3_ETR"/>
+        <Signal Name="UART5_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VSS" Position="E7" Type="Power"/>
+    <Pin Name="VDDIO4" Position="E8" Type="Power"/>
+    <Pin Name="VDDIO4" Position="E9" Type="Power"/>
+    <Pin Name="PD2" Position="E10" Type="I/O">
+        <Signal Name="ADF1_SDI0"/>
+        <Signal Name="DEBUG_TRACED0"/>
+        <Signal Name="FMC_A0"/>
+        <Signal Name="FMC_A16"/>
+        <Signal Name="FMC_CLE"/>
+        <Signal Name="HDP_HDP1"/>
+        <Signal Name="I2S2_SDO"/>
+        <Signal Name="MDF1_SDI1"/>
+        <Signal Name="MDIOS_MDC"/>
+        <Signal Name="PWR_WKUP4"/>
+        <Signal Name="SAI1_D1"/>
+        <Signal Name="SAI1_SD_A"/>
+        <Signal Name="SPI2_MOSI"/>
+        <Signal Name="TIM15_CH1N"/>
+        <Signal Name="TIM1_CH3"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PD12" Position="E11" Type="I/O">
+        <Signal Name="DCMIPP_D12"/>
+        <Signal Name="DCMI_D12"/>
+        <Signal Name="ETH1_MDIO"/>
+        <Signal Name="FMC_A5"/>
+        <Signal Name="FMC_A21"/>
+        <Signal Name="HDP_HDP5"/>
+        <Signal Name="MDF1_SDI3"/>
+        <Signal Name="PSSI_D12"/>
+        <Signal Name="SAI1_D3"/>
+        <Signal Name="SPDIFRX1_IN3"/>
+        <Signal Name="UCPD1_FRSTX2"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB3" Position="E12" Type="I/O">
+        <Signal Name="DEBUG_JTDO-SWO"/>
+        <Signal Name="DEBUG_TRACECLK"/>
+        <Signal Name="FMC_A23"/>
+        <Signal Name="FMC_NBL1"/>
+        <Signal Name="GFXTIM_FCKCAL"/>
+        <Signal Name="GFXTIM_LCKCAL"/>
+        <Signal Name="HDP_HDP0"/>
+        <Signal Name="MDF1_CKI1"/>
+        <Signal Name="SAI2_FS_B"/>
+        <Signal Name="TIM1_CH4N"/>
+        <Signal Name="USART1_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB2" Position="E13" Type="I/O">
+        <Signal Name="ADF1_SDI0"/>
+        <Signal Name="FMC_D2"/>
+        <Signal Name="FMC_DA2"/>
+        <Signal Name="HDP_HDP2"/>
+        <Signal Name="I2S3_SDO"/>
+        <Signal Name="LTDC_B2"/>
+        <Signal Name="MDF1_SDI1"/>
+        <Signal Name="RTC_OUT2"/>
+        <Signal Name="SAI1_D1"/>
+        <Signal Name="SAI1_SD_A"/>
+        <Signal Name="SPI3_MOSI"/>
+        <Signal Name="TIM1_CH1"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+        <Condition Diagnostic="" Expression="!(RTC_OUT2 &amp; (WakeUp_Outputed | AlarmA_Outputed | AlarmB_Outputed))"/>
+    </Pin>
+    <Pin Name="PD13" Position="E14" Type="I/O">
+        <Signal Name="DCMIPP_D13"/>
+        <Signal Name="DCMI_D13"/>
+        <Signal Name="FMC_D4"/>
+        <Signal Name="FMC_DA4"/>
+        <Signal Name="LPTIM1_CH1"/>
+        <Signal Name="LTDC_R6"/>
+        <Signal Name="PSSI_D13"/>
+        <Signal Name="SAI2_SCK_A"/>
+        <Signal Name="TIM4_CH2"/>
+        <Signal Name="UART9_RTS"/>
+        <Signal Name="UCPD1_FRSTX2"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VSSSMPS" Position="F1" Type="Power"/>
+    <Pin Name="VSSSMPS" Position="F2" Type="Power"/>
+    <Pin Name="VSSSMPS" Position="F3" Type="Power"/>
+    <Pin Name="VSSSMPS" Position="F4" Type="Power"/>
+    <Pin Name="VSSAON" Position="F5" Type="Power"/>
+    <Pin Name="VSS" Position="F10" Type="Power"/>
+    <Pin Name="PD11" Position="F11" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="DCMIPP_D15"/>
+        <Signal Name="FMC_D8"/>
+        <Signal Name="FMC_DA8"/>
+        <Signal Name="I2C4_SDA"/>
+        <Signal Name="I2S2_SDI"/>
+        <Signal Name="PSSI_D15"/>
+        <Signal Name="SDMMC1_D0"/>
+        <Signal Name="SPI2_MISO"/>
+        <Signal Name="UCPD1_FRSTX1"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE0" Position="F12" Type="I/O">
+        <Signal Name="DCMIPP_D2"/>
+        <Signal Name="DCMI_D2"/>
+        <Signal Name="FMC_D9"/>
+        <Signal Name="FMC_DA9"/>
+        <Signal Name="LPTIM1_ETR"/>
+        <Signal Name="LPTIM2_ETR"/>
+        <Signal Name="PSSI_D2"/>
+        <Signal Name="SAI2_MCLK_A"/>
+        <Signal Name="TAMP_IN6"/>
+        <Signal Name="TAMP_OUT5"/>
+        <Signal Name="TIM4_ETR"/>
+        <Signal Name="UART8_RX"/>
+        <Signal Name="USART3_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE1" Position="F13" Type="I/O">
+        <Signal Name="DCMIPP_D8"/>
+        <Signal Name="DCMI_D8"/>
+        <Signal Name="FMC_D10"/>
+        <Signal Name="FMC_DA10"/>
+        <Signal Name="LPTIM1_IN2"/>
+        <Signal Name="LPTIM2_CH2"/>
+        <Signal Name="PSSI_D8"/>
+        <Signal Name="UART8_TX"/>
+        <Signal Name="USART3_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PE2" Position="F14" Type="I/O">
+        <Signal Name="ADF1_CCK0"/>
+        <Signal Name="DEBUG_TRACECLK"/>
+        <Signal Name="FMC_D11"/>
+        <Signal Name="FMC_DA11"/>
+        <Signal Name="LPTIM5_IN1"/>
+        <Signal Name="MDF1_CCK0"/>
+        <Signal Name="SAI1_CK1"/>
+        <Signal Name="SAI1_MCLK_A"/>
+        <Signal Name="SPI4_SCK"/>
+        <Signal Name="TIM1_CH2N"/>
+        <Signal Name="UCPD1_FRSTX1"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VLXSMPS" Position="G1" Type="Power"/>
+    <Pin Name="VLXSMPS" Position="G2" Type="Power"/>
+    <Pin Name="VLXSMPS" Position="G3" Type="Power"/>
+    <Pin Name="VLXSMPS" Position="G4" Type="Power"/>
+    <Pin Name="VDD" Position="G10" Type="Power"/>
+    <Pin Name="VDD" Position="G11" Type="Power"/>
+    <Pin Name="VDD" Position="G12" Type="Power"/>
+    <Pin Name="PE3" Position="G13" Type="I/O">
+        <Signal Name="DEBUG_TRACED0"/>
+        <Signal Name="FMC_D12"/>
+        <Signal Name="FMC_DA12"/>
+        <Signal Name="LPTIM5_ETR"/>
+        <Signal Name="MDF1_CKI2"/>
+        <Signal Name="SAI1_SD_B"/>
+        <Signal Name="TIM15_BKIN"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB0" Position="G14" Type="I/O">
+        <Signal Name="ADF1_SDI0"/>
+        <Signal Name="DCMIPP_D4"/>
+        <Signal Name="DCMI_D4"/>
+        <Signal Name="DEBUG_TRACED1"/>
+        <Signal Name="FMC_D13"/>
+        <Signal Name="FMC_DA13"/>
+        <Signal Name="MDF1_SDI2"/>
+        <Signal Name="PSSI_D4"/>
+        <Signal Name="SAI1_D2"/>
+        <Signal Name="SAI1_FS_A"/>
+        <Signal Name="SPI4_NSS"/>
+        <Signal Name="TIM15_CH1N"/>
+        <Signal Name="TIM1_CH4"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDSMPS" Position="H1" Type="Power"/>
+    <Pin Name="VDDSMPS" Position="H2" Type="Power"/>
+    <Pin Name="VDDSMPS" Position="H3" Type="Power"/>
+    <Pin Name="VDDSMPS" Position="H4" Type="Power"/>
+    <Pin Name="VSS" Position="H10" Type="Power"/>
+    <Pin Name="VSS" Position="H11" Type="Power"/>
+    <Pin Name="PD9" Position="H12" Type="I/O">
+        <Signal Name="DCMIPP_D11"/>
+        <Signal Name="DCMI_D11"/>
+        <Signal Name="FMC_SDCLK"/>
+        <Signal Name="LTDC_R1"/>
+        <Signal Name="PSSI_D11"/>
+        <Signal Name="TAMP_IN5"/>
+        <Signal Name="TAMP_OUT6"/>
+        <Signal Name="USART3_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB7" Position="H13" Type="I/O">
+        <Signal Name="ADF1_SDI0"/>
+        <Signal Name="DCMIPP_D7"/>
+        <Signal Name="DCMI_D7"/>
+        <Signal Name="DEBUG_TRACED3"/>
+        <Signal Name="FMC_D15"/>
+        <Signal Name="FMC_DA15"/>
+        <Signal Name="MDF1_SDI1"/>
+        <Signal Name="PSSI_D7"/>
+        <Signal Name="SAI1_D1"/>
+        <Signal Name="SAI1_SD_A"/>
+        <Signal Name="SAI2_MCLK_B"/>
+        <Signal Name="SPI4_MOSI"/>
+        <Signal Name="TIM15_CH2"/>
+        <Signal Name="TIM1_BKIN2"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB6" Position="H14" Type="I/O">
+        <Signal Name="ADF1_CCK1"/>
+        <Signal Name="DCMIPP_D6"/>
+        <Signal Name="DCMI_D6"/>
+        <Signal Name="DEBUG_TRACED2"/>
+        <Signal Name="FMC_D14"/>
+        <Signal Name="FMC_DA14"/>
+        <Signal Name="MDF1_CCK1"/>
+        <Signal Name="PSSI_D6"/>
+        <Signal Name="SAI1_CK2"/>
+        <Signal Name="SAI1_SCK_A"/>
+        <Signal Name="SPI4_MISO"/>
+        <Signal Name="TIM15_CH1"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF4" Position="J1" Type="I/O">
+        <Signal Name="ADC1_INP18"/>
+        <Signal Name="DCMIPP_HSYNC"/>
+        <Signal Name="DCMI_HSYNC"/>
+        <Signal Name="ETH1_MDIO"/>
+        <Signal Name="HDP_HDP4"/>
+        <Signal Name="I2S1_WS"/>
+        <Signal Name="I2S3_WS"/>
+        <Signal Name="I2S6_WS"/>
+        <Signal Name="LPTIM3_CH2"/>
+        <Signal Name="LTDC_R3"/>
+        <Signal Name="PSSI_DE"/>
+        <Signal Name="SPI1_NSS"/>
+        <Signal Name="SPI3_NSS"/>
+        <Signal Name="SPI6_NSS"/>
+        <Signal Name="TIM5_ETR"/>
+        <Signal Name="USART2_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF6" Position="J2" Type="I/O">
+        <Signal Name="ADC1_INP15"/>
+        <Signal Name="ADC2_INP15"/>
+        <Signal Name="ETH1_MII_COL"/>
+        <Signal Name="GFXTIM_FCKCAL"/>
+        <Signal Name="GFXTIM_LCKCAL"/>
+        <Signal Name="HDP_HDP3"/>
+        <Signal Name="I2S6_MCK"/>
+        <Signal Name="LPTIM3_CH1"/>
+        <Signal Name="LTDC_DE"/>
+        <Signal Name="SPI1_RDY"/>
+        <Signal Name="SPI4_RDY"/>
+        <Signal Name="SPI5_RDY"/>
+        <Signal Name="TIM15_CH2"/>
+        <Signal Name="TIM1_CH3"/>
+        <Signal Name="TIM2_CH4"/>
+        <Signal Name="TIM5_CH4"/>
+        <Signal Name="USART2_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF10" Position="J3" Type="I/O">
+        <Signal Name="DCMIPP_D11"/>
+        <Signal Name="DCMIPP_D15"/>
+        <Signal Name="DCMI_D11"/>
+        <Signal Name="ETH1_MII_RX_DV"/>
+        <Signal Name="ETH1_RGMII_RX_CTL"/>
+        <Signal Name="ETH1_RMII_CRS_DV"/>
+        <Signal Name="LTDC_R1"/>
+        <Signal Name="MDF1_SDI3"/>
+        <Signal Name="PSSI_D11"/>
+        <Signal Name="PSSI_D15"/>
+        <Signal Name="SAI1_D3"/>
+        <Signal Name="TIM16_BKIN"/>
+        <Signal Name="UART7_RX"/>
+        <Signal Name="UCPD1_FRSTX1"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF5" Position="J4" Type="I/O">
+        <Signal Name="DCMIPP_D6"/>
+        <Signal Name="DCMI_D6"/>
+        <Signal Name="ETH1_CLK"/>
+        <Signal Name="FMC_NE3"/>
+        <Signal Name="LPTIM2_IN2"/>
+        <Signal Name="LTDC_G0"/>
+        <Signal Name="PSSI_D6"/>
+        <Signal Name="SAI2_SD_A"/>
+        <Signal Name="TIM1_ETR"/>
+        <Signal Name="USART3_CTS"/>
+        <Signal Name="USART3_NSS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF3" Position="J5" Type="I/O">
+        <Signal Name="ADC1_INP16"/>
+        <Signal Name="DCMIPP_HSYNC"/>
+        <Signal Name="DCMI_HSYNC"/>
+        <Signal Name="ETH1_PPS_OUT"/>
+        <Signal Name="FDCAN3_RX"/>
+        <Signal Name="FMC_NL"/>
+        <Signal Name="LTDC_R4"/>
+        <Signal Name="PSSI_DE"/>
+        <Signal Name="USART2_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDIO3" Position="J10" Type="Power"/>
+    <Pin Name="VDDIO3" Position="J11" Type="Power"/>
+    <Pin Name="PN12" Position="J12" Type="I/O">
+        <Signal Name="XSPIM_P2_NCS2"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN4" Position="J13" Type="I/O">
+        <Signal Name="XSPIM_P2_IO2"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN8" Position="J14" Type="I/O">
+        <Signal Name="XSPIM_P2_IO4"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF2" Position="K1" Type="I/O">
+        <Signal Name="ETH1_RGMII_CLK125"/>
+        <Signal Name="FDCAN3_TX"/>
+        <Signal Name="FMC_NWAIT"/>
+        <Signal Name="I2S2_CK"/>
+        <Signal Name="LTDC_B1"/>
+        <Signal Name="SPI2_SCK"/>
+        <Signal Name="TIM1_CH3N"/>
+        <Signal Name="USART2_CTS"/>
+        <Signal Name="USART2_NSS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF14" Position="K2" Type="I/O">
+        <Signal Name="ADC2_INN2"/>
+        <Signal Name="ADC2_INP6"/>
+        <Signal Name="ETH1_MII_RXD0"/>
+        <Signal Name="ETH1_RGMII_RXD0"/>
+        <Signal Name="ETH1_RMII_RXD0"/>
+        <Signal Name="LTDC_G0"/>
+        <Signal Name="SPI5_MOSI"/>
+        <Signal Name="TIM2_CH2"/>
+        <Signal Name="USART1_CTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF15" Position="K3" Type="I/O">
+        <Signal Name="ADC1_EXTI15"/>
+        <Signal Name="ADC2_EXTI15"/>
+        <Signal Name="ETH1_MII_RXD1"/>
+        <Signal Name="ETH1_RGMII_RXD1"/>
+        <Signal Name="ETH1_RMII_RXD1"/>
+        <Signal Name="LTDC_G1"/>
+        <Signal Name="SPI5_SCK"/>
+        <Signal Name="USART1_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF7" Position="K4" Type="I/O">
+        <Signal Name="ADC1_INN5"/>
+        <Signal Name="ADC1_INP9"/>
+        <Signal Name="ADC2_INN5"/>
+        <Signal Name="ADC2_INP9"/>
+        <Signal Name="ETH1_MII_RX_CLK"/>
+        <Signal Name="ETH1_RGMII_RX_CLK"/>
+        <Signal Name="ETH1_RMII_REF_CLK"/>
+        <Signal Name="GFXTIM_TE"/>
+        <Signal Name="HDP_HDP0"/>
+        <Signal Name="I2S1_CK"/>
+        <Signal Name="LTDC_VSYNC"/>
+        <Signal Name="SPI1_SCK"/>
+        <Signal Name="TIM1_CH2N"/>
+        <Signal Name="TIM3_CH3"/>
+        <Signal Name="TIM9_CH1"/>
+        <Signal Name="UART4_CTS"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VSS" Position="K5" Type="Power"/>
+    <Pin Name="VDDCORE" Position="K6" Type="Power"/>
+    <Pin Name="VDDCORE" Position="K7" Type="Power"/>
+    <Pin Name="VDDCORE" Position="K8" Type="Power"/>
+    <Pin Name="VDDCORE" Position="K9" Type="Power"/>
+    <Pin Name="VSS" Position="K10" Type="Power"/>
+    <Pin Name="PA3" Position="K11" Type="I/O">
+        <Signal Name="FMC_A17"/>
+        <Signal Name="FMC_ALE"/>
+        <Signal Name="SAI1_SD_B"/>
+        <Signal Name="SPI5_NSS"/>
+        <Signal Name="TIM16_CH1"/>
+        <Signal Name="UART7_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN6" Position="K12" Type="I/O">
+        <Signal Name="XSPIM_P2_CLK"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN7" Position="K13" Type="I/O">
+        <Signal Name="XSPIM_P2_NCLK"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN5" Position="K14" Type="I/O">
+        <Signal Name="XSPIM_P2_IO3"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF8" Position="L1" Type="I/O">
+        <Signal Name="DEBUG_TRACECLK"/>
+        <Signal Name="ETH1_MII_RXD2"/>
+        <Signal Name="ETH1_RGMII_RXD2"/>
+        <Signal Name="FMC_NWE"/>
+        <Signal Name="LTDC_R6"/>
+        <Signal Name="UART9_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF11" Position="L2" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC1_INP2"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="DCMIPP_D15"/>
+        <Signal Name="ETH1_MII_TX_EN"/>
+        <Signal Name="ETH1_RGMII_TX_CTL"/>
+        <Signal Name="ETH1_RMII_TX_EN"/>
+        <Signal Name="LTDC_B0"/>
+        <Signal Name="PSSI_D15"/>
+        <Signal Name="SAI2_SD_B"/>
+        <Signal Name="SPI5_MOSI"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PF12" Position="L3" Type="I/O">
+        <Signal Name="ADC1_INN2"/>
+        <Signal Name="ADC1_INP6"/>
+        <Signal Name="DCMIPP_D13"/>
+        <Signal Name="DCMI_D13"/>
+        <Signal Name="ETH1_MII_TXD0"/>
+        <Signal Name="ETH1_RGMII_TXD0"/>
+        <Signal Name="ETH1_RMII_TXD0"/>
+        <Signal Name="PSSI_D13"/>
+        <Signal Name="SPI5_MISO"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDA18PLL" Position="L4" Type="Power"/>
+    <Pin Name="PG14" Position="L5" Type="I/O">
+        <Signal Name="DCMIPP_D11"/>
+        <Signal Name="DCMI_D11"/>
+        <Signal Name="DEBUG_TRACED1"/>
+        <Signal Name="FMC_NCE"/>
+        <Signal Name="FMC_NE2"/>
+        <Signal Name="I2S6_SDO"/>
+        <Signal Name="LPTIM1_ETR"/>
+        <Signal Name="LTDC_B1"/>
+        <Signal Name="PSSI_D11"/>
+        <Signal Name="SPI6_MOSI"/>
+        <Signal Name="TIM8_CH4"/>
+        <Signal Name="USART10_RTS"/>
+        <Signal Name="USART2_RTS"/>
+        <Signal Name="USART6_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA12" Position="L6" Type="I/O">
+        <Signal Name="ADC1_INN12"/>
+        <Signal Name="ADC1_INP13"/>
+        <Signal Name="ADC2_INN12"/>
+        <Signal Name="ADC2_INP13"/>
+        <Signal Name="FDCAN1_TX"/>
+        <Signal Name="FMC_D0"/>
+        <Signal Name="FMC_DA0"/>
+        <Signal Name="HDP_HDP4"/>
+        <Signal Name="I2S2_CK"/>
+        <Signal Name="LPUART1_RTS"/>
+        <Signal Name="LTDC_B2"/>
+        <Signal Name="SAI2_FS_B"/>
+        <Signal Name="SPI2_SCK"/>
+        <Signal Name="TIM1_ETR"/>
+        <Signal Name="UART4_TX"/>
+        <Signal Name="USART1_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDCORE" Position="L7" Type="Power"/>
+    <Pin Name="PA6" Position="L8" Type="I/O">
+        <Signal Name="ADC1_INP3"/>
+        <Signal Name="ADC2_INP3"/>
+        <Signal Name="BOOT1"/>
+        <Signal Name="DCMIPP_PIXCLK"/>
+        <Signal Name="DCMI_PIXCLK"/>
+        <Signal Name="HDP_HDP6"/>
+        <Signal Name="I2S1_SDI"/>
+        <Signal Name="I2S6_SDI"/>
+        <Signal Name="I3C1_SDA"/>
+        <Signal Name="LPTIM3_ETR"/>
+        <Signal Name="LTDC_B7"/>
+        <Signal Name="LTDC_HSYNC"/>
+        <Signal Name="MDIOS_MDC"/>
+        <Signal Name="PSSI_PDCK"/>
+        <Signal Name="SPI1_MISO"/>
+        <Signal Name="SPI6_MISO"/>
+        <Signal Name="TIM13_CH1"/>
+        <Signal Name="TIM1_BKIN"/>
+        <Signal Name="TIM3_CH1"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA1" Position="L9" Type="I/O">
+        <Signal Name="ADC1_INP1"/>
+        <Signal Name="ADC2_INP1"/>
+        <Signal Name="DCMIPP_D0"/>
+        <Signal Name="DCMI_D0"/>
+        <Signal Name="FMC_D6"/>
+        <Signal Name="FMC_DA6"/>
+        <Signal Name="HDP_HDP1"/>
+        <Signal Name="LPTIM3_IN1"/>
+        <Signal Name="LTDC_G2"/>
+        <Signal Name="PSSI_D0"/>
+        <Signal Name="SAI2_MCLK_B"/>
+        <Signal Name="TIM15_CH1N"/>
+        <Signal Name="TIM2_CH2"/>
+        <Signal Name="TIM5_CH2"/>
+        <Signal Name="UART4_RX"/>
+        <Signal Name="USART2_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB11" Position="L10" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC1_INP4"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="ADC2_INP4"/>
+        <Signal Name="FMC_D10"/>
+        <Signal Name="FMC_DA10"/>
+        <Signal Name="HDP_HDP3"/>
+        <Signal Name="I2C2_SDA"/>
+        <Signal Name="I3C2_SDA"/>
+        <Signal Name="LPTIM2_ETR"/>
+        <Signal Name="LTDC_G6"/>
+        <Signal Name="TIM2_CH4"/>
+        <Signal Name="USART3_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB4(NJTRST)" Position="L11" Type="I/O">
+        <Signal Name="DCMIPP_VSYNC"/>
+        <Signal Name="DCMI_VSYNC"/>
+        <Signal Name="DEBUG_NJTRST"/>
+        <Signal Name="FMC_D13"/>
+        <Signal Name="FMC_DA13"/>
+        <Signal Name="HDP_HDP4"/>
+        <Signal Name="I2S1_SDI"/>
+        <Signal Name="I2S2_WS"/>
+        <Signal Name="I2S3_SDI"/>
+        <Signal Name="I2S6_SDI"/>
+        <Signal Name="LPTIM4_ETR"/>
+        <Signal Name="LTDC_R3"/>
+        <Signal Name="PSSI_RDY"/>
+        <Signal Name="SPI1_MISO"/>
+        <Signal Name="SPI2_NSS"/>
+        <Signal Name="SPI3_MISO"/>
+        <Signal Name="SPI6_MISO"/>
+        <Signal Name="TIM16_BKIN"/>
+        <Signal Name="TIM3_CH1"/>
+        <Signal Name="UART7_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG8" Position="L12" Type="I/O">
+        <Signal Name="FMC_A20"/>
+        <Signal Name="HDP_HDP7"/>
+        <Signal Name="I2S2_SDO"/>
+        <Signal Name="LTDC_G7"/>
+        <Signal Name="PWR_PVD_IN"/>
+        <Signal Name="RTC_REFIN"/>
+        <Signal Name="SAI1_SCK_B"/>
+        <Signal Name="SPI2_MOSI"/>
+        <Signal Name="TIM12_CH2"/>
+        <Signal Name="TIM1_CH3N"/>
+        <Signal Name="UART4_CTS"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN2" Position="L13" Type="I/O">
+        <Signal Name="FMC_A23"/>
+        <Signal Name="XSPIM_P2_IO0"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN9" Position="L14" Type="I/O">
+        <Signal Name="DCMIPP_D5"/>
+        <Signal Name="DCMI_D5"/>
+        <Signal Name="PSSI_D5"/>
+        <Signal Name="XSPIM_P2_IO5"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VREF+" Position="M1" Type="MonoIO"/>
+    <Pin Name="PF13" Position="M2" Type="I/O">
+        <Signal Name="ADC2_INP2"/>
+        <Signal Name="DCMIPP_D10"/>
+        <Signal Name="DCMI_D10"/>
+        <Signal Name="ETH1_MII_TXD1"/>
+        <Signal Name="ETH1_RGMII_TXD1"/>
+        <Signal Name="ETH1_RMII_TXD1"/>
+        <Signal Name="PSSI_D10"/>
+        <Signal Name="SPI5_NSS"/>
+        <Signal Name="USART1_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDA18ADC" Position="M3" Type="Power"/>
+    <Pin Name="VSSA" Position="M4" Type="Power"/>
+    <Pin Name="PG15" Position="M5" Type="I/O">
+        <Signal Name="ADC1_EXTI15"/>
+        <Signal Name="ADC1_INN3"/>
+        <Signal Name="ADC1_INP7"/>
+        <Signal Name="ADC2_EXTI15"/>
+        <Signal Name="ADC2_INN3"/>
+        <Signal Name="ADC2_INP7"/>
+        <Signal Name="DCMIPP_D4"/>
+        <Signal Name="DCMI_D4"/>
+        <Signal Name="ETH1_MII_RX_CLK"/>
+        <Signal Name="ETH1_RMII_REF_CLK"/>
+        <Signal Name="FMC_CLK"/>
+        <Signal Name="LTDC_B0"/>
+        <Signal Name="PSSI_D4"/>
+        <Signal Name="SPI1_RDY"/>
+        <Signal Name="SPI4_RDY"/>
+        <Signal Name="SPI5_RDY"/>
+        <Signal Name="TIM1_CH4"/>
+        <Signal Name="USART3_CK"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA11" Position="M6" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC1_INN11"/>
+        <Signal Name="ADC1_INP12"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="ADC2_INN11"/>
+        <Signal Name="ADC2_INP12"/>
+        <Signal Name="FDCAN1_RX"/>
+        <Signal Name="FMC_D1"/>
+        <Signal Name="FMC_DA1"/>
+        <Signal Name="HDP_HDP3"/>
+        <Signal Name="I2S2_WS"/>
+        <Signal Name="LPUART1_CTS"/>
+        <Signal Name="LTDC_B3"/>
+        <Signal Name="SPI2_NSS"/>
+        <Signal Name="TIM1_CH4"/>
+        <Signal Name="UART4_RX"/>
+        <Signal Name="USART1_CTS"/>
+        <Signal Name="USART1_NSS"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA9" Position="M7" Type="I/O">
+        <Signal Name="ADC1_INP10"/>
+        <Signal Name="ADC2_INP10"/>
+        <Signal Name="DCMIPP_D0"/>
+        <Signal Name="DCMI_D0"/>
+        <Signal Name="FMC_D3"/>
+        <Signal Name="FMC_DA3"/>
+        <Signal Name="HDP_HDP1"/>
+        <Signal Name="I2C3_SDA"/>
+        <Signal Name="I2S2_CK"/>
+        <Signal Name="I3C2_SDA"/>
+        <Signal Name="LPUART1_TX"/>
+        <Signal Name="LTDC_B5"/>
+        <Signal Name="PSSI_D0"/>
+        <Signal Name="SPI2_SCK"/>
+        <Signal Name="TIM1_CH2"/>
+        <Signal Name="USART1_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA5" Position="M8" Type="I/O">
+        <Signal Name="ADC2_INP18"/>
+        <Signal Name="DCMIPP_D8"/>
+        <Signal Name="DCMI_D8"/>
+        <Signal Name="FMC_NOE"/>
+        <Signal Name="HDP_HDP5"/>
+        <Signal Name="I2S1_CK"/>
+        <Signal Name="I2S6_CK"/>
+        <Signal Name="I3C1_SCL"/>
+        <Signal Name="LTDC_CLK"/>
+        <Signal Name="PSSI_D8"/>
+        <Signal Name="PWR_CSTOP"/>
+        <Signal Name="SPI1_SCK"/>
+        <Signal Name="SPI6_SCK"/>
+        <Signal Name="TIM10_CH1"/>
+        <Signal Name="TIM2_CH1"/>
+        <Signal Name="TIM2_ETR"/>
+        <Signal Name="TIM9_CH2"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG1" Position="M9" Type="I/O">
+        <Signal Name="DCMIPP_PIXCLK"/>
+        <Signal Name="DCMI_PIXCLK"/>
+        <Signal Name="FMC_A19"/>
+        <Signal Name="LTDC_G1"/>
+        <Signal Name="PSSI_PDCK"/>
+        <Signal Name="SAI1_SCK_B"/>
+        <Signal Name="SPI5_MISO"/>
+        <Signal Name="TIM13_CH1"/>
+        <Signal Name="TIM16_CH1N"/>
+        <Signal Name="UART7_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB12" Position="M10" Type="I/O">
+        <Signal Name="FDCAN2_RX"/>
+        <Signal Name="FMC_D9"/>
+        <Signal Name="FMC_DA9"/>
+        <Signal Name="HDP_HDP4"/>
+        <Signal Name="I2C2_SMBA"/>
+        <Signal Name="I2S2_WS"/>
+        <Signal Name="LPTIM2_IN2"/>
+        <Signal Name="LTDC_G5"/>
+        <Signal Name="SPI2_NSS"/>
+        <Signal Name="TIM1_BKIN"/>
+        <Signal Name="UART5_RX"/>
+        <Signal Name="USART3_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB5(JTDO/TRACESWO)" Position="M11" Type="I/O">
+        <Signal Name="DCMIPP_D10"/>
+        <Signal Name="DCMI_D10"/>
+        <Signal Name="DEBUG_JTDO-SWO"/>
+        <Signal Name="FDCAN2_RX"/>
+        <Signal Name="FMC_D12"/>
+        <Signal Name="FMC_DA12"/>
+        <Signal Name="HDP_HDP5"/>
+        <Signal Name="I2C1_SMBA"/>
+        <Signal Name="I2S1_SDO"/>
+        <Signal Name="I2S3_SDO"/>
+        <Signal Name="I2S6_SDO"/>
+        <Signal Name="LPTIM4_OUT"/>
+        <Signal Name="LTDC_R2"/>
+        <Signal Name="PSSI_D10"/>
+        <Signal Name="SPI1_MOSI"/>
+        <Signal Name="SPI3_MOSI"/>
+        <Signal Name="SPI6_MOSI"/>
+        <Signal Name="TIM17_BKIN"/>
+        <Signal Name="TIM3_CH2"/>
+        <Signal Name="UART5_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG0" Position="M12" Type="I/O">
+        <Signal Name="ETH1_PHY_INTN"/>
+        <Signal Name="LTDC_R0"/>
+        <Signal Name="LTDC_VSYNC"/>
+        <Signal Name="TIM12_CH1"/>
+        <Signal Name="TIM1_CH4N"/>
+        <Signal Name="UART9_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN0" Position="M13" Type="I/O">
+        <Signal Name="FMC_A25"/>
+        <Signal Name="XSPIM_P2_DQS0"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN10" Position="M14" Type="I/O">
+        <Signal Name="LTDC_B4"/>
+        <Signal Name="XSPIM_P2_IO6"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VREF-" Position="N1" Type="Power"/>
+    <Pin Name="CSI_D1N" Position="N2" Type="I/O">
+        <Signal Name="CSI_D1N"/>
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="CSI_CKN" Position="N3" Type="I/O">
+        <Signal Name="CSI_CKN"/>
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="CSI_D0N" Position="N4" Type="I/O">
+        <Signal Name="CSI_D0N"/>
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="CSI_REXT" Position="N5" Type="I/O">
+        <Signal Name="CSI_REXT"/>
+        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDCSI" Position="N6" Type="Power"/>
+    <Pin Name="PA10" Position="N7" Type="I/O">
+        <Signal Name="ADC1_INN10"/>
+        <Signal Name="ADC1_INP11"/>
+        <Signal Name="ADC2_INN10"/>
+        <Signal Name="ADC2_INP11"/>
+        <Signal Name="DCMIPP_D1"/>
+        <Signal Name="DCMI_D1"/>
+        <Signal Name="FMC_D2"/>
+        <Signal Name="FMC_DA2"/>
+        <Signal Name="HDP_HDP2"/>
+        <Signal Name="LPUART1_RX"/>
+        <Signal Name="LTDC_B4"/>
+        <Signal Name="MDIOS_MDIO"/>
+        <Signal Name="PSSI_D1"/>
+        <Signal Name="PWR_CSLEEP"/>
+        <Signal Name="TIM1_CH3"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA2" Position="N8" Type="I/O">
+        <Signal Name="ADC1_INP14"/>
+        <Signal Name="ADC2_INP14"/>
+        <Signal Name="FMC_D5"/>
+        <Signal Name="FMC_DA5"/>
+        <Signal Name="HDP_HDP2"/>
+        <Signal Name="LPTIM3_IN2"/>
+        <Signal Name="LTDC_B7"/>
+        <Signal Name="MDIOS_MDIO"/>
+        <Signal Name="PWR_WKUP2"/>
+        <Signal Name="SAI2_SCK_B"/>
+        <Signal Name="TIM15_CH1"/>
+        <Signal Name="TIM2_CH3"/>
+        <Signal Name="TIM5_CH3"/>
+        <Signal Name="USART2_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG12" Position="N9" Type="I/O">
+        <Signal Name="FMC_A18"/>
+        <Signal Name="LTDC_G0"/>
+        <Signal Name="SAI1_MCLK_B"/>
+        <Signal Name="SPI5_SCK"/>
+        <Signal Name="TIM17_CH1"/>
+        <Signal Name="UART7_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG10" Position="N10" Type="I/O">
+        <Signal Name="DCMIPP_D2"/>
+        <Signal Name="DCMI_D2"/>
+        <Signal Name="FDCAN2_TX"/>
+        <Signal Name="FMC_A16"/>
+        <Signal Name="FMC_CLE"/>
+        <Signal Name="HDP_HDP5"/>
+        <Signal Name="I2S2_CK"/>
+        <Signal Name="LPTIM2_CH1"/>
+        <Signal Name="LTDC_G4"/>
+        <Signal Name="PSSI_D2"/>
+        <Signal Name="SPI2_SCK"/>
+        <Signal Name="TIM1_CH1N"/>
+        <Signal Name="UART5_TX"/>
+        <Signal Name="USART3_CTS"/>
+        <Signal Name="USART3_NSS"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG2" Position="N11" Type="I/O">
+        <Signal Name="DCMIPP_D6"/>
+        <Signal Name="DCMI_D6"/>
+        <Signal Name="FMC_A21"/>
+        <Signal Name="LTDC_R0"/>
+        <Signal Name="PSSI_D6"/>
+        <Signal Name="SAI1_FS_B"/>
+        <Signal Name="SAI2_MCLK_B"/>
+        <Signal Name="SPI5_MOSI"/>
+        <Signal Name="TIM14_CH1"/>
+        <Signal Name="TIM17_CH1N"/>
+        <Signal Name="UART7_CTS"/>
+        <Signal Name="USART3_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA15(JTDI)" Position="N12" Type="I/O">
+        <Signal Name="ADC1_EXTI15"/>
+        <Signal Name="ADC2_EXTI15"/>
+        <Signal Name="DEBUG_JTDI"/>
+        <Signal Name="FMC_D15"/>
+        <Signal Name="FMC_DA15"/>
+        <Signal Name="HDP_HDP7"/>
+        <Signal Name="I2S1_WS"/>
+        <Signal Name="I2S3_WS"/>
+        <Signal Name="I2S6_WS"/>
+        <Signal Name="LTDC_R5"/>
+        <Signal Name="SPI1_NSS"/>
+        <Signal Name="SPI3_NSS"/>
+        <Signal Name="SPI6_NSS"/>
+        <Signal Name="TIM2_CH1"/>
+        <Signal Name="TIM2_ETR"/>
+        <Signal Name="UART4_DE"/>
+        <Signal Name="UART4_RTS"/>
+        <Signal Name="UART7_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN3" Position="N13" Type="I/O">
+        <Signal Name="FMC_A22"/>
+        <Signal Name="XSPIM_P2_IO1"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN11" Position="N14" Type="I/O">
+        <Signal Name="ADC1_EXTI11"/>
+        <Signal Name="ADC2_EXTI11"/>
+        <Signal Name="LTDC_B6"/>
+        <Signal Name="XSPIM_P2_IO7"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VSS" Position="P1" Type="Power"/>
+    <Pin Name="CSI_D1P" Position="P2" Type="I/O">
+        <Signal Name="CSI_D1P"/>
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="CSI_CKP" Position="P3" Type="I/O">
+        <Signal Name="CSI_CKP"/>
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="CSI_D0P" Position="P4" Type="I/O">
+        <Signal Name="CSI_D0P"/>
+        <Signal IOModes="Input" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VDDA18CSI" Position="P5" Type="Power"/>
+    <Pin Name="PA14(JTCK/SWCLK)" Position="P6" Type="I/O">
+        <Signal Name="DEBUG_JTCK-SWCLK"/>
+        <Signal Name="HDP_HDP6"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA13(JTMS/SWDIO)" Position="P7" Type="I/O">
+        <Signal Name="DEBUG_JTMS-SWDIO"/>
+        <Signal Name="HDP_HDP5"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA8" Position="P8" Type="I/O">
+        <Signal Name="ADC1_INP5"/>
+        <Signal Name="ADC2_INP5"/>
+        <Signal Name="FMC_D4"/>
+        <Signal Name="FMC_DA4"/>
+        <Signal Name="HDP_HDP0"/>
+        <Signal Name="I2C3_SCL"/>
+        <Signal Name="I3C2_SCL"/>
+        <Signal Name="LTDC_B6"/>
+        <Signal Name="RCC_MCO_1"/>
+        <Signal Name="TIM11_CH1"/>
+        <Signal Name="TIM1_CH1"/>
+        <Signal Name="UART7_RX"/>
+        <Signal Name="USART1_CK"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PG13" Position="P9" Type="I/O">
+        <Signal Name="DCMIPP_D12"/>
+        <Signal Name="DCMI_D12"/>
+        <Signal Name="FMC_NE1"/>
+        <Signal Name="LPTIM1_IN1"/>
+        <Signal Name="LPTIM2_IN1"/>
+        <Signal Name="LTDC_DE"/>
+        <Signal Name="PSSI_D12"/>
+        <Signal Name="SAI2_FS_A"/>
+        <Signal Name="TIM4_CH1"/>
+        <Signal Name="USART3_RTS"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA0" Position="P10" Type="I/O">
+        <Signal Name="ADC1_INN1"/>
+        <Signal Name="ADC1_INP0"/>
+        <Signal Name="ADC2_INN1"/>
+        <Signal Name="ADC2_INP0"/>
+        <Signal Name="FMC_D7"/>
+        <Signal Name="FMC_DA7"/>
+        <Signal Name="HDP_HDP0"/>
+        <Signal Name="I2S6_WS"/>
+        <Signal Name="LTDC_G3"/>
+        <Signal Name="PWR_WKUP1"/>
+        <Signal Name="SAI2_SD_B"/>
+        <Signal Name="SPI6_NSS"/>
+        <Signal Name="TIM15_BKIN"/>
+        <Signal Name="TIM2_CH1"/>
+        <Signal Name="TIM5_CH1"/>
+        <Signal Name="TIM9_CH1"/>
+        <Signal Name="UART4_TX"/>
+        <Signal Name="USART2_CTS"/>
+        <Signal Name="USART2_NSS"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PB10" Position="P11" Type="I/O">
+        <Signal Name="ADC1_INN4"/>
+        <Signal Name="ADC1_INP8"/>
+        <Signal Name="ADC2_INN4"/>
+        <Signal Name="ADC2_INP8"/>
+        <Signal Name="FMC_D11"/>
+        <Signal Name="FMC_DA11"/>
+        <Signal Name="HDP_HDP2"/>
+        <Signal Name="I2C2_SCL"/>
+        <Signal Name="I2S2_CK"/>
+        <Signal Name="I3C2_SCL"/>
+        <Signal Name="LPTIM2_IN1"/>
+        <Signal Name="LTDC_G7"/>
+        <Signal Name="SPI2_SCK"/>
+        <Signal Name="TIM2_CH3"/>
+        <Signal Name="USART3_TX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA7" Position="P12" Type="I/O">
+        <Signal Name="HDP_HDP7"/>
+        <Signal Name="I2S1_SDO"/>
+        <Signal Name="I2S6_SDO"/>
+        <Signal Name="LTDC_B1"/>
+        <Signal Name="LTDC_R4"/>
+        <Signal Name="SPI1_MOSI"/>
+        <Signal Name="SPI6_MOSI"/>
+        <Signal Name="TIM14_CH1"/>
+        <Signal Name="TIM1_CH1N"/>
+        <Signal Name="TIM3_CH2"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PN1" Position="P13" Type="I/O">
+        <Signal Name="FMC_A24"/>
+        <Signal Name="XSPIM_P2_NCS1"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="VSS" Position="P14" Type="Power"/>
+</Mcu>

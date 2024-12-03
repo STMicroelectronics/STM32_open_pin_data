@@ -256,21 +256,21 @@
             <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_XSPI1_CLK_ENABLE" ConfigFile="MCE-STM32H7RSxx" InstanceName="MCE1" Name="MCE" Version="v1_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_XSPI1_CLK_ENABLE" ConfigFile="MCE-STM32H7RSxx" InstanceName="MCE1" Name="MCE" Version="v1_0_H7RS_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot"/>
             <ContextIP ContextName="Appli"/>
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_XSPI2_CLK_ENABLE" ConfigFile="MCE-STM32H7RSxx" InstanceName="MCE2" Name="MCE" Version="v1_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_XSPI2_CLK_ENABLE" ConfigFile="MCE-STM32H7RSxx" InstanceName="MCE2" Name="MCE" Version="v1_0_H7RS_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot"/>
             <ContextIP ContextName="Appli"/>
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_FMC_CLK_ENABLE" ConfigFile="MCE-STM32H7RSxx" InstanceName="MCE3" Name="MCE" Version="v1_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_FMC_CLK_ENABLE" ConfigFile="MCE-STM32H7RSxx" InstanceName="MCE3" Name="MCE" Version="v1_0_H7RS_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot"/>
             <ContextIP ContextName="Appli"/>
@@ -695,6 +695,7 @@
         <Signal Name="SPI6_NSS"/>
         <Signal Name="TIM2_CH1"/>
         <Signal Name="TIM2_ETR"/>
+        <Signal Name="UART4_DE"/>
         <Signal Name="UART4_RTS"/>
         <Signal Name="UART7_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
@@ -814,11 +815,13 @@
         <Signal Name="FMC_D0"/>
         <Signal Name="FMC_DA0"/>
         <Signal Name="I2S2_CK"/>
+        <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
         <Signal Name="SAI2_FS_B"/>
         <Signal Name="SPI2_SCK"/>
         <Signal Name="TIM1_ETR"/>
         <Signal Name="UART4_TX"/>
+        <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -905,8 +908,10 @@
         <Signal Name="SPI2_MISO"/>
         <Signal Name="TIM12_CH1"/>
         <Signal Name="TIM1_CH2N"/>
+        <Signal Name="UART4_DE"/>
         <Signal Name="UART4_RTS"/>
         <Signal Name="USART1_TX"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -981,6 +986,7 @@
         <Signal Name="LPTIM1_IN1"/>
         <Signal Name="LPTIM2_IN1"/>
         <Signal Name="SAI2_FS_A"/>
+        <Signal Name="USART3_DE"/>
         <Signal Name="USART3_RTS"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
