@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U3" DBVersion="V3.0" Family="STM32U3" HasPowerPad="false" IOType="" Line="STM32U3x5" Package="WLCSP68" RefName="STM32U385RGYxG" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -89,7 +89,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="CORTEX_M33_NS-STM32U3xx" InstanceName="CORTEX_M33_NS" Name="CORTEX_M33_NS" Version="STM32U3x-cortex_v1_0_Cube">
+    <IP ConfigFile="CORTEX_M33_NS-STM32U3xx" InstanceName="CORTEX_M33_NS" Name="CORTEX_M33_NS" Version="cortex_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>
@@ -97,7 +97,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="CORTEX_M33_S-STM32U3xx" InstanceName="CORTEX_M33_S" Name="CORTEX_M33_S" Version="STM32U3x-cortex_v1_0_Cube">
+    <IP ConfigFile="CORTEX_M33_S-STM32U3xx" InstanceName="CORTEX_M33_S" Name="CORTEX_M33_S" Version="cortex_v1_0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" InitializerForced="true"/>
         </ContextSplit>
@@ -468,6 +468,14 @@
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SAU-STM32U3xx" InstanceName="SAU" Name="SAU" Version="sau_v2_0_U3_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>

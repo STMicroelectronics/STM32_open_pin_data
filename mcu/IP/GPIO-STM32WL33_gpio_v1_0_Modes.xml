@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32WL33_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
@@ -1697,7 +1697,18 @@
         <Parameter Name="GPIO_Pin"/>
     </RefMode>
     <RefMode Name="Input">
+        <Condition Diagnostic="" Expression="PWR:PWR_APC=0"/>
         <ConfigForMode>GPIO</ConfigForMode>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_INPUT</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+    </RefMode>
+    <RefMode Name="Input">
+        <Condition Diagnostic="" Expression="(PWR:PWR_APC=1)"/>
+        <ConfigForMode>GPIOForAPC</ConfigForMode>
         <Parameter Name="GPIO_PuPd"/>
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_Mode">
@@ -2710,6 +2721,11 @@
                 <PossibleValue>GPIO_AF6_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="TIM16_BRK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_TIM16</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="TIM2_CH4">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_TIM2</PossibleValue>
@@ -2728,6 +2744,11 @@
         <SpecificParameter Name="GPIO_Pin">
             <PossibleValue>GPIO_PIN_10</PossibleValue>
         </SpecificParameter>
+        <PinSignal Name="I2S3_MCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_MCO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="LCD_SEG4">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF6_LCD</PossibleValue>
@@ -2738,9 +2759,9 @@
                 <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="MRSUBG_RX_DATA">
+        <PinSignal Name="MRSUBG_TX_DATA">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_RX</PossibleValue>
+                <PossibleValue>GPIO_AF4_TX</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="MRSUBG_TX_SEQUENCE">
@@ -2766,14 +2787,14 @@
                 <PossibleValue>GPIO_AF6_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="MRSUBG_RX_CLOCK">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_RX</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
         <PinSignal Name="MRSUBG_RX_SEQUENCE">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF2_RX</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="MRSUBG_TX_CLOCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_TX</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="RCC_MCO">
@@ -2796,7 +2817,7 @@
         </SpecificParameter>
         <PinSignal Name="DEBUG_SWDIO">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF1_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF1_SWDIO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="I2C1_SMBA">
@@ -2839,7 +2860,7 @@
         </PinSignal>
         <PinSignal Name="SYS_JTCK-SWCLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF1_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF1_SWDIO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM2_ETR">
@@ -2904,6 +2925,11 @@
         <PinSignal Name="DEBUG_SWDIO">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF0_LCO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="I2S3_MCK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF3_MCO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LCD_SEG1">
@@ -3215,7 +3241,7 @@
         </SpecificParameter>
         <PinSignal Name="DEBUG_SWDIO">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF1_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF1_SWDIO</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="LCD_SEG6">
@@ -3223,9 +3249,9 @@
                 <PossibleValue>GPIO_AF6_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="MRSUBG_TX_DATA">
+        <PinSignal Name="MRSUBG_RX_DATA">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_TX</PossibleValue>
+                <PossibleValue>GPIO_AF4_RX</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_SCK">
@@ -3429,9 +3455,9 @@
                 <PossibleValue>GPIO_AF6_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="MRSUBG_TX_CLOCK">
+        <PinSignal Name="MRSUBG_RX_CLOCK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF4_TX</PossibleValue>
+                <PossibleValue>GPIO_AF4_RX</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="SPI1_MISO">
@@ -3441,7 +3467,12 @@
         </PinSignal>
         <PinSignal Name="SYS_JTCK-SWCLK">
             <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF1_SYS</PossibleValue>
+                <PossibleValue>GPIO_AF1_SWDIO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM16_BRK">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_TIM16</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="USART1_DE">
@@ -3629,6 +3660,11 @@
                 <PossibleValue>GPIO_AF1_LPUART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="RF_ACTIVITY">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF2_RF</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="SPI3_MOSI">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF3_SPI3</PossibleValue>
@@ -3637,11 +3673,6 @@
         <PinSignal Name="TIM2_ETR">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF4_TIM2</PossibleValue>
-            </SpecificParameter>
-        </PinSignal>
-        <PinSignal Name="rf_activity">
-            <SpecificParameter Name="GPIO_AF">
-                <PossibleValue>GPIO_AF2_rf</PossibleValue>
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>

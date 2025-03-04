@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32U5" DBVersion="V3.0" Family="STM32U5" HasPowerPad="false" IOType="" Line="STM32U575/585" Package="LQFP100" RefName="STM32U585VITx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -1117,7 +1117,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SYS-STM32U5xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32L55_vrefbuf_v1_0">
+    <IP ConfigFile="SYS-STM32U5xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32U5_vrefbuf_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>

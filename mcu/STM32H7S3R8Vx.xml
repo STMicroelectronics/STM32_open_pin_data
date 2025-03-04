@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7RS" DBVersion="V3.0" Family="STM32H7" FwLibrary="STM32Cube_FW_H7RS" HasPowerPad="false" IOType="" Line="STM32H7R3/7S3" Package="VFQFPN68" RefName="STM32H7S3R8Vx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M7</Core>
     <Context Comment="Enable the Boot code context only for the peripheral(s) you want to use in Boot" Core="ARM Cortex-M7" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Boot" Name="Boot" Secure="false" SemaphoreSuffix="_BOOT" ShortName="Boot"/>
@@ -290,6 +290,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="RAMECC-STM32H7RSxx" InstanceName="RAMECC" Name="RAMECC" Version="ramecc_v1_0_H7RS_Cube"/>
     <IP ConfigFile="RCC-STM32H7RSxx" InstanceName="RCC" Name="RCC" Version="STM32H7RS_rcc_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot" InitializerForced="true"/>

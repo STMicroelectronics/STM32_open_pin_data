@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32C0_64" DBVersion="V3.0" Family="STM32C0" HasPowerPad="false" IOType="" Line="STM32C0x1" Package="UFBGA64" RefName="STM32C091RCIx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Ram>36</Ram>
-    <IONb>61</IONb>
+    <IONb>63</IONb>
     <Die>DIE44D</Die>
     <Flash>256</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32C0xx" InstanceName="ADC1" Name="ADC" Version="aditf4_v3_0_Cube"/>
@@ -183,6 +183,16 @@
         <Signal Name="USART1_RTS"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
+    <Pin Name="PA10 [PA12]" Position="B8" Type="I/O" Variant="PINREMAP_10_12">
+        <Signal Name="I2C1_SDA"/>
+        <Signal Name="I2C2_SDA"/>
+        <Signal Name="RCC_MCO_2"/>
+        <Signal Name="SPI2_MOSI"/>
+        <Signal Name="TIM17_BKIN"/>
+        <Signal Name="TIM1_CH3"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
     <Pin Name="PC14-OSCX_IN(PC14)" Position="C1" Type="I/O">
         <Signal Name="I2C1_SDA"/>
         <Signal Name="IR_OUT"/>
@@ -283,6 +293,17 @@
         <Signal Name="USART1_NSS"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
+    <Pin Name="PA9 [PA11]" Position="C8" Type="I/O" Variant="PINREMAP">
+        <Signal Name="I2C1_SCL"/>
+        <Signal Name="I2C2_SCL"/>
+        <Signal Name="RCC_MCO"/>
+        <Signal Name="SPI2_MISO"/>
+        <Signal Name="TIM15_BKIN"/>
+        <Signal Name="TIM1_CH2"/>
+        <Signal Name="TIM3_ETR"/>
+        <Signal Name="USART1_TX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
+    </Pin>
     <Pin Name="VDD/VDDA" Position="D1" Type="Power"/>
     <Pin Name="VREF+" Position="D2" Type="MonoIO"/>
     <Pin Name="PF3" Position="D3" Type="I/O">
@@ -315,6 +336,7 @@
         <Signal Name="USART1_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
+    <Pin Name="NC" Position="D6" Type="NC" Variant="PINREMAP_10_12"/>
     <Pin Name="PA13" Position="D7" Type="I/O">
         <Signal Name="ADC1_IN13"/>
         <Signal Name="DEBUG_SWDIO"/>
@@ -368,6 +390,7 @@
         <Signal Name="USART1_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
+    <Pin Name="NC" Position="E6" Type="NC" Variant="PINREMAP"/>
     <Pin Name="PC6" Position="E7" Type="I/O">
         <Signal Name="TIM2_CH3"/>
         <Signal Name="TIM3_CH1"/>

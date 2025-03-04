@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32C0" DBVersion="V3.0" Family="STM32C0" HasPowerPad="false" IOType="" Line="STM32C0x1" Package="SO8N" RefName="STM32C011J(4-6)Mx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Frequency>48</Frequency>
     <Ram>6</Ram>
-    <IONb>6</IONb>
+    <IONb>13</IONb>
     <Die>DIE443</Die>
     <Flash>16</Flash>
     <Flash>32</Flash>

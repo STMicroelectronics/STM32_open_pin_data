@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5_512" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H5x3" Package="UFBGA100" RefName="STM32H523VCIx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -329,6 +329,15 @@
     <IP ConfigFile="LevelX-STM32H5xx" InstanceName="LEVELX" Name="LevelX" Version="v1.0.0_H5_Cube">
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
+        </ContextSplit>
+        <ContextSplit Name="split3">
+            <ContextIP ContextName="CortexM33"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="LINKEDLIST-STM32H5xx" InstanceName="LINKEDLIST" Name="LINKEDLIST" Version="STM32H5_linkedlist_v1_0">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>

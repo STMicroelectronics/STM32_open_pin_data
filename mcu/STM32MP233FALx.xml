@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP2" DBVersion="V3.0" Family="STM32MP2" HasPowerPad="false" IOType="" Line="STM32MP233" Package="VFBGA361" RefName="STM32MP233FALx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A35</Core>
     <Core>ARM Cortex-M33</Core>
@@ -22,7 +22,7 @@
     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use from Secure OS" Core="ARM Cortex-M33" GenType="TF-M" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure FW" Name="CortexM33SSecureOS" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="M33S"/>
     <Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you want to use from Cube" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure FW" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M33NS"/>
     <Ram>776</Ram>
-    <IONb>146</IONb>
+    <IONb>144</IONb>
     <Die>DIE505</Die>
     <Flash>0</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32MP2xx" IPContextCoupling="ADC1IADC2" InstanceName="ADC1" Name="ADC" Version="aditf5_v3_3_MP2_Cube">
@@ -674,10 +674,8 @@
     </IP>
     <IP InstanceName="RIF" Name="RIF" Version="STM32MP2_rif_v1_0_Cube">
         <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA35SFSBLA"/>
-        </ContextSplit>
-        <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS,CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="RNG-STM32MP2xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1_MP2">
@@ -1246,15 +1244,6 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS,CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
-        </ContextSplit>
-    </IP>
-    <IP ConfigFile="WWDG-STM32MP2xx" InstanceName="WWDG2" Name="WWDG" Version="wwdg1_v2_0">
-        <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SFSBLA"/>
-            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS,CortexA35NSSSBL"/>
-            <ContextIP ContextName="CortexA35NSSSBL" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
-            <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
-            <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexA35NSOS,CortexA35NSSSBL"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="GPIO-STM32MP2xx" InstanceName="GPIO" Name="GPIO" Version="STM32MP23_gpio_v1_0">
@@ -2887,7 +2876,7 @@
         <Signal Name="USART1_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI1,EXTI2" Name="GPIO"/>
     </Pin>
-    <Pin Name="DNU" Position="R13" Type="MonoIO"/>
+    <Pin Name="NC" Position="R13" Type="NC"/>
     <Pin Name="VDD33_USB" Position="R14" Type="Power"/>
     <Pin Name="USB3DR_TXRTUNE" Position="R15" Type="MonoIO">
         <Signal Name="USB3DR_TXRTUNE"/>
@@ -3000,7 +2989,7 @@
     </Pin>
     <Pin Name="DNU" Position="T12" Type="MonoIO"/>
     <Pin Name="VDDA18USB" Position="T13" Type="Power"/>
-    <Pin Name="DNU" Position="T14" Type="MonoIO"/>
+    <Pin Name="NC" Position="T14" Type="NC"/>
     <Pin Name="USBH_HS_TXRTUNE" Position="T15" Type="MonoIO">
         <Signal Name="USBH_HS_TXRTUNE"/>
     </Pin>
@@ -3109,7 +3098,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI1,EXTI2" Name="GPIO"/>
     </Pin>
     <Pin Name="VDD33UCPD" Position="U11" Type="Power"/>
-    <Pin Name="DNU" Position="U12" Type="MonoIO"/>
+    <Pin Name="NC" Position="U12" Type="NC"/>
     <Pin Name="DNU" Position="U13" Type="MonoIO"/>
     <Pin Name="DNU" Position="U14" Type="MonoIO"/>
     <Pin Name="DNU" Position="U15" Type="MonoIO"/>
@@ -3362,7 +3351,7 @@
         <Signal Name="UCPD1_CC2"/>
     </Pin>
     <Pin Name="DNU" Position="W15" Type="MonoIO"/>
-    <Pin Name="DNU" Position="W16" Type="MonoIO"/>
+    <Pin Name="NC" Position="W16" Type="NC"/>
     <Pin Name="DDR_DQ1" Position="W17" Type="MonoIO"/>
     <Pin Name="DDR_DQ0" Position="W18" Type="MonoIO"/>
     <Pin Name="VSS" Position="W19" Type="Power"/>

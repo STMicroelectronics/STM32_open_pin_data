@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2022 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32C0" DBVersion="V3.0" Family="STM32C0" HasPowerPad="false" IOType="" Line="STM32C0x1" Package="WLCSP12" RefName="STM32C011D6Yx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Frequency>48</Frequency>
     <Ram>6</Ram>
-    <IONb>10</IONb>
+    <IONb>18</IONb>
     <Die>DIE443</Die>
     <Flash>32</Flash>
     <Voltage Max="3.6" Min="2"/>

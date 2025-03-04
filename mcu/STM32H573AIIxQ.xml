@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H563/H573" Package="UFBGA169" RefName="STM32H573AIIxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -631,14 +631,6 @@
         </ContextSplit>
         <ContextSplit Name="split2">
             <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
-    <IP ConfigFile="SECURE_MANAGER_API-STM32H5xx" InstanceName="SECURE_MANAGER_API" Name="SECURE_MANAGER_API" Version="v0.1.0_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>

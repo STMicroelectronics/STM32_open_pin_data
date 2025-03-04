@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WBA" DBVersion="V3.0" Family="STM32WBA" HasPowerPad="false" IOType="" Line="STM32WBAx0" Package="UFQFPN32" RefName="STM32WBA50KGUx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <Ram>64</Ram>
-    <IONb>22</IONb>
+    <IONb>20</IONb>
     <Die>DIE492</Die>
     <Flash>1024</Flash>
     <Temperature Max="85" Min="-40"/>
     <IP ClockEnableMode="__HAL_RCC_ADC4_CLK_ENABLE" ConfigFile="ADC-STM32WBAxx" InstanceName="ADC4" Name="ADC" Version="aditf4_v4_WBA_Cube"/>
     <IP ConfigFile="ADV_TRACE-STM32WBAxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube"/>
     <IP ConfigFile="AES-STM32WBAxx" InstanceName="AES" Name="AES" Version="aes3_v2_0_WBA_Cube"/>
-    <IP ConfigFile="COMMON_WPAN-STM32WBAxx" InstanceName="COMMON_WPAN" Name="COMMON_WPAN" Version="v1.0.0_Cube"/>
-    <IP ConfigFile="CORTEX_M33-STM32WBAxx" InstanceName="CORTEX_M33" Name="CORTEX_M33" Version="cortex_v1_0_Cube"/>
+    <IP ConfigFile="COMMON_WPAN-STM32WBAxx" InstanceName="COMMON_WPAN" Name="COMMON_WPAN" Version="v1.1.0_Cube"/>
+    <IP ConfigFile="CORTEX_M33-STM32WBAxx" InstanceName="CORTEX_M33" Name="CORTEX_M33" Version="cortex_v1_1_Cube"/>
     <IP InstanceName="CRC" Name="CRC" Version="integtest1_v2_0"/>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32L55_sys_v1_0"/>
     <IP ConfigFile="FileX-STM32WBAxx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_WBA_Cube"/>
@@ -36,7 +36,7 @@
     <IP ClockEnableMode="__HAL_RCC_RTCAPB_CLK_ENABLE" InstanceName="RTC" Name="RTC" Version="rtc2_v2_WBA_Cube"/>
     <IP ConfigFile="SEQUENCER-STM32WBAxx" InstanceName="SEQUENCER" Name="SEQUENCER" Version="v1.0_Cube"/>
     <IP ConfigFile="SPI-STM32WBAxx" InstanceName="SPI3" Name="SPI" Version="spi2s3_v2_0_Cube"/>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.5_Cube"/>
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.6_Cube"/>
     <IP InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0"/>
     <IP InstanceName="TAMP" Name="TAMP" Version="STM32L5_rtc2_v2_8_Cube"/>
     <IP ConfigFile="ThreadX-STM32WBAxx" InstanceName="THREADX" Name="ThreadX" Version="v1.0.0_WBA_Cube"/>

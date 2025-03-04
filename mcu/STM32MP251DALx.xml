@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP2" DBVersion="V3.0" Family="STM32MP2" HasPowerPad="false" IOType="" Line="STM32MP251" Package="VFBGA361" RefName="STM32MP251DALx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A35</Core>
     <Core>ARM Cortex-M33</Core>
@@ -22,7 +22,7 @@
     <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use from Secure OS" Core="ARM Cortex-M33" GenType="TF-M" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure FW" Name="CortexM33SSecureOS" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="M33S"/>
     <Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you want to use from Cube" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure FW" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M33NS"/>
     <Ram>808</Ram>
-    <IONb>146</IONb>
+    <IONb>144</IONb>
     <Die>DIE505</Die>
     <Flash>0</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32MP2xx" IPContextCoupling="ADC1IADC2" InstanceName="ADC1" Name="ADC" Version="aditf5_v3_3_MP2_Cube">
@@ -494,6 +494,16 @@
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="LINKEDLIST-STM32MP2xx" InstanceName="LINKEDLIST" Name="LINKEDLIST" Version="STM32MP2_linkedlist_v1_0">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexA35NSOS" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="HPDMA-STM32MP2xx" InstanceName="LPDMA1" Name="LPDMA" Version="STM32MP2_v0.1.0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35" ForcedSelection="true" InitializerForced="true"/>
@@ -688,10 +698,8 @@
     </IP>
     <IP InstanceName="RIF" Name="RIF" Version="STM32MP2_rif_v1_0_Cube">
         <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexA35SFSBLA"/>
-        </ContextSplit>
-        <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="RNG-STM32MP2xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1_MP2">

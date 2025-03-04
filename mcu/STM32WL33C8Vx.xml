@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32WL33" DBVersion="V3.0" Family="STM32WL3" FwLibrary="STM32Cube_FW_WL3" HasPowerPad="false" IOType="" Line="STM32WLx3" Package="VFQFPN48" RefName="STM32WL33C8Vx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Ram>16</Ram>
@@ -43,6 +43,7 @@
     <Pin Name="PA2" Position="1" Type="I/O">
         <Signal Name="ADC1_VINM2"/>
         <Signal Name="DEBUG_SWDIO"/>
+        <Signal Name="I2S3_MCK"/>
         <Signal Name="LCD_SEG1"/>
         <Signal Name="PWR_WKUP14"/>
         <Signal Name="TIM16_CH1"/>
@@ -114,17 +115,18 @@
     <Pin Name="PA11" Position="9" Type="I/O">
         <Signal Name="I2S3_SD"/>
         <Signal Name="LCD_SEG5"/>
-        <Signal Name="MRSUBG_RX_CLOCK"/>
         <Signal Name="MRSUBG_RX_SEQUENCE"/>
+        <Signal Name="MRSUBG_TX_CLOCK"/>
         <Signal Name="PWR_WKUP11"/>
         <Signal Name="RCC_MCO"/>
         <Signal Name="SPI3_MOSI"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA10" Position="10" Type="I/O">
+        <Signal Name="I2S3_MCK"/>
         <Signal Name="LCD_SEG4"/>
         <Signal Name="LPUART1_CTS"/>
-        <Signal Name="MRSUBG_RX_DATA"/>
+        <Signal Name="MRSUBG_TX_DATA"/>
         <Signal Name="MRSUBG_TX_SEQUENCE"/>
         <Signal Name="PWR_WKUP10"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
@@ -180,6 +182,7 @@
         <Signal Name="I2C2_SDA"/>
         <Signal Name="LPUART1_DE"/>
         <Signal Name="LPUART1_RTS"/>
+        <Signal Name="PWR_WKUP7"/>
         <Signal Name="TIM2_CH2"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
@@ -231,6 +234,7 @@
         <Signal Name="I2C1_SDA"/>
         <Signal Name="LCD_SEG0"/>
         <Signal Name="PWR_WKUP13"/>
+        <Signal Name="TIM16_BRK"/>
         <Signal Name="TIM2_CH4"/>
         <Signal Name="USART1_TX"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
@@ -328,7 +332,7 @@
         <Signal Name="DEBUG_SWDIO"/>
         <Signal Name="LCD_SEG6"/>
         <Signal Name="LCSC_LCA"/>
-        <Signal Name="MRSUBG_TX_DATA"/>
+        <Signal Name="MRSUBG_RX_DATA"/>
         <Signal Name="PWR_WKUP1"/>
         <Signal Name="SPI1_SCK"/>
         <Signal Name="TIM16_CH1N"/>
@@ -341,9 +345,10 @@
         <Signal Name="DEBUG_SWCLK"/>
         <Signal Name="LCD_SEG7"/>
         <Signal Name="LCSC_LCT"/>
-        <Signal Name="MRSUBG_TX_CLOCK"/>
+        <Signal Name="MRSUBG_RX_CLOCK"/>
         <Signal Name="PWR_WKUP2"/>
         <Signal Name="SPI1_MISO"/>
+        <Signal Name="TIM16_BRK"/>
         <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>

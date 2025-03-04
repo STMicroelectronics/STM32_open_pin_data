@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32H56x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="LPGPIOx" Comment="LPGPIO address" Type="list" Visible="false">
@@ -240,6 +240,42 @@
         <Condition Diagnostic="" Expression="PB8"/>
         <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
         <Parameter Name="GPIO_Speed"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+        <Parameter Name="PinState"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="PB13"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+            <PossibleValue>GPIO_SPEED_FREQ_MEDIUM</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_ModeDefaultOutputPP">
+            <PossibleValue>GPIO_MODE_OUTPUT_PP</PossibleValue>
+            <PossibleValue>GPIO_MODE_OUTPUT_OD</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_FM8"/>
+        <Parameter Name="PinState"/>
+        <Parameter Name="PinAttribute"/>
+    </RefMode>
+    <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="PB14"/>
+        <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
+        <Parameter Name="GPIO_Speed">
+            <PossibleValue>GPIO_SPEED_FREQ_LOW</PossibleValue>
+            <PossibleValue>GPIO_SPEED_FREQ_MEDIUM</PossibleValue>
+        </Parameter>
         <Parameter Name="GPIO_PuPd"/>
         <Parameter Name="GPIOx"/>
         <Parameter Name="GPIO_ModeDefaultOutputPP">
@@ -883,6 +919,7 @@
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="Output">
+        <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6|PB13|PB14)"/>
         <ConfigForMode>GPIODefaultOutputPP</ConfigForMode>
         <Parameter Name="GPIO_Speed"/>
         <Parameter Name="GPIO_PuPd"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32C091xx_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="GPIO_AF" Comment="GPIO Alternate Function" Type="list" DefaultValue="null" Visible="false"/>
@@ -2236,6 +2236,9 @@
         </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA10 [PA12]">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </SpecificParameter>
         <PinSignal Name="EVENTOUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_EVENTOUT</PossibleValue>
@@ -2246,9 +2249,19 @@
                 <PossibleValue>GPIO_AF6_I2C1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="I2C2_SDA">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="RCC_MCO_2">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF3_MCO2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MOSI">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF0_SPI2</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM17_BKIN">
@@ -2938,6 +2951,9 @@
         </PinSignal>
     </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA9 [PA11]">
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_9</PossibleValue>
+        </SpecificParameter>
         <PinSignal Name="EVENTOUT">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF7_EVENTOUT</PossibleValue>
@@ -2948,9 +2964,24 @@
                 <PossibleValue>GPIO_AF6_I2C1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+        <PinSignal Name="I2C2_SCL">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF8_I2C2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
         <PinSignal Name="RCC_MCO">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF0_MCO</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="SPI2_MISO">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF4_SPI2</PossibleValue>
+            </SpecificParameter>
+        </PinSignal>
+        <PinSignal Name="TIM15_BKIN">
+            <SpecificParameter Name="GPIO_AF">
+                <PossibleValue>GPIO_AF5_TIM15</PossibleValue>
             </SpecificParameter>
         </PinSignal>
         <PinSignal Name="TIM1_CH2">

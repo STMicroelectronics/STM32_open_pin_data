@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32C0" DBVersion="V3.0" Family="STM32C0" HasPowerPad="false" IOType="" Line="STM32C0x1" Package="TSSOP20" RefName="STM32C031F(4-6)Px" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Frequency>48</Frequency>
@@ -178,14 +178,6 @@
         <Signal Name="USART2_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="PA9 [PA11]" Position="16" Type="I/O" Variant="PINREMAP">
-        <Signal Name="I2C1_SCL"/>
-        <Signal Name="RCC_MCO"/>
-        <Signal Name="TIM1_CH2"/>
-        <Signal Name="TIM3_ETR"/>
-        <Signal Name="USART1_TX"/>
-        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
-    </Pin>
     <Pin Name="PA11 [PA9]" Position="16" Type="I/O">
         <Signal Name="ADC1_EXTI11"/>
         <Signal Name="ADC1_IN11"/>
@@ -197,12 +189,12 @@
         <Signal Name="USART1_NSS"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="PA10 [PA12]" Position="17" Type="I/O" Variant="PINREMAP_10_12">
-        <Signal Name="I2C1_SDA"/>
-        <Signal Name="RCC_MCO_2"/>
-        <Signal Name="TIM17_BKIN"/>
-        <Signal Name="TIM1_CH3"/>
-        <Signal Name="USART1_RX"/>
+    <Pin Name="PA9 [PA11]" Position="16" Type="I/O">
+        <Signal Name="I2C1_SCL"/>
+        <Signal Name="RCC_MCO"/>
+        <Signal Name="TIM1_CH2"/>
+        <Signal Name="TIM3_ETR"/>
+        <Signal Name="USART1_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA12 [PA10]" Position="17" Type="I/O">
@@ -215,6 +207,14 @@
         <Signal Name="USART1_DE"/>
         <Signal Name="USART1_RTS"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
+    </Pin>
+    <Pin Name="PA10 [PA12]" Position="17" Type="I/O">
+        <Signal Name="I2C1_SDA"/>
+        <Signal Name="RCC_MCO_2"/>
+        <Signal Name="TIM17_BKIN"/>
+        <Signal Name="TIM1_CH3"/>
+        <Signal Name="USART1_RX"/>
+        <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA13" Position="18" Type="I/O">
         <Signal Name="ADC1_IN13"/>

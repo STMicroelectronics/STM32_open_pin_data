@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32N6" DBVersion="V3.0" Family="STM32N6" HasPowerPad="false" IOType="" Line="STM32N6x5" Package="VFBGA223" RefName="STM32N655L0HxQ" xmlns="http://dummy.com">
     <Core>ARM Cortex-M55</Core>
     <ContextProject Attributes="DUAL,TZ" Comment="Secure and Non Secure domains" Contexts="FSBL,AppliSecure,AppliNonSecure,ExtMemLoader" Name="SecureNSecure"/>
@@ -11,7 +11,7 @@
     <Context Comment="Enable the External Memory Loader context for the peripheral(s) that you plan to use" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="External Memory Loader" Name="ExtMemLoader" Secure="true" SemaphoreSuffix="_EL" ShortName="ExtMemLoader"/>
     <TrustZone>Available</TrustZone>
     <Ram>4200</Ram>
-    <IONb>163</IONb>
+    <IONb>146</IONb>
     <Die>DIE486</Die>
     <Flash>0</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32N6xx" IPContextCoupling="ADC1|ADC2" InstanceName="ADC1" Name="ADC" Version="aditf6_v3_3_N6_Cube">
@@ -68,7 +68,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="CORTEX_M55_S-STM32N6xx" InstanceName="CORTEX_M55_FSBL" Name="CORTEX_M55_FSBL" Version="cortex_v1_0_Cube">
+    <IP ConfigFile="CORTEX_M55_FSBL-STM32N6xx" InstanceName="CORTEX_M55_FSBL" Name="CORTEX_M55_FSBL" Version="cortex_v1_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
@@ -102,7 +102,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="CSI" Name="CSI" Version="v1_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_CSI_CLK_ENABLE" InstanceName="CSI" Name="CSI" Version="v1_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -204,7 +204,10 @@
     </IP>
     <IP ConfigFile="FileX-STM32N6xx" InstanceName="FILEX" Name="FileX" Version="v1.0.0_N6_Cube">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="FMC-STM32N6xx" InstanceName="FMC" Name="FMC" Version="fmc2_v2_0">
@@ -404,7 +407,10 @@
     </IP>
     <IP ConfigFile="LevelX-STM32N6xx" InstanceName="LEVELX" Name="LevelX" Version="v1.0.0_N6_Cube">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="LINKEDLIST-STM32N6xx" InstanceName="LINKEDLIST" Name="LINKEDLIST" Version="STM32N6_linkedlist_v1_0">
@@ -443,15 +449,6 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM4" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
-        <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="FSBL"/>
-            <ContextIP ContextName="AppliSecure"/>
-            <ContextIP ContextName="Appli"/>
-            <ContextIP ContextName="AppliNonSecure"/>
-            <ContextIP ContextName="ExtMemLoader"/>
-        </ContextSplit>
-    </IP>
     <IP ConfigFile="LPTIM-STM32N6xx" InstanceName="LPTIM5" Name="LPTIM" Version="N6_lptimer1_v2_2_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
@@ -470,7 +467,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LTDC-STM32N6xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_1">
+    <IP ConfigFile="LTDC-STM32N6xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft1_v1_3">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -535,7 +532,10 @@
     </IP>
     <IP ConfigFile="NetXDuo-STM32N6xx" InstanceName="NETXDUO" Name="NetXDuo" Version="v1.0.0_N6_Cube">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="PKA-STM32N6xx" InstanceName="PKA" Name="PKA" Version="pka32_v1_0_Cube">
@@ -576,12 +576,10 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="RIF-STM32N6xx" InstanceName="RIF" Name="RIF" Version="STM32N6_rif_v1_0_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="FSBL"/>
-            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="AppliNonSecure"/>
-            <ContextIP ContextName="ExtMemLoader"/>
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL" DevalidatedOnSelect="AppliSecure,Appli"/>
+            <ContextIP ContextName="AppliSecure" DefaultSelection="true" DevalidatedOnSelect="FSBL"/>
+            <ContextIP ContextName="Appli" DefaultSelection="true" DevalidatedOnSelect="FSBL"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="RNG-STM32N6xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1">
@@ -627,6 +625,12 @@
             <ContextIP ContextName="Appli"/>
             <ContextIP ContextName="AppliNonSecure"/>
             <ContextIP ContextName="ExtMemLoader"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="SAU-STM32N6xx" InstanceName="SAU" Name="SAU" Version="sau_v2_0_N6_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32N6xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v3_0_Cube">
@@ -716,7 +720,7 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="SYS-STM32N6xx" InstanceName="SYS_S" Name="SYS_S" Version="STM32N6x_sys_s_v1_0">
-        <ContextSplit Name="split1">
+        <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
             <ContextIP ContextName="Appli"/>
@@ -734,8 +738,6 @@
     <IP ConfigFile="ThreadX-STM32N6xx" InstanceName="THREADX" Name="ThreadX" Version="v1.0.0_N6_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
-        </ContextSplit>
-        <ContextSplit Name="split1">
             <ContextIP ContextName="AppliSecure"/>
             <ContextIP ContextName="Appli"/>
             <ContextIP ContextName="AppliNonSecure"/>
@@ -796,15 +798,6 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM7" Name="TIM6_7N6" Version="gptimer2_v4_x_Cube">
-        <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="FSBL"/>
-            <ContextIP ContextName="AppliSecure"/>
-            <ContextIP ContextName="Appli"/>
-            <ContextIP ContextName="AppliNonSecure"/>
-            <ContextIP ContextName="ExtMemLoader"/>
-        </ContextSplit>
-    </IP>
-    <IP ConfigFile="TIM-STM32N6xx" InstanceName="TIM8" Name="TIM1_8N6" Version="gptimer2_v4_x_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -1032,7 +1025,10 @@
     </IP>
     <IP ConfigFile="USBX-STM32N6xx" InstanceName="USBX" Name="USBX" Version="v1.0.0_N6_Cube">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="AppliNonSecure" ForcedSelection="true"/>
+            <ContextIP ContextName="FSBL"/>
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
+            <ContextIP ContextName="AppliNonSecure"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="VENC-STM32N6xx" InstanceName="VENC" Name="VENC" Version="venc1_v1_0">
@@ -1123,15 +1119,10 @@
             <ContextIP ContextName="AppliNonSecure" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
-    <Pin Name="PDR_ON" Position="A1" Type="I/O">
-        <Signal IOModes="Input" Name="GPIO"/>
-    </Pin>
-    <Pin Name="OTG1_TXRTUNE" Position="A2" Type="I/O">
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
-    </Pin>
-    <Pin Name="OTG1_HSDP" Position="A3" Type="I/O">
+    <Pin Name="PDR_ON" Position="A1" Type="MonoIO"/>
+    <Pin Name="OTG1_TXRTUNE" Position="A2" Type="MonoIO"/>
+    <Pin Name="OTG1_HSDP" Position="A3" Type="MonoIO">
         <Signal Name="USB1_OTG_HS_DP"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="UCPD1_CC1" Position="A4" Type="I/O">
         <Signal Name="UCPD1_CC1"/>
@@ -1278,7 +1269,6 @@
         <Signal Name="LTDC_CLK"/>
         <Signal Name="SDMMC2_D6"/>
         <Signal Name="SPI6_SCK"/>
-        <Signal Name="TIM8_CH3N"/>
         <Signal Name="USART10_CTS"/>
         <Signal Name="USART10_NSS"/>
         <Signal Name="USART6_CTS"/>
@@ -1317,13 +1307,11 @@
     </Pin>
     <Pin Name="VSS" Position="A19" Type="Power"/>
     <Pin Name="NC" Position="B1" Type="NC"/>
-    <Pin Name="OTG1_ID" Position="B2" Type="I/O">
+    <Pin Name="OTG1_ID" Position="B2" Type="MonoIO">
         <Signal Name="USB1_OTG_HS_ID"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
-    <Pin Name="OTG1_HSDM" Position="B3" Type="I/O">
+    <Pin Name="OTG1_HSDM" Position="B3" Type="MonoIO">
         <Signal Name="USB1_OTG_HS_DM"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="UCPD1_CC2" Position="B4" Type="I/O">
         <Signal Name="UCPD1_CC2"/>
@@ -1537,13 +1525,11 @@
         <Signal Name="UCPD1_FRSTX1"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="OTG2_HSDP" Position="C1" Type="I/O">
+    <Pin Name="OTG2_HSDP" Position="C1" Type="MonoIO">
         <Signal Name="USB2_OTG_HS_DP"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
-    <Pin Name="OTG2_HSDM" Position="C2" Type="I/O">
+    <Pin Name="OTG2_HSDM" Position="C2" Type="MonoIO">
         <Signal Name="USB2_OTG_HS_DM"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="VDD33USB" Position="C3" Type="Power"/>
     <Pin Name="PB14" Position="C17" Type="I/O">
@@ -1554,7 +1540,6 @@
         <Signal Name="LPTIM1_CH2"/>
         <Signal Name="LTDC_HSYNC"/>
         <Signal Name="PSSI_D10"/>
-        <Signal Name="TIM8_CH4N"/>
         <Signal Name="USART10_CK"/>
         <Signal Name="USART6_CTS"/>
         <Signal Name="USART6_NSS"/>
@@ -1774,12 +1759,9 @@
         <Signal Name="RCC_OSC32_IN"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="OTG2_TXRTUNE" Position="E2" Type="I/O">
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
-    </Pin>
-    <Pin Name="OTG2_ID" Position="E4" Type="I/O">
+    <Pin Name="OTG2_TXRTUNE" Position="E2" Type="MonoIO"/>
+    <Pin Name="OTG2_ID" Position="E4" Type="MonoIO">
         <Signal Name="USB2_OTG_HS_ID"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="PB7" Position="E16" Type="I/O">
         <Signal Name="ADF1_SDI0"/>
@@ -1906,9 +1888,7 @@
     </Pin>
     <Pin Name="V08CAP" Position="G1" Type="Power"/>
     <Pin Name="VFBSMPS" Position="G2" Type="Power"/>
-    <Pin Name="PWR_ON" Position="G4" Type="I/O">
-        <Signal IOModes="Input" Name="GPIO"/>
-    </Pin>
+    <Pin Name="PWR_ON" Position="G4" Type="MonoIO"/>
     <Pin Name="VSSAON" Position="G6" Type="Power"/>
     <Pin Name="PD9" Position="G14" Type="I/O">
         <Signal Name="DCMIPP_D11"/>
@@ -2292,9 +2272,8 @@
         <Signal Name="USART2_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
-    <Pin Name="CSI_REXT" Position="T6" Type="I/O">
+    <Pin Name="CSI_REXT" Position="T6" Type="MonoIO">
         <Signal Name="CSI_REXT"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="PG14" Position="T7" Type="I/O">
         <Signal Name="DCMIPP_D11"/>
@@ -2307,7 +2286,6 @@
         <Signal Name="LTDC_B1"/>
         <Signal Name="PSSI_D11"/>
         <Signal Name="SPI6_MOSI"/>
-        <Signal Name="TIM8_CH4"/>
         <Signal Name="USART10_RTS"/>
         <Signal Name="USART2_RTS"/>
         <Signal Name="USART6_TX"/>
@@ -2433,7 +2411,6 @@
         <Signal Name="I2S1_SDO"/>
         <Signal Name="I2S3_SDO"/>
         <Signal Name="I2S6_SDO"/>
-        <Signal Name="LPTIM4_OUT"/>
         <Signal Name="LTDC_R2"/>
         <Signal Name="PSSI_D10"/>
         <Signal Name="SPI1_MOSI"/>
@@ -2555,17 +2532,14 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="VREF-" Position="V2" Type="Power"/>
-    <Pin Name="CSI_D1N" Position="V3" Type="I/O">
+    <Pin Name="CSI_D1N" Position="V3" Type="MonoIO">
         <Signal Name="CSI_D1N"/>
-        <Signal IOModes="Input" Name="GPIO"/>
     </Pin>
-    <Pin Name="CSI_CKN" Position="V4" Type="I/O">
+    <Pin Name="CSI_CKN" Position="V4" Type="MonoIO">
         <Signal Name="CSI_CKN"/>
-        <Signal IOModes="Input" Name="GPIO"/>
     </Pin>
-    <Pin Name="CSI_D0N" Position="V5" Type="I/O">
+    <Pin Name="CSI_D0N" Position="V5" Type="MonoIO">
         <Signal Name="CSI_D0N"/>
-        <Signal IOModes="Input" Name="GPIO"/>
     </Pin>
     <Pin Name="VDDA18CSI" Position="V6" Type="Power"/>
     <Pin Name="PA14(JTCK/SWCLK)" Position="V7" Type="I/O">
@@ -2736,17 +2710,14 @@
     </Pin>
     <Pin Name="VSS" Position="W1" Type="Power"/>
     <Pin Name="VREF+" Position="W2" Type="MonoIO"/>
-    <Pin Name="CSI_D1P" Position="W3" Type="I/O">
+    <Pin Name="CSI_D1P" Position="W3" Type="MonoIO">
         <Signal Name="CSI_D1P"/>
-        <Signal IOModes="Input" Name="GPIO"/>
     </Pin>
-    <Pin Name="CSI_CKP" Position="W4" Type="I/O">
+    <Pin Name="CSI_CKP" Position="W4" Type="MonoIO">
         <Signal Name="CSI_CKP"/>
-        <Signal IOModes="Input" Name="GPIO"/>
     </Pin>
-    <Pin Name="CSI_D0P" Position="W5" Type="I/O">
+    <Pin Name="CSI_D0P" Position="W5" Type="MonoIO">
         <Signal Name="CSI_D0P"/>
-        <Signal IOModes="Input" Name="GPIO"/>
     </Pin>
     <Pin Name="VDDCSI" Position="W6" Type="Power"/>
     <Pin Name="PA13(JTMS/SWDIO)" Position="W7" Type="I/O">
@@ -2884,7 +2855,6 @@
         <Signal Name="I2S2_WS"/>
         <Signal Name="I2S3_SDI"/>
         <Signal Name="I2S6_SDI"/>
-        <Signal Name="LPTIM4_ETR"/>
         <Signal Name="LTDC_R3"/>
         <Signal Name="PSSI_RDY"/>
         <Signal Name="SDMMC2_D3"/>

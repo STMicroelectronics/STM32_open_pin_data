@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <IP DBVersion="V3.0" IPType="service" Name="GPIO" Version="STM32U031x_gpio_v1_0" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:schemaLocation="http://dummy.com IP_Modes_V3_0.xsd" xmlns="http://dummy.com">
     <About>GPIO: General Purpose Input Output</About>
     <RefParameter Name="LPGPIOx" Comment="LPGPIO address" Type="list" Visible="false">
@@ -1671,6 +1671,14 @@
             </SpecificParameter>
         </PinSignal>
     </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA10 [PA12]">
+        <SpecificParameter Name="EXTI_Line">
+            <PossibleValue>EXTI_LINE_10</PossibleValue>
+        </SpecificParameter>
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_10</PossibleValue>
+        </SpecificParameter>
+    </GPIO_Pin>
     <GPIO_Pin PortName="PA" Name="PA11 [PA9]">
         <SpecificParameter Name="EXTI_Line">
             <PossibleValue>EXTI_LINE_11</PossibleValue>
@@ -2217,6 +2225,14 @@
                 <PossibleValue>GPIO_AF7_USART1</PossibleValue>
             </SpecificParameter>
         </PinSignal>
+    </GPIO_Pin>
+    <GPIO_Pin PortName="PA" Name="PA9 [PA11]">
+        <SpecificParameter Name="EXTI_Line">
+            <PossibleValue>EXTI_LINE_9</PossibleValue>
+        </SpecificParameter>
+        <SpecificParameter Name="GPIO_Pin">
+            <PossibleValue>GPIO_PIN_9</PossibleValue>
+        </SpecificParameter>
     </GPIO_Pin>
     <GPIO_Pin PortName="PB" Name="PB0">
         <SpecificParameter Name="ClockEnableMode">
