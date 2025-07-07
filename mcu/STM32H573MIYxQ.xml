@@ -116,7 +116,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0">
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H5_sys_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -1112,7 +1112,7 @@
     </Pin>
     <Pin Name="PB4(NJTRST)" Position="B6" Type="I/O">
         <Signal Name="DCMI_D7"/>
-        <Signal Name="DEBUG_JTRST"/>
+        <Signal Name="DEBUG_NJTRST"/>
         <Signal Name="I2S1_SDI"/>
         <Signal Name="I2S2_WS"/>
         <Signal Name="I2S3_SDI"/>

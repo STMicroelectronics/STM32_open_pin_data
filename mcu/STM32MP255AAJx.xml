@@ -12,15 +12,16 @@
     <GentypeFirmware FirmwareName="U-Boot" GenType="U-BOOT"/>
     <ContextProject Attributes="MONO" Comment="A35 Master without Cortex M33 TrustZone activated ?" Contexts="BootROMA35,CortexA35SFSBLA,CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS" Name="A35TD_TZDIS"/>
     <ContextProject Attributes="DUAL,TZ" Comment="A35 Master with Cortex M33 TrustZone activated ?" Contexts="BootROMA35,CortexA35SFSBLA,CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS,CortexM33NS" Name="A35TD_TZEN"/>
-    <Context Comment="Enable the Boot ROM context for the peripheral(s) that you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the Boot ROM." Core="ARM Cortex-A35" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A35 ROM code" Name="BootROMA35" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A35 ROM"/>
-    <Context Comment="Enable the Boot ROM context for the peripheral(s) that you want to use as boot device(s): this will restrain the pins choices to the ones recognized by the Boot ROM." Core="ARM Cortex-M33" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-M33 ROM code" Name="BootROMM33" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="M33 ROM"/>
-    <Context Comment="Enable the Boot loader context (TF-A_BL2) for the peripheral(s) that you want to use in the early boot execution context" Core="ARM Cortex-A35" GenType="TF-A" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A35 secure loader" Name="CortexA35SFSBLA" Secure="true" SemaphoreSuffix="_BOOTLOADER_FSBLA" ShortName="A35S"/>
-    <Context Comment="Enable the Cortex-A35 context for the peripheral(s) that you plan to use from Secure OS" Core="ARM Cortex-A35" GenType="OP-TEE" GroupName="Runtime contexts" GroupShortName="RT" LongName="CortexA35S Secure OS" Name="CortexA35SSecureOS" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A35S"/>
-    <Context Comment="Enable the Cortex-A35 non-secure context for the peripheral(s) that you want to use from U-Boot" Core="ARM Cortex-A35" GenType="U-BOOT" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A35 non secure loader" Name="CortexA35NSSSBL" Secure="false" SemaphoreSuffix="_BOOTLOADER_SSBL" ShortName="A35NS"/>
-    <Context Comment="Enable the Cortex-A35 non-secure context for the peripheral(s) that you plan to use from Linux" Core="ARM Cortex-A35" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A35 non secure OS" Name="CortexA35NSOS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A35NS"/>
-    <Context Comment="Enable the Boot loader context for the peripheral(s) that you want to use in the early boot execution context" Core="ARM Cortex-M33" GenType="MCUBOOT" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-M33 secure loader" Name="CortexM33SFSBLM" Secure="true" SemaphoreSuffix="_BOOTLOADER_FSBLM" ShortName="M33S"/>
-    <Context Comment="Enable the Cortex-M33 context for the peripheral(s) that you plan to use from Secure OS" Core="ARM Cortex-M33" GenType="TF-M" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure FW" Name="CortexM33SSecureOS" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="M33S"/>
-    <Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) that you want to use from Cube" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure FW" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M33NS"/>
+    <ContextProject Attributes="DUAL,TZ" Comment="M33 Master" Contexts="BootROMA35,CortexA35SFSBLA,CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33SFSBLM,CortexM33SSecureOS,CortexM33NS,ExtMemLoader" Name="M33TD"/>
+    <Context Comment="Enable the Boot ROM context for the peripheral(s) that you want to use as bootdevice(s):&lt;br/&gt;       this will restrain the pins choices to the ones recognized by the Boot ROM." Core="ARM Cortex-A35" GenType="BOOTROM" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A35 ROM code" Name="BootROMA35" Secure="true" SemaphoreSuffix="_BOOTROM" ShortName="A35 ROM"/>
+    <Context Comment="Enable the Boot loader context (TF-A_BL2) for the peripheral(s) &lt;br/&gt;                                 that you want to use in the early boot execution context" Core="ARM Cortex-A35" GenType="TF-A" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-A35 secure loader" Name="CortexA35SFSBLA" Secure="true" SemaphoreSuffix="_BOOTLOADER_FSBLA" ShortName="A35S"/>
+    <Context Comment="Enable the Cortex-A35 context for the peripheral(s)  &lt;br/&gt;                                                    that you plan to use from Secure OS" Core="ARM Cortex-A35" GenType="OP-TEE" GroupName="Runtime contexts" GroupShortName="RT" LongName="CortexA35S Secure OS" Name="CortexA35SSecureOS" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="A35S"/>
+    <Context Comment="Enable the Cortex-A35 non-secure context for the peripheral(s) &lt;br/&gt;                                    that you want to use from U-Boot" Core="ARM Cortex-A35" GenType="U-BOOT" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A35 non secure loader" Name="CortexA35NSSSBL" Secure="false" SemaphoreSuffix="_BOOTLOADER_SSBL" ShortName="A35NS"/>
+    <Context Comment="Enable the Cortex-A35 non-secure context for the peripheral(s) &lt;br/&gt;                                  that you plan to use from Linux" Core="ARM Cortex-A35" GenType="LINUX" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-A35 non secure OS" Name="CortexA35NSOS" Secure="false" SemaphoreSuffix="_LINUX" ShortName="A35NS"/>
+    <Context Comment="Enable the Boot loader context for the peripheral(s) &lt;br/&gt;                                                     that you want to use in the early boot execution context" Core="ARM Cortex-M33" GenType="MCUBOOT" GroupName="Boot time" GroupShortName="BT" LongName="Cortex-M33 secure loader" Name="CortexM33SFSBLM" Secure="true" SemaphoreSuffix="_BOOTLOADER_FSBLM" ShortName="M33S"/>
+    <Context Comment="Enable the Cortex-M33 context for the peripheral(s) &lt;br/&gt;                                                         that you plan to use from Secure OS" Core="ARM Cortex-M33" GenType="TF-M" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 secure FW" Name="CortexM33SSecureOS" Secure="true" SemaphoreSuffix="_SECURE_OS" ShortName="M33S"/>
+    <Context Comment="Enable the Cortex-M33 non-secure context for the peripheral(s) &lt;br/&gt;                                 that you want to use from Cube" Core="ARM Cortex-M33" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="Cortex-M33 non secure FW" Name="CortexM33NS" Secure="false" SemaphoreSuffix="_CUBE" ShortName="M33NS"/>
+    <Context Comment="Enable the External Memory Loader code context only for the peripheral(s) &lt;br/&gt;              you want to use in Eloader" Core="ARM Cortex-M33" GenType="EL" GroupName="Runtime contexts" GroupShortName="RT" LongName="ExternalMemoryLoader" Name="ExtMemLoader" Secure="false" SemaphoreSuffix="_EL" ShortName="ExtMemLoader"/>
     <Ram>808</Ram>
     <IONb>144</IONb>
     <Die>DIE505</Die>
@@ -83,10 +84,13 @@
     <IP InstanceName="BSEC" Name="BSEC" Version="bsec2_v1_1">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSSSBL"/>
-            <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZDIS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZEN" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZDIS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZEN" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexM33SFSBLM" ContextProject="M33TD" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ContextProject="M33TD" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="COMBOPHY" Name="COMBOPHY" Version="MP2_Cube">
@@ -98,6 +102,12 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+        </ContextSplit>
+    </IP>
+    <IP ConfigFile="CORTEX_M33-STM32MP2xx" InstanceName="CORTEX_A35" Name="CORTEX_A35" Version="cortex_v1_0_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="CORTEX_M33-STM32MP2xx" InstanceName="CORTEX_M33" Name="CORTEX_M33" Version="cortex_v1_0_Cube">
@@ -118,7 +128,7 @@
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_CSI2_CLK_ENABLE" InstanceName="CSI" Name="CSI" Version="v1_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_CSI_CLK_ENABLE" InstanceName="CSI" Name="CSI" Version="v1_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
@@ -164,12 +174,17 @@
     </IP>
     <IP InstanceName="DDR_CTRL_PHY" Name="DDR_CTRL_PHY" Version="ddr_v2_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZDIS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZEN" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="M33TD"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZDIS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZEN" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="M33TD" DevalidatedOnSelect="CortexA35NSOS,CortexA35NSSSBL"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32MP2_debug_v1_0">
@@ -212,6 +227,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="ETH-STM32MP2xx" InstanceName="ETH2" Name="ETH" Version="STM32MP2_ethermac1G_v1_1_rc1">
@@ -223,6 +239,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_FDCAN_CLK_ENABLE" ConfigFile="FDCAN-STM32MP2xx" IPContextCoupling="FDCAN" InstanceName="FDCAN1" Name="FDCAN" Version="STM32MP_fdcan1_v1_2">
@@ -261,7 +278,6 @@
     <IP ConfigFile="FMC-STM32MP2xx" InstanceName="FMC" Name="FMC" Version="STM32MP2_v1_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -269,6 +285,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS"/>
             <ContextIP ContextName="CortexM33NS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="FREERTOS-STM32MP2xx" InstanceName="FREERTOS" Name="FREERTOS" Version="MP2-v8.0.0_Cube">
@@ -289,13 +306,13 @@
     <IP ConfigFile="HASH-STM32MP2xx" InstanceName="HASH" Name="HASH" Version="hash1_v4_1_MP2_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="HDP" Name="HDP" Version="STM32MP1_hdp_v1_0">
@@ -347,6 +364,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C2" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -358,6 +376,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C3" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -369,6 +388,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C4" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -380,6 +400,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C5" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -391,6 +412,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C6" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -402,6 +424,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C7" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -413,6 +436,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C8" Name="I2C" Version="STM32MP_i2c2_v1_3">
@@ -424,6 +448,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_SPI1_CLK_ENABLE" ConfigFile="I2S-STM32MPxx" IPContextCoupling="SPI1I2S1" InstanceName="I2S1" Name="I2S" Version="spi2s3_v2_1_Cube">
@@ -527,22 +552,25 @@
     </IP>
     <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZDIS" ForcedSelection="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZEN" ForcedSelection="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG2" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZDIS" ForcedSelection="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZEN" ForcedSelection="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG3" Name="IWDG" Version="iwdg1_v3_0">
@@ -559,19 +587,8 @@
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LINKEDLIST-STM32MP2xx" InstanceName="LINKEDLIST" Name="LINKEDLIST" Version="STM32MP2_linkedlist_v1_0">
-        <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="CortexA35NSOS" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
-        </ContextSplit>
-    </IP>
     <IP ConfigFile="HPDMA-STM32MP2xx" InstanceName="LPDMA1" Name="LPDMA" Version="STM32MP2_v0.1.0_Cube">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true" InitializerForced="true"/>
@@ -579,6 +596,8 @@
             <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true" InitializerForced="true"/>
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZDIS" ForcedSelection="true" InitializerForced="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZEN" ForcedSelection="true" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="LPTIM-STM32MP2xx" InstanceName="LPTIM1" Name="LPTIM" Version="MP2_lptimer1_v2_3_Cube">
@@ -647,22 +666,21 @@
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LTDC-STM32MP2xx" InstanceName="LTDC" Name="LTDC" Version="STM32MP2_lcdtft2_v1_0">
+    <IP ConfigFile="LTDC-STM32MP25xx" InstanceName="LTDC" Name="LTDC" Version="STM32MP2_lcdtft2_v1_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
-            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SSecureOS"/>
+            <ContextIP ContextName="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexM33SFSBLM"/>
+            <ContextIP ContextName="CortexM33SSecureOS"/>
+            <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="LVDS-STM32MP2xx" InstanceName="LVDS" Name="LVDS" Version="v1.0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexA35SFSBLA"/>
-            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SFSBLM"/>
@@ -683,7 +701,6 @@
     <IP ClockEnableMode="__HAL_RCC_OSPI1_CLK_ENABLE" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi_v5_2_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -691,6 +708,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_OSPI2_CLK_ENABLE" InstanceName="OCTOSPI2" Name="OCTOSPI" Version="octospi_v5_2_Cube">
@@ -702,12 +720,12 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="OCTOSPIM" Name="OCTOSPIM" Version="octospi_v5_2_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -715,6 +733,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="OPENAMP-STM32MP2xx" InstanceName="OPENAMP" Name="OPENAMP" Version="v0.3.0_MP2_Cube">
@@ -743,7 +762,6 @@
     </IP>
     <IP ConfigFile="PWR-STM32MP2xx" InstanceName="PWR" Name="PWR" Version="STM32MP2_pwr_v1_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true"/>
@@ -751,12 +769,13 @@
             <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true"/>
             <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true"/>
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="RCC" Name="RCC" Version="STM32MP2_rcc_v1_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true"/>
@@ -764,6 +783,7 @@
             <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true"/>
             <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true"/>
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="RESMGR_UTILITY-STM32MP2xx" InstanceName="RESMGR_UTILITY" Name="RESMGR_UTILITY" Version="STM32MP2_Cube">
@@ -780,25 +800,25 @@
     <IP ConfigFile="RNG-STM32MP2xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1_MP2">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="ExtMemLoader" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="RTC-STM32MP2xx" InstanceName="RTC" Name="RTC" Version="STM32MP2_rtc3_v1_2_rc1">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMM33"/>
-            <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA"/>
+            <ContextIP ContextName="CortexA35SSecureOS"/>
+            <ContextIP ContextName="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexM33SFSBLM"/>
+            <ContextIP ContextName="CortexM33SSecureOS"/>
+            <ContextIP ContextName="CortexM33NS"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="SAI-STM32MP2xx" InstanceName="SAI1" Name="SAI" Version="STM32MP2_sai1_v2_1">
@@ -848,7 +868,6 @@
     <IP ConfigFile="SDIO-STM32MP2xx" InstanceName="SDMMC1" Name="SDMMC" Version="STM32MP2_sdmmc2_v2_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -856,12 +875,12 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="SDIO-STM32MP2xx" InstanceName="SDMMC2" Name="SDMMC" Version="STM32MP2_sdmmc2_v2_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -869,6 +888,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="SDIO-STM32MP2xx" InstanceName="SDMMC3" Name="SDMMC" Version="STM32MP2_sdmmc2_v2_0_Cube">
@@ -880,6 +900,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="SERC" Name="SERC" Version="v1.0_MP2_Cube">
@@ -994,7 +1015,6 @@
     <IP InstanceName="STGEN" Name="STGEN" Version="v1.0_MP2_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33" ForcedSelection="true"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
         </ContextSplit>
@@ -1011,15 +1031,16 @@
     </IP>
     <IP InstanceName="TAMP" Name="TAMP" Version="STM32MP2_rtc3_v1_2_rc1">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35" ForcedSelection="true"/>
-            <ContextIP ContextName="BootROMM33"/>
-            <ContextIP ContextName="CortexA35SFSBLA" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35SSecureOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSSSBL" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA35NSOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33SFSBLM" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33SSecureOS" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA35SFSBLA"/>
+            <ContextIP ContextName="CortexA35SSecureOS"/>
+            <ContextIP ContextName="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexM33SFSBLM"/>
+            <ContextIP ContextName="CortexM33SSecureOS"/>
+            <ContextIP ContextName="CortexM33NS"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZDIS"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="A35TD_TZEN"/>
+            <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="TIM-STM32MP2xx" InstanceName="TIM1" Name="TIM1_8MP2" Version="gptimer2_v4_x_Cube">
@@ -1211,8 +1232,6 @@
     </IP>
     <IP InstanceName="UART4" Name="UART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1220,12 +1239,12 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="UART5" Name="UART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1233,12 +1252,11 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="UART7" Name="UART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1246,12 +1264,12 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="UART8" Name="UART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1259,12 +1277,12 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="UART9" Name="UART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1272,6 +1290,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_UCPD1_CLK_ENABLE" ConfigFile="UCPD-STM32MP2xx" InstanceName="UCPD1" Name="UCPD" Version="ucpd_v1_0_Cube">
@@ -1287,8 +1306,6 @@
     </IP>
     <IP InstanceName="USART1" Name="USART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1301,7 +1318,6 @@
     <IP InstanceName="USART2" Name="USART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1313,8 +1329,6 @@
     </IP>
     <IP InstanceName="USART3" Name="USART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1327,7 +1341,6 @@
     <IP InstanceName="USART6" Name="USART" Version="STM32MP2_sci3_v2_3">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1340,13 +1353,13 @@
     <IP InstanceName="USB3DR" Name="USB3DR" Version="MP2-v1_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="BootROMA35"/>
-            <ContextIP ContextName="BootROMM33"/>
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="USBH_HS" Name="USBH_HS" Version="STM32MP2_host_v1_0_Cube">
@@ -1357,6 +1370,7 @@
             <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="USBPD-STM32MP2xx" InstanceName="USBPD" Name="USBPD" Version="usbpd_STM32MP2_v4.3_Cube">
@@ -1368,6 +1382,7 @@
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="VDEC" Name="VDEC" Version="v1.0_MP2_Cube">
@@ -1393,7 +1408,7 @@
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_VREF_CLK_ENABLE" ConfigFile="SYS-STM32MP2xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32MP2_vrefbuf_v1_0">
-        <ContextSplit Name="NOINIT1">
+        <ContextSplit Name="split1">
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
             <ContextIP ContextName="CortexA35NSSSBL"/>
@@ -1405,28 +1420,40 @@
     </IP>
     <IP ConfigFile="WWDG-STM32MP2xx" InstanceName="WWDG1" Name="WWDG" Version="wwdg1_v2_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SFSBLA"/>
-            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
-            <ContextIP ContextName="CortexA35NSSSBL"/>
-            <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
             <ContextIP ContextName="CortexM33SFSBLM"/>
-            <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
-            <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZDIS"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZEN"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZDIS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZEN" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35NSSSBL" ContextProject="A35TD_TZDIS"/>
+            <ContextIP ContextName="CortexA35NSSSBL" ContextProject="A35TD_TZEN"/>
+            <ContextIP ContextName="CortexA35NSOS" ContextProject="A35TD_TZDIS" ValidatedOnSelect="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexA35NSOS" ContextProject="A35TD_TZEN" ValidatedOnSelect="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ContextProject="A35TD_TZDIS" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ContextProject="A35TD_TZEN" DevalidatedOnSelect="CortexM33NS,CortexA35NSOS"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ContextProject="M33TD"/>
+            <ContextIP ContextName="CortexM33NS" ContextProject="A35TD_TZDIS" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="CortexM33NS" ContextProject="A35TD_TZEN" DevalidatedOnSelect="CortexM33SSecureOS,CortexA35SSecureOS"/>
+            <ContextIP ContextName="CortexM33NS" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="WWDG-STM32MP2xx" InstanceName="WWDG2" Name="WWDG" Version="wwdg1_v2_0">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="CortexA35SFSBLA"/>
-            <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
-            <ContextIP ContextName="CortexA35NSSSBL"/>
-            <ContextIP ContextName="CortexA35NSOS" DevalidatedOnSelect="CortexA35NSSSBL" ValidatedOnSelect="CortexA35NSSSBL"/>
-            <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZDIS"/>
+            <ContextIP ContextName="CortexA35SFSBLA" ContextProject="A35TD_TZEN"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZDIS" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35SSecureOS" ContextProject="A35TD_TZEN" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexA35NSSSBL" ContextProject="A35TD_TZDIS"/>
+            <ContextIP ContextName="CortexA35NSSSBL" ContextProject="A35TD_TZEN"/>
+            <ContextIP ContextName="CortexA35NSOS" ContextProject="A35TD_TZDIS" ValidatedOnSelect="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexA35NSOS" ContextProject="A35TD_TZEN" ValidatedOnSelect="CortexA35NSSSBL"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ContextProject="A35TD_TZDIS" DevalidatedOnSelect="CortexA35NSOS"/>
+            <ContextIP ContextName="CortexM33SSecureOS" ContextProject="A35TD_TZEN" DevalidatedOnSelect="CortexA35NSOS"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="GPIO-STM32MP2xx" InstanceName="GPIO" Name="GPIO" Version="STM32MP2_gpio_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="BootROMA35" InitializerForced="true"/>
-            <ContextIP ContextName="BootROMM33" InitializerForced="true"/>
             <ContextIP ContextName="CortexA35SFSBLA" InitializerForced="true"/>
             <ContextIP ContextName="CortexA35SSecureOS" InitializerForced="true"/>
             <ContextIP ContextName="CortexA35NSSSBL" InitializerForced="true"/>
@@ -2592,6 +2619,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI1,EXTI2" Name="GPIO"/>
     </Pin>
     <Pin Name="PC13" Position="K5" Type="I/O">
+        <Signal Name="RTC_LSCO"/>
         <Signal Name="RTC_OUT1"/>
         <Signal Name="RTC_TS"/>
         <Signal Name="TAMP_OUT1"/>
@@ -2751,6 +2779,7 @@
     <Pin Name="BOOT0" Position="N3" Type="Boot"/>
     <Pin Name="BOOT1" Position="N4" Type="Boot"/>
     <Pin Name="PI8" Position="N5" Type="I/O">
+        <Signal Name="RTC_LSCO"/>
         <Signal Name="RTC_OUT2"/>
         <Signal Name="TAMP_IN1"/>
         <Signal Name="TAMP_OUT2"/>

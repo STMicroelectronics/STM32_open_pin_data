@@ -11,7 +11,7 @@
     <Context Comment="Enable the External Memory Loader context for the peripheral(s) that you plan to use" Core="ARM Cortex-M55" GenType="CUBE" GroupName="Runtime contexts" GroupShortName="RT" LongName="External Memory Loader" Name="ExtMemLoader" Secure="true" SemaphoreSuffix="_EL" ShortName="ExtMemLoader"/>
     <TrustZone>Available</TrustZone>
     <Ram>4200</Ram>
-    <IONb>108</IONb>
+    <IONb>106</IONb>
     <Die>DIE486</Die>
     <Flash>0</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADC12_CLK_ENABLE" ConfigFile="ADC-STM32N6xx" IPContextCoupling="ADC1|ADC2" InstanceName="ADC1" Name="ADC" Version="aditf6_v3_3_N6_Cube">
@@ -102,7 +102,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" InstanceName="DCMI" Name="DCMI" Version="cci_v2_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_DCMI_PSSI_CLK_ENABLE" ConfigFile="DCMI-STM32N6xx" InstanceName="DCMI" Name="DCMI" Version="cci_v2_0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -315,7 +315,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S1" Name="I2S" Version="spi2s3_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SPI1_CLK_ENABLE" ConfigFile="I2S-STM32N6xx" InstanceName="I2S1" Name="I2S" Version="spi2s3_v2_1_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -324,7 +324,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S2" Name="I2S" Version="spi2s3_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SPI2_CLK_ENABLE" ConfigFile="I2S-STM32N6xx" InstanceName="I2S2" Name="I2S" Version="spi2s3_v2_1_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -333,7 +333,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S3" Name="I2S" Version="spi2s3_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SPI3_CLK_ENABLE" ConfigFile="I2S-STM32N6xx" InstanceName="I2S3" Name="I2S" Version="spi2s3_v2_1_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -342,7 +342,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="I2S-STM32N6xx" InstanceName="I2S6" Name="I2S" Version="spi2s3_v2_1_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SPI6_CLK_ENABLE" ConfigFile="I2S-STM32N6xx" InstanceName="I2S6" Name="I2S" Version="spi2s3_v2_1_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -505,9 +505,9 @@
     </IP>
     <IP ConfigFile="RIF-STM32N6xx" InstanceName="RIF" Name="RIF" Version="STM32N6_rif_v1_0_Cube">
         <ContextSplit Name="NOINIT1">
-            <ContextIP ContextName="FSBL" DevalidatedOnSelect="AppliSecure,Appli"/>
-            <ContextIP ContextName="AppliSecure" DefaultSelection="true" DevalidatedOnSelect="FSBL"/>
-            <ContextIP ContextName="Appli" DefaultSelection="true" DevalidatedOnSelect="FSBL"/>
+            <ContextIP ContextName="FSBL" InversedAssignment="AppliSecure,Appli"/>
+            <ContextIP ContextName="AppliSecure" DefaultSelection="true" InversedAssignment="FSBL"/>
+            <ContextIP ContextName="Appli" DefaultSelection="true" InversedAssignment="FSBL"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="RNG-STM32N6xx" InstanceName="RNG" Name="RNG" Version="rng1_v4_1">
@@ -547,12 +547,15 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="SAU-STM32N6xx" InstanceName="SAU" Name="SAU" Version="sau_v2_0_N6_Cube">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="AppliSecure" ForcedSelection="true" InitializerForced="true"/>
-            <ContextIP ContextName="Appli" ForcedSelection="true" InitializerForced="true"/>
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="FSBL"/>
+        </ContextSplit>
+        <ContextSplit Name="NOINIT2">
+            <ContextIP ContextName="AppliSecure"/>
+            <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32N6xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v3_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_SDMMC1_CLK_ENABLE" ConfigFile="SDIO-STM32N6xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v3_N6_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -621,7 +624,7 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="SYS-STM32N6xx" InstanceName="SYS_S" Name="SYS_S" Version="STM32N6x_sys_s_v1_0">
-        <ContextSplit Name="NOINIT1">
+        <ContextSplit Name="split1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
             <ContextIP ContextName="Appli"/>
@@ -879,7 +882,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_USB1_OTG_HS_CLK_ENABLE" InstanceName="USB1_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_5_Cube">
+    <IP ClockEnableMode="__HAL_RCC_USB1_OTG_HS_CLK_ENABLE; __HAL_RCC_USB1_OTG_HS_PHY_CLK_ENABLE" InstanceName="USB1_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_5_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -888,7 +891,7 @@
             <ContextIP ContextName="ExtMemLoader"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_USB2_OTG_HS_CLK_ENABLE" InstanceName="USB2_OTG_HS" Name="USB_OTG_HS" Version="otghs2_v2_5_Cube">
+    <IP ClockEnableMode="__HAL_RCC_USB2_OTG_HS_CLK_ENABLE;__HAL_RCC_USB2_OTG_HS_PHY_CLK_ENABLE" InstanceName="USB2_OTG_HS" Name="USB_OTG_HS" Version="otghs2_v2_5_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="FSBL"/>
             <ContextIP ContextName="AppliSecure"/>
@@ -1011,9 +1014,8 @@
     <Pin Name="OTG1_HSDM" Position="A5" Type="MonoIO">
         <Signal Name="USB1_OTG_HS_DM"/>
     </Pin>
-    <Pin Name="UCPD1_CC1" Position="A6" Type="I/O">
+    <Pin Name="UCPD1_CC1" Position="A6" Type="MonoIO">
         <Signal Name="UCPD1_CC1"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="PH1-OSC_OUT(PH1)" Position="A7" Type="I/O">
         <Signal Name="RCC_OSC_OUT"/>
@@ -1113,9 +1115,8 @@
     <Pin Name="OTG1_HSDP" Position="B5" Type="MonoIO">
         <Signal Name="USB1_OTG_HS_DP"/>
     </Pin>
-    <Pin Name="UCPD1_CC2" Position="B6" Type="I/O">
+    <Pin Name="UCPD1_CC2" Position="B6" Type="MonoIO">
         <Signal Name="UCPD1_CC2"/>
-        <Signal IOModes="Input,Output,Analog" Name="GPIO"/>
     </Pin>
     <Pin Name="PH0-OSC_IN(PH0)" Position="B7" Type="I/O">
         <Signal Name="RCC_OSC_IN"/>

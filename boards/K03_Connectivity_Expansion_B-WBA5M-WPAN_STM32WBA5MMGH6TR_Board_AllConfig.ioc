@@ -1,4 +1,4 @@
-#Copyright (c) 2024 STMicroelectronics. All rights reserved.
+#Copyright (c) 2025 STMicroelectronics. All rights reserved.
 #MicroXplorer Configuration settings - do not modify
 CAD.formats=
 CAD.pinconfig=
@@ -11,7 +11,7 @@ I2C3.Timing=0x10C0ECFF
 KeepUserPlacement=false
 MMTAppRegionsCount=0
 MMTConfigApplied=false
-Mcu.CPN=STM32WBA5MJGH6TR
+Mcu.CPN=STM32WBA5MMGH6TR
 Mcu.ContextProject=TrustZoneDisabled
 Mcu.Family=STM32WBA
 Mcu.IP0=CORTEX_M33_NS
@@ -25,7 +25,7 @@ Mcu.IP7=RCC
 Mcu.IP8=SYS
 Mcu.IP9=USART1
 Mcu.IPNb=10
-Mcu.Name=STM32WBA5MJGHx
+Mcu.Name=STM32WBA5MMGHx
 Mcu.Package=LGA72
 Mcu.Pin0=PB12
 Mcu.Pin1=PA8
@@ -48,7 +48,7 @@ Mcu.Pin9=PA14 (JTCK/SWCLK)
 Mcu.PinsNb=18
 Mcu.ThirdPartyNb=0
 Mcu.UserConstants=
-Mcu.UserName=STM32WBA5MJGHx
+Mcu.UserName=STM32WBA5MMGHx
 MxCube.Version=6.13.0
 MxDb.Version=DB.6.0.130
 NVIC.BusFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false\:false

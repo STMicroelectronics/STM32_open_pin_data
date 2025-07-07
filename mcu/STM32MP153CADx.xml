@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32MP" DBVersion="V3.0" Family="STM32MP1" HasPowerPad="false" IOType="" Line="STM32MP153" Package="TFBGA257" RefName="STM32MP153CADx" xmlns="http://dummy.com">
     <Core>ARM Cortex-A7</Core>
     <Core>ARM Cortex-M4</Core>
@@ -35,7 +35,7 @@
     <IP InstanceName="BSEC" Name="BSEC" Version="bsec2_v1_1">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexA7S" ForcedSelection="true"/>
-            <ContextIP ContextName="CortexA7NS" ForcedSelection="true"/>
+            <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="CRC-STM32MP1xx" InstanceName="CRC1" Name="CRC" Version="integtest1_v2_2">

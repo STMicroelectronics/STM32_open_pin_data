@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H7AB" DBVersion="V3.0" Family="STM32H7" HasPowerPad="false" IOType="" Line="STM32H7A3/7B3" Package="TFBGA100" RefName="STM32H7B3VIHxQ" xmlns="http://dummy.com">
     <Core>Arm Cortex-M7</Core>
     <Frequency>280</Frequency>
@@ -49,7 +49,7 @@
     <IP ConfigFile="LPTIM-STM32H7xx" InstanceName="LPTIM2" Name="LPTIM" Version="H7xx_lptimer1_v1_1_Cube"/>
     <IP ConfigFile="LPTIM-STM32H7xx" InstanceName="LPTIM3" Name="LPTIM" Version="H7xx_lptimer1_v1_1_Cube"/>
     <IP InstanceName="LPUART1" Name="LPUART" Version="sci3_v1_3_Cube"/>
-    <IP ConfigFile="LTDC-STM32H7xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft2_v1_0"/>
+    <IP ConfigFile="LTDC-STM32H7xx" InstanceName="LTDC" Name="LTDC" Version="lcdtft4_v1_0"/>
     <IP ConfigFile="MBEDTLS-STM32H7xx" InstanceName="MBEDTLS" Name="MBEDTLS" Version="v2_16_2_Cube"/>
     <IP InstanceName="MDIOS" Name="MDIOS" Version="mdios1_v1_0_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_OCTOSPIM_CLK_ENABLE;__HAL_RCC_OSPI1_CLK_ENABLE" ConfigFile="OCTOSPI-STM32H7xx" InstanceName="OCTOSPI1" Name="OCTOSPI" Version="octospi_v2_1H7AB_Cube"/>
@@ -64,7 +64,7 @@
     <IP ConfigFile="RAMECC-STM32H7xx" InstanceName="RAMECC" Name="RAMECC" Version="ramecc_v1_0_Cube"/>
     <IP InstanceName="RCC" Name="RCC" Version="STM32H7AB_rcc_v1_0"/>
     <IP ConfigFile="RNG-STM32H7xx" InstanceName="RNG" Name="RNG" Version="rng1_v2_0"/>
-    <IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32H7xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_7_Cube"/>
+    <IP ClockEnableMode="__HAL_RCC_RTC_ENABLE" ConfigFile="RTC-STM32H7B0xx" InstanceName="RTC" Name="RTC" Version="rtc2_v2_7_Cube"/>
     <IP InstanceName="SAI1" Name="SAI" Version="sai1_v2_1_Cube"/>
     <IP InstanceName="SAI2" Name="SAI" Version="sai1_v2_1_Cube"/>
     <IP ConfigFile="SDIO-STM32H7xx" InstanceName="SDMMC1" Name="SDMMC" Version="sdmmc2_v1_0_Cube"/>
@@ -375,7 +375,7 @@
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PB4" Position="C5" Type="I/O">
-        <Signal Name="DEBUG_JTRST"/>
+        <Signal Name="DEBUG_NJTRST"/>
         <Signal Name="I2S1_SDI"/>
         <Signal Name="I2S2_WS"/>
         <Signal Name="I2S3_SDI"/>

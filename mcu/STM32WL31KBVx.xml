@@ -20,6 +20,7 @@
     <IP ConfigFile="MRSUBG_TIMER-STM32WL33xx" InstanceName="MRSUBG_TIMER" Name="MRSUBG_TIMER" Version="mrsubg_timer_v1_0"/>
     <IP ConfigFile="PWR-STM32WL3xx" InstanceName="PWR" Name="PWR" Version="STM32WL33_pwr_v1_0"/>
     <IP InstanceName="RCC" Name="RCC" Version="STM32WL33xx_rcc_v1_0"/>
+    <IP InstanceName="RF" Name="RF" Version="rf2g4ctrl_v1_1_Cube"/>
     <IP ConfigFile="RNG-STM32WL3xx" InstanceName="RNG" Name="RNG" Version="rng1_v3_1"/>
     <IP ConfigFile="RTC-STM32WL3xx" InstanceName="RTC" Name="RTC" Version="rtc2_v3_0_Cube"/>
     <IP ConfigFile="Sigfox-STM32WL33xx" InstanceName="SIGFOX" Name="Sigfox" Version="v1.0_Cube"/>
@@ -29,6 +30,7 @@
     <IP ConfigFile="TIM-STM32WL3xx" InstanceName="TIM16" Name="TIM1_8WL33" Version="gptimer2_v3_x_Cube"/>
     <IP ConfigFile="TINY_LPM-STM32WL33xx" InstanceName="TINY_LPM" Name="TINY_LPM" Version="v1.0_Cube"/>
     <IP InstanceName="USART1" Name="USART" Version="sci3_v2_1_Cube"/>
+    <IP ConfigFile="WMBUS-STM32WL33xx" InstanceName="WMBUS" Name="wMBus" Version="v1.0_Cube"/>
     <IP ConfigFile="GPIO-STM32WL3xx" InstanceName="GPIO" Name="GPIO" Version="STM32WL33_gpio_v1_0"/>
     <IP ConfigFile="DMA-STM32WL3xx" InstanceName="DMA" Name="DMA" Version="STM32WL33_dma1_v1_3"/>
     <IP ConfigFile="NVIC-STM32WLxx" InstanceName="NVIC" Name="NVIC" Version="STM32WL33"/>
@@ -153,6 +155,7 @@
         <Signal Name="I2C1_SDA"/>
         <Signal Name="LPUART1_RX"/>
         <Signal Name="PWR_WKUP7"/>
+        <Signal Name="RF_ACTIVITY"/>
         <Signal Name="SPI3_MOSI"/>
         <Signal Name="TIM2_ETR"/>
         <Signal IOModes="Input,Output,Analog,EXTI" Name="GPIO"/>

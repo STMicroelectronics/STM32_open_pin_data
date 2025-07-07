@@ -160,6 +160,7 @@
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot" InitializerForced="true"/>
             <ContextIP ContextName="Appli" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ClockEnableMode="__HAL_RCC_GPU2D_CLK_ENABLE" ConfigFile="GPU2D-STM32H7RSxx" InstanceName="GPU2D" Name="GPU2D" Version="gpu2d_v1_0">
@@ -186,6 +187,7 @@
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot" InitializerForced="true"/>
             <ContextIP ContextName="Appli" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP InstanceName="I2C1" Name="I2C" Version="i2c1_v1_0H7RS_Cube">
@@ -262,6 +264,7 @@
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot" InitializerForced="true"/>
             <ContextIP ContextName="Appli" InitializerForced="true"/>
+            <ContextIP ContextName="ExtMemLoader" InitializerForced="true"/>
         </ContextSplit>
     </IP>
     <IP ConfigFile="LPTIM-STM32H7RSxx" InstanceName="LPTIM2" Name="LPTIM" Version="H7R_lptimer1_v2_2_Cube">
@@ -294,7 +297,7 @@
             <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LTDC-STM32H7RSxx" InstanceName="LTDC" Name="LTDC" Version="lcdtft2_v1_0">
+    <IP ConfigFile="LTDC-STM32H7RSxx" InstanceName="LTDC" Name="LTDC" Version="lcdtft4_v1_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="Boot"/>
             <ContextIP ContextName="Appli"/>
@@ -457,10 +460,8 @@
         </ContextSplit>
     </IP>
     <IP ConfigFile="SYS-STM32H7RSxx" InstanceName="SYS" Name="SYS" Version="STM32H7RS_sys_v1_0">
-        <ContextSplit Name="split1">
+        <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="Boot"/>
-        </ContextSplit>
-        <ContextSplit Name="split2">
             <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
@@ -615,7 +616,13 @@
             <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_USB_OTG_FS_CLK_ENABLE; __HAL_RCC_USBPHYC_CLK_ENABLE" InstanceName="USB_OTG_FS" Name="USB_OTG_FS" Version="otgfs1_v3_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_USB_OTG_FS_CLK_ENABLE; __HAL_RCC_USBPHYC_CLK_ENABLE" IPContextCoupling="USB_OTG_FS1 | USB_OTG_FS" InstanceName="USB_OTG_FS" Name="USB_OTG_FS" Version="otgfs1_v3_0_h7_Cube">
+        <ContextSplit Name="NOINIT1">
+            <ContextIP ContextName="Boot"/>
+            <ContextIP ContextName="Appli"/>
+        </ContextSplit>
+    </IP>
+    <IP ClockEnableMode="__HAL_RCC_USB_OTG_FS_CLK_ENABLE; __HAL_RCC_USBPHYC_CLK_ENABLE" IPContextCoupling="USB_OTG_FS1 | USB_OTG_FS" InstanceName="USB_OTG_FS1" Name="USB_OTG_FS1" Version="v1.0.0_Cube">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="Boot"/>
             <ContextIP ContextName="Appli"/>

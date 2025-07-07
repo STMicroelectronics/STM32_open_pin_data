@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2023 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32W" DBVersion="V3.0" Family="STM32WB" HasPowerPad="false" IOType="" Line="STM32WBx5" Package="UFBGA129" RefName="STM32WB55VGQx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
     <Frequency>64</Frequency>
     <MemoryMap>Available</MemoryMap>
-    <Ram>128</Ram>
+    <Ram>256</Ram>
     <IONb>72</IONb>
     <Die>DIE495</Die>
     <Flash>1024</Flash>

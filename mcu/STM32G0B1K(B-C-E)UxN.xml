@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G0-512" DBVersion="V3.0" Family="STM32G0" HasPowerPad="false" IOType="" Line="STM32G0x1" Package="UFQFPN32" RefName="STM32G0B1K(B-C-E)UxN" xmlns="http://dummy.com">
     <Core>ARM Cortex-M0+</Core>
     <Frequency>64</Frequency>
@@ -309,7 +309,7 @@
     <Pin Name="UCPD1_DBCC1" Position="19" Type="MonoIO" Variant="PINREMAP">
         <Signal Name="UCPD1_DBCC1"/>
     </Pin>
-    <Pin Name="VDD" Position="20" Type="Power"/>
+    <Pin Name="VDDIO2" Position="20" Type="Power"/>
     <Pin Name="PA10" Position="21" Type="I/O">
         <Signal Name="I2C1_SDA"/>
         <Signal Name="I2C2_SDA"/>

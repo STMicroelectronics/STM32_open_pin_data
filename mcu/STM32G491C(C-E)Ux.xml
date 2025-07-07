@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2021 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32G4-479" DBVersion="V3.0" Family="STM32G4" HasPowerPad="false" IOType="" Line="STM32G4x1" Package="UFQFPN48" RefName="STM32G491C(C-E)Ux" xmlns="http://dummy.com">
     <Core>ARM Cortex-M4</Core>
     <Frequency>170</Frequency>
@@ -61,6 +61,7 @@
     <IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM17" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
     <IP ConfigFile="TIM-STM32G4xx" InstanceName="TIM20" Name="TIM1_8G4" Version="gptimer2_v4_x_Cube"/>
     <IP ConfigFile="TRACER_EMB-STM32G4xx" InstanceName="TRACER_EMB" Name="TRACER_EMB" Version="tracer_STM32G47_v1.6.0_Cube"/>
+    <IP InstanceName="UART4" Name="UART" Version="sci2_v3_1_Cube"/>
     <IP ClockEnableMode="__HAL_RCC_UCPD1_CLK_ENABLE" ConfigFile="UCPD-STM32G4xx" InstanceName="UCPD1" Name="UCPD" Version="ucpd_v1_0_Cube"/>
     <IP InstanceName="USART1" Name="USART" Version="sci3_v2_1_Cube"/>
     <IP InstanceName="USART2" Name="USART" Version="sci3_v2_1_Cube"/>
@@ -494,6 +495,8 @@
         <Signal Name="TIM2_CH1"/>
         <Signal Name="TIM2_ETR"/>
         <Signal Name="TIM8_CH1"/>
+        <Signal Name="UART4_DE"/>
+        <Signal Name="UART4_RTS"/>
         <Signal Name="USART2_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -503,6 +506,7 @@
         <Signal Name="I2S3_CK"/>
         <Signal Name="SPI3_SCK"/>
         <Signal Name="TIM8_CH1N"/>
+        <Signal Name="UART4_TX"/>
         <Signal Name="USART3_TX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -512,6 +516,7 @@
         <Signal Name="I2C3_SDA"/>
         <Signal Name="SPI3_MISO"/>
         <Signal Name="TIM8_CH2N"/>
+        <Signal Name="UART4_RX"/>
         <Signal Name="USART3_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
@@ -582,6 +587,7 @@
         <Signal Name="TIM3_CH4"/>
         <Signal Name="TIM4_CH2"/>
         <Signal Name="TIM8_BKIN"/>
+        <Signal Name="UART4_CTS"/>
         <Signal Name="USART1_RX"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>

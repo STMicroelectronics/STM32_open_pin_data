@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Copyright (c) 2024 STMicroelectronics. All rights reserved. -->
+<!-- Copyright (c) 2025 STMicroelectronics. All rights reserved. -->
 <Mcu ClockTree="STM32H5" DBVersion="V3.0" Family="STM32H5" HasPowerPad="false" IOType="" Line="STM32H5x3" Package="LQFP176" RefName="STM32H563IGTx" xmlns="http://dummy.com">
     <Core>ARM Cortex-M33</Core>
     <ContextProject Attributes="MONO" Comment="without TrustZone activated ?" Contexts="CortexM33" Name="TrustZoneDisabled"/>
@@ -102,7 +102,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H7_sys_v1_0">
+    <IP InstanceName="DEBUG" Name="DEBUG" Version="STM32H5_sys_v1_1">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -2560,7 +2560,7 @@
     </Pin>
     <Pin Name="PB4(NJTRST)" Position="162" Type="I/O">
         <Signal Name="DCMI_D7"/>
-        <Signal Name="DEBUG_JTRST"/>
+        <Signal Name="DEBUG_NJTRST"/>
         <Signal Name="I2S1_SDI"/>
         <Signal Name="I2S2_WS"/>
         <Signal Name="I2S3_SDI"/>

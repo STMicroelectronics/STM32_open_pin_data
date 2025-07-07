@@ -196,7 +196,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GTZC-STM32H56x" InstanceName="GTZC" Name="GTZC" Version="tzsc1_v2_2_rc1_Mustang512K">
+    <IP ClockEnableMode="__HAL_RCC_GTZC1_CLK_ENABLE;" ConfigFile="GTZC-STM32H56x" InstanceName="GTZC" Name="GTZC" Version="tzsc1_v2_2_rc1_Mustang512K">
         <ContextSplit Name="split3">
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
@@ -206,7 +206,7 @@
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GTZC-STM32H56x" InstanceName="GTZC_S" Name="GTZC" Version="tzsc1_v2_2_rc1_Mustang512K">
+    <IP ClockEnableMode="__HAL_RCC_GTZC1_CLK_ENABLE;" ConfigFile="GTZC-STM32H56x" InstanceName="GTZC_S" Name="GTZC" Version="tzsc1_v2_2_rc1_Mustang512K">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true"/>
         </ContextSplit>
