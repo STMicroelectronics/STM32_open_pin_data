@@ -462,7 +462,7 @@
             <ContextIP ContextName="CortexA7NS"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="SYS" Name="SYS" Version="STM32MP1_sys_v1_0">
+    <IP ConfigFile="SYS-STM32MP1xx" InstanceName="SYS" Name="SYS" Version="STM32MP1_sys_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM4" InitializerForced="true"/>
         </ContextSplit>

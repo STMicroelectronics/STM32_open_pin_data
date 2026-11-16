@@ -42,6 +42,32 @@
         <PossibleValue Value="CortexA35NSOS" Comment="CortexA35NS OS"/>
         <PossibleValue Value="CortexM33SSecureOS" Comment="CortexM33S Secure OS"/>
         <PossibleValue Value="CortexM33NS" Comment="CortexM33NS"/>
+        <PossibleValue Value="CortexM33SSecureOS,CortexM33NS" Comment="CortexM33S Secure OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35NSOS,CortexM33NS" Comment="CortexA35NS OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35NSOS,CortexM33SSecureOS" Comment="CortexA35NS OS, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35NSOS,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35NS OS, CortexM33S Secure OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexM33NS" Comment="CortexA35NS SSBL, CortexM33NS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexM33SSecureOS" Comment="CortexA35NS SSBL, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35NS SSBL, CortexM33S Secure OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexA35NSOS" Comment="CortexA35NS SSBL, CortexA35NS OS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexA35NSOS,CortexM33NS" Comment="CortexA35NS SSBL, CortexA35NS OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS" Comment="CortexA35NS SSBL, CortexA35NS OS, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35NS SSBL, CortexA35NS OS, CortexM33NS, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexM33SSecureOS" Comment="CortexA35S Secure OS, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexM33S Secure OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSOS" Comment="CortexA35S Secure OS, CortexA35NS OS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexM33NS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSOS,CortexM33SSecureOS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSOS,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexM33NS, CortexM33S Secure OS"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL" Comment="CortexA35S Secure OS, CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS" Comment="CortexA35S Secure OS, CortexM33NS, CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexM33SSecureOS" Comment="CortexA35S Secure OS, CortexM33S Secure OS, CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexM33NS, CortexM33S Secure OS, CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexM33NS, CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexM33S Secure OS , CortexA35NS SSBL"/>
+        <PossibleValue Value="CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS,CortexM33NS" Comment="CortexA35S Secure OS, CortexA35NS OS, CortexM33NS, CortexM33S Secure OS, CortexA35NS SSBL"/>
     </RefParameter>
     <RefParameter Name="GPIO_Pin" Comment="GPIO pin mask" Type="list" Visible="false"/>
     <RefParameter Name="GPIO_ModeDefaultPP" Comment="GPIO mode" Type="list" DefaultValue="GPIO_MODE_AF_PP">
@@ -174,96 +200,44 @@
         <PossibleValue Value="GPIO_MODE_EVT_FALLING" Comment="External Event Mode with Falling edge trigger detection"/>
         <PossibleValue Value="GPIO_MODE_EVT_RISING_FALLING" Comment="External Event Mode with Rising/Falling edge trigger detection"/>
     </RefParameter>
-    <RefParameter Name="DCMIPP_RET" Comment="Retime" Type="list" DefaultValue="0">
+    <RefParameter Name="skew-delay-input-ps" Comment="skew-delay-input-ps" Type="list" DefaultValue="0">
         <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
+        <PossibleValue Value="300" Comment="300"/>
+        <PossibleValue Value="500" Comment="500"/>
+        <PossibleValue Value="750" Comment="750"/>
+        <PossibleValue Value="1000" Comment="1000"/>
+        <PossibleValue Value="1250" Comment="1250"/>
+        <PossibleValue Value="1500" Comment="1500"/>
+        <PossibleValue Value="1750" Comment="1750"/>
+        <PossibleValue Value="2000" Comment="2000"/>
+        <PossibleValue Value="2250" Comment="2250"/>
+        <PossibleValue Value="2500" Comment="2500"/>
+        <PossibleValue Value="2750" Comment="2750"/>
+        <PossibleValue Value="3000" Comment="3000"/>
+        <PossibleValue Value="3250" Comment="3250"/>
     </RefParameter>
-    <RefParameter Name="DCMIPP_INVCLK" Comment="Invert Clock" Type="list" DefaultValue="0">
+    <RefParameter Name="skew-delay-output-ps" Comment="skew-delay-output-ps" Type="list" DefaultValue="0">
         <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
+        <PossibleValue Value="300" Comment="300"/>
+        <PossibleValue Value="500" Comment="500"/>
+        <PossibleValue Value="750" Comment="750"/>
+        <PossibleValue Value="1000" Comment="1000"/>
+        <PossibleValue Value="1250" Comment="1250"/>
+        <PossibleValue Value="1500" Comment="1500"/>
+        <PossibleValue Value="1750" Comment="1750"/>
+        <PossibleValue Value="2000" Comment="2000"/>
+        <PossibleValue Value="2250" Comment="2250"/>
+        <PossibleValue Value="2500" Comment="2500"/>
+        <PossibleValue Value="2750" Comment="2750"/>
+        <PossibleValue Value="3000" Comment="3000"/>
+        <PossibleValue Value="3250" Comment="3250"/>
     </RefParameter>
-    <RefParameter Name="DCMIPP_INVCLK_DT" Comment="Invert Clock" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="DCMIPP_DE" Comment="Double Edge" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="DCMIPP_DLYPATH" Comment="Delay Path" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="DCMIPP_DLY[3:0]" Comment="Delay field" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="ETH_RET" Comment="Retime" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="ETH_INVCLK" Comment="Invert Clock" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="ETH_DE" Comment="Double Edge" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="ETH_DLYPATH" Comment="Delay Path" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="ETH_DLY[3:0]" Comment="Delay field" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-        <PossibleValue Value="2" Comment="2"/>
-        <PossibleValue Value="3" Comment="3"/>
-        <PossibleValue Value="4" Comment="4"/>
-        <PossibleValue Value="5" Comment="5"/>
-        <PossibleValue Value="6" Comment="6"/>
-        <PossibleValue Value="7" Comment="7"/>
-        <PossibleValue Value="8" Comment="8"/>
-        <PossibleValue Value="9" Comment="9"/>
-        <PossibleValue Value="10" Comment="10"/>
-        <PossibleValue Value="11" Comment="11"/>
-        <PossibleValue Value="12" Comment="12"/>
-        <PossibleValue Value="13" Comment="13"/>
-        <PossibleValue Value="14" Comment="14"/>
-        <PossibleValue Value="15" Comment="15"/>
-    </RefParameter>
-    <RefParameter Name="TRACE_RET" Comment="Retime" Type="list" DefaultValue="1">
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="TRACE_INVCLK" Comment="Invert Clock (Edge align data)" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="TRACE_DE" Comment="Double Edge" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="TRACE_DLYPATH" Comment="Delay Path" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="TRACE_DLY[3:0]" Comment="Delay field" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="LTDC_RET" Comment="Retime" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="LTDC_INVCLK" Comment="Invert Clock" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="LTDC_INVCLK_DT" Comment="Invert Clock" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-        <PossibleValue Value="1" Comment="1"/>
-    </RefParameter>
-    <RefParameter Name="LTDC_DE" Comment="Double Edge" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="LTDC_DLYPATH" Comment="Delay Path" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
-    </RefParameter>
-    <RefParameter Name="LTDC_DLY[3:0]" Comment="Delay field" Type="list" DefaultValue="0">
-        <PossibleValue Value="0" Comment="0"/>
+    <RefParameter Name="io-sync" Comment="io-sync" Type="list" DefaultValue="pass-through">
+        <PossibleValue Value="pass-through" Comment="pass-through"/>
+        <PossibleValue Value="clock inverted" Comment="clock inverted"/>
+        <PossibleValue Value="data on rising edge" Comment="data on rising edge"/>
+        <PossibleValue Value="data on falling edge" Comment="data on falling edge"/>
+        <PossibleValue Value="data on both edges" Comment="data on both edges"/>
     </RefParameter>
     <RefMode Name="GPIO">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -274,6 +248,9 @@
         <Parameter Name="GPIO_Mode"/>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AnalogForADC">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -288,6 +265,9 @@
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="SYSCFG_AnalogSwitch"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AnalogForADC_NoPuPd">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -299,6 +279,9 @@
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="SYSCFG_AnalogSwitch"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Analog">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -312,6 +295,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Analog_NoPuPd">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -322,6 +308,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Input">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -333,6 +322,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Output">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -346,6 +338,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AnalogForADC">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -365,7 +360,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AnalogForADC_NoPuPd">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -382,7 +392,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Analog">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -401,7 +426,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Analog_NoPuPd">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -417,7 +457,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Input">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -434,7 +489,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="Output">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -453,7 +523,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPull">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -466,71 +551,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetiming">
-        <Condition Diagnostic="" Expression="(LTDC:PCPolarity=LTDC_PCPOLARITY_IPC) &amp; LTDC_CUBE"/>
-        <ConfigForMode>AlternateFunctionIORetiming</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
-        <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetiming">
-        <Condition Diagnostic="" Expression="(LTDC:PCPolarity=LTDC_PCPOLARITY_IIPC) &amp; LTDC_CUBE"/>
-        <ConfigForMode>AlternateFunctionIORetiming</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
-        <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetiming">
-        <Condition Diagnostic="" Expression="!LTDC_CUBE"/>
-        <ConfigForMode>AlternateFunctionIORetiming</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET"/>
-        <Parameter Name="LTDC_INVCLK_DT">
-            <PossibleValue>0</PossibleValue>
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
-        <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullIORetimingLTDCOtherIPs">
         <ConfigForMode>AlternateFunctionIORetiming</ConfigForMode>
@@ -542,15 +565,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on rising edge</PossibleValue>
         </Parameter>
-        <Parameter Name="LTDC_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullIORetimingETH">
@@ -563,13 +580,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET"/>
-        <Parameter Name="ETH_INVCLK"/>
-        <Parameter Name="ETH_DE"/>
-        <Parameter Name="ETH_DLYPATH"/>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
+        <Parameter Name="io-sync"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullIORetimingETHRGMII">
@@ -582,19 +593,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullIORetimingETHRGMII_ID">
@@ -607,85 +608,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on both edges</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetimingDCMIPP">
-        <Condition Diagnostic="" Expression="(DCMIPP:PCKPolarity=DCMI_PCKPOLARITY_FALLING) &amp; DCMIPP_CUBE"/>
-        <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_ModePuPdOnly">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_RET">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_DE"/>
-        <Parameter Name="DCMIPP_DLYPATH"/>
-        <Parameter Name="DCMIPP_DLY[3:0]"/>
-        <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetimingDCMIPP">
-        <Condition Diagnostic="" Expression="(DCMIPP:PCKPolarity=DCMI_PCKPOLARITY_RISING)&amp; DCMIPP_CUBE"/>
-        <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_ModePuPdOnly">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_RET">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_INVCLK">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_DE"/>
-        <Parameter Name="DCMIPP_DLYPATH"/>
-        <Parameter Name="DCMIPP_DLY[3:0]"/>
-        <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetimingDCMIPP">
-        <Condition Diagnostic="" Expression="!DCMIPP_CUBE"/>
-        <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="GPIO_ModePuPdOnly">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_RET">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_INVCLK_DT">
-            <PossibleValue>0</PossibleValue>
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_DE"/>
-        <Parameter Name="DCMIPP_DLYPATH"/>
-        <Parameter Name="DCMIPP_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnlyIORetimingDCMIPP">
@@ -697,18 +622,13 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="DCMIPP_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on falling edge</PossibleValue>
         </Parameter>
-        <Parameter Name="DCMIPP_INVCLK_DT">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_DE"/>
-        <Parameter Name="DCMIPP_DLYPATH"/>
-        <Parameter Name="DCMIPP_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnlyIORetimingDCMIPP_PIXCLK">
+        <Condition Diagnostic="" Expression="(DCMIPP:DCMIPP_PCKPOLARITY=DCMIPP_PCKPOLARITY_FALLING) &amp; DCMIPP_CUBE"/>
         <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
         <Parameter Name="GPIO_PuPd"/>
@@ -717,37 +637,24 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="DCMIPP_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
-        <Parameter Name="DCMIPP_INVCLK_DT">
-            <PossibleValue>0</PossibleValue>
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_DE"/>
-        <Parameter Name="DCMIPP_DLYPATH"/>
-        <Parameter Name="DCMIPP_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
-    <RefMode Name="AlternateFunctionPushPullIORetimingDCMIPPOtherIPs">
+    <RefMode Name="AlternateFunctionPuPdOnlyIORetimingDCMIPP_PIXCLK">
+        <Condition Diagnostic="" Expression="!(DCMIPP:DCMIPP_PCKPOLARITY=DCMIPP_PCKPOLARITY_FALLING) &amp; DCMIPP_CUBE"/>
         <ConfigForMode>AlternateFunctionPuPd</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed"/>
         <Parameter Name="GPIO_PuPd"/>
         <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="DCMIPP_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>clock inverted</PossibleValue>
         </Parameter>
-        <Parameter Name="DCMIPP_INVCLK_DT">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="DCMIPP_DE"/>
-        <Parameter Name="DCMIPP_DLYPATH"/>
-        <Parameter Name="DCMIPP_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrain">
@@ -761,6 +668,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPP">
         <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
@@ -774,6 +684,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPWildcat">
         <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
@@ -787,6 +700,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPull">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -800,6 +716,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainNoPullOrPullUp">
         <ConfigForMode>AlternateFunctionNoPullOrPullUp</ConfigForMode>
@@ -812,6 +731,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -826,6 +748,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -840,6 +765,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullVeryHighSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -854,6 +782,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullUp">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -866,6 +797,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullPULLUP">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -880,6 +814,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeedDefault">
         <ConfigForMode>AlternateFunctionMediumSpeedDefault</ConfigForMode>
@@ -892,6 +829,24 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
+    </RefMode>
+    <RefMode Name="AlternateFunctionPushPullMediumSpeedDefault_INPUT">
+        <ConfigForMode>AlternateFunctionMediumSpeedDefault</ConfigForMode>
+        <Parameter Name="GPIO_AF"/>
+        <Parameter Name="GPIO_Speed_Medium_Default"/>
+        <Parameter Name="GPIO_PuPd"/>
+        <Parameter Name="GPIOx"/>
+        <Parameter Name="GPIO_Mode">
+            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
+        </Parameter>
+        <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="PinAttribute"/>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
+        </Parameter>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeedDefaultIORetiming">
         <Condition Diagnostic="" Expression="(LTDC:PCPolarity=LTDC_PCPOLARITY_IPC) &amp; LTDC_CUBE"/>
@@ -904,15 +859,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
-        <Parameter Name="LTDC_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeedDefaultIORetiming">
@@ -926,15 +875,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>clock inverted</PossibleValue>
         </Parameter>
-        <Parameter Name="LTDC_INVCLK">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeedDefaultIORetiming">
@@ -948,13 +891,10 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="LTDC_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
+            <PossibleValue>clock inverted</PossibleValue>
         </Parameter>
-        <Parameter Name="LTDC_INVCLK_DT"/>
-        <Parameter Name="LTDC_DE"/>
-        <Parameter Name="LTDC_DLYPATH"/>
-        <Parameter Name="LTDC_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullMediumSpeedDefaultIORetimingETH">
@@ -967,13 +907,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET"/>
-        <Parameter Name="ETH_INVCLK"/>
-        <Parameter Name="ETH_DE"/>
-        <Parameter Name="ETH_DLYPATH"/>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
+        <Parameter Name="io-sync"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedDefault">
@@ -987,6 +921,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultIORetiming">
         <ConfigForMode>AlternateFunctionHighSpeedDefaultIORetiming</ConfigForMode>
@@ -998,13 +935,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="TRACE_RET"/>
-        <Parameter Name="TRACE_INVCLK">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on rising edge</PossibleValue>
         </Parameter>
-        <Parameter Name="TRACE_DE"/>
-        <Parameter Name="TRACE_DLYPATH"/>
-        <Parameter Name="TRACE_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultIORetimingOthersTRACEx">
@@ -1017,13 +950,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="TRACE_RET"/>
-        <Parameter Name="TRACE_INVCLK">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on rising edge</PossibleValue>
         </Parameter>
-        <Parameter Name="TRACE_DE"/>
-        <Parameter Name="TRACE_DLYPATH"/>
-        <Parameter Name="TRACE_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedByDefault">
@@ -1037,6 +966,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
+        </Parameter>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedByDefaultIORetiming">
         <ConfigForMode>AlternateFunctionHighSpeedByDefaultIORetiming</ConfigForMode>
@@ -1048,13 +980,7 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET"/>
-        <Parameter Name="ETH_INVCLK"/>
-        <Parameter Name="ETH_DE"/>
-        <Parameter Name="ETH_DLYPATH"/>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
+        <Parameter Name="io-sync"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedDefaultIORetimingRGMIIOthers">
@@ -1067,20 +993,8 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
     </RefMode>
@@ -1094,20 +1008,8 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on both edges</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
     </RefMode>
@@ -1121,19 +1023,9 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedByDefaultIORetimingRGMII_ID">
@@ -1146,36 +1038,10 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on both edges</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
-        <Parameter Name="PinAttribute"/>
-    </RefMode>
-    <RefMode Name="AlternateFunctionPushPullHighSpeedByDefaultRGMIIID_IORetiming">
-        <ConfigForMode>AlternateFunctionHighSpeedByDefaultIORetiming</ConfigForMode>
-        <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed_High_ByDefault"/>
-        <Parameter Name="GPIO_PuPd"/>
-        <Parameter Name="GPIOx"/>
-        <Parameter Name="GPIO_Mode">
-            <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
-        </Parameter>
-        <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET"/>
-        <Parameter Name="ETH_INVCLK"/>
-        <Parameter Name="ETH_DE"/>
-        <Parameter Name="ETH_DLYPATH"/>
-        <Parameter Name="ETH_DLY[3:0]"/>
+        <Parameter Name="skew-delay-input-ps"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnly">
@@ -1188,6 +1054,8 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnlyIORetiming">
         <ConfigForMode>AlternateFunctionPuPdIORetiming</ConfigForMode>
@@ -1198,13 +1066,7 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_RET"/>
-        <Parameter Name="ETH_INVCLK"/>
-        <Parameter Name="ETH_DE"/>
-        <Parameter Name="ETH_DLYPATH"/>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
+        <Parameter Name="io-sync"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnlyIORetimingRGMII">
@@ -1216,20 +1078,8 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on both edges</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
     </RefMode>
@@ -1242,19 +1092,10 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
+        <Parameter Name="skew-delay-output-ps"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnlyIORetimingRGMII_ID_GTX_CLK">
@@ -1266,19 +1107,10 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>0</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>pass-through</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
+        <Parameter Name="skew-delay-input-ps"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuPdOnlyIORetimingRGMII_ID_RX_CTL">
@@ -1290,19 +1122,10 @@
         <Parameter Name="GPIO_ModePuPdOnly">
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on both edges</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
+        <Parameter Name="skew-delay-input-ps"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullHighSpeedByDefaultIORetimingRGMII_TX_CTL">
@@ -1315,19 +1138,10 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
-        <Parameter Name="ETH_RET">
-            <PossibleValue>1</PossibleValue>
+        <Parameter Name="io-sync">
+            <PossibleValue>data on both edges</PossibleValue>
         </Parameter>
-        <Parameter Name="ETH_INVCLK">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DE">
-            <PossibleValue>1</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLYPATH">
-            <PossibleValue>0</PossibleValue>
-        </Parameter>
-        <Parameter Name="ETH_DLY[3:0]"/>
+        <Parameter Name="skew-delay-input-ps"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPuOnly">
@@ -1342,6 +1156,9 @@
             <PossibleValue>GPIO_MODE_AF</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EXTI1">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -1354,6 +1171,9 @@
             <PossibleValue>EXTI1</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EXTI2">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -1366,6 +1186,9 @@
             <PossibleValue>EXTI2</PossibleValue>
         </Parameter>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EXTIRisingFalling">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -1375,6 +1198,9 @@
         <Parameter Name="GPIO_ModeDefaultEXTI_IT_RF"/>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EVENTOUT">
         <Condition Diagnostic="" Expression="S_SECURE"/>
@@ -1390,6 +1216,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EXTI1">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -1407,7 +1236,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EXTI2">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -1425,7 +1269,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EXTIRisingFalling">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -1440,7 +1299,22 @@
             <PossibleValue>CortexA35NSSSBL</PossibleValue>
             <PossibleValue>CortexA35NSOS</PossibleValue>
             <PossibleValue>CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSOS,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexM33NS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS</PossibleValue>
+            <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="EVENTOUT">
         <Condition Diagnostic="" Expression="!S_SECURE"/>
@@ -1489,6 +1363,9 @@
             <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS</PossibleValue>
             <PossibleValue>CortexA35SSecureOS,CortexA35NSSSBL,CortexA35NSOS,CortexM33SSecureOS,CortexM33NS</PossibleValue>
         </Parameter>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultPPLowSpeed">
         <ConfigForMode>AlternateFunctionDefaultPP</ConfigForMode>
@@ -1504,6 +1381,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainLowSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -1518,6 +1398,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionPushPullLowSpeed">
         <ConfigForMode>AlternateFunction</ConfigForMode>
@@ -1532,6 +1415,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultOD">
         <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
@@ -1545,6 +1431,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionOpenDrainAndPushPullDefaultODLowSpeed">
         <ConfigForMode>AlternateFunctionDefaultOD</ConfigForMode>
@@ -1560,6 +1449,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="RTCAlternateFunctionPushPull">
         <Condition Diagnostic="" Expression="(RTC_OUT_ALARM &amp; PC13_RTC_OUT_ALARM) | (RTC_OUT_CALIB &amp; PC13_RTC_OUT_CALIB)"/>
@@ -1591,6 +1483,9 @@
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="AlternateFunctionNoPushPullVeryHighTargetMode">
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeedTargetMode</ConfigForMode>
@@ -1606,11 +1501,17 @@
             <PossibleValue>GPIO_MODE_AF_PP</PossibleValue>
         </Parameter>
         <Parameter Name="GPIO_Pin"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
         <Parameter Name="PinAttribute"/>
     </RefMode>
     <RefMode Name="System">
         <ConfigForMode>System</ConfigForMode>
         <Parameter Name="PinAttribute"/>
+        <Parameter Name="skew-delay-input-ps"/>
+        <Parameter Name="skew-delay-output-ps"/>
+        <Parameter Name="io-sync"/>
     </RefMode>
     <RefMode Name="SystemRIF"/>
     <GPIO_Pin PortName="PA" Name="ANA0">

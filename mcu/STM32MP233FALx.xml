@@ -458,7 +458,7 @@
             <ContextIP ContextName="CortexM33NS"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v3_0">
+    <IP ClockEnableMode="__HAL_RCC_IWDG1_CLK_ENABLE" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG1" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS,CortexA35NSSSBL"/>
@@ -470,7 +470,7 @@
             <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG2" Name="IWDG" Version="iwdg1_v3_0">
+    <IP ClockEnableMode="__HAL_RCC_IWDG2_CLK_ENABLE" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG2" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexA35SFSBLA"/>
             <ContextIP ContextName="CortexA35SSecureOS" DevalidatedOnSelect="CortexA35NSOS,CortexA35NSSSBL"/>
@@ -481,14 +481,14 @@
             <ContextIP ContextName="BootROMA35" ContextProject="M33TD"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG3" Name="IWDG" Version="iwdg1_v3_0">
+    <IP ClockEnableMode="__HAL_RCC_IWDG3_CLK_ENABLE" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG3" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS"/>
             <ContextIP ContextName="CortexM33NS" DevalidatedOnSelect="CortexM33SSecureOS"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="none" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG4" Name="IWDG" Version="iwdg1_v3_0">
+    <IP ClockEnableMode="__HAL_RCC_IWDG4_CLK_ENABLE" ConfigFile="IWDG-STM32MP2xx" InstanceName="IWDG4" Name="IWDG" Version="iwdg1_v3_0">
         <ContextSplit Name="NOINIT1">
             <ContextIP ContextName="CortexM33SFSBLM"/>
             <ContextIP ContextName="CortexM33SSecureOS" DevalidatedOnSelect="CortexM33NS"/>

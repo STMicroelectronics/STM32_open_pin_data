@@ -1016,15 +1016,6 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="SYS-STM32H5xx" InstanceName="VREFBUF" Name="VREFBUF" Version="STM32L55_vrefbuf_v1_0">
-        <ContextSplit Name="split1">
-            <ContextIP ContextName="CortexM33S"/>
-            <ContextIP ContextName="CortexM33NS"/>
-        </ContextSplit>
-        <ContextSplit Name="split3">
-            <ContextIP ContextName="CortexM33"/>
-        </ContextSplit>
-    </IP>
     <IP ConfigFile="WWDG-STM32H5xx" InstanceName="WWDG" Name="WWDG" Version="wwdg1_v2_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>

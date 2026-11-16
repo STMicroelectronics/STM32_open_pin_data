@@ -1653,9 +1653,7 @@
         <Condition Diagnostic="" Expression="PB6"/>
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeed</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed_High_Only">
-            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
-        </Parameter>
+        <Parameter Name="GPIO_Speed_High_Default"/>
         <Parameter Name="GPIO_Pu">
             <PossibleValue>GPIO_PULLUP</PossibleValue>
         </Parameter>
@@ -1671,9 +1669,7 @@
         <Condition Diagnostic="" Expression="PB7"/>
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeed</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed_High_Only">
-            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
-        </Parameter>
+        <Parameter Name="GPIO_Speed_High_Default"/>
         <Parameter Name="GPIO_Pu">
             <PossibleValue>GPIO_PULLUP</PossibleValue>
         </Parameter>
@@ -1689,9 +1685,7 @@
         <Condition Diagnostic="" Expression="PB8"/>
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeed</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed_High_Only">
-            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
-        </Parameter>
+        <Parameter Name="GPIO_Speed_High_Default"/>
         <Parameter Name="GPIO_Pu">
             <PossibleValue>GPIO_PULLUP</PossibleValue>
         </Parameter>
@@ -1707,9 +1701,7 @@
         <Condition Diagnostic="" Expression="PB9"/>
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeed</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed_High_Only">
-            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
-        </Parameter>
+        <Parameter Name="GPIO_Speed_High_Default"/>
         <Parameter Name="GPIO_Pu">
             <PossibleValue>GPIO_PULLUP</PossibleValue>
         </Parameter>
@@ -1725,9 +1717,7 @@
         <Condition Diagnostic="" Expression="!(PB9|PB8|PB7|PB6)"/>
         <ConfigForMode>AlternateFunctionNoPushPullVeryHighSpeed</ConfigForMode>
         <Parameter Name="GPIO_AF"/>
-        <Parameter Name="GPIO_Speed_High_Only">
-            <PossibleValue>GPIO_SPEED_FREQ_VERY_HIGH</PossibleValue>
-        </Parameter>
+        <Parameter Name="GPIO_Speed_High_Default"/>
         <Parameter Name="GPIO_Pu">
             <PossibleValue>GPIO_PULLUP</PossibleValue>
         </Parameter>

@@ -24,7 +24,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="ADV_TRACE-STM32WBAxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_Cube">
+    <IP ConfigFile="ADV_TRACE-STM32WBAxx" InstanceName="ADV_TRACE" Name="ADV_TRACE" Version="v1.0_WBA_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
         </ContextSplit>
@@ -43,7 +43,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="COMMON_WPAN-STM32WBAxx" InstanceName="COMMON_WPAN" Name="COMMON_WPAN" Version="v1.5.0_Cube">
+    <IP ConfigFile="COMMON_WPAN-STM32WBAxx" InstanceName="COMMON_WPAN" Name="COMMON_WPAN" Version="v1.6.0_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>
@@ -431,7 +431,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.10_Cube">
+    <IP ConfigFile="STM32_WPAN-STM32WBAxx" InstanceName="STM32_WPAN" Name="STM32_WPAN" Version="v2.11_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" InitializerForced="true"/>
         </ContextSplit>
@@ -439,7 +439,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0">
+    <IP ConfigFile="SYS-STM32WBAxx" InstanceName="SYS" Name="SYS" Version="STM32U5x_sys_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33NS" ForcedSelection="true"/>
         </ContextSplit>
@@ -447,7 +447,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP InstanceName="SYS_S" Name="SYS_S" Version="STM32U5x_sys_s_v1_0">
+    <IP ConfigFile="SYS-STM32WBAxx" InstanceName="SYS_S" Name="SYS_S" Version="STM32U5x_sys_s_v1_0">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S" ForcedSelection="true"/>
         </ContextSplit>

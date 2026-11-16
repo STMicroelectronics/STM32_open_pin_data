@@ -270,6 +270,11 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
+    <IP ConfigFile="SAU-STM32WL4xx" InstanceName="SAU" Name="SAU" Version="sau_v2_0_WL4_Cube">
+        <ContextSplit Name="split1">
+            <ContextIP ContextName="CortexM33S"/>
+        </ContextSplit>
+    </IP>
     <IP ConfigFile="SPI-STM32WL4xx" InstanceName="SPI3" Name="SPI" Version="spi2s3_v2_5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>

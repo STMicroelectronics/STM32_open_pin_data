@@ -151,7 +151,7 @@
             <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="GPDMA-STM32H7RSxx" InstanceName="GPDMA1" Name="GPDMA" Version="STM32H7RS_dma3_Cube">
+    <IP ClockEnableMode="__HAL_RCC_GPDMA1_CLK_ENABLE" ConfigFile="GPDMA-STM32H7RSxx" InstanceName="GPDMA1" Name="GPDMA" Version="STM32H7RS_dma3_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot" InitializerForced="true"/>
             <ContextIP ContextName="Appli" InitializerForced="true"/>
@@ -178,7 +178,7 @@
             <ContextIP ContextName="Appli"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="HPDMA-STM32H7RSxx" InstanceName="HPDMA1" Name="HPDMA" Version="STM32H7RS_dma3_Cube">
+    <IP ClockEnableMode="__HAL_RCC_HPDMA1_CLK_ENABLE" ConfigFile="HPDMA-STM32H7RSxx" InstanceName="HPDMA1" Name="HPDMA" Version="STM32H7RS_dma3_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="Boot" InitializerForced="true"/>
             <ContextIP ContextName="Appli" InitializerForced="true"/>

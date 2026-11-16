@@ -217,5 +217,5 @@ VP_PWR_VS_SECSignals.Mode=Security/Privilege
 VP_PWR_VS_SECSignals.Signal=PWR_VS_SECSignals
 VP_SYS_VS_Systick.Mode=SysTick
 VP_SYS_VS_Systick.Signal=SYS_VS_Systick
-board=STM32WL43E_DK
+board=STM32WL43E-DK
 boardIOC=true

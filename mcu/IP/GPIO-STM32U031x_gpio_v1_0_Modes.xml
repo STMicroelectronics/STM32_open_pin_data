@@ -1502,7 +1502,7 @@
                 <PossibleValue>GPIO_AF11_LCD</PossibleValue>
             </SpecificParameter>
         </PinSignal>
-        <PinSignal Name="TIM2_CH1_OUT">
+        <PinSignal Name="TIM2_CH1">
             <SpecificParameter Name="GPIO_AF">
                 <PossibleValue>GPIO_AF1_TIM2</PossibleValue>
             </SpecificParameter>

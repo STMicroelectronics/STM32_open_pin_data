@@ -842,7 +842,6 @@
         <Signal Name="I2C3_SMBA"/>
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="SAI1_FS_B"/>
-        <Signal Name="USB_SOF"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PD2" Position="C5" Type="I/O">
@@ -936,7 +935,6 @@
         <Signal Name="DEBUG_JTMS-SWDIO"/>
         <Signal Name="IR_OUT"/>
         <Signal Name="SAI1_SD_B"/>
-        <Signal Name="USB_NOE"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PC10" Position="E5" Type="I/O">
@@ -1068,7 +1066,6 @@
         <Signal Name="SPI1_RDY"/>
         <Signal Name="TIM1_CH1"/>
         <Signal Name="USART1_CK"/>
-        <Signal Name="USB_SOF"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PC1" Position="H6" Type="I/O">

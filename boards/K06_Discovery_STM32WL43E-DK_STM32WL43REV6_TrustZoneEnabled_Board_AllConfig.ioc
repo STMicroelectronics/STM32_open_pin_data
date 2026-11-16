@@ -282,5 +282,5 @@ VP_SYS_S_VS_Systick.Mode=SysTick
 VP_SYS_S_VS_Systick.Signal=SYS_S_VS_Systick
 VP_SYS_VS_Systick.Mode=SysTick
 VP_SYS_VS_Systick.Signal=SYS_VS_Systick
-board=STM32WL43E_DK
+board=STM32WL43E-DK
 boardIOC=true

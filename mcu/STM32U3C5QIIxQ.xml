@@ -349,7 +349,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM1" Name="LPTIM" Version="U3_lptimer1_v2_2_Cube">
+    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM1" Name="LPTIM" Version="U3_1M5_lptimer1_v2_2_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -360,7 +360,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM2" Name="LPTIM" Version="U3_lptimer1_v2_2_Cube">
+    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM2" Name="LPTIM" Version="U3_1M5_lptimer1_v2_2_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -371,7 +371,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM3" Name="LPTIM" Version="U3_lptimer1_v2_2_Cube">
+    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM3" Name="LPTIM" Version="U3_1M5_lptimer1_v2_2_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -382,7 +382,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM4" Name="LPTIM" Version="U3_lptimer1_v2_2_Cube">
+    <IP ConfigFile="LPTIM-STM32U3xx" InstanceName="LPTIM4" Name="LPTIM" Version="U3_1M5_lptimer1_v2_2_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
@@ -1190,7 +1190,6 @@
         <Signal Name="DEBUG_JTMS-SWDIO"/>
         <Signal Name="IR_OUT"/>
         <Signal Name="SAI1_SD_B"/>
-        <Signal Name="USB_NOE"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA14 (JTCK/SWCLK)" Position="C11" Type="I/O">
@@ -1201,7 +1200,6 @@
         <Signal Name="I2C4_SMBA"/>
         <Signal Name="LPTIM1_CH1"/>
         <Signal Name="SAI1_FS_B"/>
-        <Signal Name="USB_SOF"/>
         <Signal IOModes="Input,Output,Analog,EVENTOUT,EXTI" Name="GPIO"/>
     </Pin>
     <Pin Name="PA11" Position="C12" Type="I/O">

@@ -12,6 +12,7 @@
     <Ram>1536</Ram>
     <IONb>178</IONb>
     <Die>DIE47A</Die>
+    <Flash>3072</Flash>
     <IP ClockEnableMode="__HAL_RCC_ADC_CLK_ENABLE" ConfigFile="ADC-STM32H5xx" IPContextCoupling="ADC12" InstanceName="ADC1" Name="ADC" Version="aditf5_v3_0_H5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>

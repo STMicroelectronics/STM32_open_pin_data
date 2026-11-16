@@ -768,7 +768,7 @@
             <ContextIP ContextName="CortexM33"/>
         </ContextSplit>
     </IP>
-    <IP ClockEnableMode="__HAL_RCC_USB_OTG_HS_CLK_ENABLE;__HAL_RCC_USBPHYC_CLK_ENABLE" InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_0_Cube">
+    <IP ClockEnableMode="__HAL_RCC_USB_OTG_HS_CLK_ENABLE;__HAL_RCC_USBPHYC_CLK_ENABLE" InstanceName="USB_OTG_HS" Name="USB_OTG_HS" Version="otghs1_v2_0_U5_Cube">
         <ContextSplit Name="split1">
             <ContextIP ContextName="CortexM33S"/>
         </ContextSplit>
